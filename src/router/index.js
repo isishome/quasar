@@ -26,6 +26,10 @@ export const router = createRouter({
 })
 
 router.beforeEach((to) => {
+
+})
+
+router.afterEach(async (to) => {
   const title = `${to.meta.title ? `${to.meta.title} | ` : ''}SeraSome\'s Quasar`
   document.title = title
   const ogTitle = document.createElement('meta')
@@ -37,9 +41,7 @@ router.beforeEach((to) => {
     document.head.appendChild(ogTitle)
   else
     oldOgTitle.replaceWith(ogTitle)
-})
 
-router.afterEach(async (to, from) => {
   await nextTick()
   const sections = document.querySelectorAll('section[id]')
   const store = useStore()
