@@ -1,0 +1,81 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const props = defineProps({
+  language: {
+    type: String,
+    default: 'html'
+  },
+  intersection: {
+    type: Boolean,
+    default: false
+  }
+})
+
+const Prism = window.Prism
+Prism.disableWorkerMessageHandler = true
+
+onMounted(() => {
+  if (code.value)
+    Prism.highlightElement(code.value)
+})
+
+const code = ref(null)
+const onIntersection = (entry) => {
+  if (props.intersection && entry.isIntersecting)
+    Prism.highlightElement(code.value)
+}
+
+</script>
+
+<template>
+  <div v-intersection.once="onIntersection" class="pre-wrap" :data-language="language">
+    <pre><code ref="code" :class="`language-${language}`">{{ $slots.default()[0].children.replace(/^[\r\n\s]{0,}/, '').replace(/[\r\n\s]{0,}$/, '') }}</code></pre>
+  </div>
+</template>
+
+<style scoped>
+.pre-wrap {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #202030;
+  transition: background-color .3s ease;
+}
+
+.body--dark .pre-wrap {
+  background-color: #181818;
+}
+
+.pre-wrap::before {
+  content: attr(data-language);
+  position: absolute;
+  z-index: 2;
+  color: rgba(255, 255, 255, .3);
+  top: 4px;
+  right: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .pre-wrap {
+    border-radius: 0;
+  }
+
+  .pre-wrap::before {
+    top: 1px;
+    right: 5px;
+    font-size: 11px;
+  }
+}
+
+.pre-wrap:deep(pre[class*=language-]) {
+  background-color: transparent;
+  padding: 1em 1.6em;
+}
+
+.pre-wrap:deep(code[class*=language-]) {
+  font-size: 14px !important;
+  background-color: transparent;
+}
+</style>
