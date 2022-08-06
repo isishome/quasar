@@ -54,7 +54,7 @@ const toggleDark = () => {
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
           <router-link class="title" :to="{ name: 'intro' }">
-            SeraSome's Quasar
+            Sera's Quasar
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />
@@ -140,8 +140,8 @@ const toggleDark = () => {
 
 <style>
 :root {
-  --q-primary: #00a187 !important;
-  --q-primary-alpha: #07b38833 !important;
+  --q-primary: #00b4ff !important;
+  --q-primary-alpha: #00b4ff35 !important;
   --q-secondary: #26A69A;
   --q-accent: #9C27B0;
   --q-positive: #21BA45;
@@ -189,22 +189,21 @@ a {
 
 .header {
   transition: all .3s ease;
-  background-color: #fff;
-  color: inherit;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .08);
-}
+  background-color: var(--q-primary-alpha) !important;
+  color: var(--q-primary);
 
-.body--dark .header {
-  background-color: rgba(30, 30, 30, 1) !important;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
 .header.scroll {
-  color: var(--q-primary);
-  background-color: var(--q-primary-alpha) !important;
+  color: inherit;
+  background-color: inherit !important;
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
-  box-shadow: none;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .08);
+}
+
+.body--dark .header.scroll {
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
 .aside.wide {
