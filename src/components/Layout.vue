@@ -132,7 +132,7 @@ onUnmounted(() => {
     </q-drawer>
     <q-page-container>
       <div class="row justify-center contents">
-        <aside v-if="screen.gt.sm" class="col-2 row justify-end relative-position" style="min-width:250px">
+        <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside wide full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-sm">
@@ -154,12 +154,14 @@ onUnmounted(() => {
           <router-view />
           <q-list dense>
             <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
-            <ins class="adsbygoogle" style="display:block;height:200px" data-ad-client="ca-pub-5110777286519562"
-              data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
-              :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
+            <q-item>
+              <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px"
+                data-ad-client="ca-pub-5110777286519562" data-ad-slot="8610177982" :data-adtest="prod ? 'off' : 'on'"
+                :key="key"></ins>
+            </q-item>
           </q-list>
         </q-page>
-        <aside v-if="screen.gt.md" class="col-2 row justify-start relative-position">
+        <aside class="gt-md col-2 row justify-start relative-position">
           <div class="aside wide right text-weight-bold">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
