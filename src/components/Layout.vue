@@ -102,25 +102,20 @@ onUnmounted(() => {
             <q-item class="text-weight-bold">
               <q-item-label> {{ r.meta.title }}</q-item-label>
             </q-item>
-            <q-item v-for="c in r.children" :key="c.name">
-              <q-item-section class="no-padding no-margin">
-                <router-link :class="routeName === c.name ? 'active' : ''" :to="{ name: c.name }">
-                  {{ c.meta.title }}
-                </router-link>
-              </q-item-section>
+            <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active" :active="routeName === c.name"
+              :to="{ name: c.name }"> {{ c.meta.title }}
             </q-item>
           </q-list>
         </template>
       </div>
     </q-drawer>
     <q-drawer v-if="screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right" behavior="mobile">
-      <div class="aside right">
-        <q-list dense>
-          <q-item clickable v-for="section in sections" :key="section.id" class="text-caption"
-            @click="rightDrawerOpen = false">
-            <router-link :class="section.active ? 'active' : ''" :to="{ params: { sid: section.id } }" replace>
-              {{ section.name }}
-            </router-link>
+      <div class="aside right text-weight-bold">
+        <q-list v-if="sections.length > 0" dense>
+          <q-item-label header class="header-title q-py-sm">단락</q-item-label>
+          <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
+            :active="section.active" @click="rightDrawerOpen = false" :to="{ params: { sid: section.id } }">
+            {{ section.name }}
           </q-item>
         </q-list>
       </div>
@@ -134,12 +129,8 @@ onUnmounted(() => {
                 <q-item>
                   <q-item-label class="header-title"> {{ r.meta.title }}</q-item-label>
                 </q-item>
-                <q-item v-for="c in r.children" :key="c.name">
-                  <q-item-section class="no-padding no-margin">
-                    <router-link :class="routeName === c.name ? 'active' : ''" :to="{ name: c.name }"> {{ c.meta.title
-                    }}
-                    </router-link>
-                  </q-item-section>
+                <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active"
+                  :active="routeName === c.name" :to="{ name: c.name }"> {{ c.meta.title }}
                 </q-item>
               </q-list>
             </template>
@@ -147,21 +138,17 @@ onUnmounted(() => {
         </aside>
         <q-page class="col page" :style-fn="myTweak">
           <router-view />
-          <q-list dense>
-            <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
-            <q-item>
-              <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px"
-                data-ad-client="ca-pub-5110777286519562" data-ad-slot="8610177982" :data-adtest="prod ? 'off' : 'on'"
-                :key="key"></ins>
-            </q-item>
-          </q-list>
+          <div class="q-py-xl"></div>
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
+            data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
+            :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
         </q-page>
         <aside class="gt-md col-2 row justify-start relative-position">
           <div class="aside wide right text-weight-bold">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
               <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
-                :active="section.active" @click="rightDrawerOpen = false" :to="{ params: { sid: section.id } }">
+                :active="section.active" :to="{ params: { sid: section.id } }">
                 {{ section.name }}
               </q-item>
             </q-list>
@@ -337,5 +324,15 @@ a {
 
 .q-item {
   line-height: 24px;
+}
+
+ins {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
+  background-color: rgba(0, 0, 0, .02);
+}
+
+.body--dark ins {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
+  background-color: rgba(255, 255, 255, .02);
 }
 </style>
