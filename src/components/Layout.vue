@@ -152,16 +152,14 @@ onUnmounted(() => {
                 {{ section.name }}
               </q-item>
             </q-list>
-            <q-list dense>
-              <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
+            <q-list dense class="q-mt-xl">
               <q-item>
                 <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px"
                   data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? 'off' : 'on'"
                   :key="key"></ins>
               </q-item>
             </q-list>
-            <q-list dense>
-              <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
+            <q-list dense class="q-mt-xl">
               <q-item>
                 <ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px"
                   data-ad-client="ca-pub-5110777286519562" data-ad-slot="8367732885" :data-adtest="prod ? 'off' : 'on'"
@@ -329,6 +327,16 @@ a {
 ins {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
   background-color: rgba(0, 0, 0, .02);
+  position: relative;
+}
+
+ins::after {
+  content: '광고';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
 }
 
 .body--dark ins {
