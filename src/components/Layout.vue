@@ -61,12 +61,9 @@ watch(() => route.name, (val, old) => {
 
 const onWindowLoad = () => {
   const adsbygoogle = window.adsbygoogle || []
-  const ins = document.querySelectorAll('ins[data-ad-slot]').length
-  let i = 0
-  while (i < ins) {
-    adsbygoogle.push({})
-    i++
-  }
+  adsbygoogle.push({})
+  adsbygoogle.push({})
+  adsbygoogle.push({})
 }
 
 onMounted(() => {
