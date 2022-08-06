@@ -22,7 +22,7 @@ const update = (val) => {
 </script>
 
 <template>
-  <div class="q-pa-xs" style="width:1000px;max-width: 100%;margin:0 auto;word-break: break-all;">
+  <div style="width:1000px;max-width: 100%;margin:0 auto;word-break: break-all;">
     <div class="q-py-xl"></div>
     <q-btn icon="dark_mode" @click="$q.dark.set(!$q.dark.isActive)"></q-btn>
     <div class="q-py-xl"></div>
