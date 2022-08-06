@@ -60,14 +60,12 @@ watch(() => route.name, (val, old) => {
 })
 
 const onWindowLoad = () => {
-  if (screen.value.gt.md) {
-    const adsbygoogle = window.adsbygoogle || []
-    const ins = document.querySelectorAll('ins[data-ad-slot]').length
-    let i = 0
-    while (i < ins) {
-      adsbygoogle.push({})
-      i++
-    }
+  const adsbygoogle = window.adsbygoogle || []
+  const ins = document.querySelectorAll('ins[data-ad-slot]').length
+  let i = 0
+  while (i < ins) {
+    adsbygoogle.push({})
+    i++
   }
 }
 
