@@ -1,9 +1,10 @@
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useQuasar } from 'quasar'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { useQuasar, uid } from 'quasar'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
 
+const prod = computed(() => import.meta.env.PROD)
 const $q = useQuasar()
 const screen = computed(() => $q.screen)
 const route = useRoute()
@@ -45,6 +46,44 @@ const toggleDark = () => {
   document.documentElement.style.colorScheme = $q.dark.isActive ? 'dark' : 'light'
 }
 
+const key = ref(uid())
+const reload = () => {
+  key.value = uid()
+  nextTick(() => {
+    onWindowLoad()
+  })
+}
+
+watch(() => route.name, (val, old) => {
+  if (val && val !== old)
+    reload()
+})
+
+const onWindowLoad = () => {
+  if (screen.value.gt.md) {
+    const adsbygoogle = window.adsbygoogle || []
+    const ins = document.querySelectorAll('ins[data-ad-slot]').length
+    let i = 0
+    while (i < ins) {
+      adsbygoogle.push({})
+      i++
+    }
+  }
+}
+
+onMounted(() => {
+  if (document.readyState !== 'complete')
+    window.addEventListener("load", onWindowLoad)
+  else {
+    nextTick(() => {
+      onWindowLoad()
+    })
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener("load", onWindowLoad)
+})
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
@@ -113,6 +152,12 @@ const toggleDark = () => {
         </aside>
         <q-page class="col page" :style-fn="myTweak">
           <router-view />
+          <q-list dense>
+            <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
+              data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
+              :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
+          </q-list>
         </q-page>
         <aside v-if="screen.gt.md" class="col-2 row justify-start relative-position">
           <div class="aside wide right text-weight-bold">
@@ -124,12 +169,20 @@ const toggleDark = () => {
               </q-item>
             </q-list>
             <q-list dense>
-              <q-item-label header class="header-title q-py-sm q-mt-md">광고</q-item-label>
-              <div class="full-width bg-grey-1" style="height:600px"></div>
+              <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
+              <q-item>
+                <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px"
+                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? 'off' : 'on'"
+                  :key="key"></ins>
+              </q-item>
             </q-list>
             <q-list dense>
-              <q-item-label header class="header-title q-py-sm q-mt-md">광고</q-item-label>
-              <div class="full-width bg-grey-1" style="height:200px"></div>
+              <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
+              <q-item>
+                <ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px"
+                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="8367732885" :data-adtest="prod ? 'off' : 'on'"
+                  :key="key"></ins>
+              </q-item>
             </q-list>
           </div>
         </aside>
@@ -191,18 +244,18 @@ a {
   transition: all .3s ease;
   background-color: var(--q-primary-alpha) !important;
   color: var(--q-primary);
-
 }
 
 .header.scroll {
   color: inherit;
-  background-color: inherit !important;
+  background-color: rgba(255, 255, 255, .5) !important;
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .08);
 }
 
 .body--dark .header.scroll {
+  background-color: rgba(29, 29, 29, .5) !important;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
@@ -250,10 +303,10 @@ a {
 .aside.right:deep(a.active::after) {
   content: '';
   position: absolute;
-  top: 20%;
-  left: 4px;
+  top: 25%;
+  left: 8px;
   width: 4px;
-  height: 60%;
+  height: 50%;
   background-color: var(--q-primary);
   border-radius: 2px;
 }
