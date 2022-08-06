@@ -176,6 +176,7 @@ onUnmounted(() => {
                   :key="key"></ins>
               </q-item>
             </q-list>
+            {{ prod }}
             <q-list dense>
               <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
               <q-item>
