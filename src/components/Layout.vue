@@ -154,7 +154,7 @@ onUnmounted(() => {
           <router-view />
           <q-list dense>
             <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
+            <ins class="adsbygoogle" style="display:block;height:200px" data-ad-client="ca-pub-5110777286519562"
               data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
               :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
           </q-list>
@@ -176,7 +176,6 @@ onUnmounted(() => {
                   :key="key"></ins>
               </q-item>
             </q-list>
-            {{ prod }}
             <q-list dense>
               <q-item-label header class="header-title q-py-sm q-mt-lg">광고</q-item-label>
               <q-item>
