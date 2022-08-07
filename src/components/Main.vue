@@ -1,20 +1,20 @@
 <script setup>
 import { shallowReadonly } from 'vue'
 const sites = shallowReadonly([
-  { name: 'Vue.js', logo: '/images/sites/vuejs.svg', url: 'https://vuejs.org/' },
-  { name: 'Quasar', logo: '/images/sites/quasar.svg', url: 'https://quasar.dev/' },
-  { name: 'Vite', logo: '/images/sites/vite.png', url: 'https://vitejs.dev/' },
-  { name: 'Vue Router', logo: '/images/sites/router.png', url: 'https://router.vuejs.org/' },
-  { name: 'Pinia', logo: '/images/sites/pinia.svg', url: 'https://pinia.vuejs.org/' },
-  { name: 'Axios', logo: '/images/sites/axios.svg', url: 'https://axios-http.com/kr/' },
-  { name: 'Vue I18n', logo: '/images/sites/i18n.svg', url: 'https://vue-i18n.intlify.dev/' }
+  { name: 'Vue.js', logo: 'images/sites/vuejs.svg', url: 'https://vuejs.org/' },
+  { name: 'Quasar', logo: 'images/sites/quasar.svg', url: 'https://quasar.dev/' },
+  { name: 'Vite', logo: 'images/sites/vite.png', url: 'https://vitejs.dev/' },
+  { name: 'Vue Router', logo: 'images/sites/router.png', url: 'https://router.vuejs.org/' },
+  { name: 'Pinia', logo: 'images/sites/pinia.svg', url: 'https://pinia.vuejs.org/' },
+  { name: 'Axios', logo: 'images/sites/axios.svg', url: 'https://axios-http.com/kr/' },
+  { name: 'Vue I18n', logo: 'images/sites/i18n.svg', url: 'https://vue-i18n.intlify.dev/' }
 ])
 </script>
 
 <template>
   <div class="text-center">
     <div class="q-py-lg q-px-sm q-gutter-y-md">
-      <q-img src="/images/quasar/logo-vertical.svg" width="40%" class="invert" />
+      <q-img src="images/quasar/logo-vertical.svg" width="40%" class="invert" />
       <div class="q-mt-xl text-primary text-weight-bold text-subtitle text-keep">빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의
         인터페이스를
         손쉽게 구축
