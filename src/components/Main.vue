@@ -39,12 +39,10 @@ const sites = shallowReadonly([
       <u>무엇보다도 개발에 소요되는 시간을 크게 절약</u>해 주었죠.
     </p>
     <p class="text-body1 text-keep">
-      그동안 quasar를 사용하면서 중요하다고 생각한 부분과, 자주 사용하게 되는 컴포넌트나 플러그인 위주로 포스팅할 예정입니다.<br />
-      그래서 vue.js를 새로 시작하는 분들에게 많은 도움이 되길 바랍니다.
+      그동안 quasar를 사용하면서 중요하다고 생각한 부분과, 자주 사용하게 되는 컴포넌트나 플러그인 위주로 포스팅할 예정입니다. 그래서 vue.js를 새로 시작하는 분들에게 많은 도움이 되길 바랍니다.
     </p>
     <em class="text-caption text-keep q-my-xl q-pa-md">
-      이 사이트는 vue.js v3와 quasar framework v2를 이용해 제작되었으며,<br />
-      사이트 성능에 영향을 주는 외부 폰트나 불필요한 플러그인의 사용을 최소화했습니다.
+      이 사이트는 vue.js v3와 quasar framework v2를 이용해 제작되었으며, 사이트 성능에 영향을 주는 외부 폰트나 불필요한 플러그인의 사용을 최소화했습니다.
     </em>
     <div class="q-pt-xl text-keep">
       <div class="text-h6 text-weight-bold">vue.js를 사용하는데 유용한 사이트와 플러그인</div>
