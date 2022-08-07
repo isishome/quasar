@@ -22,9 +22,17 @@ const routes = [
           {
             path: 'why',
             name: 'why',
-            component: () => import('@/components/started/Why.vue'),
+            component: () => import('@/components/intro/Why.vue'),
             meta: {
               title: '왜 퀘이사인가?'
+            }
+          },
+          {
+            path: 'start',
+            name: 'start',
+            component: () => import('@/components/intro/Start.vue'),
+            meta: {
+              title: '시작하기'
             }
           }
         ]

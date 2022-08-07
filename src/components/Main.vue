@@ -15,38 +15,39 @@ const sites = shallowReadonly([
   <div class="text-center">
     <div class="q-py-lg q-px-sm q-gutter-y-md">
       <q-img src="images/quasar/logo-vertical.svg" width="40%" class="invert" />
-      <div class="q-mt-xl text-primary text-weight-bold text-subtitle text-keep">빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의
-        인터페이스를
-        손쉽게 구축
+      <div class="q-mt-xl text-primary text-weight-bold text-subtitle text-keep">
+        빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의 인터페이스를 손쉽게 구축
       </div>
       <div class="row justify-center q-gutter-x-sm">
         <q-btn unelevated color="primary" label="왜 퀘이사인가?" :to="{ name: 'why' }" />
       </div>
     </div>
     <p class="text-body1 text-keep">
-      예전 회사에서 새로운 프레임워크를 공부할 기회가 있었는데 그게 vue.js였습니다.<br />
-      매일 <strong>jquery</strong>와 에디터는 <strong>visual studio</strong>만
-      쓰다가 작업 환경을 바꾸는 게 여간 어려운 일이 아니었습니다. 그리고 사용자 인터페이스의 부제를 해결하기 위해 어쩔 수 없이 <strong>quasar&nbsp;framework</strong>를 공부하게
-      되었습니다.
+      예전 회사에서 새로운 프레임워크를 공부할 기회가 생겼는데 그때 시작한 게 <strong>vue.js</strong>였습니다.<br />
+      그전까지는 <strong>visual studio</strong>를 이용해 <strong>asp.net</strong>과 <strong>jquery</strong>로 프로젝트를 진행했었는데 갑자기
+      새 작업 환경을 구축하려고 보니 여간 어려운 게 아니었습니다. 거기에 더해 좀 더 나은 사용자 인터페이스를 제공하고자 <strong>quasar&nbsp;framework</strong>를
+      도입하게 되면서 처음 만나게 되었죠.
     </p>
     <p class="text-h6 text-weight-bold text-keep">
-      그런데 이것이 제 개발자 인생의 큰 전환점이 되었습니다.
+      그런데 이것이 제 개발 스타일에 엄청난 변화를 가져왔습니다.
     </p>
     <p class="text-body1 text-keep">
-      기존에 시각적인 요소를 전부 디자이너에게 의존하던 것에서 벗어나,<br />
-      좀 더 이쁘고, 사용하기 편하며, 반응형 웹을 제작할 때 들어가는 큰 수고스러움도 완화시켜주며,<br />
-      무엇보다도 개발에 소요되는 시간을 크게 절약해 줍니다.
+      기존에 시각적인 요소를 전부 디자이너에게 의존하던 것에서 벗어나<br />
+      <u>수려한 레이아웃을 구현해 주며</u>,<br />
+      <u>사용하기 편하고</u>,<br />
+      <u>반응형 웹을 제작할 때 들어가는 큰 수고스러움도 완화</u>시켜주며,<br />
+      <u>무엇보다도 개발에 소요되는 시간을 크게 절약</u>해 주었죠.
     </p>
     <p class="text-body1 text-keep">
-      그동안 <strong>quasar&nbsp;framework</strong>를 사용하면서 중요한 부분이나 꼭 필요한 부분, 자주 사용하게 되는 컴포넌트나 플러그인 위주로 게시물을 작성해 갈 예정입니다.
+      그동안 quasar를 사용하면서 중요하다고 생각한 부분과, 자주 사용하게 되는 컴포넌트나 플러그인 위주로 포스팅할 예정입니다.<br />
       그래서 vue.js를 새로 시작하는 분들에게 많은 도움이 되길 바랍니다.
     </p>
-    <p class="text-caption text-keep q-my-xl">
+    <em class="text-caption text-keep q-my-xl q-pa-md">
       이 사이트는 vue.js v3와 quasar framework v2를 이용해 제작되었으며,<br />
-      사이트 성능에 영향을 주는 외부 폰트나 플러그인을 사용하지 않았습니다.
-    </p>
+      사이트 성능에 영향을 주는 외부 폰트나 불필요한 플러그인의 사용을 최소화했습니다.
+    </em>
     <div class="q-pt-xl text-keep">
-      <div class="text-h6 text-weight-bold">vue.js를 사용하는데 도움을 주는 유용한 플러그인 또는 사이트</div>
+      <div class="text-h6 text-weight-bold">vue.js를 사용하는데 유용한 사이트와 플러그인</div>
       <div class="row justify-center items-start q-col-gutter-sm q-mt-sm">
         <div class="col-6 col-md-3" v-for="s in sites" :key="s.name">
           <q-btn class="fit" no-caps flat dense padding="0" :href="s.url" target="_blank" rel="noopener noreferrer">

@@ -223,6 +223,19 @@ blockquote {
   border-radius: 0 4px 4px 0;
 }
 
+em {
+  font-style: normal !important;
+  display: inline-block;
+  margin: 0 .2rem;
+  padding: 0 .2rem;
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 4px;
+}
+
+.body--dark em {
+  background-color: rgba(255, 255, 255, .2);
+}
+
 .text-keep {
   word-break: keep-all;
 }
