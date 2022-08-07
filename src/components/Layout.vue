@@ -87,8 +87,10 @@ onUnmounted(() => {
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
-          <router-link class="title" :to="{ name: 'intro' }">
-            Sera's Quasar
+          <router-link class="title" :to="{ name: 'main' }">
+            <div class="row items-center">
+              Sera's Quasar
+            </div>
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />
@@ -123,7 +125,7 @@ onUnmounted(() => {
     <q-page-container>
       <div class="row justify-center contents">
         <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
-          <div class="aside wide full-height scroll" style="overflow:scroll">
+          <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-sm">
                 <q-item>
@@ -144,7 +146,7 @@ onUnmounted(() => {
             :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
         </q-page>
         <aside class="gt-md col-2 row justify-start relative-position">
-          <div class="aside wide right text-weight-bold">
+          <div class="aside right text-weight-bold">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
               <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
@@ -189,14 +191,54 @@ onUnmounted(() => {
 
 body {
   overflow-y: scroll;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  letter-spacing: .2px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  direction: ltr;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  transition: color .5s, background-color .5s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .body--light {
-  color: rgba(20, 20, 20, 1) !important;
+  color: rgba(33, 53, 71, 1) !important;
 }
 
 .body--dark {
+  color: rgba(255, 255, 255, .87) !important;
   background-color: rgba(30, 30, 30, 1) !important;
+}
+
+blockquote {
+  box-shadow: inset 4px 0 0 0 rgba(100, 150, 200, 1);
+  padding: 1rem 1rem 1rem 2em;
+  margin: 2rem 0;
+  background-color: rgba(0, 0, 0, .03);
+  border-radius: 0 4px 4px 0;
+}
+
+.text-keep {
+  word-break: keep-all;
+}
+
+p {
+  line-height: 1.7 !important;
+  letter-spacing: .2px !important;
+}
+
+.bg-back {
+  background-color: rgba(0, 0, 0, .02);
+}
+
+
+.body--dark .bg-back {
+  background-color: rgba(255, 255, 255, .05);
 }
 </style>
 <style scoped>
@@ -241,8 +283,8 @@ a {
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
-.aside.wide {
-  width: 250px;
+.aside.fixed-260 {
+  width: 260px;
 }
 
 .aside {

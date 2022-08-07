@@ -2,24 +2,21 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component:  () => import('@/components/NotFound.vue') 
+    component: () => import('@/components/NotFound.vue')
   }, {
     path: '/',
     component: () => import('@/components/Layout.vue'),
     children: [
       {
         path: '',
-        name: 'intro',
-        component: () => import('@/components/Intro.vue'),
-        meta: {
-          title: '소개'
-        }
+        name: 'main',
+        component: () => import('@/components/Main.vue')
       },
       {
-        path: 'started',
+        path: 'intro',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: '시작하기'
+          title: '소개'
         },
         children: [
           {
