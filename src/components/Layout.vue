@@ -41,9 +41,11 @@ watch(() => activeId.value, (val, old) => {
     history.replaceState({}, null, `#${val}`)
 })
 
+
+// toggle dark 
 const toggleDark = () => {
   $q.dark.set(!$q.dark.isActive)
-  document.documentElement.style.colorScheme = $q.dark.isActive ? 'dark' : 'light'
+  $q.cookies.set('sq.dark', $q.dark.isActive, { path: import.meta.env.BASE_URL, expires: 365 })
 }
 
 const key = ref(uid())
@@ -145,6 +147,18 @@ onUnmounted(() => {
           <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
             data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
             :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
+          <div class="q-py-lg"></div>
+          <template v-if="route.name === 'main'">
+            <q-separator />
+            <div class="q-py-lg">
+              <div class="row justify-center items-center q-gutter-x-xs text-caption bottom">
+                <div>Copyright</div>
+                <div>@</div>
+                <div>2022</div>
+                <div>SeraSome</div>
+              </div>
+            </div>
+          </template>
         </q-page>
         <aside class="gt-md col-2 row justify-start relative-position block">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
@@ -240,7 +254,7 @@ p {
 }
 
 strong {
-  text-shadow: 0 0 0 rgba(33, 53, 71, 1);
+  text-shadow: 0 0 0 rgba(33, 53, 71, .1);
 }
 
 .body--dark strong {
@@ -266,6 +280,10 @@ strong {
 .body--dark .note {
   background-color: rgba(255, 255, 255, .05);
   box-shadow: 4px 0 0 0 rgba(255, 255, 255, .1), -4px 0 0 0 rgba(255, 255, 255, .1);
+}
+
+.q-separator--dark {
+  background-color: rgba(255, 255, 255, .14);
 }
 </style>
 <style scoped>
@@ -368,12 +386,12 @@ a {
 }
 
 .page {
-  padding: 64px 96px;
+  padding: 64px 96px 0 96px;
 }
 
 @media (max-width:1240px) {
   .page {
-    padding: 32px 48px;
+    padding: 32px 48px 0 48px;
   }
 }
 
@@ -422,5 +440,13 @@ ins::after {
 .body--dark ins {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
   background-color: rgba(255, 255, 255, .02);
+}
+
+.bottom {
+  color: rgba(0, 0, 0, .5);
+}
+
+.body--dark .bottom {
+  color: rgba(255, 255, 255, .5);
 }
 </style>

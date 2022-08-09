@@ -52,7 +52,8 @@ const sites = shallowReadonly([
           <q-btn class="fit" no-caps flat dense padding="0" :href="s.url" target="_blank" rel="noopener noreferrer">
             <q-card bordered square class="no-shadow fit bg-back">
               <q-card-section>
-                <img :src="s.logo" width="100" height="100" />
+                <img :src="s.logo" width="100" height="100"
+                  :class="['Quasar', 'Javascript'].includes(s.name) ? 'invert' : ''" />
               </q-card-section>
               <q-card-section class="text-h6">{{ s.name }}</q-card-section>
             </q-card>
