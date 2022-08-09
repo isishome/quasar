@@ -35,7 +35,7 @@ const myTweak = (offset) => {
   store.setOffset(offset)
 }
 
-const activeId = computed(() => store.sections.find(s => s.active) ? store.sections.find(s => s.active).id : null)
+const activeId = computed(() => store.active)
 watch(() => activeId.value, (val, old) => {
   if (val && val !== old)
     history.replaceState({}, null, `#${val}`)
@@ -60,10 +60,11 @@ watch(() => route.name, (val, old) => {
 })
 
 const onWindowLoad = () => {
-  const adsbygoogle = window.adsbygoogle || []
-  adsbygoogle.push({})
-  adsbygoogle.push({})
-  adsbygoogle.push({})
+  if (prod.value) {
+    const adsbygoogle = window.adsbygoogle || []
+    adsbygoogle.push({})
+    adsbygoogle.push({})
+  }
 }
 
 onMounted(() => {
@@ -105,7 +106,7 @@ onUnmounted(() => {
               <q-item-label> {{ r.meta.title }}</q-item-label>
             </q-item>
             <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active" :active="routeName === c.name"
-              :to="{ name: c.name }"> {{ c.meta.title }}
+              @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title }}
             </q-item>
           </q-list>
         </template>
@@ -116,7 +117,7 @@ onUnmounted(() => {
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
           <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
-            :active="section.active" @click="rightDrawerOpen = false" :to="{ params: { sid: section.id } }">
+            :active="section.id === activeId" @click="rightDrawerOpen = false" :to="{ params: { sid: section.id } }">
             {{ section.name }}
           </q-item>
         </q-list>
@@ -145,12 +146,12 @@ onUnmounted(() => {
             data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
             :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
         </q-page>
-        <aside class="gt-md col-2 row justify-start relative-position">
-          <div class="aside right text-weight-bold">
+        <aside class="gt-md col-2 row justify-start relative-position block">
+          <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
               <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
-                :active="section.active" :to="{ params: { sid: section.id } }">
+                :active="section.id === activeId" :to="{ params: { sid: section.id } }">
                 {{ section.name }}
               </q-item>
             </q-list>
@@ -158,13 +159,6 @@ onUnmounted(() => {
               <q-item>
                 <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px"
                   data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? 'off' : 'on'"
-                  :key="key"></ins>
-              </q-item>
-            </q-list>
-            <q-list dense class="q-mt-lg">
-              <q-item>
-                <ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px"
-                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="8367732885" :data-adtest="prod ? 'off' : 'on'"
                   :key="key"></ins>
               </q-item>
             </q-list>
@@ -245,6 +239,14 @@ p {
   letter-spacing: .2px !important;
 }
 
+strong {
+  text-shadow: 0 0 0 rgba(33, 53, 71, 1);
+}
+
+.body--dark strong {
+  text-shadow: 0 0 0 rgba(255, 255, 255, .87);
+}
+
 .bg-back {
   background-color: rgba(0, 0, 0, .02);
 }
@@ -252,6 +254,18 @@ p {
 
 .body--dark .bg-back {
   background-color: rgba(255, 255, 255, .05);
+}
+
+.note {
+  margin: 22px 0;
+  padding: 16px 24px;
+  background-color: rgb(225, 244, 255);
+  box-shadow: 4px 0 0 0 rgb(129, 219, 255), -4px 0 0 0 rgb(129, 219, 255);
+}
+
+.body--dark .note {
+  background-color: rgba(255, 255, 255, .05);
+  box-shadow: 4px 0 0 0 rgba(255, 255, 255, .1), -4px 0 0 0 rgba(255, 255, 255, .1);
 }
 </style>
 <style scoped>
@@ -332,6 +346,11 @@ a {
   color: var(--q-primary);
 }
 
+.aside.right {
+  position: sticky;
+  bottom: 0;
+}
+
 .aside.right:deep(a.active) {
   opacity: .8;
   color: inherit !important;
@@ -383,6 +402,7 @@ ins {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
   background-color: rgba(0, 0, 0, .02);
   position: relative;
+  min-height: 200px;
 }
 
 ins::after {

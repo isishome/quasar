@@ -16,7 +16,7 @@ export const router = createRouter({
         }
         else if (to.params.sid) {
           const store = useStore()
-          resolve({ el: `#${to.params.sid}`, top: store.offset, behavior: 'smooth' })
+          resolve({ el: `#${to.params.sid}`, top: store.offset })
         }
         else
           resolve({ top: 0 })
@@ -43,13 +43,14 @@ router.afterEach(async () => {
   await nextTick()
   const sections = document.querySelectorAll('section[id]')
   const store = useStore()
-  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, active: false })))
+  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, ratio: 0 })))
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const state = entry.intersectionRatio > .5
-      if (store.section(entry.target.id) !== state)
-        store.setActive(entry.target.id, state)
+      const targetRatio = (entry.boundingClientRect.height / window.innerHeight < 1 ? 1 : entry.boundingClientRect.height / window.innerHeight) * entry.intersectionRatio
+      store.setActive(entry.target.id, targetRatio)
     })
-  }, { threshold: [.3, .7] })
+  }, {
+    threshold: Array.from(Array(10), (_, x) => x * 0.1)
+  })
   sections.forEach(section => io.observe(section))
 })
