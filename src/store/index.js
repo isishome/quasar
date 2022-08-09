@@ -20,7 +20,6 @@ export const useStore = defineStore('main', {
       if (findSection) {
         findSection.ratio = ratio
         this.active = this.sections.reduce((prev, current) => (prev.ratio > current.ratio) ? prev : current).id
-        console.log(this.active)
       }
     },
     setOffset(value) {
