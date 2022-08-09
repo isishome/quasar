@@ -132,7 +132,7 @@ onUnmounted(() => {
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-sm">
                 <q-item>
-                  <q-item-label class="header-title"> {{ r.meta.title }}</q-item-label>
+                  <q-item-label class="header-title q-py-xs"> {{ r.meta.title }}</q-item-label>
                 </q-item>
                 <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active"
                   :active="routeName === c.name" :to="{ name: c.name }"> {{ c.meta.title }}
@@ -195,6 +195,9 @@ onUnmounted(() => {
   --q-warning: #F2C037;
   --q-dark: #1d1d1d;
   --q-dark-page: #121212;
+  --q-vuejs: #42b883;
+  --q-back: rgba(0, 0, 0, .03);
+  --q-dark-back: rgba(255, 255, 255, .05);
 }
 
 body {
@@ -220,7 +223,7 @@ body {
 
 .body--dark {
   color: rgba(255, 255, 255, .87) !important;
-  background-color: rgba(30, 30, 30, 1) !important;
+  background-color: rgba(26, 26, 26, 1) !important;
 }
 
 blockquote {
@@ -262,12 +265,22 @@ strong {
 }
 
 .bg-back {
-  background-color: rgba(0, 0, 0, .02);
+  background-color: var(--q-back);
 }
 
-
 .body--dark .bg-back {
-  background-color: rgba(255, 255, 255, .05);
+  background-color: var(--q-dark-back);
+}
+
+.tip {
+  box-shadow: inset 0 0 0 1px var(--q-vuejs);
+  background-color: var(--q-back);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.body--dark .tip {
+  background-color: var(--q-dark-back);
 }
 
 .note {
@@ -413,7 +426,7 @@ a {
 }
 
 .q-item {
-  line-height: 24px;
+  line-height: 1.6em;
 }
 
 ins {
@@ -430,16 +443,16 @@ ins::after {
   left: 50%;
   z-index: -1;
   transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, .1);
-}
-
-.body--dark ins::after {
-  color: rgba(255, 255, 255, .1);
+  color: rgba(0, 0, 0, .2);
 }
 
 .body--dark ins {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
   background-color: rgba(255, 255, 255, .02);
+}
+
+.body--dark ins::after {
+  color: rgba(255, 255, 255, .2);
 }
 
 .bottom {

@@ -44,7 +44,7 @@ const onIntersection = (entry) => {
 }
 
 .body--dark .pre-wrap {
-  background-color: #181818;
+  background-color: #242424;
 }
 
 .pre-wrap::before {

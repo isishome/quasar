@@ -190,4 +190,29 @@ a {
   transition: opacity .2s;
   white-space: nowrap;
 }
+
+.q-video {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
+  background-color: rgba(0, 0, 0, .02);
+  position: relative;
+}
+
+.q-video::after {
+  content: '영상';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, .2);
+}
+
+.body--dark .q-video {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
+  background-color: rgba(255, 255, 255, .02);
+}
+
+.body--dark .q-video::after {
+  color: rgba(255, 255, 255, .2);
+}
 </style>

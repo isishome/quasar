@@ -52,6 +52,22 @@ const routes = [
             }
           }
         ]
+      }, {
+        path: 'tools',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '도구'
+        },
+        children: [
+          {
+            path: 'htmlencode',
+            name: 'htmlencode',
+            component: () => import('@/components/tools/HtmlEncode.vue'),
+            meta: {
+              title: 'HTML 인코딩'
+            }
+          }
+        ]
       }
     ]
   }
