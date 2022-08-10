@@ -21,9 +21,15 @@ const sites = shallowReadonly([
       </div>
       <div class="row justify-center q-gutter-x-sm">
         <q-btn unelevated color="primary" label="왜 퀘이사인가?" :to="{ name: 'why' }" />
+        <q-btn outline class="arrow" color="primary" label="시작하기" :to="{ name: 'start' }">
+          <div class="row justify-center items-center q-gutter-x-xs">
+            <div>시작하기</div>
+            <q-icon size="xs" name="arrow_forward" />
+          </div>
+        </q-btn>
       </div>
     </div>
-    <p>
+    <p class="q-mt-lg">
       예전 회사에서 새로운 프레임워크를 공부할 기회가 생겼는데 그때 시작한 게 <strong>vue.js</strong>였습니다.<br />
       그전까지는 <strong>visual studio</strong>를 이용해 <strong>asp.net</strong>과 <strong>jquery</strong>로 프로젝트를 진행했었는데 갑자기
       새 작업 환경을 구축하려고 보니 여간 어려운 게 아니었습니다. 거기에 더해 좀 더 나은 사용자 인터페이스를 제공하고자 <strong>quasar&nbsp;framework</strong>를
@@ -66,5 +72,13 @@ const sites = shallowReadonly([
 <style scoped>
 .body--dark .invert {
   filter: hue-rotate(180deg) invert(100);
+}
+
+.arrow:deep(i) {
+  transition: transform .3s ease;
+}
+
+.arrow:hover:deep(i) {
+  transform: translateX(20%);
 }
 </style>
