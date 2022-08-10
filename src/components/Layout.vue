@@ -314,6 +314,10 @@ p,
 li {
   word-break: keep-all;
 }
+
+u {
+  text-underline-offset: 2px;
+}
 </style>
 <style scoped>
 a {
