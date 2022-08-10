@@ -28,8 +28,8 @@
         퀘이사 Flex CSS 클래스는 컨테이너(부모) 또는 컨테이너 안의 아이템들(자식)에게 적용됩니다.
       </p>
       <p>
-        <img src="/../../images/layout/flexbox-container.svg" width="300" />
-        <img src="/images/layout/flexbox-items.svg" width="300" />
+        <img src="/../images/layout/flexbox-container.svg" width="300" />
+        <img src="/../images/layout/flexbox-items.svg" width="300" />
       </p>
     </section>
   </div>
