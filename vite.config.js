@@ -6,11 +6,10 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   return {
-    base: command === 'serve' ? '/' : '/quasar/',
+    base: command !== 'serve' ? '/' : '/quasar/',
     plugins: [vue({
       template: { transformAssetUrls }
     }),
-
     quasar()],
     resolve: {
       alias: {

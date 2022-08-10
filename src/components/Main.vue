@@ -1,21 +1,30 @@
 <script setup>
+import vuejsImg from '@/assets/images/sites/vuejs.svg?url'
+import quasarImg from '@/assets/images/sites/quasar.svg?url'
+import viteImg from '@/assets/images/sites/vite.webp?url'
+import routerImg from '@/assets/images/sites/router.webp?url'
+import piniaImg from '@/assets/images/sites/pinia.svg?url'
+import axiosImg from '@/assets/images/sites/axios.svg?url'
+import i18nImg from '@/assets/images/sites/i18n.svg?url'
+import jsImg from '@/assets/images/sites/js.svg?url'
 import { shallowReadonly } from 'vue'
+
 const sites = shallowReadonly([
-  { name: 'Vue.js', logo: 'images/sites/vuejs.svg', url: 'https://vuejs.org/' },
-  { name: 'Quasar', logo: 'images/sites/quasar.svg', url: 'https://quasar.dev/' },
-  { name: 'Vite', logo: 'images/sites/vite.webp', url: 'https://vitejs.dev/' },
-  { name: 'Vue Router', logo: 'images/sites/router.webp', url: 'https://router.vuejs.org/' },
-  { name: 'Pinia', logo: 'images/sites/pinia.svg', url: 'https://pinia.vuejs.org/' },
-  { name: 'Axios', logo: 'images/sites/axios.svg', url: 'https://axios-http.com/kr/' },
-  { name: 'Vue I18n', logo: 'images/sites/i18n.svg', url: 'https://vue-i18n.intlify.dev/' },
-  { name: 'Javascript', logo: 'images/sites/js.svg', url: 'https://javascript.info/' },
+  { name: 'Vue.js', logo: vuejsImg, url: 'https://vuejs.org/' },
+  { name: 'Quasar', logo: quasarImg, url: 'https://quasar.dev/' },
+  { name: 'Vite', logo: viteImg, url: 'https://vitejs.dev/' },
+  { name: 'Vue Router', logo: routerImg, url: 'https://router.vuejs.org/' },
+  { name: 'Pinia', logo: piniaImg, url: 'https://pinia.vuejs.org/' },
+  { name: 'Axios', logo: axiosImg, url: 'https://axios-http.com/kr/' },
+  { name: 'Vue I18n', logo: i18nImg, url: 'https://vue-i18n.intlify.dev/' },
+  { name: 'Javascript', logo: jsImg, url: 'https://javascript.info/' },
 ])
 </script>
 
 <template>
   <div class="text-center text-body1 q-px-md">
     <div class="q-py-lg q-px-sm q-gutter-y-md">
-      <q-img src="images/quasar/logo-vertical.svg" width="40%" class="invert" />
+      <q-img src="@/assets/images/quasar/logo-vertical.svg" width="40%" class="invert" />
       <div class="q-mt-xl text-primary text-weight-bold text-subtitle text-keep">
         빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의 인터페이스를 손쉽게 구축
       </div>
