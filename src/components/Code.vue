@@ -59,6 +59,8 @@ const onIntersection = (entry) => {
 
 @media (max-width: 480px) {
   .pre-wrap {
+    margin-left: -16px;
+    margin-right: -16px;
     border-radius: 0;
   }
 

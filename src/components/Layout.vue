@@ -198,6 +198,8 @@ onUnmounted(() => {
   --q-vuejs: #42b883;
   --q-back: rgba(0, 0, 0, .03);
   --q-dark-back: rgba(255, 255, 255, .05);
+  --q-text: rgba(33, 53, 71, 1) !important;
+  --q-dark-text: rgba(255, 255, 255, .87) !important;
 }
 
 body {
@@ -218,12 +220,20 @@ body {
 }
 
 .body--light {
-  color: rgba(33, 53, 71, 1) !important;
+  color: var(--q-text);
 }
 
 .body--dark {
-  color: rgba(255, 255, 255, .87) !important;
+  color: var(--q-dark-text);
   background-color: rgba(26, 26, 26, 1) !important;
+}
+
+.text-default {
+  color: var(--q-text) !important;
+}
+
+.body--dark .text-default {
+  color: var(--q-dark-text) !important;
 }
 
 blockquote {
@@ -251,6 +261,7 @@ em {
   word-break: keep-all;
 }
 
+.text-body2,
 p {
   line-height: 1.7 !important;
   letter-spacing: .2px !important;
@@ -297,6 +308,11 @@ strong {
 
 .q-separator--dark {
   background-color: rgba(255, 255, 255, .14);
+}
+
+p,
+li {
+  word-break: keep-all;
 }
 </style>
 <style scoped>

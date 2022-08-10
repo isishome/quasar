@@ -3,8 +3,8 @@ import { shallowReadonly } from 'vue'
 const sites = shallowReadonly([
   { name: 'Vue.js', logo: 'images/sites/vuejs.svg', url: 'https://vuejs.org/' },
   { name: 'Quasar', logo: 'images/sites/quasar.svg', url: 'https://quasar.dev/' },
-  { name: 'Vite', logo: 'images/sites/vite.png', url: 'https://vitejs.dev/' },
-  { name: 'Vue Router', logo: 'images/sites/router.png', url: 'https://router.vuejs.org/' },
+  { name: 'Vite', logo: 'images/sites/vite.webp', url: 'https://vitejs.dev/' },
+  { name: 'Vue Router', logo: 'images/sites/router.webp', url: 'https://router.vuejs.org/' },
   { name: 'Pinia', logo: 'images/sites/pinia.svg', url: 'https://pinia.vuejs.org/' },
   { name: 'Axios', logo: 'images/sites/axios.svg', url: 'https://axios-http.com/kr/' },
   { name: 'Vue I18n', logo: 'images/sites/i18n.svg', url: 'https://vue-i18n.intlify.dev/' },
@@ -66,9 +66,5 @@ const sites = shallowReadonly([
 <style scoped>
 .body--dark .invert {
   filter: hue-rotate(180deg) invert(100);
-}
-
-p {
-  word-break: keep-all;
 }
 </style>

@@ -44,6 +44,14 @@ const routes = [
         },
         children: [
           {
+            path: 'flexbox',
+            name: 'flexbox',
+            component: () => import('@/components/layout/FlexBox.vue'),
+            meta: {
+              title: 'Flexbox 소개'
+            }
+          },
+          {
             path: 'gridrow',
             name: 'gridrow',
             component: () => import('@/components/layout/GridRow.vue'),

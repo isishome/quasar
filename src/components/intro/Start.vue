@@ -17,6 +17,9 @@ const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
           <q-icon name="open_in_new" />
         </a>을 설치할 예정입니다.
       </p>
+      <p class="q-pa-sm text-caption">* 시작하기 챕터에서 사용된 설치 과정은 모두 각 프레임워크 또는 플러그인의
+        공식 홈페이지를
+        참고하여 작성되었습니다.</p>
       <div class="tip q-my-md q-pt-md q-px-md">
         <div class="row items-center q-gutter-x-xs">
           <q-icon flat name="info" color="green-7" />
@@ -109,10 +112,36 @@ Done. Now run:
             target="_blank" rel="noopener noreferrer">IDE 지원 섹션
             <q-icon name="open_in_new" />
           </a>을 확인하세요.</li>
-        <li>백엔드 프레임워크와의 통합을 포함한 자세한 도구 세부 정보는 도구 가이드에서 설명합니다.</li>
-        <li>기본 빌드 도구 Vite에 대해 자세히 알아보려면 Vite 문서를 확인하세요.</li>
-        <li>TypeScript를 사용하기로 선택한 경우 TypeScript 사용 가이드를 확인하십시오.</li>
+        <li>백엔드 프레임워크와의 통합을 포함한 툴링(프로그래밍 도구 설정)의 세부 사항은 <a class="text-green-7"
+            href="https://vuejs.org/guide/scaling-up/tooling.html" target="_blank" rel="noopener noreferrer">툴링 가이드
+            <q-icon name="open_in_new" />
+          </a>에 설명되어 있습니다.</li>
+        <li>기본 빌드 도구인 Vite에 대해 자세히 알아보려면 <a class="text-purple" href="https://vitejs.dev/" target="_blank"
+            rel="noopener noreferrer">Vite 문서
+            <q-icon name="open_in_new" />
+          </a>를 확인하세요.</li>
+        <li>TypeScript를 선택한 경우 <a class="text-green-7" href="https://vuejs.org/guide/typescript/overview.html"
+            target="_blank" rel="noopener noreferrer">TypeScript 사용 가이드
+            <q-icon name="open_in_new" />
+          </a>를 확인하세요.</li>
       </ul>
+      <div class="tip q-my-md q-pt-md q-px-md">
+        <div class="row items-center q-gutter-x-xs text-subtitle1">
+          <q-icon flat name="info" color="green-7" />
+          <b>Composition API와 &lt;script setup&gt;</b>
+        </div>
+        <ul>
+          <li><b>Composition API</b><br />Vue.js 의 옵션을 정의해서 사용(Option API)하는 데신 함수를 가져와 사용하는 방식의 API 세트로,
+            여전히 Option API 사용이 가능하지만 되도록이면 Composition API를 사용하시는 것을 추천드립니다.
+            현재 대부분의 모듈이나 플러그인 역시 Composition API로 변경되고 있는 추세입니다. <strong>퀘이사 역시 v2부터 모든 예제가 Composition API 형식으로
+              변경</strong>되었습니다.
+          </li>
+          <li class="q-mt-xs"><b>&lt;script setup&gt;</b><br />Single-File Components(SFCs)에 Composition API를 사용하기 위한
+            컴파일 구문입니다.
+            &lt;script&gt; 안에 setup을 정의하고 사용할 인자들을 따로 return 하지 않아도 되므로 코드가 간결해지고, 타입 스크립트를 사용하기에 용이하며 무엇보다 성능을 향상에 큰
+            도움이 됩니다. </li>
+        </ul>
+      </div>
       <p>
         앱을 배포할 준비가 되면 다음을 실행합니다:
       </p>
@@ -122,7 +151,12 @@ Done. Now run:
         </textarea>
       </Code>
       <p>
-        그러면 프로젝트의 ./dist 디렉토리에 프로덕션 준비가 된 앱 빌드가 생성됩니다. 프로덕션 배포 가이드를 확인하여 앱을 프로덕션으로 배포하는 방법에 대해 자세히 알아보세요.
+        그러면 프로젝트의 <em>./dist</em> 디렉터리에 프로덕션(클라이언트가 사용할 결과물) 준비가 된 앱 빌드가 생성됩니다. <a class="text-green-7"
+          href="https://vuejs.org/guide/best-practices/production-deployment.html" target="_blank"
+          rel="noopener noreferrer">프로덕션 배포 가이드
+          <q-icon name="open_in_new" />
+        </a>를 확인하여 앱을 프로덕션으로 배포하는 방법에 대해 자세히
+        알아보세요.
       </p>
     </section>
     <section id="quasar" data-name="퀘이사 플러그인 설치">
@@ -130,132 +164,122 @@ Done. Now run:
         퀘이사 플러그인 설치
       </div>
       <q-separator />
-      <p class="q-mt-md">기본적으로 제공되는 단순함과 강력한 기능으로 CLI를 포함해 퀘이사는 개발을 더 쉽게 할 수 있도록 많은 기능들을 포함하고 있습니다.
+      <p class="q-mt-md">이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 퀘이사 플러그인을 설치해보도록 하겠습니다.
       </p>
       <div class="note">
-        <p><strong>생각할 거리</strong></p>
-        <p>퀘이사는 미래를 내다보고 있으며 자체적으로 높고 현대적인 기준을 세우고 있습니다. 그리고 웹 개발의 진전을 위해 현재의 틀에서 벗어나야 합니다. 그렇지 않으면, cgi-bin / perl을
-          계속해서
-          사용해야 할지 모릅니다. 왜냐하면 개발자들에게 그것은 오랫동안 익숙한 것이었기 때문입니다. 그러나 대부분의 개발자가 오랫동안 그것에 익숙해졌다는 것이 최고의 솔루션이나 "분명한" 솔루션을
-          의미하는
-          것은 아니며, 퀘이사가 높은 품질의 작업에 대한 최적의 경로나 심지어 돈이 되지 않는다고 믿는다 해도 그 선택을 바꾸지 않을 것입니다.</p>
-        <i>우리가 퀘이사로 달성하고자 하는 것은 전체적인 웹 개발 기준을 높이는 것입니다. 앞으로 전진하세요. 그리고 진화하세요. 생각을 바꾸세요. 더 나은 대안이 있을 때 지적하세요.</i>
-
+        <p><strong>팁</strong></p>
+        <ul>
+          <li><em>@quasar/extra</em> 설치는 선택사항입니다. (기본적으로 설치하시는 것을 추천드립니다.)</li>
+          <li class="q-mt-xs"><em>sass@1.32.12</em> 역시 Sass/SCSS 를 사용하는 경우에만 설치 하시면 됩니다. (저는 CSS에 익숙하므로 설치하지 않았습니다.)
+          </li>
+        </ul>
       </div>
-      <p class="text-caption">
-        아래는 퀘이사의 유용한 부분과 특징을 일부 나열한 것입니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>신뢰할 수 있는 소스코드 하나로 모든 플랫폼을 동시에 한 번에</div>
-      </div>
-      <p>신뢰할 수 있는 소스코드 하나로 모든 플랫폼을 동시에 한 번에 : 반응형 데스크톱/모바일 웹사이트(SPA, SSR + SPA 클라이언트 테이크 오버, SSR + PWA 클라이언트 테이크 오버),
-        PWAs (프로그레시브 웹 앱), 모바일 앱(네이티브 같은) 및 멀티 플랫폼 데스크톱 앱(Electron 사용)</p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>빠르고 응답성이 뛰어난 최고 수준의 웹 컴포넌트 세트</div>
-      </div>
-      <p>퀘이사에는 거의 모든 웹 개발에 필요한 컴포넌트가 있습니다. 각 퀘이사 컴포넌트들은 사용자에게 최상의 경험을 제공하기 위해 세심하게 제작되었습니다. 퀘이사는 <strong>성능과 응답성을 염두에
-          설계</strong>되었기 때문에
-        퀘이사 사용에 따른 오버헤드를 찾아보기 어렵습니다. 이런 성능과 좋은 디자인이 여러분에게 특별한 자부심을 줄 것입니다.</p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>최적의 예제를 기본적으로 포함</div>
-      </div>
-      <p>또한 퀘이사는 개발자들이 최적의 예제를 따라 할 수 있도록 만들어졌습니다. 이를 위해 퀘이사는 <strong>특별한 설정 없이</strong> 바로 사용 가능한 훌륭한 기능들로 채워져있습니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>웹 확장 지원</div>
-      </div>
-      <p>퀘이사 웹 확장은 복잡한(또는 간단한) 설정을 웹사이트/앱에 손쉽게 더해줄 수 있는 방법입니다. 이것은 더 커뮤니티에 기여하고 속도를 높이는 데 도움이 되는 방법이기도 합니다. <strong>개발
-          패턴은 말 그대로
-          퀘이사를 가장 확장성 있고 강력한 프레임워크</strong>(- 사용자의 상상력과 혁신으로 이루어진)<strong>를 만들기 위한 포문을 열어줍니다.</strong></p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>RTL 완벽 지원</div>
-      </div>
-      <p>퀘이사의 컴포넌트들과 개발자가 작성한 코드 모두에 RTL(오른쪽에서 왼쪽으로)을 지원합니다. 개발자가 작성한 웹사이트/앱 CSS 코드는 RTL 언어팩을 사용하는 경우 자동으로 RTL로 변환됩니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>기존 프로젝트를 점진적으로 마이그레이션</div>
-      </div>
-      <p>퀘이사는 UMD(Unified Module Definition) 버전을 제공합니다. 이는 개발자가 CSS 및 JS, HTML 태그를 기존 프로젝트에 추가하고 사용할 준비가 되었음을 의미합니다.
-        따로
-        빌드 단계가 필요하지 않습니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>재사용 가능성이 아닌 기능에 집중</div>
-      </div>
-      <p>개발자는 퀘이사 CLI를 사용한 최고 수준의 프로젝트 초기화를 통해 손쉽게 시작해 볼 수 있습니다. 짧은 시간에 아이디어를 실물로 표현할 수 있습니다. 다시 말해 퀘이사가 무거운 작업을 대신
-        처리하므로
-        재사용 가능성이 아닌 기능에만 집중하면 됩니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>테스트 & 검사 자동화</div>
-      </div>
-      <p>퀘이사 프로젝트는 단위 및 종단 테스트 자동화뿐 아니라 제품 품질 증대 및 보안 검사 도구 제품군을 추가할 수 있습니다. 이 모든 것들은 웹사이트/앱이 최고의 품질이 가능하도록 해줍니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>끊임없이 성장하는 커뮤니티</div>
-      </div>
-      <p>개발자가 해결할 수 없는 문제가 발생하면 <a href="https://forum.quasar.dev/" target="_blank" rel="noopener noreferrer">퀘이사
-          포럼
-          <q-icon name="open_in_new" />
-        </a>이나 <a href="https://chat.quasar.dev/" target="_blank" rel="noopener noreferrer">디스코드 대화 서버
-          <q-icon name="open_in_new" />
-        </a>를 방문할 수 있습니다.
-        커뮤니티는 언제나 도움이 될
-        것입니다. <a href="https://twitter.quasar.dev/" target="_blank" rel="noopener noreferrer">트위터
-          <q-icon name="open_in_new" />
-        </a>를 팔로우 해서 새 버전 및 기능에 대한
-        업데이트
-        소식을 받을 수도 있습니다. <a href="https://donate.quasar.dev/" target="_blank" rel="noopener noreferrer">후원자/광고주
-          <q-icon name="open_in_new" />
-        </a>로서 특별한 서비스를 받을 수도 있고 퀘이사는 앞으로도 여러분들과 관계를 유지하며 돕도록 하겠습니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>광범위한 플랫폼 지원</div>
-      </div>
-      <p>구글 크롬, 파이어폭스, 엣지, 사파리, 오페라, iOS, 안드로이드, 맥OS, 리눅스, 윈도우
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>퀘이사 언어 팩</div>
-      </div>
-      <p>퀘이사는 기본적으로 40개 이상의 언어팩을 갖추고 있습니다. 또한 언어팩이 누락된 경우 추가하는 데 5분밖에 걸리지 않습니다.
-      </p>
-      <div class="text-h6 text-primary q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap">
-        <q-icon name="keyboard_double_arrow_right" />
-        <div>훌륭한 문서화</div>
-      </div>
-      <p>마지막으로 개발자가 퀘이사를 빠르게 선택할 수 있도록 방대하고, 부풀리지 않은 완벽한 문서를 작성하는 데 초점을 두어 많은 시간을 공들였다는 것을 말하고 싶습니다. 문서를 보고 혼란이 생기지
-        않도록
-        특별히 노력을 기울였습니다.
-      </p>
+      <Code class="q-my-lg" language="bash">
+        <textarea readonly>
+&#62; cd &#60;your-project-name&#62;
+&#62; npm install quasar @quasar/extras
+&#62; npm install -D @quasar/vite-plugin sass@1.32.12
+        </textarea>
+      </Code>
     </section>
-    <section id="started" data-name="1분 안에 시작하세요">
+    <section id="using" data-name="퀘이사 설정하기">
       <div class="text-h5 text-primary text-weight-bold q-mt-xl q-pt-lg">
-        1분 안에 시작하세요
+        퀘이사 설정하기
       </div>
       <q-separator />
-      <p class="q-mt-md">이 말을 하고 <router-link :to="{ name: 'start' }">시작</router-link>하고 싶네요! 1분 이내에 웹사이트나 앱을 시작할 수
-        있습니다.
+      <p class="q-mt-md">퀘이사를 사용하기 앞서 몇가지 설정이 필요합니다.</p>
+      <Code class="q-my-lg" language="javascript">
+        <textarea readonly>
+// main.js
+
+import { createApp } from 'vue'
+import { Quasar } from 'quasar'
+import App from './App.vue'
+
+// Import icon libraries
+import '@quasar/extras/material-icons/material-icons.css'
+import '@quasar/extras/material-icons-round/material-icons-round.css'
+
+// Import Quasar css
+import 'quasar/dist/quasar.css'
+
+createApp(App).use(Quasar, {
+  plugins: {}, // import Quasar plugins and add here
+}).mount('#app')
+        </textarea>
+      </Code>
+      <Code class="q-my-lg" language="javascript">
+        <textarea readonly>
+// vite.config.js
+
+import { fileURLToPath, URL } from 'node:url'
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue({
+      template: { transformAssetUrls }
+    }),
+    quasar()
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
+})
+        </textarea>
+      </Code>
+      <p class="text-subtitle1 text-weight-bold">이제 기본적으로 퀘이사를 사용하기 위한 준비가 모두 끝났습니다.</p>
+      <p> 이 외에도 부가적으로 사용할 <b>폰트</b>나
+        <b>아이콘</b>,
+        <b>플러그인</b> 등을 쉽게 구성할 수 있도록 공식
+        홈페이지에 <a class="text-primary" href="https://quasar.dev/start/vite-plugin" target="_blank"
+          rel="noopener noreferrer">구성 도구
+          <q-icon name="open_in_new" />
+        </a>를 확인하세요.
       </p>
     </section>
+    <div class="q-mt-xl q-pt-xl">
+      <div class="row justify-between items-cetner">
+        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'why' }" style="max-width:40%">
+          <div class="column q-gutter-y-sm no-wrap">
+            <div class="row justify-between items-center">
+              <q-icon name="chevron_left" />
+              <div class="text-subtitle1 text-weight-bold">
+                왜 퀘이사인가?
+              </div>
+            </div>
+            <q-separator />
+            <div class="text-caption text-default q-py-md">
+              개발 비용을 대폭 절감할 수 있습니다
+            </div>
+          </div>
+        </q-btn>
+        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'flexbox' }" style="max-width:40%">
+          <div class="column q-gutter-y-sm">
+            <div class="row justify-between items-center">
+              <div class="text-subtitle1 text-weight-bold">
+                Flexbox 소개
+              </div>
+              <q-icon name="chevron_right" />
+            </div>
+            <q-separator />
+            <div class="text-caption text-default q-py-md">
+              퀘이사 프레임워크를 시작해봅시다
+            </div>
+          </div>
+        </q-btn>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
-p {
-  word-break: keep-all;
-}
-
-a {
+a:not(.q-btn) {
   color: var(--q-primary);
   font-weight: 500;
   text-decoration: none;
