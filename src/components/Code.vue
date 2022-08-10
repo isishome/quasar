@@ -54,7 +54,9 @@ const onIntersection = (entry) => {
   color: rgba(255, 255, 255, .3);
   top: 4px;
   right: 10px;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: .5px;
+  font-size: 12px;
 }
 
 @media (max-width: 480px) {

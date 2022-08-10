@@ -276,11 +276,11 @@ strong {
 }
 
 .bg-back {
-  background-color: var(--q-back);
+  background-color: var(--q-back) !important;
 }
 
 .body--dark .bg-back {
-  background-color: var(--q-dark-back);
+  background-color: var(--q-dark-back) !important;
 }
 
 .tip {

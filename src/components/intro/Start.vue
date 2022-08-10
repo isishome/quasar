@@ -10,7 +10,7 @@ const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
         시작하기
       </div>
       <p>
-        퀘이사를 사용하는 방법에는 여러 가지가 있지만 여기서는 Vue.js 공식 사이트에 나온 빠른 시작의 가볍고 빠른 빌드 도구인 <a class="text-purple"
+        퀘이사를 사용하는 방법에는 여러 가지가 있지만 여기서는 Vue.js 공식 사이트에 나온 빠른 시작의 가볍고 빠른 빌드 도구인 <a class="text-deep-purple-6"
           href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite
           <q-icon name="open_in_new" />
         </a> 를 바탕으로 하는 <a href="https://quasar.dev/start/vite-plugin" target="_blank" rel="noopener noreferrer">퀘이사 플러그인
@@ -116,7 +116,7 @@ Done. Now run:
             href="https://vuejs.org/guide/scaling-up/tooling.html" target="_blank" rel="noopener noreferrer">툴링 가이드
             <q-icon name="open_in_new" />
           </a>에 설명되어 있습니다.</li>
-        <li>기본 빌드 도구인 Vite에 대해 자세히 알아보려면 <a class="text-purple" href="https://vitejs.dev/" target="_blank"
+        <li>기본 빌드 도구인 Vite에 대해 자세히 알아보려면 <a class="text-deep-purple-6" href="https://vitejs.dev/" target="_blank"
             rel="noopener noreferrer">Vite 문서
             <q-icon name="open_in_new" />
           </a>를 확인하세요.</li>
@@ -151,7 +151,7 @@ Done. Now run:
         </textarea>
       </Code>
       <p>
-        그러면 프로젝트의 <em>./dist</em> 디렉터리에 프로덕션(클라이언트가 사용할 결과물) 준비가 된 앱 빌드가 생성됩니다. <a class="text-green-7"
+        실행하면 프로젝트의 <em>./dist</em> 디렉터리에 프로덕션(클라이언트가 사용할 결과물) 준비가 된 앱 빌드가 생성됩니다. <a class="text-green-7"
           href="https://vuejs.org/guide/best-practices/production-deployment.html" target="_blank"
           rel="noopener noreferrer">프로덕션 배포 가이드
           <q-icon name="open_in_new" />
@@ -238,7 +238,7 @@ export default defineConfig({
       <p> 이 외에도 부가적으로 사용할 <b>폰트</b>나
         <b>아이콘</b>,
         <b>플러그인</b> 등을 쉽게 구성할 수 있도록 공식
-        홈페이지에 <a class="text-primary" href="https://quasar.dev/start/vite-plugin" target="_blank"
+        홈페이지에 <a class="text-primary" href="https://quasar.dev/start/vite-plugin#using-quasar" target="_blank"
           rel="noopener noreferrer">구성 도구
           <q-icon name="open_in_new" />
         </a>를 확인하세요.
@@ -246,7 +246,8 @@ export default defineConfig({
     </section>
     <div class="q-mt-xl q-pt-xl">
       <div class="row justify-between items-cetner">
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'why' }" style="max-width:45%">
+        <q-btn no-caps outline color="primary" class="bg-back" padding="1em" :to="{ name: 'why' }"
+          style="max-width:45%">
           <div class="column q-gutter-y-sm">
             <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <q-icon name="chevron_left" />
@@ -260,7 +261,8 @@ export default defineConfig({
             </div>
           </div>
         </q-btn>
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'flexbox' }" style="max-width:45%">
+        <q-btn no-caps outline color="primary" class="bg-back" padding="1em" :to="{ name: 'flexbox' }"
+          style="max-width:45%">
           <div class="column q-gutter-y-sm">
             <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <div class="text-subtitle1 text-weight-bold">
@@ -270,7 +272,7 @@ export default defineConfig({
             </div>
             <q-separator />
             <div class="text-caption text-default q-py-md text-keep">
-              퀘이사 프레임워크를 시작해봅시다
+              UI를 손쉽게 만들수 있습니다
             </div>
           </div>
         </q-btn>
@@ -287,21 +289,5 @@ a:not(.q-btn) {
   border-bottom: 1px dotted currentColor;
   transition: opacity .2s;
   white-space: nowrap;
-}
-
-div:deep(.q-video) {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
-  background-color: rgba(0, 0, 0, .02);
-  position: relative;
-}
-
-div:deep(.q-video::after) {
-  content: '영상';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, .1);
 }
 </style>

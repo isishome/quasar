@@ -176,7 +176,8 @@
     </section>
     <div class="q-mt-xl q-pt-xl">
       <div class="row justify-between items-cetner">
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'main' }" style="max-width:40%">
+        <q-btn no-caps outline color="primary" class="bg-back" padding="1em" :to="{ name: 'main' }"
+          style="max-width:40%">
           <div class="column q-gutter-y-sm">
             <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <q-icon name="chevron_left" />
@@ -186,7 +187,8 @@
             </div>
           </div>
         </q-btn>
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'start' }" style="max-width:40%">
+        <q-btn no-caps outline color="primary" class="bg-back" padding="1em" :to="{ name: 'start' }"
+          style="max-width:40%">
           <div class="column q-gutter-y-sm">
             <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <div class="text-subtitle1 text-weight-bold">
