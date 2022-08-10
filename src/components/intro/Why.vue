@@ -177,8 +177,8 @@
     <div class="q-mt-xl q-pt-xl">
       <div class="row justify-between items-cetner">
         <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'main' }" style="max-width:40%">
-          <div class="column q-gutter-y-sm no-wrap">
-            <div class="row justify-between items-center">
+          <div class="column q-gutter-y-sm">
+            <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <q-icon name="chevron_left" />
               <div class="text-subtitle1 text-weight-bold">
                 처음으로
@@ -188,14 +188,14 @@
         </q-btn>
         <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'start' }" style="max-width:40%">
           <div class="column q-gutter-y-sm">
-            <div class="row justify-between items-center">
+            <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <div class="text-subtitle1 text-weight-bold">
                 시작하기
               </div>
               <q-icon name="chevron_right" />
             </div>
             <q-separator />
-            <div class="text-caption text-default q-py-md">
+            <div class="text-caption text-default q-py-md text-keep">
               퀘이사 프레임워크를 시작해봅시다
             </div>
           </div>

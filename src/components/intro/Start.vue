@@ -246,30 +246,30 @@ export default defineConfig({
     </section>
     <div class="q-mt-xl q-pt-xl">
       <div class="row justify-between items-cetner">
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'why' }" style="max-width:40%">
-          <div class="column q-gutter-y-sm no-wrap">
-            <div class="row justify-between items-center">
+        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'why' }" style="max-width:45%">
+          <div class="column q-gutter-y-sm">
+            <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <q-icon name="chevron_left" />
               <div class="text-subtitle1 text-weight-bold">
                 왜 퀘이사인가?
               </div>
             </div>
             <q-separator />
-            <div class="text-caption text-default q-py-md">
+            <div class="text-caption text-default q-py-md text-keep">
               개발 비용을 대폭 절감할 수 있습니다
             </div>
           </div>
         </q-btn>
-        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'flexbox' }" style="max-width:40%">
+        <q-btn no-caps outline color="primary" padding="1em" :to="{ name: 'flexbox' }" style="max-width:45%">
           <div class="column q-gutter-y-sm">
-            <div class="row justify-between items-center">
+            <div class="row justify-between items-center q-gutter-x-xs no-wrap text-keep">
               <div class="text-subtitle1 text-weight-bold">
                 Flexbox 소개
               </div>
               <q-icon name="chevron_right" />
             </div>
             <q-separator />
-            <div class="text-caption text-default q-py-md">
+            <div class="text-caption text-default q-py-md text-keep">
               퀘이사 프레임워크를 시작해봅시다
             </div>
           </div>
