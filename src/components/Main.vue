@@ -1,15 +1,13 @@
 <script setup>
-import vuejsImg from '@/assets/images/sites/vuejs.svg'
-import quasarImg from '@/assets/images/sites/quasar.svg'
-//import viteImg from '@/assets/images/sites/vite.webp'
-import routerImg from '@/assets/images/sites/router.webp'
-import piniaImg from '@/assets/images/sites/pinia.svg'
-import axiosImg from '@/assets/images/sites/axios.svg'
-import i18nImg from '@/assets/images/sites/i18n.svg'
-import jsImg from '@/assets/images/sites/js.svg'
+import vuejsImg from '@/assets/images/sites/vuejs.svg?url'
+import quasarImg from '@/assets/images/sites/quasar.svg?url'
+import viteImg from '@/assets/images/sites/vite.webp?url'
+import routerImg from '@/assets/images/sites/router.webp?url'
+import piniaImg from '@/assets/images/sites/pinia.svg?url'
+import axiosImg from '@/assets/images/sites/axios.svg?url'
+import i18nImg from '@/assets/images/sites/i18n.svg?url'
+import jsImg from '@/assets/images/sites/js.svg?url'
 import { shallowReadonly } from 'vue'
-
-const viteImg = new URL('./../assets/images/sites/vite.webp', import.meta.url).href
 
 const sites = shallowReadonly([
   { name: 'Vue.js', logo: vuejsImg, url: 'https://vuejs.org/' },
