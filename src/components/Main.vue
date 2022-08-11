@@ -80,7 +80,7 @@ const sites = shallowReadonly([
 </template>
 <style scoped>
 .body--dark .invert {
-  filter: hue-rotate(180deg) invert(100);
+  filter: hue-rotate(180deg) invert(100%);
 }
 
 .arrow:deep(i) {

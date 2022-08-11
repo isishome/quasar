@@ -264,4 +264,8 @@ code {
   font-size: 2em;
   height: 1em;
 }
+
+.body--dark img {
+  filter: grayscale(1) invert(100%);
+}
 </style>
