@@ -28,7 +28,7 @@
     </section>
     <section id="what" data-name="Quasar란?">
       <Title sub>Quasar란?</Title>
-      <p class="q-mt-md">Quasar(<span class="text-primary">/ˈkweɪ.zɑɹ/</span>로 발음됨)는 Vue.js 기반 MIT 라이선스 오픈 소스 프레임워크로, 웹
+      <p>Quasar(<span class="text-primary">/ˈkweɪ.zɑɹ/</span>로 발음됨)는 Vue.js 기반 MIT 라이선스 오픈 소스 프레임워크로, 웹
         개발자는 Quasar를 사용해 다양한 유형의 반응형++
         웹사이트/앱을 빠르게 만들 수 있습니다.
       </p>
@@ -51,7 +51,7 @@
     </section>
     <section id="got" data-name="또 뭐가 있을까?">
       <Title sub>또 뭐가 있을까?</Title>
-      <p class="q-mt-md">기본적으로 제공되는 단순함과 강력한 기능으로 CLI를 포함해 Quasar는 개발을 더 쉽게 할 수 있도록 많은 기능들을 포함하고 있습니다.
+      <p>기본적으로 제공되는 단순함과 강력한 기능으로 CLI를 포함해 Quasar는 개발을 더 쉽게 할 수 있도록 많은 기능들을 포함하고 있습니다.
       </p>
       <Note>
         <p><strong>생각할 거리</strong></p>
@@ -126,7 +126,7 @@
     </section>
     <section id="started" data-name="1분 안에 시작하세요">
       <Title sub>1분 안에 시작하세요</Title>
-      <p class="q-mt-md">이 말을 하고
+      <p>이 말을 하고
         <Link :to="{ name: 'start' }">시작</Link> 하고 싶네요! 1분 이내에 웹사이트나 앱을 시작할 수
         있습니다.
       </p>

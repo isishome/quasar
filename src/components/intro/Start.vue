@@ -138,7 +138,7 @@ Done. Now run:
     </section>
     <section id="quasar" data-name="Quasar 플러그인 설치">
       <Title sub>Quasar 플러그인 설치</Title>
-      <p class="q-mt-md">이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
+      <p>이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
       </p>
       <Tip label="팁">
         <ul>
@@ -157,7 +157,7 @@ Done. Now run:
     </section>
     <section id="using" data-name="Quasar 설정하기">
       <Title sub>Quasar 설정하기</Title>
-      <p class="q-mt-md">Quasar를 사용하기 앞서 몇가지 설정이 필요합니다.</p>
+      <p>Quasar를 사용하기 앞서 몇가지 설정이 필요합니다.</p>
       <Code class="q-my-lg" language="javascript">
         <textarea readonly>
 // main.js
@@ -208,10 +208,8 @@ export default defineConfig({
       <p>이 외에도 부가적으로 사용할 <b>폰트</b>나
         <b>아이콘</b>,
         <b>플러그인</b> 등을 쉽게 구성할 수 있도록 공식
-        홈페이지에 <a class="text-primary" href="https://quasar.dev/start/vite-plugin#using-quasar" target="_blank"
-          rel="noopener noreferrer">구성 도구
-          <q-icon name="open_in_new" />
-        </a>를 확인하세요.
+        홈페이지에
+        <Link href="https://quasar.dev/start/vite-plugin#using-quasar">구성 도구</Link>를 확인하세요.
       </p>
     </section>
     <div class="q-mt-xl q-pt-xl">
@@ -223,4 +221,10 @@ export default defineConfig({
   </div>
 </template>
 <style scoped>
+@media (max-width: 480px) {
+  .pre-wrap {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
 </style>

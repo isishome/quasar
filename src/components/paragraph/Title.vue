@@ -30,7 +30,7 @@ defineProps({
     <div class="text-h5 text-weight-bold q-mt-xl q-pt-lg" :class="`text-${color}`">
       <slot></slot>
     </div>
-    <q-separator />
+    <q-separator class="q-mb-md" />
   </template>
   <p v-else-if="minor" class="q-mt-lg text-h6" :class="`text-${color}`">
     <slot></slot>

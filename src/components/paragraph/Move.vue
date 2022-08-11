@@ -29,7 +29,7 @@ defineProps({
 })
 </script>
 <template>
-  <q-btn no-caps outline :color="color" class="back" padding="1em" :to="to" style="max-width:40%">
+  <q-btn no-caps push :color="color" :text-color="color" class="back" padding="1em" :to="to" style="max-width:40%">
     <div class="column q-gutter-y-sm">
       <div class="row justify-between items-center q-gutter-x-xs no-wrap keep">
         <q-icon v-if="prev" name="chevron_left" />
