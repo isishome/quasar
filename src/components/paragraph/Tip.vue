@@ -2,7 +2,7 @@
 defineProps({
   label: {
     type: String,
-    required: true
+    required: null
   },
   color: {
     type: String,

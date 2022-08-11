@@ -15,14 +15,13 @@ export const useStore = defineStore('main', {
     setSections(payload) {
       this.sections = payload
     },
-    setActive(id, top) {
-      const findSection = this.sections.find(s => s.id === id)
-      if (findSection) {
+    setTop(id, top) {
+      const findSection = this.sections.find(s => s.id === id && s.top === 0)
+      if (findSection)
         findSection.top = top
-        const filter = this.sections.filter(s => s.top !== null)
-        if (filter.length > 0)
-          this.active = filter.reduce((prev, current) => (Math.abs(prev.top) < Math.abs(current.top)) ? prev : current).id
-      }
+    },
+    setActive(id) {
+      this.active = id
     },
     setOffset(value) {
       this.offset = value
