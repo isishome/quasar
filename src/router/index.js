@@ -43,11 +43,10 @@ router.afterEach(async () => {
   await nextTick()
   const sections = document.querySelectorAll('section[id]')
   const store = useStore()
-  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, ratio: 0 })))
+  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: null })))
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const targetRatio = (entry.boundingClientRect.height / window.innerHeight < 1 ? 1 : entry.boundingClientRect.height / window.innerHeight) * entry.intersectionRatio
-      store.setActive(entry.target.id, targetRatio)
+      store.setActive(entry.target.id, entry.isIntersecting ? entry.boundingClientRect.top : null)
     })
   }, {
     threshold: Array.from(Array(10), (_, x) => x * 0.1)

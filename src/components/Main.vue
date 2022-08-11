@@ -29,7 +29,7 @@ const sites = shallowReadonly([
         빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의 인터페이스를 손쉽게 구축
       </div>
       <div class="row justify-center q-gutter-x-sm">
-        <q-btn unelevated color="primary" label="왜 퀘이사인가?" :to="{ name: 'why' }" />
+        <q-btn unelevated color="primary" label="왜 Quasar인가?" :to="{ name: 'why' }" />
         <q-btn outline class="arrow" color="primary" :to="{ name: 'start' }">
           <div class="row justify-center items-center q-gutter-x-xs">
             <div>시작하기</div>

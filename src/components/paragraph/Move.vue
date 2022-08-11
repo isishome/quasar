@@ -1,0 +1,62 @@
+<script setup>
+defineProps({
+  label: {
+    type: String,
+    required: true
+  },
+  desc: {
+    type: String,
+    default: null
+  },
+  to: {
+    type: Object,
+    default: () => {
+      return {}
+    }
+  },
+  prev: {
+    type: Boolean,
+    default: false
+  },
+  next: {
+    type: Boolean,
+    default: false
+  },
+  color: {
+    type: String,
+    default: 'primary'
+  }
+})
+</script>
+<template>
+  <q-btn no-caps outline :color="color" class="back" padding="1em" :to="to" style="max-width:40%">
+    <div class="column q-gutter-y-sm">
+      <div class="row justify-between items-center q-gutter-x-xs no-wrap keep">
+        <q-icon v-if="prev" name="chevron_left" />
+        <div class="text-subtitle1 text-weight-bold">
+          {{ label }}
+        </div>
+        <q-icon v-if="next" name="chevron_right" />
+      </div>
+      <template v-if="desc">
+        <q-separator />
+        <div class="text-caption text-default q-py-md text-keep">
+          {{ desc }}
+        </div>
+      </template>
+    </div>
+  </q-btn>
+</template>
+<style scoped>
+.back {
+  background-color: rgba(0, 0, 0, .03) !important;
+}
+
+.body--dark .back {
+  background-color: rgba(255, 255, 255, .05) !important;
+}
+
+.keep {
+  word-break: keep-all;
+}
+</style>

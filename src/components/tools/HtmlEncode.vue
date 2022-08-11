@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 
 const plainText = ref('')
-const encodingText = computed(() => plainText.value.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+const encodingText = computed(() => plainText.value.replace(/[\u00A0-\u9999<>\&{}]/g, function (i) {
   return '&#' + i.charCodeAt(0) + ';'
 }))
 </script>

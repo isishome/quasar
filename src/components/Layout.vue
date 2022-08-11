@@ -195,7 +195,6 @@ onUnmounted(() => {
   --q-warning: #F2C037;
   --q-dark: #1d1d1d;
   --q-dark-page: #121212;
-  --q-vuejs: #42b883;
   --q-back: rgba(0, 0, 0, .03);
   --q-dark-back: rgba(255, 255, 255, .05);
   --q-text: rgba(33, 53, 71, 1) !important;
@@ -281,29 +280,6 @@ strong {
 
 .body--dark .bg-back {
   background-color: var(--q-dark-back) !important;
-}
-
-.tip {
-  box-shadow: inset 0 0 0 1px var(--q-vuejs);
-  background-color: var(--q-back);
-  border-radius: 8px;
-  overflow-x: auto;
-}
-
-.body--dark .tip {
-  background-color: var(--q-dark-back);
-}
-
-.note {
-  margin: 22px 0;
-  padding: 16px 24px;
-  background-color: rgb(225, 244, 255);
-  box-shadow: 4px 0 0 0 rgb(129, 219, 255), -4px 0 0 0 rgb(129, 219, 255);
-}
-
-.body--dark .note {
-  background-color: rgba(255, 255, 255, .05);
-  box-shadow: 4px 0 0 0 rgba(255, 255, 255, .1), -4px 0 0 0 rgba(255, 255, 255, .1);
 }
 
 .q-separator--dark {

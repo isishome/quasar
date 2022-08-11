@@ -24,7 +24,7 @@ const routes = [
             name: 'why',
             component: () => import('@/components/intro/Why.vue'),
             meta: {
-              title: '왜 퀘이사인가?'
+              title: '왜 Quasar인가?'
             }
           },
           {
@@ -37,26 +37,42 @@ const routes = [
           }
         ]
       }, {
-        path: 'layout',
+        path: 'flexgrid',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: '레이아웃'
+          title: 'Flex Grid'
         },
         children: [
           {
             path: 'flexbox',
             name: 'flexbox',
-            component: () => import('@/components/layout/FlexBox.vue'),
+            component: () => import('@/components/flexgrid/FlexBox.vue'),
             meta: {
-              title: 'Flexbox 소개'
+              title: 'Flexbox'
             }
           },
           {
             path: 'gridrow',
             name: 'gridrow',
-            component: () => import('@/components/layout/GridRow.vue'),
+            component: () => import('@/components/flexgrid/GridRow.vue'),
             meta: {
-              title: '그리드 행'
+              title: 'Grid Row'
+            }
+          },
+          {
+            path: 'gridcolumn',
+            name: 'gridcolumn',
+            component: () => import('@/components/flexgrid/GridColumn.vue'),
+            meta: {
+              title: 'Grid Column'
+            }
+          },
+          {
+            path: 'gridgutter',
+            name: 'gridgutter',
+            component: () => import('@/components/flexgrid/GridGutter.vue'),
+            meta: {
+              title: 'Grid Gutter'
             }
           }
         ]
