@@ -26,7 +26,6 @@ const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
     </section>
     <section id="vuejs" data-name="Vue.js 빠른 시작">
       <Title sub color="green-7">Vue.js 빠른 시작</Title>
-      <q-separator />
       <Code class="q-my-lg" language="bash">
         <textarea readonly>
           &gt; npm init vue@latest
