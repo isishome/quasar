@@ -34,15 +34,14 @@ defineProps({
 <style scoped>
 .tip {
   position: relative;
-
   padding: 20px 24px 4px 42px;
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(245, 245, 245);
   border-radius: 7px;
   overflow-x: auto;
 }
 
 .body--dark .tip {
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(40, 40, 40);
 }
 
 .outer {

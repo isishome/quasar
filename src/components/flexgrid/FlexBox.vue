@@ -171,13 +171,13 @@ const practice1 = ref('row')
         </q-tab-panel>
       </q-tab-panels>
     </section>
-    <Title minor>기본적으로 래핑</Title>
-    <p>기본적으로 모든 row와 column은 내용을 래핑(줄바꿈)합니다</p>
+    <Title minor>기본 줄 바꿈</Title>
+    <p>기본적으로 모든 row와 column은 내용을 래핑(줄 바꿈) 합니다</p>
     <p>
       <img src="@/assets/images/flexgrid/flexbox-wrap.svg" width="319" />
     </p>
-    <p>명시적으로 줄 바꿈을 원하지 않고 모든 내용을 한 줄에 맞추려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
-    <p>역순으로 줄바꿈이 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
+    <p>명시적으로 줄 바꿈을 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
+    <p>역순으로 줄 바꿈이 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
     <q-markup-table flat bordered wrap-cells class="text-left col-12" style="max-width:500px">
       <thead>
         <tr>
@@ -190,19 +190,19 @@ const practice1 = ref('row')
           <td>
             <code>wrap</code>
           </td>
-          <td>필요한 경우 줄바꿈 합니다 (기본으로 활성화 되어 있으므로 따로 설정하지 않아도 됩니다)</td>
+          <td>필요한 경우 줄 바꿈 합니다 (기본으로 활성화 되어 있으므로 따로 설정하지 않아도 됩니다)</td>
         </tr>
         <tr>
           <td>
             <code>no-wrap</code>
           </td>
-          <td>필요한 경우 줄바꿈을 해제합니다</td>
+          <td>필요한 경우 줄 바꿈을 해제합니다</td>
         </tr>
         <tr>
           <td>
             <code>reverse-wrap</code>
           </td>
-          <td>필요한 경우 역순으로 줄바꿈 합니다.</td>
+          <td>필요한 경우 역순으로 줄 바꿈 합니다.</td>
         </tr>
       </tbody>
     </q-markup-table>

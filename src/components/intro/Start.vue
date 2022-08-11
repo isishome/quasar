@@ -114,7 +114,7 @@ Done. Now run:
             현재 대부분의 모듈이나 플러그인 역시 Composition API로 변경되고 있는 추세입니다. <strong>Quasar 역시 v2부터 모든 예제가 Composition API 형식으로
               변경</strong>되었습니다.
           </li>
-          <li class="q-mt-xs"><b>&lt;script setup&gt;</b><br />Single-File Components(SFCs)에 Composition API를 사용하기 위한
+          <li><b>&lt;script setup&gt;</b><br />Single-File Components(SFCs)에 Composition API를 사용하기 위한
             컴파일 구문입니다.
             &lt;script&gt; 안에 setup을 정의하고 사용할 인자들을 따로 return 하지 않아도 되므로 코드가 간결해지고, 타입 스크립트를 사용하기에 용이하며 무엇보다 성능을 향상에 큰
             도움이 됩니다. </li>
@@ -142,7 +142,7 @@ Done. Now run:
       <Tip label="팁">
         <ul>
           <li><em>@quasar/extra</em> 설치는 선택사항입니다. (기본적으로 설치하시는 것을 추천드립니다.)</li>
-          <li class="q-mt-xs"><em>sass@1.32.12</em> 역시 Sass/SCSS 를 사용하는 경우에만 설치 하시면 됩니다. (저는 CSS에 익숙하므로 설치하지 않았습니다.)
+          <li><em>sass@1.32.12</em> 역시 Sass/SCSS 를 사용하는 경우에만 설치 하시면 됩니다. (저는 CSS에 익숙하므로 설치하지 않았습니다.)
           </li>
         </ul>
       </Tip>
