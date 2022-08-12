@@ -20,11 +20,7 @@ defineProps({
   position: relative;
   margin: 22px 0;
   padding: 16px 24px;
-  /* background-color: rgb(225, 244, 255); */
-  /* box-shadow: 4px 0 0 0 rgb(129, 219, 255), -4px 0 0 0 rgb(129, 219, 255); */
 }
-
-
 
 .inner {
   position: absolute;

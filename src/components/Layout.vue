@@ -281,6 +281,10 @@ strong {
   background-color: var(--q-dark-back) !important;
 }
 
+.q-separator {
+  background-color: rgba(0, 0, 0, .08);
+}
+
 .q-separator--dark {
   background-color: rgba(255, 255, 255, .14);
 }
@@ -387,7 +391,8 @@ a {
   content: '';
   position: absolute;
   top: 25%;
-  left: 8px;
+  /* left: 8px; */
+  margin-left: -6px;
   width: 4px;
   height: 50%;
   background-color: var(--q-primary);

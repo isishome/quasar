@@ -47,9 +47,9 @@ router.afterEach(async () => {
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting)
-        store.setTop(entry.target.id, entry.target.offsetTop)
+        store.setTop(entry.target.id, entry.target.offsetTop + store.offset)
 
-      const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top + 51
+      const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
       const filter = store.sections.filter(s => s.top > 0)
       if (filter.length > 0)
         store.setActive(filter.reduce((prev, current) => (Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop)) ? prev : current).id)

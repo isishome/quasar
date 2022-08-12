@@ -49,4 +49,10 @@ defineProps({
   margin: 28px 0;
   padding: 1px !important;
 }
+
+@media (max-width: 480px) {
+  .tip {
+    padding: 10px 12px 2px 21px;
+  }
+}
 </style>

@@ -131,10 +131,12 @@
         있습니다.
       </p>
     </section>
-    <div class="q-mt-xl q-pt-xl">
+    <div class="q-py-xl"></div>
+    <q-separator class="q-mb-lg" />
+    <div>
       <div class="row justify-between items-cetner">
         <Move label="처음으로" prev :to="{ name: 'main' }" />
-        <Move label="시작하기" desc="Quasar 프레임워크를 시작해봅시다" next :to="{ name: 'start' }" />
+        <Move label="시작하기" next :to="{ name: 'start' }" />
       </div>
     </div>
   </div>

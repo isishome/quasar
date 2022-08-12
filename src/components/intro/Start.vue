@@ -211,19 +211,16 @@ export default defineConfig({
         <Link href="https://quasar.dev/start/vite-plugin#using-quasar">구성 도구</Link>를 확인하세요.
       </p>
     </section>
-    <div class="q-mt-xl q-pt-xl">
+    <div class="q-py-xl"></div>
+    <q-separator class="q-mb-lg" />
+    <div>
       <div class="row justify-between items-cetner">
-        <Move label="왜 Quasar인가?" desc="개발 비용을 대폭 절감할 수 있습니다" prev :to="{ name: 'why' }" />
-        <Move label="Flexbox 소개" desc="UI를 손쉽게 만들수 있습니다" next :to="{ name: 'flexbox' }" />
+        <Move label="왜 Quasar인가?" prev :to="{ name: 'why' }" />
+        <Move label="Flexbox 소개" next :to="{ name: 'flexbox' }" />
       </div>
     </div>
   </div>
 </template>
 <style scoped>
-@media (max-width: 480px) {
-  .pre-wrap {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
-}
+
 </style>
