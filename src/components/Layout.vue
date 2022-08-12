@@ -394,9 +394,9 @@ a {
 .aside.right:deep(a.active::after) {
   content: '';
   position: absolute;
-  top: 25%;
+  top: 20%;
   /* left: 8px; */
-  margin-left: -6px;
+  margin-left: -8px;
   width: 4px;
   height: 50%;
   background-color: var(--q-primary);

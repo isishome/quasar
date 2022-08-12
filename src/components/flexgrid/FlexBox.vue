@@ -33,7 +33,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <img src="@/assets/images/flexgrid/flexbox-items.svg" width="300" />
       </p>
     </section>
-    <section id="container" data-name="컨테이너(부모) 관리">
+    <section id="container" data-name="컨테이너(부모 요소) 관리">
       <Title sub>컨테이너(부모 요소) 관리</Title>
       <Title minor>방향 설정</Title>
       <Tip knowledge color="teal-4">
