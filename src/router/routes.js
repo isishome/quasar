@@ -56,7 +56,8 @@ const routes = [
             name: 'gridrow',
             component: () => import('@/components/flexgrid/GridRow.vue'),
             meta: {
-              title: 'Grid Row'
+              title: 'Grid Row',
+              hidden: true
             }
           },
           {
@@ -64,7 +65,8 @@ const routes = [
             name: 'gridcolumn',
             component: () => import('@/components/flexgrid/GridColumn.vue'),
             meta: {
-              title: 'Grid Column'
+              title: 'Grid Column',
+              hidden: true
             }
           },
           {
@@ -72,7 +74,8 @@ const routes = [
             name: 'gridgutter',
             component: () => import('@/components/flexgrid/GridGutter.vue'),
             meta: {
-              title: 'Grid Gutter'
+              title: 'Grid Gutter',
+              hidden: true
             }
           }
         ]
@@ -80,7 +83,8 @@ const routes = [
         path: 'tools',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: '도구'
+          title: '도구',
+          hidden: true
         },
         children: [
           {

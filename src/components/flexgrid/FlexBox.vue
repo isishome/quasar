@@ -854,13 +854,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <td>1920px</td>
             <td>대형 창 너비보다 클 때</td>
           </tr>
-          <tr>
-            <td>
-              <code>xs</code>
-            </td>
-            <td>0px</td>
-            <td>모든 창 너비 (중단점을 특정하지 않은 경우처럼)</td>
-          </tr>
         </tbody>
       </q-markup-table>
       <p>예: <code>col-md-7</code>, <code>offset-lg-3</code>, <code>col-xs-auto</code></p>

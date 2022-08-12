@@ -103,13 +103,15 @@ onUnmounted(() => {
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile">
       <div class="aside">
         <template v-for="r in routes" :key="r.name">
-          <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-sm">
+          <q-list v-if="r.path !== '/' && r.children.length > 0 && !r.meta.hidden" dense class="full-width q-mb-sm">
             <q-item class="text-weight-bold">
               <q-item-label> {{ r.meta.title }}</q-item-label>
             </q-item>
-            <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active" :active="routeName === c.name"
-              @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title }}
-            </q-item>
+            <template v-for="c in r.children" :key="c.name">
+              <q-item v-if="!c.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
+                @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title }}
+              </q-item>
+            </template>
           </q-list>
         </template>
       </div>
@@ -130,13 +132,17 @@ onUnmounted(() => {
         <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
-              <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-sm">
+              <q-list v-if="r.path !== '/' && r.children.length > 0 && !r.meta.hidden" dense class="full-width q-mb-sm">
                 <q-item>
                   <q-item-label class="header-title q-py-xs"> {{ r.meta.title }}</q-item-label>
                 </q-item>
-                <q-item v-for="c in r.children" :key="c.name" tag="a" active-class="active"
-                  :active="routeName === c.name" :to="{ name: c.name }"> {{ c.meta.title }}
-                </q-item>
+                <template v-for="c in r.children" :key="c.name">
+                  <q-item v-if="!c.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
+                    :to="{ name: c.name }"> {{
+                        c.meta.title
+                    }}
+                  </q-item>
+                </template>
               </q-list>
             </template>
           </div>
