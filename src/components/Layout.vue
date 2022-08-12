@@ -302,7 +302,20 @@ u {
 img {
   max-width: 100%;
 }
+
+code:not([class]) {
+  color: var(--q-primary);
+  border: dotted 1px var(--q-primary);
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-decoration: dashed;
+  white-space: nowrap;
+  font-size: 12px;
+  text-shadow: 1px 0 currentColor;
+  letter-spacing: 1px;
+}
 </style>
+
 <style scoped>
 a {
   text-decoration: none;

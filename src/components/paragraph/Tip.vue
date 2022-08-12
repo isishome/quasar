@@ -34,7 +34,7 @@ defineProps({
 <style scoped>
 .tip {
   position: relative;
-  padding: 20px 24px 4px 42px;
+  padding: 20px 24px 4px 24px;
   background-color: rgb(245, 245, 245);
   border-radius: 7px;
   overflow-x: auto;
@@ -52,7 +52,7 @@ defineProps({
 
 @media (max-width: 480px) {
   .tip {
-    padding: 10px 12px 2px 21px;
+    padding: 10px 12px 2px 12px;
   }
 }
 </style>

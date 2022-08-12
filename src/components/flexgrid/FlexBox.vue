@@ -1,6 +1,6 @@
 <script setup>
 import { defineAsyncComponent, ref } from 'vue'
-const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
+const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 const Practice = defineAsyncComponent(() => import('@/components/block/Practice.vue'))
 </script>
 <template>
@@ -13,7 +13,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         많은 CSS 클래스를 제공합니다. 여러 가지 옵션을 사용하여 행과 열을 다룬다고 생각하면 됩니다.
       </p>
       <p>
-        Flexbox(Quasar Flex CSS 클래스를 기반) 모듈은 컨테이너 안의 아이템(크기를 알 수 없거나 동적으로 변하는 아이템도 포함) 사이에 공간을 분배, 정렬하는 더 효율적인 방법을
+        Flexbox(Quasar Flex CSS 클래스를 기반) 모듈은 컨테이너 안의 아이템 (크기를 알 수 없거나 동적으로 변하는 아이템도 포함) 사이에 공간을 분배, 정렬하는 더 효율적인 방법을
         제공하는
         것을 목표로 하고 있습니다.(따라서 "flex(유연한)"라는 단어를 사용)
       </p>
@@ -26,26 +26,24 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="key" data-name="핵심 개념">
       <Title sub>핵심 개념</Title>
       <p>
-        Quasar Flex CSS 클래스는 컨테이너(부모) 또는 컨테이너 안의 아이템들(자식)에게 적용됩니다.
+        Quasar Flex CSS 클래스는 컨테이너(부모 요소) 또는 컨테이너 안의 아이템(자식 요소)에게 적용됩니다.
       </p>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-container.svg" width="300" />
         <img src="@/assets/images/flexgrid/flexbox-items.svg" width="300" />
       </p>
+      <Tip knowledge color="teal-4">
+        <p>
+          Quasar에서 가장 많이 사용하게 될 클래스입니다.
+          Quasar는 Flex Grid로 시작해 Flex Grid로 끝난다고 해도 과언이 아니죠.
+          그만큼 잘 익혀두면 두고두고 유용하게 사용할 수 있습니다.
+        </p>
+      </Tip>
     </section>
     <section id="container" data-name="컨테이너(부모 요소) 관리">
       <Title sub>컨테이너(부모 요소) 관리</Title>
       <Title minor>방향 설정</Title>
-      <Tip knowledge color="teal-4">
-        <p>
-          Quasar에서 가장 많이 사용하게 될 클래스입니다.
-          Quasar는 Flex Grid로 시작해 Flex Grid로 끝난다고 해도 과언이 아닙니다.
-          그만큼 잘 익혀두면 두고두고 유용하게 사용될 것입니다.
-        </p>
-        <p>
-        </p>
-      </Tip>
-      <p>다음 CSS 클래스는 아이템(자식)에 사용되는 클래스(다음 섹션에서 설명)에 영향을 주기 때문에 필수로 사용돼야 합니다.</p>
+      <p>다음 CSS 클래스는 아이템(자식 요소)에 사용되는 클래스(다음 섹션에서 설명)에 영향을 주기 때문에 필수로 사용돼야 합니다.</p>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-direction.svg" width="319" />
       </p>
@@ -97,10 +95,10 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </tbody>
         </q-markup-table>
       </div>
-      <p><em>inline</em>클래스는 아이템(자식 요소)에 영향을 주는 것이 아닌 컨테이너(부모)에게 영향을 주는 요소로 CSS <b>display</b> 속성에서 사용하는
-        <em>inline</em>값과 같이 화면에 배치된다고 생각하면 됩니다.
+      <p><em>inline</em>클래스는 아이템(자식 요소)에 영향을 주는 것이 아닌 컨테이너(부모)에게 영향을 주는 요소로 CSS <b>display</b> 속성에서
+        사용하는 <em>inline</em>값과 동일한 효과를 준다고 생각하면 됩니다.
       </p>
-      <p>다음은 해당 클래스의 예제입니다:</p>
+      <p>다음은 방향 설정 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
         { label: 'row', value: 'row' },
         { label: 'column', value: 'column' },
@@ -169,7 +167,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </template>
       </Practice>
       <Title minor>기본 줄 바꿈</Title>
-      <p>기본적으로 모든 row와 column은 내용을 래핑(줄 바꿈) 합니다</p>
+      <p>기본적으로 모든 row와 column은 내용을 줄 바꿈 합니다</p>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-wrap.svg" width="319" />
       </p>
@@ -203,7 +201,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </tr>
         </tbody>
       </q-markup-table>
-      <p>다음은 해당 클래스의 예제입니다:</p>
+      <p>다음은 줄 바꿈 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
         { label: 'wrap', value: 'wrap' },
         { label: 'no-wrap', value: 'no-wrap' },
@@ -276,12 +274,250 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <img src="@/assets/images/flexgrid/flexbox-main-axis-align---2.svg" width="319" />
       </p>
+      <p>다음은 수평 정렬 관련 헬퍼 클래스의 예제입니다:</p>
+      <Practice :options="[
+        { label: 'justify-start', value: 'justify-start' },
+        { label: 'justify-end', value: 'justify-end' },
+        { label: 'justify-center', value: 'justify-center' },
+        { label: 'justify-between', value: 'justify-between' },
+        { label: 'justify-around', value: 'justify-around' },
+        { label: 'justify-evenly', value: 'justify-evenly' }
+      ]">
+        <template #justify-start>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-start"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-start">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #justify-end>
+          <Code language="html">
+           <textarea readonly>
+&#60;div class="row justify-end"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+          </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-end">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #justify-center>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-center"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-center">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #justify-between>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-center"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #justify-around>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-center"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-around">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #justify-evenly>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-center"&#62;
+  &#60;div class="col-2 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-evenly">
+              <div class="col-2 bg-red-4">1</div>
+              <div class="col-2 bg-orange-4">2</div>
+              <div class="col-2 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+      </Practice>
       <p><strong>주축에 수직으로 정렬하려면</strong> 아래 클래스를 사용하세요. 이 클래스는 현재 줄의 교차 축을 따라 아이템(자식 요소)이 배치되는 방식에 대한 기본 동작을 정의합니다. 교차되는
         축에
         대한 수평-* 버전(주축에 수직)이라고 생각하면 됩니다.</p>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-cross-axis-align.svg" width="319" />
       </p>
+      <p>다음은 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
+      <Practice :options="[
+        { label: 'items-start', value: 'items-start' },
+        { label: 'items-end', value: 'items-end' },
+        { label: 'items-center', value: 'items-center' },
+        { label: 'items-stretch', value: 'items-stretch' },
+        { label: 'items-baseline', value: 'items-baseline' }
+      ]">
+        <template #items-start>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-start bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 bg-red-4 q-py-sm"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4 q-py-lg"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4 q-py-xs"&#62;3&#60;/div&#62;
+  &#60;div class="col-2 bg-blue-4 q-py-sm"&#62;4&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-start bg-grey-4" style="height:100px">
+              <div class="col-2 bg-red-4 q-py-sm">1</div>
+              <div class="col-2 bg-orange-4 q-py-lg">2</div>
+              <div class="col-2 bg-green-4 q-py-xs">3</div>
+              <div class="col-2 bg-blue-4 q-py-sm">4</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #items-end>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-end bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 bg-red-4 q-py-sm"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4 q-py-lg"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4 q-py-xs"&#62;3&#60;/div&#62;
+  &#60;div class="col-2 bg-blue-4 q-py-sm"&#62;4&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-end bg-grey-4" style="height:100px">
+              <div class="col-2 bg-red-4 q-py-sm">1</div>
+              <div class="col-2 bg-orange-4 q-py-lg">2</div>
+              <div class="col-2 bg-green-4 q-py-xs">3</div>
+              <div class="col-2 bg-blue-4 q-py-sm">4</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #items-center>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-center bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 bg-red-4 q-py-sm"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4 q-py-lg"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4 q-py-xs"&#62;3&#60;/div&#62;
+  &#60;div class="col-2 bg-blue-4 q-py-sm"&#62;4&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-center bg-grey-4" style="height:100px">
+              <div class="col-2 bg-red-4 q-py-sm">1</div>
+              <div class="col-2 bg-orange-4 q-py-lg">2</div>
+              <div class="col-2 bg-green-4 q-py-xs">3</div>
+              <div class="col-2 bg-blue-4 q-py-sm">4</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #items-stretch>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-stretch bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 bg-red-4 q-py-sm"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4 q-py-lg"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4 q-py-xs"&#62;3&#60;/div&#62;
+  &#60;div class="col-2 bg-blue-4 q-py-sm"&#62;4&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-stretch bg-grey-4" style="height:100px">
+              <div class="col-2 bg-red-4 q-py-sm">1</div>
+              <div class="col-2 bg-orange-4 q-py-lg">2</div>
+              <div class="col-2 bg-green-4 q-py-xs">3</div>
+              <div class="col-2 bg-blue-4 q-py-sm">4</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #items-baseline>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-baseline bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 bg-red-4 q-py-sm"&#62;1&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4 q-py-lg"&#62;2&#60;/div&#62;
+  &#60;div class="col-2 bg-green-4 q-py-xs"&#62;3&#60;/div&#62;
+  &#60;div class="col-2 bg-blue-4 q-py-sm"&#62;4&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-baseline bg-grey-4" style="height:100px">
+              <div class="col-2 bg-red-4 q-py-sm">1</div>
+              <div class="col-2 bg-orange-4 q-py-lg">2</div>
+              <div class="col-2 bg-green-4 q-py-xs">3</div>
+              <div class="col-2 bg-blue-4 q-py-sm">4</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+      </Practice>
       <Note color="green-13">
         <p><b>팁</b></p>
         <p><em>items-center</em> + <em>justify-center</em>와 효과가 같은 편리한 <em>flex-center</em> CSS 클래스도 있습니다.
@@ -294,11 +530,111 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <img src="@/assets/images/flexgrid/flexbox-content-align.svg" width="319" />
       </p>
+      <p>다음은 줄 바꿈 된 아이템의 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
+      <Practice :options="[
+        { label: 'content-start', value: 'content-start' },
+        { label: 'content-end', value: 'content-end' },
+        { label: 'content-center', value: 'content-center' },
+        { label: 'content-stretch', value: 'content-stretch' },
+        { label: 'content-between', value: 'content-between' },
+        { label: 'content-around', value: 'content-around' }
+      ]">
+        <template #content-start>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-start q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-start q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #content-end>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-end q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-end q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #content-center>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-center q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-center q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #content-stretch>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-stretch q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-stretch q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #content-between>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-between q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-between q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #content-around>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row content-around q-gutter-xs bg-grey-4" style="height:150px"&#62;
+  &#60;div class="col-1 bg-red-4" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row content-around q-gutter-xs bg-grey-4" style="height:150px">
+              <div class="col-1 bg-red-4" v-for="i in 30" :key="i">1</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+      </Practice>
     </section>
     <section id="children" data-name="아이템(자식 요소) 관리">
       <Title sub>아이템(자식 요소) 관리</Title>
-      <Title minor>사이즈 분배</Title>
-      <p>Quasar는 row에 포함된 자식 요소의 크기를 분배하기 위해 12 포인트 column 시스템을 사용합니다. 다음은 사용 가능한 CSS 헬퍼 클래스의 몇 가지 예입니다.</p>
+      <Title minor>크기 분배</Title>
+      <p>Quasar는 row에 포함된 아이템의 크기를 분배하기 위해 12 포인트 column 시스템을 사용합니다. 다음은 사용 가능한 CSS 헬퍼 클래스의 몇 가지 예입니다.</p>
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;
@@ -407,6 +743,34 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <img src="@/assets/images/flexgrid/flexbox-self.svg" width="319" />
       </p>
+      <p>다음은 자체 정렬 관련 헬퍼 클래스의 예제입니다:</p>
+      <Practice :options="[
+        { label: 'self', value: 'self' }
+      ]">
+        <template #self>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row justify-between items-start bg-grey-4" style="height:100px"&#62;
+  &#60;div class="col-2 self-start bg-red-4 q-py-sm"&#62;self-start&#60;/div&#62;
+  &#60;div class="col-2 self-center bg-orange-4 q-py-lg"&#62;self-center&#60;/div&#62;
+  &#60;div class="col-2 self-baseline bg-green-4 q-py-md"&#62;self-baseline&#60;/div&#62;
+  &#60;div class="col-2 self-end bg-blue-4 q-py-xs"&#62;self-end&#60;/div&#62;
+  &#60;div class="col-2 self-stretch bg-indigo-4 q-py-sm"&#62;self-stretch&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row justify-between items-start bg-grey-4" style="height:100px">
+              <div class="col-2 self-start bg-red-4 q-py-sm">self-start</div>
+              <div class="col-2 self-center bg-orange-4 q-py-lg">self-center</div>
+              <div class="col-2 self-baseline bg-green-4 q-py-md">self-baseline</div>
+              <div class="col-2 self-end bg-blue-4 q-py-xs">self-end</div>
+              <div class="col-2 self-stretch bg-indigo-4 q-py-sm">self-stretch</div>
+            </div>
+            <div class=" q-mb-md"></div>
+          </Tip>
+        </template>
+      </Practice>
       <Title minor>순서</Title>
       <p><code>order-first</code>와 <code>order-last</code> CSS 헬퍼 클래스를 사용하여 자식 요소의 <strong>순서를 설정할 수 있습니다</strong>.</p>
       <p>기본적으로 flex 아이템들은 소스코드의 순서대로 배치됩니다. 그러나 order 속성은 flex 컨테이너에 나타나는 순서를 제어합니다. 더 세분화가 필요한 경우<code>order</code>
@@ -621,15 +985,6 @@ th {
 
 th {
   word-break: normal !important;
-}
-
-code {
-  color: var(--q-primary);
-  border: dotted 1px var(--q-primary);
-  padding: 2px 5px;
-  border-radius: 4px;
-  text-decoration: dashed;
-  white-space: nowrap;
 }
 
 .body--dark img {

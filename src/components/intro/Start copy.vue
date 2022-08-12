@@ -9,8 +9,8 @@ defineProps({
 })
 
 const $q = useQuasar()
-const Editor = defineAsyncComponent(() => import('@/components/Editor.vue'))
-const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
+const Editor = defineAsyncComponent(() => import('@/components/block/Editor.vue'))
+const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 
 $q.lang.set('en')
 
