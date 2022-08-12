@@ -175,7 +175,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       </p>
       <p>명시적으로 줄 바꿈을 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
       <p>역순으로 줄 바꿈이 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
-      <q-markup-table flat bordered wrap-cells class="text-left col-12" style="max-width:500px">
+      <q-markup-table flat bordered wrap-cells class="text-left col-12 q-mb-md" style="max-width:500px">
         <thead>
           <tr>
             <th>클래스 명</th>
@@ -203,6 +203,70 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </tr>
         </tbody>
       </q-markup-table>
+      <p>다음은 해당 클래스의 예제입니다:</p>
+      <Practice :options="[
+        { label: 'wrap', value: 'wrap' },
+        { label: 'no-wrap', value: 'no-wrap' },
+        { label: 'reverse-wrap', value: 'reverse-wrap' }
+      ]">
+        <template #wrap>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row wrap"&#62;
+  &#60;div class="col-6 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-6 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-6 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row wrap">
+              <div class="col-6 bg-red-4">1</div>
+              <div class="col-6 bg-orange-4">2</div>
+              <div class="col-6 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #no-wrap>
+          <Code language="html">
+           <textarea readonly>
+&#60;div class="row no-wrap"&#62;
+  &#60;div class="col-6 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-6 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-6 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+          </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row no-wrap">
+              <div class="col-6 bg-red-4">1</div>
+              <div class="col-6 bg-orange-4">2</div>
+              <div class="col-6 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+        <template #reverse-wrap>
+          <Code language="html">
+            <textarea readonly>
+&#60;div class="row reverse-wrap"&#62;
+  &#60;div class="col-6 bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-6 bg-orange-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-6 bg-green-4"&#62;3&#60;/div&#62;
+&#60;/div&#62;
+            </textarea>
+          </Code>
+          <Tip label="결과">
+            <div class="row reverse-wrap">
+              <div class="col-6 bg-red-4">1</div>
+              <div class="col-6 bg-orange-4">2</div>
+              <div class="col-6 bg-green-4">3</div>
+            </div>
+            <div class="q-mb-md"></div>
+          </Tip>
+        </template>
+      </Practice>
       <Title minor>정렬</Title>
       <p><strong>주축을 따라 수평으로 정렬하려면</strong> 아래 클래스를 사용하세요. 아이템(자식 요소)이 해당 라인의 유연성과 관계없이 최대 크기에 도달 한 경우 여유 공간을 분배할 수
         있도록
@@ -500,7 +564,9 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="addon" data-name="Flex 애드온">
       <Title sub>Flex 애드온</Title>
-      <p>활성화되면(<code>quasar.config.js > framework > cssAddon: true</code>를 통해) 모든 flex(및 디스플레이) 관련 CSS 클래스에 대해 중단점 인식
+      <p>활성화되면(<code>quasar.config.js</code> &gt; <code>framework</code> &gt; <code>cssAddon: true</code>를 통해) 모든 flex(및
+        디스플레이) 관련
+        CSS 클래스에 대해 중단점 인식
         버전을 제공합니다.</p>
       <Note color="orange-4">
         <p class="text-subtitle1"><b>경고</b></p>
@@ -528,11 +594,13 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 .q-(p|m)(t|r|b|l|a|x|y)-&#60;bp&#62;-(none|auto|xs|sm|md|lg|xl)
         </textarea>
       </Code>
-      <p>예: <code>row-md</code>, <code>items-lg-end</code>, <code>q-pa-xs q-pa-sm-sm q-px-md-lg q-py-md-md</code></p>
+      <p>예: <code>row-md</code>, <code>items-lg-end</code>,
+        <code>q-pa-xs</code>, <code>q-pa-sm-sm</code>, <code>q-px-md-lg</code>, <code>q-py-md-md</code>
+      </p>
     </section>
     <section id="playground" data-name="Flex Playground">
       <Title sub>Flex Playground</Title>
-      <p>Flex의 동작을 보려면 Flex Playground를 사용하여 실시간으로 상호작용을 자세히 알아보세요.</p>
+      <p>Flex Playground를 사용하여 인터렉티브 한 Flex의 동작을 자세히 알아보세요.</p>
       <q-btn push label="Flex Playground" icon-right="open_in_new" color="primary" type="a"
         href="https://quasar.dev/layout/grid/flex-playground" target="_blank" rel="noopener noreferrer" />
     </section>
