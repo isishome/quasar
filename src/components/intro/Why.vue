@@ -124,11 +124,11 @@
         특별히 노력을 기울였습니다.
       </p>
     </section>
-    <section id="started" data-name="1분 안에 시작하세요">
-      <Title sub>1분 안에 시작하세요</Title>
-      <p>이 말을 하고
-        <Link :to="{ name: 'start' }">시작</Link> 하고 싶네요! 1분 이내에 웹사이트나 앱을 시작할 수
-        있습니다.
+    <section id="started" data-name="1분이면 시작할 수 있습니다">
+      <Title sub>1분이면 시작할 수 있습니다</Title>
+      <p>1분 이내에 웹사이트나 앱을
+        <Link :to="{ name: 'start' }">시작</Link>할 수
+        있습니다!
       </p>
     </section>
     <div class="q-py-xl"></div>
