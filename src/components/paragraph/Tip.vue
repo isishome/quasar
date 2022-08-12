@@ -8,7 +8,7 @@ defineProps({
     type: String,
     default: 'primary'
   },
-  knowledge: {
+  advice: {
     type: Boolean,
     default: false
   }
@@ -21,11 +21,11 @@ defineProps({
         <q-icon flat name="o_info" :color="color" />
         <b>{{ label }}</b>
       </div>
-      <div v-else-if="knowledge" class="row items-center q-gutter-x-xs q-mb-sm">
+      <div v-else-if="advice" class="row items-center q-gutter-x-xs q-mb-sm">
         <q-avatar size="28px">
           <img src="@/assets/images/seraq.svg" />
         </q-avatar>
-        <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Knowledge</div>
+        <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Advice</div>
       </div>
       <slot></slot>
     </div>

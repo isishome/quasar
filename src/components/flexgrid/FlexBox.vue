@@ -32,7 +32,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <img src="@/assets/images/flexgrid/flexbox-container.svg" width="300" />
         <img src="@/assets/images/flexgrid/flexbox-items.svg" width="300" />
       </p>
-      <Tip knowledge color="teal-4">
+      <Tip advice color="teal-4">
         <p>
           Quasar에서 가장 많이 사용하게 될 클래스입니다.
           Quasar는 Flex Grid로 시작해 Flex Grid로 끝난다고 해도 과언이 아니죠.

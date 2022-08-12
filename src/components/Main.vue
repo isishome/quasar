@@ -58,7 +58,7 @@ const sites = shallowReadonly([
       <Link href="https://quasar.dev/">quasar 공식 홈페이지</Link> 내용을 바탕으로, 그동안 quasar를 사용하면서 중요하다고 느낀 부분이나, 유용하게 사용했던 컴포넌트,
       플러그인을 위주로 챕터를 작성해 갈 예정입니다. vue.js를 새로 시작하거나
       새로운
-      UI를 찾던 분들에게 많은 도움이 되길 바랍니다.
+      UI 프레임워크를 찾던 분들에게 많은 도움이 되길 바랍니다.
     </p>
     <tip>
       <p class="text-caption">

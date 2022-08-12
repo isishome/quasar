@@ -107,7 +107,8 @@ Done. Now run:
           </Link>를 확인하세요.
         </li>
       </ul>
-      <Tip color="green-7" label="Composition API와 &lt;script setup&gt;">
+      <Tip advice color="teal-4">
+        <p><b>Composition API와 &lt;script setup&gt;</b></p>
         <ul>
           <li><b>Composition API</b><br />Vue.js 의 옵션을 정의해서 사용(Option API)하는 데신 함수를 가져와 사용하는 방식의 API 세트로,
             여전히 Option API 사용이 가능하지만 되도록이면 Composition API를 사용하시는 것을 추천드립니다.
@@ -139,7 +140,7 @@ Done. Now run:
       <Title sub>Quasar 플러그인 설치</Title>
       <p>이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
       </p>
-      <Tip label="팁">
+      <Tip advice color="teal-4">
         <ul>
           <li><em>@quasar/extra</em> 설치는 선택사항입니다. (기본적으로 설치하시는 것을 추천드립니다.)</li>
           <li><em>sass@1.32.12</em> 역시 Sass/SCSS 를 사용하는 경우에만 설치 하시면 됩니다. (저는 CSS에 익숙하므로 설치하지 않았습니다.)
@@ -157,6 +158,11 @@ Done. Now run:
     <section id="using" data-name="Quasar 설정하기">
       <Title sub>Quasar 설정하기</Title>
       <p>Quasar를 사용하기 앞서 몇가지 설정이 필요합니다.</p>
+      <Tip advice color="teal-4">
+        <ul>
+          <li>프로젝트 폴더 안의 <em>/src/main.js</em> 과 <em>/vite.config.js</em>에 Quasar와 관련 설정 코드 수정이 필요합니다.</li>
+        </ul>
+      </Tip>
       <Code class="q-my-lg" language="javascript">
         <textarea readonly>
 // main.js
