@@ -100,6 +100,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p><em>inline</em>클래스는 아이템(자식 요소)에 영향을 주는 것이 아닌 컨테이너(부모)에게 영향을 주는 요소로 CSS <b>display</b> 속성에서 사용하는
         <em>inline</em>값과 같이 화면에 배치된다고 생각하면 됩니다.
       </p>
+      <p>다음은 해당 클래스의 예제입니다:</p>
       <Practice :options="[
         { label: 'row', value: 'row' },
         { label: 'column', value: 'column' },
@@ -237,19 +238,19 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div class="col-8 bg-red-2"&#62;two thirds&#60;/div&#62;
-  &#60;div class="col-2 bg-orange-2"&#62;one sixth&#60;/div&#62;
-  &#60;div class="col-auto bg-green-2"&#62;auto size based on content and available space&#60;/div&#62;
-  &#60;div class="col bg-blue-2"&#62;fills remaining available space&#60;/div&#62;
+  &#60;div class="col-8 bg-red-4"&#62;two thirds&#60;/div&#62;
+  &#60;div class="col-2 bg-orange-4"&#62;one sixth&#60;/div&#62;
+  &#60;div class="col-auto bg-green-4"&#62;auto size based on content and available space&#60;/div&#62;
+  &#60;div class="col bg-blue-4"&#62;fills remaining available space&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
       <Tip label="결과">
         <div class="row">
-          <div class="col-8 bg-red-2">two thirds</div>
-          <div class="col-2 bg-orange-2">one sixth</div>
-          <div class="col-auto bg-green-2">auto size based on content and available space</div>
-          <div class="col bg-blue-2">fills remaining available space</div>
+          <div class="col-8 bg-red-4">two thirds</div>
+          <div class="col-2 bg-orange-4">one sixth</div>
+          <div class="col-auto bg-green-4">auto size based on content and available space</div>
+          <div class="col bg-blue-4">fills remaining available space</div>
         </div>
         <div class="q-mb-md"></div>
       </Tip>
@@ -265,50 +266,73 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div class="col"&#62;1&#60;/div&#62;
-  &#60;div class="col"&#62;1&#60;/div&#62;
-  &#60;div class="col"&#62;1&#60;/div&#62;
+  &#60;div class="col bg-red-4"&#62;1&#60;/div&#62;
+  &#60;div class="col bg-orange-4"&#62;1&#60;/div&#62;
+  &#60;div class="col bg-green-4"&#62;1&#60;/div&#62;
   &#60;!--
-     3개의 아이템(자식 요소)는 
-     각 아이템에 `col-4`를 사용한 것과
-     동일한 효과를 줍니다
+    3개의 아이템(자식 요소)는 
+    각 아이템에 `col-4`를 사용한 것과
+    동일한 효과를 줍니다
   --&#62;
 &#60;/div&#62;
 
 &#60;div class="row"&#62;
-  &#60;div class="col-3"&#62;1&#60;/div&#62;
-  &#60;div class="col-6"&#62;2&#60;/div&#62;
-  &#60;div class="col-3"&#62;1&#60;/div&#62;
+  &#60;div class="col-3 bg-blue-4"&#62;1&#60;/div&#62;
+  &#60;div class="col-6 bg-indigo-4"&#62;2&#60;/div&#62;
+  &#60;div class="col-3 bg-purple-4"&#62;1&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
+      <Tip label="결과">
+        <div class="row">
+          <div class="col bg-red-4">1</div>
+          <div class="col bg-orange-4">1</div>
+          <div class="col bg-green-4">1</div>
+        </div>
+
+        <div class="row">
+          <div class="col-3 bg-blue-4">1</div>
+          <div class="col-6 bg-indigo-4">2</div>
+          <div class="col-3 bg-purple-4">1</div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-grow.svg" width="400" />
       </p>
-      <p>셀을 오프셋하는것도 가능합니다. 예: <code>offset-4</code>는 공간의 1/3을 오프셋 합니다.(4/12 = 1/3 = 33%)</p>
+      <p>셀을 오프셋하는것도 가능합니다. 예: <code>offset-4</code>는 공간의 1/3을 오프셋 합니다 (4/12 = 1/3 = 33%).</p>
       <Title minor>줄 바꿈</Title>
       <p>줄 바꿈은 Flex CSS 클래스를 이해하는 핵심 기능입니다. 각 row를 정확히 12포인트로 사용해야 하는 것은 아닙니다. 더 적거나 더 많이 사용할 수 있습니다.</p>
       <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다. "반응형 디자인" 섹션을 읽어보세요.</p>
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div class="col-2"&#62;...&#60;/div&#62;
+  &#60;div class="col-2 bg-red-4"&#62;...&#60;/div&#62;
 
   &#60;!-- 2 + 6 &#60; 12, 그래서 뒤에 오는 요소는 같은 줄에 배치됩니다. --&#62;
-  &#60;div class="col-6"&#62;...&#60;/div&#62;
+  &#60;div class="col-6 bg-orange-4"&#62;...&#60;/div&#62;
 
   &#60;!-- 2 + 6 + 10 &#62; 12, 그래서 뒤에 오는 요소는 다음 줄로 줄 바꿈 됩니다. --&#62;
-  &#60;div class="col-10"&#62;...&#60;/div&#62;
+  &#60;div class="col-10 bg-green-4"&#62;...&#60;/div&#62;
 
   &#60;!--
     10 + 3 &#62; 12, 그래서 뒤에 오는 요소는 다음 줄로 줄 바꿈 됩니다.
     현재 줄만 고려한다는 점에 유의하세요. 
     (col-10의 경우는 자체 라인으로 줄 바꿈 되었으므로)
   --&#62;
-  &#60;div class="col-3"&#62;...&#60;/div&#62;
+  &#60;div class="col-3 bg-blue-4"&#62;...&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
+      <Tip label="결과">
+        <div class="row">
+          <div class="col-2 bg-red-4">...</div>
+          <div class="col-6 bg-orange-4">...</div>
+          <div class="col-10 bg-green-4">...</div>
+          <div class="col-3 bg-blue-4">...</div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
       <Note color="grey-5">row는 기본적으로 줄 바꿈 됩니다. 이를 비활성화하려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요. </Note>
       <Title minor>자체 정렬</Title>
       <p><strong>아이템(자식 요소)은 부모 요소에 지정된 정렬을 재정의 할 수 있습니다</strong>. 이를 통해 개별 flex 아이템에 대해 정렬을 재정의할 수 있습니다. 사용 가능한
@@ -328,12 +352,20 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Code language="html" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div style="order: 2"&#62;Second column&#60;/div&#62;
-  &#60;div class="order-last"&#62;Third column&#60;/div&#62;
-  &#60;div class="order-first"&#62;First column&#60;/div&#62;
+  &#60;div style="order: 2" class="bg-red-4"&#62;Second column&#60;/div&#62;
+  &#60;div class="order-last bg-orange-4"&#62;Third column&#60;/div&#62;
+  &#60;div class="order-first bg-green-4"&#62;First column&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
+      <Tip label="결과">
+        <div class="row">
+          <div style="order: 2" class="bg-red-4">Second column</div>
+          <div class="order-last bg-orange-4">Third column</div>
+          <div class="order-first bg-green-4">First column</div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
       <p>
         CSS <code>order</code> 속성의 작동 방식은 다음과 같습니다:
       </p>
@@ -343,7 +375,175 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="reponsive" data-name="반응형 디자인">
       <Title sub>반응형 디자인</Title>
+      <p>화면 너비에 따라 반응형 UI를 만들 수 있도록 도와주는 Quasar Flex CSS 클래스를 적용할 수 있습니다. 12포인트 그리드는 부트스트랩에서 영감을 받아 만들어졌기 때문에 유사한 부분이
+        많습니다.</p>
+      <p>중단점 지정자는 더 큰 중단점 정의가 더 작은 정의를 재정의 하는 모바일 우선 접근 방식을 사용합니다.</p>
+      <p>지금까지 우리가 배운 것은 창 너비에 관계없이 column 크기를 조정할 수 있는 있다는 것입니다. 반응형 UI를 만들려면 창 너비를 고려하면서 크기를 동적으로 변경해야 합니다. 먼저
+        <code>col-*</code>, <code>offset-*</code> 및 <code>col-auto</code> 헬퍼 클래스 중간에 삽입할 수 있는 몇 가지 토큰에 대해 알아보겠습니다.(토큰은
+        아래 표 참조)
+      </p>
+      <q-markup-table flat bordered wrap-cells class="text-left col-12 q-mb-md" style="max-width:500px">
+        <thead>
+          <tr>
+            <th>토큰</th>
+            <th>최소 창 너비</th>
+            <th>설명 / 다른 큰 중단점에 의해 재정의되지 않고 적용될 때</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>xs</code>
+            </td>
+            <td>0px</td>
+            <td>모든 창 너비 (중단점을 특정하지 않은 경우처럼)</td>
+          </tr>
+          <tr>
+            <td>
+              <code>sm</code>
+            </td>
+            <td>600px</td>
+            <td>초소형 창 너비보다 클 때</td>
+          </tr>
+          <tr>
+            <td>
+              <code>md</code>
+            </td>
+            <td>1024px</td>
+            <td>소형 창 너비보다 클 때</td>
+          </tr>
+          <tr>
+            <td>
+              <code>lg</code>
+            </td>
+            <td>1440px</td>
+            <td>중형 창 너비보다 클 때</td>
+          </tr>
+          <tr>
+            <td>
+              <code>xl</code>
+            </td>
+            <td>1920px</td>
+            <td>대형 창 너비보다 클 때</td>
+          </tr>
+          <tr>
+            <td>
+              <code>xs</code>
+            </td>
+            <td>0px</td>
+            <td>모든 창 너비 (중단점을 특정하지 않은 경우처럼)</td>
+          </tr>
+        </tbody>
+      </q-markup-table>
+      <p>예: <code>col-md-7</code>, <code>offset-lg-3</code>, <code>col-xs-auto</code></p>
+      <p>전체 예 : 3개의 아이템(자식 요소) 있는 row가 있다고 가정해 보겠습니다. 초소형 창에서는 아이템을 세로로 쌓아야 하고, 소형 창에서는 나란히 표시해야 하며(각각 너비가 동일함) 중형 창부터는
+        모든 아이템을 한 줄에 표시해야 합니다:</p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row"&#62;
+  &#60;div class="col-xs-12 col-sm-6 col-md-4 bg-red-4"&#62;
+    col
+  &#60;/div&#62;
+  &#60;div class="col-xs-12 col-sm-6 col-md-4 bg-orange-4"&#62;
+    col
+  &#60;/div&#62;
+  &#60;div class="col-xs-12 col-sm-6 col-md-4 bg-green-4"&#62;
+    col
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <p>창 크기를 변경하면서 확인해보세요</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4 bg-red-4">
+            col
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 bg-orange-4">
+            col
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4 bg-green-4">
+            col
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <p>위 예제에서 <code>col-xs-12</code> (12/12 = row 100%이므로 row가 내용을 기본적으로 줄 바꿈 하기 때문에 각 아이템은 컨테이너의 전체 너비를 사용하여 수직으로 쌓이게
+        됩니다), <code>col-sm-6</code>(6/12 = row의 50%) 및 <code>col-md-4</code>(4/12 = row의 33%)를 사용한 것에 주목하세요.</p>
+      <p>앞에서 언급한 것처럼, row의 내용 줄 바꿈은 기본 설정값이므로 12개의(보다 큰 경우도) 그리드 포인트가 사용되면 내용은 다음 줄로 줄 바꿈 됩니다. 두 개의
+        <code>&#60;div&#62;</code>에
+        <code>col-8</code>을 사용한 경우 8 + 8 = 16이고 한 줄에 12개 포인트만 표시할 수 있기 때문에 아이템들은 쌓이게 됩니다.
+      </p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row"&#62;
+  &#60;!--
+    12개 이상의 그리드 포인트를 함께 사용하므로,
+    두번째 &#60;div&#62;는 다음 줄로 줄 바꿈 됩니다.
+  --&#62;
+  &#60;div class="col-8 bg-red-4"&#62;col&#60;/div&#62;
+  &#60;div class="col-8 bg-orange-4"&#62;col&#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <div class="row">
+          <div class="col-8 bg-red-4">col</div>
+          <div class="col-8 bg-orange-4">col</div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <p>
+        <Link href="https://quasar.dev/style/visibility#window-width-related">Visibility</Link> 스타일 페이지에서 창 너비에 대한 임곗값과
+        이러한 토큰들(xs, sm, md, lg, xl)을 사용하여 DOM 요소를 숨기거나 표시합니다.
+      </p>
     </section>
+    <section id="addon" data-name="Flex 애드온">
+      <Title sub>Flex 애드온</Title>
+      <p>활성화되면(<code>quasar.config.js > framework > cssAddon: true</code>를 통해) 모든 flex(및 디스플레이) 관련 CSS 클래스에 대해 중단점 인식
+        버전을 제공합니다.</p>
+      <Note color="orange-4">
+        <p class="text-subtitle1"><b>경고</b></p>
+        <p>활성화할 때 CSS 사용 부분에 눈에 띄는 충돌이 있을 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요. </p>
+      </Note>
+      <Code language="css" class="q-mb-md">
+        <textarea readonly>
+.flex-&#60;bp&#62;-(block|inline)
+.(row|column|flex)-&#60;bp&#62;(|-inline-&#60;bp&#62;)
+.reverse-&#60;bp&#62;
+.(wrap|no-wrap|reverse-wrap)-&#60;bp&#62;
+.order-&#60;bp&#62;-(first|last|none)
+.justify-&#60;bp&#62;-(start|end|center|between|around|evenly)
+.items-&#60;bp&#62;-(start|end|center|baseline|stretch)
+.content-&#60;bp&#62;-(start|end|center|between|around)
+.self-&#60;bp&#62;-(start|end|center|baseline|stretch)
+.flex-&#60;bp&#62;-center
+.q-gutter-&#60;bp&#62;(|-x|-y)-(xs|sm|md|lg|xl)
+.(col|offset)-&#60;bp&#62;-(|0..12)
+        </textarea>
+      </Code>
+      <p>패딩과 마진 간격 모두에 적용되는 반응형 클래스도 있습니다:</p>
+      <Code language="css" class="q-mb-md">
+        <textarea readonly>
+.q-(p|m)(t|r|b|l|a|x|y)-&#60;bp&#62;-(none|auto|xs|sm|md|lg|xl)
+        </textarea>
+      </Code>
+      <p>예: <code>row-md</code>, <code>items-lg-end</code>, <code>q-pa-xs q-pa-sm-sm q-px-md-lg q-py-md-md</code></p>
+    </section>
+    <section id="playground" data-name="Flex Playground">
+      <Title sub>Flex Playground</Title>
+      <p>Flex의 동작을 보려면 Flex Playground를 사용하여 실시간으로 상호작용을 자세히 알아보세요.</p>
+      <q-btn push label="Flex Playground" icon-right="open_in_new" color="primary" type="a"
+        href="https://quasar.dev/layout/grid/flex-playground" target="_blank" rel="noopener noreferrer" />
+    </section>
+    <div class="q-py-xl"></div>
+    <q-separator class="q-mb-lg" />
+    <div>
+      <div class="row justify-between items-cetner">
+        <Move label="시작하기" prev :to="{ name: 'start' }" />
+        <Move label="Grid Row 소개" next :to="{ name: 'gridrow' }" />
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>

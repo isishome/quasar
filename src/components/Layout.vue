@@ -298,6 +298,10 @@ li {
 u {
   text-underline-offset: 2px;
 }
+
+img {
+  max-width: 100%;
+}
 </style>
 <style scoped>
 a {

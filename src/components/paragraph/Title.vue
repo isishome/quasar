@@ -46,7 +46,7 @@ defineProps({
       <slot></slot>
     </div>
   </div>
-  <div v-else-if="small" class="text-subtitle1 text-white inline-block q-px-xs q-mt-sm rounded-borders"
+  <div v-else-if="small" class="text-subtitle2 text-white row inline-block q-px-xs q-mt-sm rounded-borders"
     :class="`bg-${color}`">
     <slot></slot>
   </div>
