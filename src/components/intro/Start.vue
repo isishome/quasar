@@ -1,6 +1,6 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
-const Code = defineAsyncComponent(() => import('@/components/Code.vue'))
+const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 </script>
 
 <template>
@@ -222,5 +222,4 @@ export default defineConfig({
   </div>
 </template>
 <style scoped>
-
 </style>
