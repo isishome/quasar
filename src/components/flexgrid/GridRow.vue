@@ -365,6 +365,232 @@ const splitterModel = ref(100)
         </div>
         <div class="q-mb-md"></div>
       </Tip>
+      <Title minor>정렬</Title>
+      <p>flexbox 정렬 유틸리티를 사용하여 column을 수직 및 수평으로 정렬합니다.</p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row items-start bg-grey-4" style="height:6rem"&#62;
+  &#60;div class="col bg-red-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-orange-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-green-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row items-center bg-grey-4" style="height:6rem"&#62;
+  &#60;div class="col bg-red-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-orange-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-green-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row items-end bg-grey-4" style="height:6rem"&#62;
+  &#60;div class="col bg-red-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-orange-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col bg-green-4"&#62;
+    세 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row bg-grey-4" style="height:6rem"&#62;
+  &#60;div class="col self-start bg-red-4"&#62;
+    .self-start
+  &#60;/div&#62;
+  &#60;div class="col self-center bg-orange-4"&#62;
+    .self-center
+  &#60;/div&#62;
+  &#60;div class="col self-end bg-green-4"&#62;
+    .self-end
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <em class="bg-blue-9 text-white">items-start</em>
+        <div class="row items-start bg-grey-4" style="height:6rem">
+          <div class="col bg-red-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-orange-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-green-4">
+            세 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">items-center</em>
+        <div class="row items-center bg-grey-4" style="height:6rem">
+          <div class="col bg-red-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-orange-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-green-4">
+            세 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">items-end</em>
+        <div class="row items-end bg-grey-4" style="height:6rem">
+          <div class="col bg-red-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-orange-4">
+            세 개의 column 중 하나
+          </div>
+          <div class="col bg-green-4">
+            세 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">self-*</em>
+        <div class="row bg-grey-4" style="height:6rem">
+          <div class="col self-start bg-red-4">
+            .self-start
+          </div>
+          <div class="col self-center bg-orange-4">
+            .self-center
+          </div>
+          <div class="col self-end bg-green-4">
+            .self-end
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row justify-start bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row justify-center bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row justify-end bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row justify-around bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row justify-between bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;div class="row justify-evenly bg-grey-4"&#62;
+  &#60;div class="col-4 bg-red-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    두 개의 column 중 하나
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <em class="bg-blue-9 text-white">justify-start</em>
+        <div class="row justify-start bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">justify-center</em>
+        <div class="row justify-center bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">justify-end</em>
+        <div class="row justify-end bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">justify-around</em>
+        <div class="row justify-around bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">justify-between</em>
+        <div class="row justify-between bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em class="bg-blue-9 text-white">justify-evenly</em>
+        <div class="row justify-evenly bg-grey-4">
+          <div class="col-4 bg-red-4">
+            두 개의 column 중 하나
+          </div>
+          <div class="col-4 bg-orange-4">
+            두 개의 column 중 하나
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <Note color="green-13">
+        <p><b>팁</b></p>
+        <p><em>items-center</em> + <em>justify-center</em>와 효과가 같은 편리한 <em>flex-center</em> CSS 클래스도 있습니다.
+          <em>flex</em>, <em>row</em> 또는
+          <em>column</em>과
+          함께 사용하세요.
+        </p>
+      </Note>
     </section>
   </div>
 </template>

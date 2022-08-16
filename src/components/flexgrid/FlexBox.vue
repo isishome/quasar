@@ -60,37 +60,37 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <td>
                 <code>row</code>
               </td>
-              <td>아이템(자식 요소)을 가로 방향으로 배치한다</td>
+              <td>아이템(자식 요소)을 수평 방향으로 배치한다</td>
             </tr>
             <tr>
               <td>
                 <code>row inline</code>
               </td>
-              <td>아이템(자식 요소)을 가로 방향으로 인라인 배치한다</td>
+              <td>아이템(자식 요소)을 수평 방향으로 인라인 배치한다</td>
             </tr>
             <tr>
               <td>
                 <code>column</code>
               </td>
-              <td>아이템(자식 요소)을 세로 방향으로 배치한다</td>
+              <td>아이템(자식 요소)을 수직 방향으로 배치한다</td>
             </tr>
             <tr>
               <td>
                 <code>column inline</code>
               </td>
-              <td>아이템(자식 요소)을 세로 방향으로 인라인 배치한다</td>
+              <td>아이템(자식 요소)을 수직 방향으로 인라인 배치한다</td>
             </tr>
             <tr>
               <td>
                 <code>row reverse</code>
               </td>
-              <td>아이템(자식 요소)을 가로 역방향으로 배치한다</td>
+              <td>아이템(자식 요소)을 수평 역방향으로 배치한다</td>
             </tr>
             <tr>
               <td>
                 <code>column reverse</code>
               </td>
-              <td>아이템(자식 요소)을 세로 역방향으로 배치한다</td>
+              <td>아이템(자식 요소)을 수직 역방향으로 배치한다</td>
             </tr>
           </tbody>
         </q-markup-table>
