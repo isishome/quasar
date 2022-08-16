@@ -320,6 +320,11 @@ code:not([class]) {
   text-shadow: 1px 0 currentColor;
   letter-spacing: 1px;
 }
+
+.tip .contents .row>div,
+.tip .contents .column>div {
+  padding: 10px 15px;
+}
 </style>
 
 <style scoped>

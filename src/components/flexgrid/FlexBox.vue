@@ -10,7 +10,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         Quasar는
         <Link href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</Link>의 도움으로 손쉽게 UI를 구축하는 데 도움이 되는
-        많은 CSS 클래스를 제공합니다. 여러 가지 옵션을 사용하여 행과 열을 다룬다고 생각하면 됩니다.
+        많은 CSS 클래스를 제공합니다. 여러 가지 옵션을 사용하여 row와 column을 다룬다고 생각하면 됩니다.
       </p>
       <p>
         Flexbox(Quasar Flex CSS 클래스를 기반) 모듈은 컨테이너 안의 아이템 (크기를 알 수 없거나 동적으로 변하는 아이템도 포함) 사이에 공간을 분배, 정렬하는 더 효율적인 방법을
@@ -803,7 +803,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="reponsive" data-name="반응형 디자인">
       <Title sub>반응형 디자인</Title>
-      <p>화면 너비에 따라 반응형 UI를 만들 수 있도록 도와주는 Quasar Flex CSS 클래스를 적용할 수 있습니다. 12포인트 그리드는 부트스트랩에서 영감을 받아 만들어졌기 때문에 유사한 부분이
+      <p>화면 너비에 따라 반응형 UI를 만들 수 있도록 도와주는 Quasar Flex CSS 클래스를 적용할 수 있습니다. 12포인트 grid는 부트스트랩에서 영감을 받아 만들어졌기 때문에 유사한 부분이
         많습니다.</p>
       <p>중단점 지정자는 더 큰 중단점 정의가 더 작은 정의를 재정의 하는 모바일 우선 접근 방식을 사용합니다.</p>
       <p>지금까지 우리가 배운 것은 창 너비에 관계없이 column 크기를 조정할 수 있는 있다는 것입니다. 반응형 UI를 만들려면 창 너비를 고려하면서 크기를 동적으로 변경해야 합니다. 먼저
@@ -891,7 +891,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       </Tip>
       <p>위 예제에서 <code>col-xs-12</code> (12/12 = row 100%이므로 row가 내용을 기본적으로 줄 바꿈 하기 때문에 각 아이템은 컨테이너의 전체 너비를 사용하여 수직으로 쌓이게
         됩니다), <code>col-sm-6</code>(6/12 = row의 50%) 및 <code>col-md-4</code>(4/12 = row의 33%)를 사용한 것에 주목하세요.</p>
-      <p>앞에서 언급한 것처럼, row의 내용 줄 바꿈은 기본 설정값이므로 12개의(보다 큰 경우도) 그리드 포인트가 사용되면 내용은 다음 줄로 줄 바꿈 됩니다. 두 개의
+      <p>앞에서 언급한 것처럼, row의 내용 줄 바꿈은 기본 설정값이므로 12개의(보다 큰 경우도) grid 포인트가 사용되면 내용은 다음 줄로 줄 바꿈 됩니다. 두 개의
         <code>&#60;div&#62;</code>에
         <code>col-8</code>을 사용한 경우 8 + 8 = 16이고 한 줄에 12개 포인트만 표시할 수 있기 때문에 아이템들은 쌓이게 됩니다.
       </p>
@@ -899,7 +899,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;!--
-    12개 이상의 그리드 포인트를 함께 사용하므로,
+    12개 이상의 grid 포인트를 함께 사용하므로,
     두번째 &#60;div&#62;는 다음 줄로 줄 바꿈 됩니다.
   --&#62;
   &#60;div class="col-8 bg-red-4"&#62;col&#60;/div&#62;

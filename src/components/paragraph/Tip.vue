@@ -27,7 +27,9 @@ defineProps({
         </q-avatar>
         <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Advice</div>
       </div>
-      <slot></slot>
+      <div class="contents">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
