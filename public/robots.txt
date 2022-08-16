@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://work.serasome.com/quasar/sitemap.xml
+Sitemap: https://quasar.serasome.com/sitemap.xml
