@@ -56,8 +56,7 @@ const routes = [
             name: 'gridrow',
             component: () => import('@/components/flexgrid/GridRow.vue'),
             meta: {
-              title: 'Grid Row',
-              hidden: true
+              title: 'Grid Row'
             }
           },
           {

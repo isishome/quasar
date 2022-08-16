@@ -27,11 +27,11 @@ defineProps({
 })
 </script>
 <template>
-  <div v-if="head" class="text-h4 text-weight-bold q-py-lg" :class="`text-${color}`">
+  <div v-if="head" class="text-h3 text-weight-bold q-py-lg" :class="`text-${color}`">
     <slot></slot>
   </div>
   <template v-else-if="sub">
-    <div class="text-h5 text-weight-bold q-mt-xl q-pt-lg" :class="`text-${color}`">
+    <div class="text-h4 text-weight-bold q-mt-xl q-pt-lg" :class="`text-${color}`">
       <slot></slot>
     </div>
     <q-separator class="q-mb-md" />

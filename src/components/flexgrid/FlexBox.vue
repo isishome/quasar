@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent, ref } from 'vue'
+import { defineAsyncComponent } from 'vue'
 const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 const Practice = defineAsyncComponent(() => import('@/components/block/Practice.vue'))
 </script>
@@ -40,8 +40,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </p>
       </Tip>
     </section>
-    <section id="container" data-name="컨테이너(부모 요소) 관리">
-      <Title sub>컨테이너(부모 요소) 관리</Title>
+    <section id="container" data-name="컨테이너 관리">
+      <Title sub>컨테이너 관리</Title>
       <Title minor>방향 설정</Title>
       <p>다음 CSS 클래스는 아이템(자식 요소)에 사용되는 클래스(다음 섹션에서 설명)에 영향을 주기 때문에 필수로 사용돼야 합니다.</p>
       <p>
@@ -631,8 +631,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </template>
       </Practice>
     </section>
-    <section id="children" data-name="아이템(자식 요소) 관리">
-      <Title sub>아이템(자식 요소) 관리</Title>
+    <section id="children" data-name="아이템 관리">
+      <Title sub>아이템 관리</Title>
       <Title minor>크기 분배</Title>
       <p>Quasar는 row에 포함된 아이템의 크기를 분배하기 위해 12 포인트 column 시스템을 사용합니다. 다음은 사용 가능한 CSS 헬퍼 클래스의 몇 가지 예입니다.</p>
       <Code language="html">
