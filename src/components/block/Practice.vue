@@ -7,7 +7,7 @@ const props = defineProps({
   }
 })
 
-const tab = ref(props.options.length > 0 ? props.options[0].label : '')
+const tab = ref(props.options.length > 0 ? props.options[0].value : '')
 </script>
 <template>
   <div>

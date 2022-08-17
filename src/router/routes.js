@@ -64,8 +64,7 @@ const routes = [
             name: 'gridcolumn',
             component: () => import('@/components/flexgrid/GridColumn.vue'),
             meta: {
-              title: 'Grid Column',
-              hidden: true
+              title: 'Grid Column'
             }
           },
           {

@@ -71,6 +71,7 @@ defineProps({
 .example:deep(.row),
 .example:deep(.column) {
   background-color: rgba(0, 0, 0, .08);
+  margin-bottom: 16px;
 }
 
 .body--dark .example:deep(.row),
@@ -89,42 +90,42 @@ defineProps({
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1);
 }
 
-.example:deep(.row>div:nth-child(1)),
+.example:deep(.row>div:nth-child(8n+1)),
 .example:deep(.column>div:nth-child(1)) {
   background-color: rgba(244, 67, 54, .3);
 }
 
-.example:deep(.row>div:nth-child(2)),
+.example:deep(.row>div:nth-child(8n+2)),
 .example:deep(.column>div:nth-child(2)) {
   background-color: rgba(255, 152, 0, .3);
 }
 
-.example:deep(.row>div:nth-child(3)),
+.example:deep(.row>div:nth-child(8n+3)),
 .example:deep(.column>div:nth-child(3)) {
   background-color: rgba(76, 175, 80, .3);
 }
 
-.example:deep(.row>div:nth-child(4)),
+.example:deep(.row>div:nth-child(8n+4)),
 .example:deep(.column>div:nth-child(4)) {
   background-color: rgba(33, 150, 243, .3);
 }
 
-.example:deep(.row>div:nth-child(5)),
+.example:deep(.row>div:nth-child(8n+5)),
 .example:deep(.column>div:nth-child(5)) {
   background-color: rgba(63, 81, 181, .3);
 }
 
-.example:deep(.row>div:nth-child(6)),
+.example:deep(.row>div:nth-child(8n+6)),
 .example:deep(.column>div:nth-child(6)) {
   background-color: rgba(156, 39, 176, .3);
 }
 
-.example:deep(.row>div:nth-child(7)),
+.example:deep(.row>div:nth-child(8n+7)),
 .example:deep(.column>div:nth-child(7)) {
   background-color: rgba(121, 85, 72, .3);
 }
 
-.example:deep(.row>div:nth-child(8)),
+.example:deep(.row>div:nth-child(8n+8)),
 .example:deep(.column>div:nth-child(8)) {
   background-color: rgba(96, 125, 139, .3);
 }

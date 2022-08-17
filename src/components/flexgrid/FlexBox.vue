@@ -117,7 +117,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <div class="row">
               <div v-for="i in 5" :key="i">{{ i }}</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #column>
@@ -132,7 +131,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <div class="column">
               <div v-for="i in 5" :key="i">{{ i }}</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #row-reverse>
@@ -147,7 +145,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <div class="row reverse">
               <div v-for="i in 5" :key="i">{{ i }}</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #column-reverse>
@@ -162,7 +159,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <div class="column reverse">
               <div v-for="i in 5" :key="i">{{ i }}</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
       </Practice>
@@ -223,7 +219,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-6">2</div>
               <div class="col-6">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #no-wrap>
@@ -242,7 +237,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-6">2</div>
               <div class="col-6">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #reverse-wrap>
@@ -261,7 +255,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-6">2</div>
               <div class="col-6">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
       </Practice>
@@ -299,7 +292,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #justify-end>
@@ -318,7 +310,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #justify-center>
@@ -337,7 +328,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #justify-between>
@@ -356,7 +346,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #justify-around>
@@ -375,7 +364,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #justify-evenly>
@@ -394,7 +382,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2">2</div>
               <div class="col-2">3</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
       </Practice>
@@ -430,7 +417,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2 q-py-xs">3</div>
               <div class="col-2 q-py-sm">4</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #items-end>
@@ -451,7 +437,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2 q-py-xs">3</div>
               <div class="col-2 q-py-sm">4</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #items-center>
@@ -472,7 +457,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2 q-py-xs">3</div>
               <div class="col-2 q-py-sm">4</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #items-stretch>
@@ -493,7 +477,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2 q-py-xs">3</div>
               <div class="col-2 q-py-sm">4</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #items-baseline>
@@ -514,7 +497,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
               <div class="col-2 q-py-xs">3</div>
               <div class="col-2 q-py-sm">4</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
       </Practice>
@@ -542,91 +524,85 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <template #content-start>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-start q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-start q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-start q-gutter-xs" style="height:150px">
+            <div class="row content-start q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #content-end>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-end q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-end q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-end q-gutter-xs" style="height:150px">
+            <div class="row content-end q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #content-center>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-center q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-center q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-center q-gutter-xs" style="height:150px">
+            <div class="row content-center q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #content-stretch>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-stretch q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-stretch q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-stretch q-gutter-xs" style="height:150px">
+            <div class="row content-stretch q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #content-between>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-between q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-between q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-between q-gutter-xs" style="height:150px">
+            <div class="row content-between q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
         <template #content-around>
           <Code language="html">
             <textarea readonly>
-&#60;div class="row content-around q-gutter-xs" style="height:150px"&#62;
+&#60;div class="row content-around q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
 &#60;/div&#62;
             </textarea>
           </Code>
           <Info label="결과" example>
-            <div class="row content-around q-gutter-xs" style="height:150px">
+            <div class="row content-around q-gutter-xs" style="height:20rem">
               <div class="col-1" v-for="i in 30" :key="i">1</div>
             </div>
-            <div class="q-mb-md"></div>
           </Info>
         </template>
       </Practice>
@@ -652,7 +628,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-auto">auto size based on content and available space</div>
           <div class="col">fills remaining available space</div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <p>위 예를 보면 <code>col-8</code>은 8/12 = 2/3 = 66%이기 때문에 row 너비의 2/3를 채웁니다. 동시에 <code>col-2</code>는 1/6을
         차지합니다.(2/12
@@ -690,13 +665,11 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col">1</div>
           <div class="col">1</div>
         </div>
-
         <div class="row">
           <div class="col-3">1</div>
           <div class="col-6">2</div>
           <div class="col-3">1</div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-grow.svg" width="400" />
@@ -732,7 +705,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-10">...</div>
           <div class="col-3">...</div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <Note color="grey-5">row는 기본적으로 줄 바꿈 됩니다. 이를 비활성화하려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요. </Note>
       <Title minor>자체 정렬</Title>
@@ -796,7 +768,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="order-last">Third column</div>
           <div class="order-first">First column</div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <p>
         CSS <code>order</code> 속성의 작동 방식은 다음과 같습니다:
@@ -891,7 +862,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             col
           </div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <p>위 예제에서 <code>col-xs-12</code> (12/12 = row 100%이므로 row가 내용을 기본적으로 줄 바꿈 하기 때문에 각 아이템은 컨테이너의 전체 너비를 사용하여 수직으로
         쌓이게
@@ -917,7 +887,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-8">col</div>
           <div class="col-8">col</div>
         </div>
-        <div class="q-mb-md"></div>
       </Info>
       <p>
         <Link href="https://quasar.dev/style/visibility#window-width-related">Visibility</Link> 스타일 페이지에서 창 너비에 대한
