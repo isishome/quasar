@@ -189,6 +189,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title sub>반응형 클래스</Title>
       <p>grid에는 복잡한 반응형 레이아웃을 구축하기 위한 5개 계층의 미리 정의된 클래스가 포함되어 있습니다. 초소형(xs), 소형(sm), 중형(md), 대형(lg) 또는 초대형(xl) 디바이스에서
         row의 높이를 원하는 대로 커스터마이징 할 수 있습니다.</p>
+    </section>
+    <section id="breakpoint" data-name="모든 중단점" sub>
       <Title minor>모든 중단점</Title>
       <p>가장 작은 디바이스에서 가장 큰 디바이스까지 동일한 grid의 경우 <code>.col</code> 및 <code>.col-*</code> 클래스를 사용합니다. 특정 높이의 row가 필요한 경우
         포인트가 지정된 클래스를 사용하세요. 그런
@@ -220,6 +222,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-4">.col-4</div>
         </div>
       </Info>
+    </section>
+    <section id="mixmatch" data-name="믹스 앤 매치" sub>
       <Title minor>믹스 앤 매치</Title>
       <p>row가 grid 계층에 쌓이는 것을 원하지 않나요? 필요에 따라 각 계층에 서로 다른 클래스를 조합하여 사용하세요. 모든 클래스들이 어떻게 작동하는지 알고 싶다면 아래 예제를 참고하세요.
       </p>
@@ -261,6 +265,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-6">.col-6</div>
         </div>
       </Info>
+    </section>
+    <section id="align" data-name="정렬" sub>
       <Title minor>정렬</Title>
       <p>flexbox 정렬 유틸리티를 사용하여 column을 수직 및 수평으로 정렬합니다.</p>
       <Practice :options="[
@@ -551,6 +557,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           함께 사용하세요.
         </p>
       </Note>
+    </section>
+    <section id="wrap" data-name="줄 바꿈" sub>
       <Title minor>줄 바꿈</Title>
       <p>단일 row에 column들의 높이 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
       <Code language="html" class="q-mb-md">
@@ -603,6 +611,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-3 col-sm-6">.col-3 .col-sm-6</div>
         </div>
       </Info>
+    </section>
+    <section id="order" data-name="재배치" sub>
       <Title minor>재배치</Title>
       <Practice :options="[
         { label: '역순', value: 'reverse' },
@@ -675,6 +685,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
+    </section>
+    <section id="nesting" data-name="중첩" sub>
       <Title minor>중첩</Title>
       <p>기본 grid에 콘텐츠를 중첩시키려면 기존 grid의 <code>.col-sm-*</code> 안에 새로운 grid(<code>.row</code> 및
         <code>.col-sm-*</code>

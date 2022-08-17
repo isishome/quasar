@@ -43,16 +43,17 @@ router.afterEach(async () => {
   await nextTick()
   const sections = document.querySelectorAll('section[id]')
   const store = useStore()
-  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0 })))
+  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, sub: s.hasAttribute('sub') })))
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting)
+      if (entry.isIntersecting) {
         store.setTop(entry.target.id, entry.target.offsetTop + store.offset)
 
-      const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
-      const filter = store.sections.filter(s => s.top > 0)
-      if (filter.length > 0)
-        store.setActive(filter.reduce((prev, current) => (Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop)) ? prev : current).id)
+        const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
+        const filter = store.sections.filter(s => s.top > 0)
+        if (filter.length > 0)
+          store.setActive(filter.reduce((prev, current) => (Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop)) ? prev : current).id)
+      }
     })
   }, {
     threshold: Array.from(Array(10), (_, x) => x * 0.1)

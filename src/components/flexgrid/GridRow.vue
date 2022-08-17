@@ -187,6 +187,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title sub>반응형 클래스</Title>
       <p>grid에는 복잡한 반응형 레이아웃을 구축하기 위한 5개 계층의 미리 정의된 클래스가 포함되어 있습니다. 초소형(xs), 소형(sm), 중형(md), 대형(lg) 또는 초대형(xl) 디바이스에서
         column의 너비를 원하는 대로 커스터마이징 할 수 있습니다.</p>
+    </section>
+    <section id="breakpoint" data-name="모든 중단점" sub>
       <Title minor>모든 중단점</Title>
       <p>가장 작은 디바이스에서 가장 큰 디바이스까지 동일한 grid의 경우 <code>.col</code> 및 <code>.col-*</code> 클래스를 사용합니다. 특정 너비의 column이 필요한 경우
         포인트가 지정된 클래스를 사용하세요. 그런
@@ -242,6 +244,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </div>
         </div>
       </Info>
+    </section>
+    <section id="stack" data-name="수평 쌓기" sub>
       <Title minor>수평 쌓기</Title>
       <p><code>.col-12</code>와 <code>.col-md-*</code> 클래스의 조합을 사용하여 소형 디바이스에서 쌓는 정렬로 시작해 데스크톱(중형) 디바이스에서 수평 정렬까지 기본
         그리드
@@ -295,6 +299,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Info advice color="teal-4">
         <p><code>col-md</code> 처럼 너비를 지정하지 않고 중단점만 지정하면 해당 라인의 남은 포인트만큼 너비를 채웁니다.</p>
       </Info>
+    </section>
+    <section id="mixmatch" data-name="믹스 앤 매치" sub>
       <Title minor>믹스 앤 매치</Title>
       <p>column이 grid 계층에 쌓이는 것을 원하지 않나요? 필요에 따라 각 계층에 서로 다른 클래스를 조합하여 사용하세요. 모든 클래스들이 어떻게 작동하는지 알고 싶다면 아래 예제를 참고하세요.
       </p>
@@ -361,6 +367,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </div>
         </div>
       </Info>
+    </section>
+    <section id="align" data-name="정렬" sub>
       <Title minor>정렬</Title>
       <p>flexbox 정렬 유틸리티를 사용하여 column을 수직 및 수평으로 정렬합니다.</p>
       <Practice :options="[
@@ -651,6 +659,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           함께 사용하세요.
         </p>
       </Note>
+    </section>
+    <section id="wrap" data-name="column 줄 바꿈" sub>
       <Title minor>column 줄 바꿈</Title>
       <p>단일 row에 column들의 너비 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
       <Code language="html" class="q-mb-md">
@@ -717,6 +727,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </div>
         </div>
       </Info>
+    </section>
+    <section id="order" data-name="재배치" sub>
       <Title minor>재배치</Title>
       <Practice :options="[
         { label: '역순', value: 'reverse' },
@@ -783,6 +795,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
+    </section>
+    <section id="offset" data-name="column 오프셋" sub>
       <Title minor>column 오프셋</Title>
       <p>column을 우측으로 이동시킬 때 <code>.offset-md-*</code> 클래스를 사용하세요. 이 클래스들은 column의 좌측 여백을 그 너비(*) 만큼
         늘립니다. 예를 들어
@@ -840,6 +854,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </div>
         </div>
       </Info>
+    </section>
+    <section id="nesting" data-name="중첩" sub>
       <Title minor>중첩</Title>
       <p>기본 grid에 콘텐츠를 중첩시키려면 기존 grid의 <code>.col-sm-*</code> 안에 새로운 grid(<code>.row</code> 및
         <code>.col-sm-*</code>

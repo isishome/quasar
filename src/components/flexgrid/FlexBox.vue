@@ -42,6 +42,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="container" data-name="컨테이너 관리">
       <Title sub>컨테이너 관리</Title>
+    </section>
+    <section id="direction" data-name="방향 설정" sub>
       <Title minor>방향 설정</Title>
       <p>다음 CSS 클래스는 아이템(자식 요소)에 사용되는 클래스(다음 섹션에서 설명)에 영향을 주기 때문에 필수로 사용돼야 합니다.</p>
       <p>
@@ -162,6 +164,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
+    </section>
+    <section id="default-wrap" data-name="기본 줄 바꿈" sub>
       <Title minor>기본 줄 바꿈</Title>
       <p>기본적으로 모든 row와 column은 내용을 줄 바꿈 합니다</p>
       <p>
@@ -258,6 +262,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
+    </section>
+    <section id="align" data-name="정렬" sub>
       <Title minor>정렬</Title>
       <p><strong>주축을 따라 수평으로 정렬하려면</strong> 아래 클래스를 사용하세요. 아이템(자식 요소)이 해당 라인의 유연성과 관계없이 최대 크기에 도달 한 경우 여유 공간을 분배할 수
         있도록
@@ -609,24 +615,26 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="children" data-name="아이템 관리">
       <Title sub>아이템 관리</Title>
+    </section>
+    <section id="distribute" data-name="크기 분배" sub>
       <Title minor>크기 분배</Title>
       <p>Quasar는 row에 포함된 아이템의 크기를 분배하기 위해 12 포인트 column 시스템을 사용합니다. 다음은 사용 가능한 CSS 헬퍼 클래스의 몇 가지 예입니다.</p>
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div class="col-8"&#62;two thirds&#60;/div&#62;
-  &#60;div class="col-2"&#62;one sixth&#60;/div&#62;
-  &#60;div class="col-auto"&#62;auto size based on content and available space&#60;/div&#62;
-  &#60;div class="col"&#62;fills remaining available space&#60;/div&#62;
+  &#60;div class="col-8"&#62;2/3&#60;/div&#62;
+  &#60;div class="col-2"&#62;1/6&#60;/div&#62;
+  &#60;div class="col-auto"&#62;콘텐츠 및 사용 가능한 공간에 따라 자동 크기 조정&#60;/div&#62;
+  &#60;div class="col"&#62;남아있는 사용 가능한 공간을 채움&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
       <Info label="결과" example>
         <div class="row">
-          <div class="col-8">two thirds</div>
-          <div class="col-2">one sixth</div>
-          <div class="col-auto">auto size based on content and available space</div>
-          <div class="col">fills remaining available space</div>
+          <div class="col-8">2/3</div>
+          <div class="col-2">1/6</div>
+          <div class="col-auto">콘텐츠 및 사용 가능한 공간에 따라 자동 크기 조정</div>
+          <div class="col">남아있는 사용 가능한 공간을 채움</div>
         </div>
       </Info>
       <p>위 예를 보면 <code>col-8</code>은 8/12 = 2/3 = 66%이기 때문에 row 너비의 2/3를 채웁니다. 동시에 <code>col-2</code>는 1/6을
@@ -675,6 +683,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <img src="@/assets/images/flexgrid/flexbox-grow.svg" width="400" />
       </p>
       <p>셀을 오프셋하는것도 가능합니다. 예: <code>offset-4</code>는 공간의 1/3을 오프셋 합니다 (4/12 = 1/3 = 33%).</p>
+    </section>
+    <section id="wrap" data-name="줄 바꿈" sub>
       <Title minor>줄 바꿈</Title>
       <p>줄 바꿈은 Flex CSS 클래스를 이해하는 핵심 기능입니다. 각 row를 정확히 12포인트로 사용해야 하는 것은 아닙니다. 더 적거나 더 많이 사용할 수 있습니다.</p>
       <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다. "반응형 디자인" 섹션을 읽어보세요.</p>
@@ -707,6 +717,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </div>
       </Info>
       <Note color="grey-5">row는 기본적으로 줄 바꿈 됩니다. 이를 비활성화하려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요. </Note>
+    </section>
+    <section id="self-align" data-name="자체 정렬" sub>
       <Title minor>자체 정렬</Title>
       <p><strong>아이템(자식 요소)은 부모 요소에 지정된 정렬을 재정의 할 수 있습니다</strong>. 이를 통해 개별 flex 아이템에 대해 정렬을 재정의할 수 있습니다. 사용 가능한
         값들(<code>self-start</code>,
@@ -745,6 +757,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
+    </section>
+    <section id="order" data-name="순서" sub>
       <Title minor>순서</Title>
       <p><code>order-first</code>와 <code>order-last</code> CSS 헬퍼 클래스를 사용하여 자식 요소의 <strong>순서를 설정할 수
           있습니다</strong>.</p>
@@ -756,17 +770,17 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Code language="html" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
-  &#60;div style="order: 2" class=""&#62;Second column&#60;/div&#62;
-  &#60;div class="order-last"&#62;Third column&#60;/div&#62;
-  &#60;div class="order-first"&#62;First column&#60;/div&#62;
+  &#60;div style="order: 2" class=""&#62;두 번째 column&#60;/div&#62;
+  &#60;div class="order-last"&#62;세 번째 column&#60;/div&#62;
+  &#60;div class="order-first"&#62;첫 번째 column&#60;/div&#62;
 &#60;/div&#62;
         </textarea>
       </Code>
       <Info label="결과" example>
         <div class="row">
-          <div style="order: 2" class="">Second column</div>
-          <div class="order-last">Third column</div>
-          <div class="order-first">First column</div>
+          <div style="order: 2" class="">두 번째 column</div>
+          <div class="order-last">세 번째 column</div>
+          <div class="order-first">첫 번째 column</div>
         </div>
       </Info>
       <p>

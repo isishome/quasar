@@ -170,8 +170,9 @@ onUnmounted(() => {
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-              <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
-                :active="section.id === activeId" :to="{ params: { sid: section.id } }">
+              <q-item clickable v-for="section in sections" :key="section.id" tag="a"
+                :inset-level="section.sub ? .3 : 0" active-class="active" :active="section.id === activeId"
+                :to="{ params: { sid: section.id } }">
                 {{ section.name }}
               </q-item>
             </q-list>
@@ -414,8 +415,7 @@ a {
   content: '';
   position: absolute;
   top: 20%;
-  /* left: 8px; */
-  margin-left: -8px;
+  left: 8px;
   width: 4px;
   height: 50%;
   background-color: var(--q-primary);
