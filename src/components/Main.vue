@@ -60,10 +60,10 @@ const sites = shallowReadonly([
       새로운
       UI 프레임워크를 찾던 분들에게 많은 도움이 되길 바랍니다.
     </p>
-    <tip>
+    <Info>
       <p class="text-caption">
         이 사이트는 vue.js v3와 quasar framework v2를 이용해 제작되었으며, 사이트 성능에 영향을 주는 외부 폰트나 불필요한 플러그인의 사용을 최소화했습니다.</p>
-    </tip>
+    </Info>
     <div class="q-pt-xl text-keep">
       <div class="text-h6 text-weight-bold">vue.js를 사용하는데 유용한 사이트와 플러그인</div>
       <div class="row justify-center items-start q-col-gutter-sm q-mt-sm">
