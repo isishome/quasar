@@ -7,7 +7,7 @@ import Link from '@/components/paragraph/Link.vue'
 import Title from '@/components/paragraph/Title.vue'
 import Move from '@/components/paragraph/Move.vue'
 import Note from '@/components/paragraph/Note.vue'
-import Tip from '@/components/paragraph/Tip.vue'
+import Info from '@/components/paragraph/Info.vue'
 
 // Import icon libraries
 import '@quasar/extras/material-icons/material-icons.css'
@@ -25,5 +25,5 @@ createApp(App).use(router).use(pinia).use(Quasar, {
   .component('Title', Title)
   .component('Move', Move)
   .component('Note', Note)
-  .component('Tip', Tip)
+  .component('Info', Info)
   .mount('#app')

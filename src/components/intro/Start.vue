@@ -15,14 +15,14 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <p class="q-pa-sm text-caption">* 시작하기 챕터에서 사용된 설치 과정은 모두 각 프레임워크 또는 플러그인의
         공식 홈페이지를
         참고하여 작성되었습니다.</p>
-      <Tip label="전제 조건" color="green-7">
+      <Info label="전제 조건" color="green-7">
         <ul>
           <li>명령줄 익히기</li>
           <li>
             <Link href="https://nodejs.org/ko/" color="green-9">Node.js</Link> 버전 15.0 이상 설치
           </li>
         </ul>
-      </Tip>
+      </Info>
     </section>
     <section id="vuejs" data-name="Vue.js 빠른 시작">
       <Title sub color="green-7">Vue.js 빠른 시작</Title>
@@ -107,7 +107,7 @@ Done. Now run:
           </Link>를 확인하세요.
         </li>
       </ul>
-      <Tip advice color="teal-4">
+      <Info advice color="teal-4">
         <p><b>Composition API와 &lt;script setup&gt;</b></p>
         <ul>
           <li><b>Composition API</b><br />Vue.js 의 옵션을 정의해서 사용(Option API)하는 데신 함수를 가져와 사용하는 방식의 API 세트로,
@@ -120,7 +120,7 @@ Done. Now run:
             &lt;script&gt; 안에 setup을 정의하고 사용할 인자들을 따로 return 하지 않아도 되므로 코드가 간결해지고, 타입 스크립트를 사용하기에 용이하며 무엇보다 성능을 향상에 큰
             도움이 됩니다. </li>
         </ul>
-      </Tip>
+      </Info>
       <p>
         앱을 배포할 준비가 되면 다음을 실행합니다:
       </p>
@@ -140,13 +140,13 @@ Done. Now run:
       <Title sub>Quasar 플러그인 설치</Title>
       <p>이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
       </p>
-      <Tip advice color="teal-4">
+      <Info advice color="teal-4">
         <ul>
           <li><em>@quasar/extra</em> 설치는 선택사항입니다. (기본적으로 설치하시는 것을 추천드립니다.)</li>
           <li><em>sass@1.32.12</em> 역시 Sass/SCSS 를 사용하는 경우에만 설치 하시면 됩니다. (저는 CSS에 익숙하므로 설치하지 않았습니다.)
           </li>
         </ul>
-      </Tip>
+      </Info>
       <Code class="q-my-lg" language="bash">
         <textarea readonly>
 &#62; cd &#60;your-project-name&#62;
@@ -158,11 +158,11 @@ Done. Now run:
     <section id="using" data-name="Quasar 설정하기">
       <Title sub>Quasar 설정하기</Title>
       <p>Quasar를 사용하기 앞서 몇가지 설정이 필요합니다.</p>
-      <Tip advice color="teal-4">
+      <Info advice color="teal-4">
         <ul>
           <li>프로젝트 폴더 안의 <em>/src/main.js</em> 과 <em>/vite.config.js</em>에 Quasar와 관련 설정 코드 수정이 필요합니다.</li>
         </ul>
-      </Tip>
+      </Info>
       <Code class="q-my-lg" language="javascript">
         <textarea readonly>
 // main.js
