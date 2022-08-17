@@ -36,6 +36,7 @@ const splitterModel = ref(100)
     .col
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col bg-red-4"&#62;
     .col
@@ -89,6 +90,7 @@ const splitterModel = ref(100)
     .col
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col bg-red-4"&#62;
     .col
@@ -145,6 +147,7 @@ const splitterModel = ref(100)
     .col-12 .col-md-2
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col bg-red-4"&#62;
     .col
@@ -210,6 +213,7 @@ const splitterModel = ref(100)
     .col
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col-8 bg-red-4"&#62;
     .col-8
@@ -246,7 +250,7 @@ const splitterModel = ref(100)
         </div>
         <div class="q-mb-md"></div>
       </Tip>
-      <Title minor>모든 중단점</Title>
+      <Title minor>수평 쌓기</Title>
       <p><code>.col-12</code>와 <code>.col-md-*</code> 클래스의 조합을 사용하여 소형 디바이스에서 쌓는 정렬로 시작해 데스크톱(중형) 디바이스에서 수평 정렬까지 기본 그리드
         시스템을 생성할 수 있습니다.</p>
       <Code language="html" class="q-mb-md">
@@ -259,6 +263,7 @@ const splitterModel = ref(100)
     .col-12 .col-md-4
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col-12 col-md bg-red-4"&#62;
     .col-12 .col-md
@@ -311,6 +316,7 @@ const splitterModel = ref(100)
     .col-6 .col-md-4
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col-6 col-md-4 bg-red-4"&#62;
     .col-6 .col-md-4
@@ -322,6 +328,7 @@ const splitterModel = ref(100)
     .col-6 .col-md-4
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row"&#62;
   &#60;div class="col-6 bg-red-4"&#62;
     .col-6
@@ -380,6 +387,7 @@ const splitterModel = ref(100)
     세 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row items-center bg-grey-4" style="height:6rem"&#62;
   &#60;div class="col bg-red-4"&#62;
     세 개의 column 중 하나
@@ -391,6 +399,7 @@ const splitterModel = ref(100)
     세 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row items-end bg-grey-4" style="height:6rem"&#62;
   &#60;div class="col bg-red-4"&#62;
     세 개의 column 중 하나
@@ -402,6 +411,7 @@ const splitterModel = ref(100)
     세 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row bg-grey-4" style="height:6rem"&#62;
   &#60;div class="col self-start bg-red-4"&#62;
     .self-start
@@ -416,7 +426,7 @@ const splitterModel = ref(100)
         </textarea>
       </Code>
       <Tip label="결과">
-        <em class="bg-blue-9 text-white">items-start</em>
+        <em>items-start</em>
         <div class="row items-start bg-grey-4" style="height:6rem">
           <div class="col bg-red-4">
             세 개의 column 중 하나
@@ -429,7 +439,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">items-center</em>
+        <em>items-center</em>
         <div class="row items-center bg-grey-4" style="height:6rem">
           <div class="col bg-red-4">
             세 개의 column 중 하나
@@ -442,7 +452,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">items-end</em>
+        <em>items-end</em>
         <div class="row items-end bg-grey-4" style="height:6rem">
           <div class="col bg-red-4">
             세 개의 column 중 하나
@@ -455,7 +465,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">self-*</em>
+        <em>self-*</em>
         <div class="row bg-grey-4" style="height:6rem">
           <div class="col self-start bg-red-4">
             .self-start
@@ -479,6 +489,7 @@ const splitterModel = ref(100)
     두 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row justify-center bg-grey-4"&#62;
   &#60;div class="col-4 bg-red-4"&#62;
     두 개의 column 중 하나
@@ -487,6 +498,7 @@ const splitterModel = ref(100)
     두 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row justify-end bg-grey-4"&#62;
   &#60;div class="col-4 bg-red-4"&#62;
     두 개의 column 중 하나
@@ -495,6 +507,7 @@ const splitterModel = ref(100)
     두 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row justify-around bg-grey-4"&#62;
   &#60;div class="col-4 bg-red-4"&#62;
     두 개의 column 중 하나
@@ -503,6 +516,7 @@ const splitterModel = ref(100)
     두 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row justify-between bg-grey-4"&#62;
   &#60;div class="col-4 bg-red-4"&#62;
     두 개의 column 중 하나
@@ -511,6 +525,7 @@ const splitterModel = ref(100)
     두 개의 column 중 하나
   &#60;/div&#62;
 &#60;/div&#62;
+
 &#60;div class="row justify-evenly bg-grey-4"&#62;
   &#60;div class="col-4 bg-red-4"&#62;
     두 개의 column 중 하나
@@ -522,7 +537,7 @@ const splitterModel = ref(100)
         </textarea>
       </Code>
       <Tip label="결과">
-        <em class="bg-blue-9 text-white">justify-start</em>
+        <em>justify-start</em>
         <div class="row justify-start bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -532,7 +547,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">justify-center</em>
+        <em>justify-center</em>
         <div class="row justify-center bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -542,7 +557,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">justify-end</em>
+        <em>justify-end</em>
         <div class="row justify-end bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -552,7 +567,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">justify-around</em>
+        <em>justify-around</em>
         <div class="row justify-around bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -562,7 +577,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">justify-between</em>
+        <em>justify-between</em>
         <div class="row justify-between bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -572,7 +587,7 @@ const splitterModel = ref(100)
           </div>
         </div>
         <div class="q-mb-md"></div>
-        <em class="bg-blue-9 text-white">justify-evenly</em>
+        <em>justify-evenly</em>
         <div class="row justify-evenly bg-grey-4">
           <div class="col-4 bg-red-4">
             두 개의 column 중 하나
@@ -591,6 +606,231 @@ const splitterModel = ref(100)
           함께 사용하세요.
         </p>
       </Note>
+      <Title minor>column 줄 바꿈</Title>
+      <p>단일 row에 column들의 너비 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-9 bg-red-4"&#62;
+    .col-9
+  &#60;/div&#62;
+  &#60;div class="col-4 bg-orange-4"&#62;
+    .col-4&#60;br /&#62;9 + 4 = 13 &#38;gt; 12이므로 이 column은 새 라인으로 줄 바꿈 됩니다.
+  &#60;/div&#62;
+  &#60;div class="col-5 bg-green-4"&#62;
+    .col-5&#60;br /&#62;뒤에 오는 column들도 앞 column과 계산되어 계속 이어집니다.
+  &#60;/div&#62;
+&#60;/div&#62;
+
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-6 col-sm-3 bg-red-4"&#62;
+    .col-6 .col-sm-3
+  &#60;/div&#62;
+  &#60;div class="col-6 col-sm-3 bg-orange-4"&#62;
+    .col-6 .col-sm-3
+  &#60;/div&#62;
+  &#60;div class="col-6 col-sm-3 bg-green-4"&#62;
+    .col-6 .col-sm-3
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <p class="text-caption">브라우저의 크기를 변경해가면서 확인해 보세요.</p>
+        <div class="row bg-grey-4">
+          <div class="col-9 bg-red-4">
+            .col-9
+          </div>
+          <div class="col-4 bg-orange-4">
+            .col-4<br />9 + 4 = 13 &gt; 12이므로 이 column은 새 라인으로 줄 바꿈 됩니다.
+          </div>
+          <div class="col-5 bg-green-4">
+            .col-5<br />뒤에 오는 column들도 앞 column과 계산되어 계속 이어집니다.
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <div class="row bg-grey-4">
+          <div class="col-6 col-sm-3 bg-red-4">
+            .col-6 .col-sm-3
+          </div>
+          <div class="col-6 col-sm-3 bg-orange-4">
+            .col-6 .col-sm-3
+          </div>
+          <div class="col-6 col-sm-3 bg-green-4">
+            .col-6 .col-sm-3
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <Title minor>재배치</Title>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row reverse"&#62;
+  &#60;div class="col bg-red-4"&#62;
+    첫 번째, 마지막으로
+  &#60;/div&#62;
+  &#60;div class="col bg-orange-4"&#62;
+    두 번째, 바뀌지 않음
+  &#60;/div&#62;
+  &#60;div class="col bg-green-4"&#62;
+    세 번째, 처음으로
+  &#60;/div&#62;
+&#60;/div&#62;
+
+&#60;div class="row"&#62;
+  &#60;div class="col order-none bg-red-4"&#62;
+    첫 번째, 재배치되지 않음(.order-none)
+  &#60;/div&#62;
+  &#60;div class="col-6 order-last bg-orange-4"&#62;
+    두번째, 마지막으로(.order-last)
+  &#60;/div&#62;
+  &#60;div class="col-6 order-first bg-green-4"&#62;
+    세 번째, 처음으로(.order_first)
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <em>역순</em>
+        <div class="row reverse">
+          <div class="col bg-red-4">
+            첫 번째, 마지막으로
+          </div>
+          <div class="col bg-orange-4">
+            두 번째, 바뀌지 않음
+          </div>
+          <div class="col bg-green-4">
+            세 번째, 처음으로
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <em>Flex 배치</em>
+        <div class="row">
+          <div class="col order-none bg-red-4">
+            첫 번째, 재배치되지 않음(.order-none)
+          </div>
+          <div class="col-6 order-last bg-orange-4">
+            두번째, 마지막으로(.order-last)
+          </div>
+          <div class="col-6 order-first bg-green-4">
+            세 번째, 처음으로(.order_first)
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <Title minor>column 오프셋</Title>
+      <p>column을 우측으로 이동시킬 때 <code>.offset-md-*</code> 클래스를 사용하세요. 이 클래스들은 column의 좌측 여백을 그 너비(*) 만큼 늘립니다. 예를 들어
+        <code>.offset-md-4</code>는
+        <code>.col-md-4</code>를 4너비만큼 이동시킵니다.
+      </p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-md-4 bg-red-4"&#62;
+    .col-md-4
+  &#60;/div&#62;
+  &#60;div class="col-md-4 offset-md-4 bg-orange-4"&#62;
+    .col-md-4 .offset-md-4
+  &#60;/div&#62;
+&#60;/div&#62;
+
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-md-3 offset-md-3 bg-red-4"&#62;
+    .col-md-3 .offset-md-3
+  &#60;/div&#62;
+  &#60;div class="col-md-3 offset-md-3 bg-orange-4"&#62;
+    .col-md-3 .offset-md-3
+  &#60;/div&#62;
+&#60;/div&#62;
+
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-md-6 offset-md-3 bg-red-4"&#62;
+    .col-md-6 .offset-md-3
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <p class="text-caption">브라우저의 크기를 변경해가면서 확인해 보세요.</p>
+        <div class="row bg-grey-4">
+          <div class="col-md-4 bg-red-4">
+            .col-md-4
+          </div>
+          <div class="col-md-4 offset-md-4 bg-orange-4">
+            .col-md-4 .offset-md-4
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <div class="row bg-grey-4">
+          <div class="col-md-3 offset-md-3 bg-red-4">
+            .col-md-3 .offset-md-3
+          </div>
+          <div class="col-md-3 offset-md-3 bg-orange-4">
+            .col-md-3 .offset-md-3
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+        <div class="row bg-grey-4">
+          <div class="col-md-6 offset-md-3 bg-red-4">
+            .col-md-6 .offset-md-3
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
+      <Title minor>중첩</Title>
+      <p>기본 grid에 콘텐츠를 중첩시키려면 기존 grid의 <code>.col-sm-*</code> 안에 새로운 grid(<code>.row</code> 및 <code>.col-sm-*</code>
+        세트)를 추가합니다. 중첩된
+        row에는 최대
+        12포인트
+        이하의 column이 포함되어야 합니다(12 포인트 column을 모두 사용할 필요는 없음). </p>
+      <Code language="html" class="q-mb-md">
+        <textarea readonly>
+&#60;div class="row bg-grey-4"&#62;
+  &#60;div class="col-sm-9 bg-red-4"&#62;
+    &#60;p&#62;1단계: .col-sm-9&#60;/p&#62;
+    &#60;div class="row bg-grey-3"&#62;
+      &#60;div class="col-8 col-sm-6 bg-orange-4"&#62;
+        2단계: .col-8 .col-sm-6
+      &#60;/div&#62;
+      &#60;div class="col-4 col-sm-6 bg-green-4"&#62;
+        3단계: .col-4 .col-sm-6
+      &#60;/div&#62;
+    &#60;/div&#62;
+  &#60;/div&#62;
+&#60;/div&#62;
+        </textarea>
+      </Code>
+      <Tip label="결과">
+        <p class="text-caption">브라우저의 크기를 변경해가면서 확인해 보세요.</p>
+        <div class="row bg-grey-4">
+          <div class="col-sm-9 bg-red-4">
+            <p>1단계: .col-sm-9</p>
+            <div class="row bg-grey-3">
+              <div class="col-8 col-sm-6 bg-orange-4">
+                2단계: .col-8 .col-sm-6
+              </div>
+              <div class="col-4 col-sm-6 bg-green-4">
+                3단계: .col-4 .col-sm-6
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="q-mb-md"></div>
+      </Tip>
     </section>
+    <section id="playground" data-name="Flex Playground">
+      <Title sub>Flex Playground</Title>
+      <p>Flex Playground를 사용하여 인터렉티브 한 Flex의 동작을 자세히 알아보세요.</p>
+      <q-btn push label="Flex Playground" icon-right="open_in_new" color="primary" type="a"
+        href="https://quasar.dev/layout/grid/flex-playground" target="_blank" rel="noopener noreferrer" />
+    </section>
+    <div class="q-py-xl"></div>
+    <q-separator class="q-mb-lg" />
+    <div>
+      <div class="row justify-between items-cetner">
+        <Move label="Flexbox 소개" prev :to="{ name: 'flexbox' }" />
+        <Move label="Grid Column 소개" next :to="{ name: 'gridcolumn' }" />
+      </div>
+    </div>
   </div>
 </template>

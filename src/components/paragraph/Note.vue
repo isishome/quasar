@@ -32,6 +32,11 @@ defineProps({
   opacity: .1;
 }
 
+.body--light .note:deep(em) {
+  background-color: var(--q-primary);
+  color: var(--q-dark-text);
+}
+
 .body--dark .inner {
   opacity: 1;
   background-color: rgba(255, 255, 255, .05) !important;

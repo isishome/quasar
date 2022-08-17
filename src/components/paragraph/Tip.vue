@@ -46,6 +46,11 @@ defineProps({
   background-color: rgb(40, 40, 40);
 }
 
+.body--light .tip:deep(em) {
+  background-color: var(--q-primary);
+  color: var(--q-dark-text);
+}
+
 .outer {
   border-radius: 8px;
   margin: 28px 0;
