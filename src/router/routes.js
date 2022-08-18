@@ -72,8 +72,7 @@ const routes = [
             name: 'gridgutter',
             component: () => import('@/components/flexgrid/GridGutter.vue'),
             meta: {
-              title: 'Grid Gutter',
-              hidden: true
+              title: 'Grid Gutter'
             }
           }
         ]

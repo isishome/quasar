@@ -165,14 +165,14 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </template>
       </Practice>
     </section>
-    <section id="default-wrap" data-name="기본 줄 바꿈" sub>
-      <Title minor>기본 줄 바꿈</Title>
-      <p>기본적으로 모든 row와 column은 내용을 줄 바꿈 합니다</p>
+    <section id="default-wrap" data-name="기본 래핑" sub>
+      <Title minor>기본 래핑</Title>
+      <p>기본적으로 모든 row와 column은 내용을 래핑 합니다</p>
       <p>
         <img src="@/assets/images/flexgrid/flexbox-wrap.svg" width="319" />
       </p>
-      <p>명시적으로 줄 바꿈을 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
-      <p>역순으로 줄 바꿈이 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
+      <p>명시적으로 래핑 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
+      <p>역순으로 래핑 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
       <q-markup-table flat bordered wrap-cells class="text-left col-12 q-mb-md" style="max-width:500px">
         <thead>
           <tr>
@@ -185,23 +185,23 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             <td>
               <code>wrap</code>
             </td>
-            <td>필요한 경우 줄 바꿈 합니다 (기본으로 활성화 되어 있으므로 따로 설정하지 않아도 됩니다)</td>
+            <td>필요한 경우 래핑 합니다 (기본으로 활성화 되어 있으므로 따로 설정하지 않아도 됩니다)</td>
           </tr>
           <tr>
             <td>
               <code>no-wrap</code>
             </td>
-            <td>필요한 경우 줄 바꿈을 해제합니다</td>
+            <td>필요한 경우 래핑을 해제합니다</td>
           </tr>
           <tr>
             <td>
               <code>reverse-wrap</code>
             </td>
-            <td>필요한 경우 역순으로 줄 바꿈 합니다.</td>
+            <td>필요한 경우 역순으로 래핑 합니다.</td>
           </tr>
         </tbody>
       </q-markup-table>
-      <p>다음은 줄 바꿈 관련 헬퍼 클래스의 예제입니다:</p>
+      <p>다음은 래핑 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
         { label: 'wrap', value: 'wrap' },
         { label: 'no-wrap', value: 'no-wrap' },
@@ -518,7 +518,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <img src="@/assets/images/flexgrid/flexbox-content-align.svg" width="319" />
       </p>
-      <p>다음은 줄 바꿈 된 아이템의 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
+      <p>다음은 래핑 된 아이템의 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
         { label: 'content-start', value: 'content-start' },
         { label: 'content-end', value: 'content-end' },
@@ -684,9 +684,9 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       </p>
       <p>셀을 오프셋하는것도 가능합니다. 예: <code>offset-4</code>는 공간의 1/3을 오프셋 합니다 (4/12 = 1/3 = 33%).</p>
     </section>
-    <section id="wrap" data-name="줄 바꿈" sub>
-      <Title minor>줄 바꿈</Title>
-      <p>줄 바꿈은 Flex CSS 클래스를 이해하는 핵심 기능입니다. 각 row를 정확히 12포인트로 사용해야 하는 것은 아닙니다. 더 적거나 더 많이 사용할 수 있습니다.</p>
+    <section id="wrap" data-name="래핑" sub>
+      <Title minor>래핑</Title>
+      <p>래핑은 Flex CSS 클래스를 이해하는 핵심 기능입니다. 각 row를 정확히 12포인트로 사용해야 하는 것은 아닙니다. 더 적거나 더 많이 사용할 수 있습니다.</p>
       <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다. "반응형 디자인" 섹션을 읽어보세요.</p>
       <Code language="html">
         <textarea readonly>
@@ -716,7 +716,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <div class="col-3">...</div>
         </div>
       </Info>
-      <Note color="grey-5">row는 기본적으로 줄 바꿈 됩니다. 이를 비활성화하려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요. </Note>
+      <Note color="grey-5">row는 기본적으로 래핑 됩니다. 이를 비활성화하려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요. </Note>
     </section>
     <section id="self-align" data-name="자체 정렬" sub>
       <Title minor>자체 정렬</Title>

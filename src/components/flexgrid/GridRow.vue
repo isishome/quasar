@@ -660,8 +660,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </p>
       </Note>
     </section>
-    <section id="wrap" data-name="column 줄 바꿈" sub>
-      <Title minor>column 줄 바꿈</Title>
+    <section id="wrap" data-name="column 래핑" sub>
+      <Title minor>column 래핑</Title>
       <p>단일 row에 column들의 너비 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
       <Code language="html" class="q-mb-md">
         <textarea readonly>

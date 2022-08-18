@@ -18,8 +18,13 @@ defineProps({
 <style scoped>
 .note {
   position: relative;
-  margin: 22px 0;
+  margin: 16px 0 22px 0;
   padding: 16px 24px;
+}
+
+.note:deep(p) {
+  padding-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .inner {
