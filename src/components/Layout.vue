@@ -100,7 +100,7 @@ onUnmounted(() => {
         <q-btn v-if="screen.lt.lg && sections.length > 0" dense flat icon="assignment" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
-    <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile">
+    <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside">
         <template v-for="r in routes" :key="r.name">
           <q-list v-if="r.path !== '/' && r.children.length > 0 && !r.meta.hidden" dense class="full-width q-mb-sm">
@@ -116,12 +116,14 @@ onUnmounted(() => {
         </template>
       </div>
     </q-drawer>
-    <q-drawer v-if="screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right" behavior="mobile">
+    <q-drawer v-if="screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right" behavior="mobile"
+      no-swipe-open no-swipe-close>
       <div class="aside right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-          <q-item clickable v-for="section in sections" :key="section.id" tag="a" active-class="active"
-            :active="section.id === activeId" @click="rightDrawerOpen = false" :to="{ params: { sid: section.id } }">
+          <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .3 : 0"
+            active-class="active" :active="section.id === activeId" @click="rightDrawerOpen = false"
+            :to="{ params: { sid: section.id } }">
             {{ section.name }}
           </q-item>
         </q-list>
