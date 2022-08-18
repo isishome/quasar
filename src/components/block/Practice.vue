@@ -28,6 +28,7 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
   margin-bottom: 2rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
   border-radius: 8px;
+  padding: 10px;
 }
 
 .body--dark .practice {
@@ -59,11 +60,6 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
   .practice:deep(.pre-wrap) {
     margin-left: 0 !important;
     margin-right: 0 !important;
-  }
-
-  .practice:deep(.outer) {
-    margin-left: 16px;
-    margin-right: 16px;
   }
 }
 
