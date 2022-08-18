@@ -10,18 +10,19 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <Link :to="{ name: 'flexbox' }">Flexbox 소개</Link>에서 배운 Gutters에 대해 더 자세히 알아보도록 하겠습니다.
       </p>
-      <p>Gutter Quasar CSS 클래스는 요소(특히 Grid Row)를 서로 동일한 거리로 쉽게 배치할 수 있는 방법을 제공합니다.</p>
+      <p>Quasar Gutter CSS 클래스는 요소(특히 Grid Row)를 서로 동일한 간격으로 쉽게 배치할 수 있는 방법을 제공합니다.</p>
     </section>
     <section id="types" data-name="유형">
       <Title sub>유형</Title>
-      <p>사용 사례에 따라 <code>q-gutter-{size}</code> 와 <code>q-col-gutter-{size}</code>의 두 가지 주요 gutter 유형이 있습니다. 첫 번째는 서로
-        거리를
+      <p>사용 사례에 따라 <code>q-gutter-{size}</code>와 <code>q-col-gutter-{size}</code>의 두 가지의 주요 gutter 유형이 있습니다. 첫 번째는 서로
+        간격을
         두려는 요소가 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스를 사용하지 않을 때, 두 번째는 <code>col-*</code> 또는
         <code>offset-*</code> 클래스를 사용할 때 각각 사용됩니다.
       </p>
       <Note color="green-13">
         <p><strong>팁</strong></p>
-        <p>접미사(<em>-none</em>,<em>-xs</em>,<em>-sm</em>,<em>-md</em>,<em>-lg</em>,<em>-xl</em>)는 디바이스 화면 너비가 아닌 요소 사의 간격
+        <p>접미사(<em>-none</em>,<em>-xs</em>,<em>-sm</em>,<em>-md</em>,<em>-lg</em>,<em>-xl</em>)는 디바이스 화면 너비가 아닌 요소 사이의
+          간격
           너비를 나타냅니다.
         </p>
       </Note>
@@ -34,10 +35,10 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <code>q-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는 +마진</strong>을
           적용합니다. gutter의
           css가 깨지지 않도록 다른 간격
-          클래스와 함께 동작할 때 이점을 고려하세요.
+          클래스와 함께 동작할 때 이점에 유의하세요.
         </p>
       </Note>
-      <p>이 클래스는 직계 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 없을 때 사용됩니다.</p>
+      <p>이 클래스는 인접한 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 없을 때 사용됩니다.</p>
       <Practice class="practice" :options="[
         { label: 'q-gutter-xs', value: 'q-gutter-xs' },
         { label: 'q-gutter-sm', value: 'q-gutter-sm' },
@@ -116,7 +117,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
-      <p>위 예제에 포함되지 않은 <code>q-gutter-none</code> 클래스(gutter가 사용되지 않은 것과 동일)도 있습니다.</p>
+      <p>위 예제에 포함되지 않은 <code>q-gutter-none</code> 클래스(gutter를 사용하지 않은 것과 동일)도 있습니다.</p>
       <Practice class="practice" :options="[
         { label: '수평에만 적용되는 q-gutter', value: 'horizontal' },
         { label: '수직에만 적용되는 q-gutter', value: 'vertical' },
@@ -175,10 +176,10 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             +패딩</strong>을
           적용합니다. gutter의
           css가 깨지지 않도록 다른 간격
-          클래스와 함께 동작할 때 이점을 고려하세요.
+          클래스와 함께 동작할 때 이점에 유의하세요.
         </p>
       </Note>
-      <p>이 클래스는 직계 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 있을 때 사용됩니다.</p>
+      <p>이 클래스는 인접한 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 있을 때 사용됩니다.</p>
       <Practice class="practice" :options="[
         { label: 'q-col-gutter-none', value: 'q-col-gutter-none' },
         { label: 'q-col-gutter-xs', value: 'q-col-gutter-xs' },
@@ -488,7 +489,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 
   &#60;q-separator class="q-my-md" /&#62;
 
-  &#60;p&#62;.q-gutter 및 .col-6 너비의 자식 요소 - 2 .col-6 합은 &#60;strong&#62;100%를 초과&#60;/strong&#62;&#60;/p&#62;
+  &#60;p&#62;.q-gutter 및 .col-6 너비의 자식 요소 .col-6 합은 &#60;strong&#62;100%를 초과&#60;/strong&#62;&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4"&#62;
       &#60;div class="row q-gutter-lg"&#62;
@@ -501,7 +502,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 
   &#60;q-separator class="q-my-md" /&#62;
 
-  &#60;p&#62;.q-gutter 및 .col-6 너비의 자식 요소 - 2 .col-6 합은 &#60;strong&#62;100%&#60;/strong&#62;&#60;/p&#62;
+  &#60;p&#62;.q-gutter 및 .col-6 너비의 자식 요소 .col-6 합은 &#60;strong&#62;100%&#60;/strong&#62;&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4 q-mt-lg"&#62;
       &#60;div class="row q-col-gutter-lg"&#62;
@@ -538,7 +539,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             </div>
           </div>
           <q-separator class="q-my-md" />
-          <p>.q-gutter 및 .col-6 너비의 자식 요소 - 2 .col-6 합은 <strong>100%를 초과</strong></p>
+          <p>.q-gutter 및 .col-6 너비의 자식 요소 .col-6 합은 <strong>100%를 초과</strong></p>
           <div class="row">
             <div class="col bg-red-4">
               <div class="row q-gutter-lg">
@@ -549,7 +550,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             </div>
           </div>
           <q-separator class="q-my-md" />
-          <p>.q-gutter 및 .col-6 너비의 자식 요소 - 2 .col-6 합은 <strong>100%</strong></p>
+          <p>.q-gutter 및 .col-6 너비의 자식 요소 .col-6 합은 <strong>100%</strong></p>
           <div class="row">
             <div class="col bg-red-4 q-mt-lg">
               <div class="row q-col-gutter-lg">
@@ -573,7 +574,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Code language="html">
             <textarea readonly>
 &#60;div class="q-px-xl q-py-md"&#62;
-  &#60;p&#62;.q-col-gutter 및 스타일 적용된 자식 요소&#60;/p&#62;
+  &#60;p&#62;.q-col-gutter와 스타일 적용된 자식 요소&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4 q-mt-lg"&#62;
       &#60;div class="row q-col-gutter-lg"&#62;
@@ -587,7 +588,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 
   &#60;q-separator class="q-my-md" /&#62;
 
-  &#60;p&#62;.q-col-gutter 및 스타일 적용된 자식 요소의 내부 요소&#60;/p&#62;
+  &#60;p&#62;.q-col-gutter와 자식 요소 안의 스타일 적용된 요소&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4"&#62;
       &#60;div class="row q-col-gutter-lg"&#62;
@@ -602,7 +603,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 
   &#60;q-separator class="q-my-md" /&#62;
 
-  &#60;p&#62;.q-col-gutter 및 스타일 적용된 QBtn&#60;/p&#62;
+  &#60;p&#62;.q-col-gutter와 QBtn 자식 요소&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4 q-mt-lg"&#62;
       &#60;div class="row q-col-gutter-lg"&#62;
@@ -612,8 +613,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
   &#60;/div&#62;
 
   &#60;q-separator class="q-my-md" /&#62;
-
-  &#60;p&#62;.q-col-gutter 및 스타일 적용된 QBtn의 내부 요소&#60;/p&#62;
+  
+  &#60;p&#62;.q-col-gutter와 자식 요소 안의 QBtn&#60;/p&#62;
   &#60;div class="row"&#62;
     &#60;div class="col bg-red-4"&#62;
       &#60;div class="row q-col-gutter-lg"&#62;
@@ -628,7 +629,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Code>
       <Info label="결과">
         <div class="q-px-xl q-py-md">
-          <p>.q-col-gutter 및 스타일 적용된 자식 요소</p>
+          <p>.q-col-gutter와 스타일 적용된 자식 요소</p>
           <div class="row">
             <div class="col bg-red-4 q-mt-lg">
               <div class="row q-col-gutter-lg">
@@ -640,7 +641,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             </div>
           </div>
           <q-separator class="q-my-md" />
-          <p>.q-col-gutter 및 스타일 적용된 자식 요소의 내부 요소</p>
+          <p>.q-col-gutter와 자식 요소 안의 스타일 적용된 요소</p>
           <div class="row">
             <div class="col bg-red-4">
               <div class="row q-col-gutter-lg">
@@ -653,7 +654,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             </div>
           </div>
           <q-separator class="q-my-md" />
-          <p>.q-col-gutter 및 스타일 적용된 QBtn</p>
+          <p>.q-col-gutter와 QBtn 자식 요소</p>
           <div class="row">
             <div class="col bg-red-4 q-mt-lg">
               <div class="row q-col-gutter-lg">
@@ -662,7 +663,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
             </div>
           </div>
           <q-separator class="q-my-md" />
-          <p>.q-col-gutter 및 스타일 적용된 QBtn의 내부 요소</p>
+          <p>.q-col-gutter와 자식 요소 안의 QBtn</p>
           <div class="row">
             <div class="col bg-red-4">
               <div class="row q-col-gutter-lg">
