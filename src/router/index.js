@@ -1,4 +1,3 @@
-import { nextTick } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 import { useStore } from '@/store'
@@ -39,24 +38,27 @@ router.beforeEach((to) => {
     oldOgTitle.replaceWith(ogTitle)
 })
 
-router.afterEach(async () => {
-  await nextTick()
-  const sections = document.querySelectorAll('section[id]')
-  const store = useStore()
-  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, sub: s.hasAttribute('sub') })))
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        store.setTop(entry.target.id, entry.target.offsetTop + store.offset)
+router.afterEach(() => {
+  setTimeout(() => {
+    const sections = document.querySelectorAll('section[id]')
+    const store = useStore()
+    store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, sub: s.hasAttribute('sub') })))
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        store.setTop(entry.target.id, entry.isIntersecting ? entry.target.offsetTop + store.offset : 0)
 
-        const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
-        const filter = store.sections.filter(s => s.top > 0)
-        if (filter.length > 0)
-          store.setActive(filter.reduce((prev, current) => (Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop)) ? prev : current).id)
-      }
+        if (entry.isIntersecting) {
+          const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
+          const filter = store.sections.filter(s => s.top > 0)
+          if (filter.length > 0)
+            store.setActive(filter.reduce((prev, current) => (Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop)) ? prev : current).id)
+        }
+        else if (entry.target.id === store.active)
+          store.setActive(null)
+      })
+    }, {
+      threshold: Array.from(Array(10), (_, x) => x * 0.1)
     })
-  }, {
-    threshold: Array.from(Array(10), (_, x) => x * 0.1)
-  })
-  sections.forEach(section => io.observe(section))
+    sections.forEach(section => io.observe(section))
+  }, 100)
 })

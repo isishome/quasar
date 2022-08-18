@@ -10,7 +10,7 @@ const props = defineProps({
 const tab = ref(props.options.length > 0 ? props.options[0].value : '')
 </script>
 <template>
-  <div>
+  <div class="practice">
     <q-option-group v-model="tab" inline size="xs" :options="options">
       <template #label="opt">
         {{ opt.label }}
@@ -24,27 +24,44 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
   </div>
 </template>
 <style scoped>
+.practice {
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+  border-radius: 8px;
+}
+
+.body--dark .practice {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .1);
+}
+
 .q-tab-panels {
   background-color: transparent;
 }
 
 .q-tab-panel {
   padding: 0;
+  margin: 0 !important;
   overflow: hidden;
 }
 
-@media (max-width: 480px) {
-  .q-tab-panels {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
+.practice:deep(.info) {
+  background-color: transparent !important;
+  padding: 0;
+}
 
-  .q-tab-panels:deep(.pre-wrap) {
+.practice:deep(.outer) {
+  margin-top: 10px;
+  margin-bottom: 0;
+  background-color: transparent !important;
+}
+
+@media (max-width: 480px) {
+  .practice:deep(.pre-wrap) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
-  .q-tab-panel:deep(.outer) {
+  .practice:deep(.outer) {
     margin-left: 16px;
     margin-right: 16px;
   }
