@@ -27,19 +27,18 @@ defineProps({
 })
 </script>
 <template>
-  <div v-if="head" class="text-h3 text-weight-bold q-py-lg" :class="`text-${color}`">
+  <div v-if="head" class="text-h3 text-weight-bold q-mb-xl" :class="`text-${color}`">
     <slot></slot>
   </div>
   <template v-else-if="sub">
-    <div class="text-h4 text-weight-bold q-mt-xl q-pt-lg" :class="`text-${color}`">
+    <div class="sub text-h4 text-weight-bold q-mt-xl q-mb-lg q-py-sm" :class="`text-${color}`">
       <slot></slot>
     </div>
-    <q-separator class="q-mb-md" />
   </template>
-  <p v-else-if="minor" class="q-mt-lg q-pt-lg text-h5" :class="`text-${color}`">
+  <p v-else-if="minor" class="q-mt-xl q-mb-lg q-py-sm text-h5" :class="`text-${color}`">
     <slot></slot>
   </p>
-  <div v-else-if="arrow" class="text-h6 q-mt-lg q-py-sm row items-center q-gutter-x-xs no-wrap"
+  <div v-else-if="arrow" class="text-h6 q-mt-md q-mb-sm q-py-sm row items-center q-gutter-x-xs no-wrap"
     :class="`text-${color}`">
     <q-icon name="keyboard_double_arrow_right" />
     <div>
@@ -51,3 +50,8 @@ defineProps({
     <slot></slot>
   </div>
 </template>
+<style scoped>
+.sub {
+  border-bottom: solid 1px #dddddd;
+}
+</style>

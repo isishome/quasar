@@ -20,6 +20,11 @@ export const useStore = defineStore('main', {
       if (findSection)
         findSection.top = top
     },
+    setIntersecting(id, intersecting) {
+      const findSection = this.sections.find(s => s.id === id)
+      if (findSection)
+        findSection.intersecting = intersecting
+    },
     setActive(id) {
       this.active = id
     },
