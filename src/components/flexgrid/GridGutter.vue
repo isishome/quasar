@@ -687,6 +687,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <div>
       <div class="row justify-between items-cetner">
         <Move label="Grid Column 소개" prev :to="{ name: 'gridcolumn' }" />
+        <Move label="$q 객체" next :to="{ name: 'qobject' }" />
       </div>
     </div>
   </div>

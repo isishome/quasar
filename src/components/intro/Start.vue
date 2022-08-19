@@ -168,7 +168,7 @@ Done. Now run:
 // main.js
 
 import { createApp } from 'vue'
-import { Quasar }  from "quasar"
+{{ 'import { Quasar } from \'quasar\'' }}
 import App from './App.vue'
 
 // Import icon libraries
@@ -221,7 +221,7 @@ export default defineConfig({
     <div>
       <div class="row justify-between items-cetner">
         <Move label="왜 Quasar인가?" prev :to="{ name: 'why' }" />
-        <Move label="$q 객체" next :to="{ name: 'qobject' }" />
+        <Move label="Flexbox 소개" next :to="{ name: 'flexbox' }" />
       </div>
     </div>
   </div>

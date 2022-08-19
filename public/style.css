@@ -125,6 +125,6 @@ code:not([class]) {
   text-decoration: dashed;
   white-space: nowrap;
   font-size: 12px;
-  text-shadow: 1px 0 currentColor;
+  font-family: inherit;
   letter-spacing: 1px;
 }

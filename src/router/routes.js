@@ -37,46 +37,6 @@ const routes = [
           }
         ]
       }, {
-        path: 'opthelper',
-        component: () => import('@/components/Blank.vue'),
-        meta: {
-          title: '옵션 및 헬퍼'
-        },
-        children: [
-          {
-            path: 'qobject',
-            name: 'qobject',
-            component: () => import('@/components/opthelper/QObject.vue'),
-            meta: {
-              title: '$q 객체'
-            }
-          },
-          {
-            path: 'platform',
-            name: 'platform',
-            component: () => import('@/components/opthelper/Platform.vue'),
-            meta: {
-              title: '플랫폼 감지'
-            }
-          },
-          {
-            path: 'screen',
-            name: 'screen',
-            component: () => import('@/components/opthelper/Screen.vue'),
-            meta: {
-              title: '스크린 플러그인'
-            }
-          },
-          {
-            path: 'transition',
-            name: 'transition',
-            component: () => import('@/components/opthelper/Transition.vue'),
-            meta: {
-              title: 'Transitions'
-            }
-          }
-        ]
-      }, {
         path: 'flexgrid',
         component: () => import('@/components/Blank.vue'),
         meta: {
@@ -113,6 +73,46 @@ const routes = [
             component: () => import('@/components/flexgrid/GridGutter.vue'),
             meta: {
               title: 'Grid Gutter'
+            }
+          }
+        ]
+      }, {
+        path: 'opthelper',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '옵션 및 헬퍼'
+        },
+        children: [
+          {
+            path: 'qobject',
+            name: 'qobject',
+            component: () => import('@/components/opthelper/QObject.vue'),
+            meta: {
+              title: '$q 객체'
+            }
+          },
+          {
+            path: 'platform',
+            name: 'platform',
+            component: () => import('@/components/opthelper/Platform.vue'),
+            meta: {
+              title: '플랫폼 감지'
+            }
+          },
+          {
+            path: 'screen',
+            name: 'screen',
+            component: () => import('@/components/opthelper/Screen.vue'),
+            meta: {
+              title: '스크린 플러그인'
+            }
+          },
+          {
+            path: 'transition',
+            name: 'transition',
+            component: () => import('@/components/opthelper/Transition.vue'),
+            meta: {
+              title: 'Transitions'
             }
           }
         ]

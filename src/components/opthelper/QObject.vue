@@ -17,20 +17,22 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
             디바이스 너비에 따라 다른 화면 구성을 표시하고 싶을 때
           </li>
           <li>
-            쿠키 관리 플러그인을 사용할 때
+            각종 Quasar 제공 플러그인을 사용할 때
           </li>
           <li>
-            알림 플러그인을 사용할 때
+            각종 Quasar 제공 유틸을 사용할 때
           </li>
         </ul>
       </Info>
-      <p class="q-pa-sm text-caption text-center">* Sera's Quasar에서는 <strong>Composition API</strong>와
-        <code>&lt;script setup&gt;</code>
-        이용한 사용방법만 소개하고 있습니다.
-        <br />Option API 사용법은
-        <Link href="https://quasar.dev/options/the-q-object">Quasar 공식
-        홈페이지</Link>를 참고하세요.
-      </p>
+      <Info class="text-caption">
+        <p>* Sera's Quasar에서는 <strong>Composition API</strong>와
+          <code>&lt;script setup&gt;</code>
+          이용한 사용방법만 소개하고 있습니다.
+          <br />Option API 사용법은
+          <Link href="https://quasar.dev/options/the-q-object">Quasar 공식
+          홈페이지</Link>를 참고하세요.
+        </p>
+      </Info>
       <q-markup-table flat bordered wrap-cells class="text-left">
         <thead>
           <tr>
@@ -110,7 +112,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 &#60;/template&#62;
 
 &#60;script setup&#62;
-import &#123; useQuasar &#125; from 'quasar'
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -128,7 +130,7 @@ function show () &#123;
       <Title minor>.vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-import &#123; Quasar &#125; from 'quasar'
+{{ 'import { Quasar } from \'quasar\'' }}
 
 console.log(Quasar.platform.is.ios)
         </textarea>
@@ -138,7 +140,7 @@ console.log(Quasar.platform.is.ios)
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
-        <Move label="시작하기" prev :to="{ name: 'start' }" />
+        <Move label="Grid Gutter 소개" prev :to="{ name: 'gridgutter' }" />
         <Move label="플랫폼 감지" next :to="{ name: 'platform' }" />
       </div>
     </div>

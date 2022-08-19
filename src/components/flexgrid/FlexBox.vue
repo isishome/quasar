@@ -49,54 +49,52 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>
         <img src="@/assets/images/flexgrid/flexbox-direction.svg" width="319" />
       </p>
-      <div class="row q-mb-lg">
-        <q-markup-table flat bordered wrap-cells class="text-left col-12" style="max-width:500px">
-          <thead>
-            <tr>
-              <th>클래스 명</th>
-              <th>설명</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>row</code>
-              </td>
-              <td>아이템(자식 요소)을 수평 방향으로 배치한다</td>
-            </tr>
-            <tr>
-              <td>
-                <code>row inline</code>
-              </td>
-              <td>아이템(자식 요소)을 수평 방향으로 인라인 배치한다</td>
-            </tr>
-            <tr>
-              <td>
-                <code>column</code>
-              </td>
-              <td>아이템(자식 요소)을 수직 방향으로 배치한다</td>
-            </tr>
-            <tr>
-              <td>
-                <code>column inline</code>
-              </td>
-              <td>아이템(자식 요소)을 수직 방향으로 인라인 배치한다</td>
-            </tr>
-            <tr>
-              <td>
-                <code>row reverse</code>
-              </td>
-              <td>아이템(자식 요소)을 수평 역방향으로 배치한다</td>
-            </tr>
-            <tr>
-              <td>
-                <code>column reverse</code>
-              </td>
-              <td>아이템(자식 요소)을 수직 역방향으로 배치한다</td>
-            </tr>
-          </tbody>
-        </q-markup-table>
-      </div>
+      <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
+        <thead>
+          <tr>
+            <th>클래스 명</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>row</code>
+            </td>
+            <td>아이템(자식 요소)을 수평 방향으로 배치합니다</td>
+          </tr>
+          <tr>
+            <td>
+              <code>row inline</code>
+            </td>
+            <td>아이템(자식 요소)을 수평 방향으로 인라인 배치합니다</td>
+          </tr>
+          <tr>
+            <td>
+              <code>column</code>
+            </td>
+            <td>아이템(자식 요소)을 수직 방향으로 배치합니다</td>
+          </tr>
+          <tr>
+            <td>
+              <code>column inline</code>
+            </td>
+            <td>아이템(자식 요소)을 수직 방향으로 인라인 배치합니다</td>
+          </tr>
+          <tr>
+            <td>
+              <code>row reverse</code>
+            </td>
+            <td>아이템(자식 요소)을 수평 역방향으로 배치합니다</td>
+          </tr>
+          <tr>
+            <td>
+              <code>column reverse</code>
+            </td>
+            <td>아이템(자식 요소)을 수직 역방향으로 배치합니다</td>
+          </tr>
+        </tbody>
+      </q-markup-table>
       <p><em>inline</em>클래스는 아이템(자식 요소)에 영향을 주는 것이 아닌 컨테이너(부모)에게 영향을 주는 요소로 CSS <b>display</b> 속성에서
         사용하는 <em>inline</em>값과 동일한 효과를 준다고 생각하면 됩니다.
       </p>
@@ -173,7 +171,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       </p>
       <p>명시적으로 래핑 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
       <p>역순으로 래핑 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
-      <q-markup-table flat bordered wrap-cells class="text-left col-12 q-mb-md" style="max-width:500px">
+      <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
         <thead>
           <tr>
             <th>클래스 명</th>
@@ -799,7 +797,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <code>col-*</code>, <code>offset-*</code> 및 <code>col-auto</code> 헬퍼 클래스 중간에 삽입할 수 있는 몇 가지 토큰에 대해 알아보겠습니다.(토큰은
         아래 표 참조)
       </p>
-      <q-markup-table flat bordered wrap-cells class="text-left col-12 q-mb-md" style="max-width:500px">
+      <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
         <thead>
           <tr>
             <th>토큰</th>
@@ -954,7 +952,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
-        <Move label="Transitions" prev :to="{ name: 'transition' }" />
+        <Move label="시작하기" prev :to="{ name: 'start' }" />
         <Move label="Grid Row 소개" next :to="{ name: 'gridrow' }" />
       </div>
     </div>
