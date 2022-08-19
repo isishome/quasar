@@ -303,7 +303,7 @@ a {
 
 @media (max-width:640px) {
   .page {
-    padding: 0;
+    padding: 32px 0;
   }
 }
 
