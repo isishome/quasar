@@ -954,7 +954,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
-        <Move label="시작하기" prev :to="{ name: 'start' }" />
+        <Move label="Transitions" prev :to="{ name: 'transition' }" />
         <Move label="Grid Row 소개" next :to="{ name: 'gridrow' }" />
       </div>
     </div>

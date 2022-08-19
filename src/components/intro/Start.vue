@@ -26,7 +26,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="vuejs" data-name="Vue.js 빠른 시작">
       <Title sub color="green-7">Vue.js 빠른 시작</Title>
-      <Code class="q-my-lg" language="bash">
+      <Code class="q-mb-lg" language="bash">
         <textarea readonly>
           &gt; npm init vue@latest
         </textarea>
@@ -38,7 +38,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         선택적
         기능에 사용 여부가 표시됩니다:
       </p>
-      <Code class="q-my-lg" language="bash">
+      <Code class="q-mb-lg" language="bash">
         <textarea readonly>
 Need to install the following packages:
   create-vue@latest
@@ -69,7 +69,7 @@ Done. Now run:
       <p>
         옵션에 대해 잘 모르는 경우 엔터키를 눌러 <em>No(아니오)</em>를 선택하세요. 프로젝트가 생성되면 안내에 따라 의존성 모듈들을 설치하고 개발 서버를 시작합니다:
       </p>
-      <Code class="q-my-lg" language="bash">
+      <Code class="q-mb-lg" language="bash">
         <textarea readonly>
 &#62; cd &#60;your-project-name&#62;
 &#62; npm install
@@ -124,7 +124,7 @@ Done. Now run:
       <p>
         앱을 배포할 준비가 되면 다음을 실행합니다:
       </p>
-      <Code class="q-my-lg" language="bash">
+      <Code class="q-mb-lg" language="bash">
         <textarea readonly>
 &#62; npm run build
         </textarea>
@@ -147,7 +147,7 @@ Done. Now run:
           </li>
         </ul>
       </Info>
-      <Code class="q-my-lg" language="bash">
+      <Code class="q-mb-lg" language="bash">
         <textarea readonly>
 &#62; cd &#60;your-project-name&#62;
 &#62; npm install quasar @quasar/extras
@@ -163,17 +163,16 @@ Done. Now run:
           <li>프로젝트 폴더 안의 <em>/src/main.js</em> 과 <em>/vite.config.js</em>에 Quasar와 관련 설정 코드 수정이 필요합니다.</li>
         </ul>
       </Info>
-      <Code class="q-my-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // main.js
 
 import { createApp } from 'vue'
-import { Quasar } from 'quasar'
+import { Quasar }  from "quasar"
 import App from './App.vue'
 
 // Import icon libraries
 import '@quasar/extras/material-icons/material-icons.css'
-import '@quasar/extras/material-icons-round/material-icons-round.css'
 
 // Import Quasar css
 import 'quasar/dist/quasar.css'
@@ -183,7 +182,7 @@ createApp(App).use(Quasar, {
 }).mount('#app')
         </textarea>
       </Code>
-      <Code class="q-my-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // vite.config.js
 
@@ -222,7 +221,7 @@ export default defineConfig({
     <div>
       <div class="row justify-between items-cetner">
         <Move label="왜 Quasar인가?" prev :to="{ name: 'why' }" />
-        <Move label="Flexbox 소개" next :to="{ name: 'flexbox' }" />
+        <Move label="$q 객체" next :to="{ name: 'qobject' }" />
       </div>
     </div>
   </div>

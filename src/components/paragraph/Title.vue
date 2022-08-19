@@ -35,7 +35,7 @@ defineProps({
       <slot></slot>
     </div>
   </template>
-  <p v-else-if="minor" class="q-mt-xl q-mb-lg q-py-sm text-h5" :class="`text-${color}`">
+  <p v-else-if="minor" class="q-mt-xl q-mb-sm q-py-sm text-h5" :class="`text-${color}`">
     <slot></slot>
   </p>
   <div v-else-if="arrow" class="text-h6 q-mt-md q-mb-sm q-py-sm row items-center q-gutter-x-xs no-wrap"
