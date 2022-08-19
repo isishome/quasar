@@ -31,7 +31,7 @@ defineProps({
     <slot></slot>
   </div>
   <template v-else-if="sub">
-    <div class="sub text-h4 text-weight-bold q-mt-xl q-mb-lg q-py-sm" :class="`text-${color}`">
+    <div class="sub text-h4 text-weight-bold q-py-sm" :class="`text-${color}`">
       <slot></slot>
     </div>
   </template>
@@ -52,6 +52,7 @@ defineProps({
 </template>
 <style scoped>
 .sub {
+  margin: 4rem 0 1.5rem;
   border-bottom: solid 1px #dddddd;
 }
 </style>
