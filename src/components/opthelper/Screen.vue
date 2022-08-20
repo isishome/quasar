@@ -99,6 +99,8 @@ body.screen--sm &#123;
 &#125;
         </textarea>
       </Code>
+    </section>
+    <section id="enable-body" data-name="Body 클래스 활성화" sub>
       <Title minor>Body 클래스를 활성화하는 방법</Title>
       <p>위 동작을 활성화하기 위해 /src/main.js 파일을 다음과 같이 편집하세요. 이 설정으로 '첫 번째 의미 있는 페인트'(FMP) 시간이 약간 증가한다는 점에 유의하세요.</p>
       <Info class="text-caption" color="transparent">

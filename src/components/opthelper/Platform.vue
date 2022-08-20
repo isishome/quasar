@@ -99,6 +99,8 @@ $q.platform.is.cordova
 &#60;/div&#62;
         </textarea>
       </Code>
+    </section>
+    <section id="users-device" data-name="사용자의 디바이스" sub>
       <Title minor>사용자의 디바이스</Title>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>

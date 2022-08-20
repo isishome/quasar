@@ -100,6 +100,8 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <p>
         이번 섹션에서는 .vue 파일 및 외부에서 사용하는 방법에 대해 설명합니다.(Composition API)
       </p>
+    </section>
+    <section id="usage-vue" data-name=".vue 안에서 사용하기" sub>
       <Title minor>.vue 파일에서 사용하기</Title>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
@@ -127,6 +129,8 @@ function show () &#123;
 &#60;/script&#62;
         </textarea>
       </Code>
+    </section>
+    <section id="usage-outside" data-name=".vue 밖에서 사용하기" sub>
       <Title minor>.vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
