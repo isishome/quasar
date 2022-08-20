@@ -7,12 +7,14 @@ defineProps({
 })
 </script>
 <template>
-  <div class="note">
-    <div class="box" :class="`bg-${color}`"></div>
-    <div class="box right" :class="`bg-${color}`"></div>
-    <div class="inner" :class="`bg-${color}`"></div>
-    <slot>
-    </slot>
+  <div>
+    <div class="note">
+      <div class="box" :class="`bg-${color}`"></div>
+      <div class="box right" :class="`bg-${color}`"></div>
+      <div class="inner" :class="`bg-${color}`"></div>
+      <slot>
+      </slot>
+    </div>
   </div>
 </template>
 <style scoped>

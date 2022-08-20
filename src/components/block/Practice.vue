@@ -11,9 +11,9 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
 </script>
 <template>
   <div class="practice">
-    <q-option-group v-model="tab" inline size="xs" :options="options">
+    <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm">
       <template #label="opt">
-        {{ opt.label }}
+        <div class="col-12"><code>{{ opt.label }}</code></div>
       </template>
     </q-option-group>
     <q-tab-panels v-model="tab">

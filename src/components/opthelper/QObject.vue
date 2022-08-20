@@ -11,7 +11,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         Quasar는 다양한 용도로 사용할 수 있는 <code>$q</code> 객체를 제공합니다. 문서를 통해 확인할 수 있습니다.
       </p>
       <Info advice color="teal-4">
-        <p>Quasar $q 객체는 사이트를 구축할 때 다양한 곳에서 유용하게 사용됩니다.</p>
+        <p><b>Quasar $q 객체는 웹사이트나 앱을 개발할 때 다양한 곳에 유용하게 사용됩니다.</b></p>
         <ul>
           <li>
             디바이스 너비에 따라 다른 화면 구성을 표시하고 싶을 때
@@ -24,10 +24,10 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
           </li>
         </ul>
       </Info>
-      <Info class="text-caption">
+      <Info class="text-caption" color="transparent">
         <p>* Sera's Quasar에서는 <strong>Composition API</strong>와
-          <code>&lt;script setup&gt;</code>
-          이용한 사용방법만 소개하고 있습니다.
+          <code>&lt;script setup&gt;</code>을
+          이용한 사용법만 소개하고 있습니다.
           <br />Option API 사용법은
           <Link href="https://quasar.dev/options/the-q-object">Quasar 공식
           홈페이지</Link>를 참고하세요.

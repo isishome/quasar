@@ -21,7 +21,7 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
           요소나 컴포넌트를 렌더링 할 것이므로 앱의 성능을 어떻게 처리할지 현명한 선택이 필요합니다.
         </p>
       </Note>
-      <Info class="text-caption">
+      <Info class="text-caption" color="transparent">
         <p>* Sera's Quasar에서는 <strong>Composition API</strong>와
           <code>&lt;script setup&gt;</code>
           이용한 사용방법만 소개하고 있습니다.

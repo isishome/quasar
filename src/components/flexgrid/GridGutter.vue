@@ -35,11 +35,11 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           <code>q-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는 +마진</strong>을
           적용합니다. gutter의
           css가 깨지지 않도록 다른 간격
-          클래스와 함께 동작할 때 이점에 유의하세요.
+          클래스와 함께 사용할 때 이점에 유의하세요.
         </p>
       </Note>
       <p>이 클래스는 인접한 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 없을 때 사용됩니다.</p>
-      <Practice class="practice" :options="[
+      <Practice :options="[
         { label: 'q-gutter-xs', value: 'q-gutter-xs' },
         { label: 'q-gutter-sm', value: 'q-gutter-sm' },
         { label: 'q-gutter-md', value: 'q-gutter-md' },
@@ -118,7 +118,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </template>
       </Practice>
       <p>위 예제에 포함되지 않은 <code>q-gutter-none</code> 클래스(gutter를 사용하지 않은 것과 동일)도 있습니다.</p>
-      <Practice class="practice" :options="[
+      <Practice :options="[
         { label: '수평에만 적용되는 q-gutter', value: 'horizontal' },
         { label: '수직에만 적용되는 q-gutter', value: 'vertical' },
         { label: '수평, 수직이 혼합된 q-gutter', value: 'mixed' }
@@ -180,7 +180,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </p>
       </Note>
       <p>이 클래스는 인접한 자식 요소에 너비를 지정하는 <code>col-*</code> 또는 <code>offset-*</code> 클래스가 있을 때 사용됩니다.</p>
-      <Practice class="practice" :options="[
+      <Practice :options="[
         { label: 'q-col-gutter-none', value: 'q-col-gutter-none' },
         { label: 'q-col-gutter-xs', value: 'q-col-gutter-xs' },
         { label: 'q-col-gutter-sm', value: 'q-col-gutter-sm' },
@@ -297,7 +297,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
       </Practice>
-      <Practice class="practice" :options="[
+      <Practice :options="[
         { label: '수평에만 적용되는 q-col-gutter', value: 'horizontal' },
         { label: '수직에만 적용되는 q-col-gutter', value: 'vertical' },
         { label: '수평, 수직이 혼합된 q-col-gutter', value: 'mixed' }
@@ -448,14 +448,14 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Note color="green-13">
         <p><strong>팁</strong></p>
         <p>
-          <code>q-gutter-*</code> 클래스는 자식 요소의 내부 수치를 <strong>변경하지 않으므로</strong> 직접 <em>배경</em>이나 <em>테두리</em>를 사용할 수
+          <em>q-gutter-*</em> 클래스는 자식 요소의 내부 수치를 <strong>변경하지 않으므로</strong> 직접 <em>배경</em>이나 <em>테두리</em>를 사용할 수
           있습니다.
         </p>
       </Note>
       <Note color="orange-4">
         <p><strong>경고</strong></p>
         <p>
-          <code>q-gutter-*</code> 클래스는 자식 요소의 외부 수치를 <strong>변경하므로</strong> 더이상 너비를 지정하는 <em>col-*</em> 또는
+          <em>q-gutter-*</em> 클래스는 자식 요소의 외부 수치를 <strong>변경하므로</strong> 더이상 너비를 지정하는 <em>col-*</em> 또는
           <em>offset-*</em> 클래스를 사용할 수
           없습니다.
         </p>
@@ -693,10 +693,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
   </div>
 </template>
 <style scoped>
-.practice:deep(.contents > div) {
-  margin-bottom: 16px;
-}
-
 .my-content {
   padding: 10px 15px;
   background: rgba(86, 61, 124, .15);

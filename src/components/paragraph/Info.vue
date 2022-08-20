@@ -19,20 +19,22 @@ defineProps({
 })
 </script>
 <template>
-  <div class="outer q-my-md" :class="`bg-${color}`">
-    <div class="info q-pt-md q-px-md">
-      <div v-if="label" class="row items-center q-gutter-x-xs q-mb-sm">
-        <q-icon flat name="o_info" :color="color" />
-        <b>{{ label }}</b>
-      </div>
-      <div v-else-if="advice" class="row items-center q-gutter-x-xs q-mb-sm">
-        <q-avatar size="28px">
-          <img src="@/assets/images/seraq.svg" />
-        </q-avatar>
-        <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Advice</div>
-      </div>
-      <div class="contents" :class="example ? 'example' : ''">
-        <slot></slot>
+  <div>
+    <div class="outer q-my-md" :class="`bg-${color}`">
+      <div class="info q-pt-md q-px-md">
+        <div v-if="label" class="row items-center q-gutter-x-xs q-mb-sm">
+          <q-icon flat name="o_info" :color="color" />
+          <b>{{ label }}</b>
+        </div>
+        <div v-else-if="advice" class="row items-center q-gutter-x-xs q-mb-sm">
+          <q-avatar size="28px">
+            <img src="@/assets/images/seraq.svg" />
+          </q-avatar>
+          <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Advice</div>
+        </div>
+        <div class="contents" :class="example ? 'example' : ''">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
