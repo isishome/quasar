@@ -101,11 +101,11 @@ onUnmounted(() => {
       </q-toolbar>
     </q-header>
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
-      <div class="aside">
+      <div class="aside mobile">
         <template v-for="r in routes" :key="r.name">
           <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
             <q-item class="text-weight-bold">
-              <q-item-label> {{ r.meta.title }}</q-item-label>
+              <q-item-label>{{ r.meta.title }}<span v-if="r.meta.hidden" style="opacity:.5"> [예정]</span></q-item-label>
             </q-item>
             <template v-for="c in r.children" :key="c.name">
               <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
@@ -118,7 +118,7 @@ onUnmounted(() => {
     </q-drawer>
     <q-drawer v-if="screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right" behavior="mobile"
       no-swipe-open no-swipe-close>
-      <div class="aside right text-weight-bold">
+      <div class="aside mobile right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
           <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .3 : 0"
@@ -136,13 +136,13 @@ onUnmounted(() => {
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
                 <q-item>
-                  <q-item-label class="header-title q-py-xs"> {{ r.meta.title }}</q-item-label>
+                  <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.hidden"
+                      style="opacity:.5"> [예정]</span></q-item-label>
                 </q-item>
                 <template v-for="c in r.children" :key="c.name">
                   <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
-                    :to="{ name: c.name }"> {{
-                        c.meta.title
-                    }}
+                    :to="{ name: c.name }">
+                    {{ c.meta.title }}
                   </q-item>
                 </template>
               </q-list>
@@ -233,13 +233,19 @@ a {
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
-.aside.fixed-260 {
-  width: 260px;
-}
+
 
 .aside {
   padding: 24px 32px 24px 5px;
   position: fixed;
+}
+
+.aside.fixed-260 {
+  width: 260px;
+}
+
+.aside.mobile {
+  position: inherit !important;
 }
 
 .body--dark .aside {
