@@ -901,7 +901,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </div>
       </Info>
       <p>
-        <Link href="https://quasar.dev/style/visibility#window-width-related">Visibility</Link> 스타일 페이지에서 창 너비에 대한
+        <Link href="https://quasar.dev/style/visibility#window-width-related">가시성</Link> 페이지에서 창 너비에 대한
         임곗값과
         이러한 토큰들(xs, sm, md, lg, xl)을 사용하여 DOM 요소를 숨기거나 표시합니다.
       </p>

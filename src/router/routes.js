@@ -77,6 +77,87 @@ const routes = [
           }
         ]
       }, {
+        path: 'styleid',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '스타일 및 아이덴티티',
+          hidden: true
+        },
+        children: [
+          {
+            path: 'typo',
+            name: 'typo',
+            component: () => import('@/components/styleid/Typo.vue'),
+            meta: {
+              title: '타이포그래피'
+            }
+          },
+          {
+            path: 'color',
+            name: 'color',
+            component: () => import('@/components/styleid/Color.vue'),
+            meta: {
+              title: '색상 팔레트'
+            }
+          },
+          {
+            path: 'dark',
+            name: 'dark',
+            component: () => import('@/components/styleid/Dark.vue'),
+            meta: {
+              title: '다크 모드'
+            }
+          },
+          {
+            path: 'spacing',
+            name: 'spacing',
+            component: () => import('@/components/styleid/Spacing.vue'),
+            meta: {
+              title: '간격'
+            }
+          },
+          {
+            path: 'break',
+            name: 'break',
+            component: () => import('@/components/styleid/Break.vue'),
+            meta: {
+              title: '중단점'
+            }
+          },
+          {
+            path: 'body',
+            name: 'body',
+            component: () => import('@/components/styleid/Body.vue'),
+            meta: {
+              title: 'Body 클래스'
+            }
+          },
+          {
+            path: 'visible',
+            name: 'visible',
+            component: () => import('@/components/styleid/Visible.vue'),
+            meta: {
+              title: '가시성'
+            }
+          },
+          {
+            path: 'position',
+            name: 'position',
+            component: () => import('@/components/styleid/Position.vue'),
+            meta: {
+              title: '위치'
+            }
+          },
+          {
+            path: 'other',
+            name: 'other',
+            component: () => import('@/components/styleid/Other.vue'),
+            meta: {
+              title: '기타 CSS 헬퍼 클래스'
+            }
+          }
+        ]
+      }, {
         path: 'opthelper',
         component: () => import('@/components/Blank.vue'),
         meta: {
@@ -113,23 +194,6 @@ const routes = [
             component: () => import('@/components/opthelper/Transition.vue'),
             meta: {
               title: 'Transitions'
-            }
-          }
-        ]
-      }, {
-        path: 'tools',
-        component: () => import('@/components/Blank.vue'),
-        meta: {
-          title: '도구',
-          hidden: true
-        },
-        children: [
-          {
-            path: 'htmlencode',
-            name: 'htmlencode',
-            component: () => import('@/components/tools/HtmlEncode.vue'),
-            meta: {
-              title: 'HTML 인코딩'
             }
           }
         ]

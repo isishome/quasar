@@ -103,12 +103,12 @@ onUnmounted(() => {
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside">
         <template v-for="r in routes" :key="r.name">
-          <q-list v-if="r.path !== '/' && r.children.length > 0 && !r.meta.hidden" dense class="full-width q-mb-md">
+          <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
             <q-item class="text-weight-bold">
               <q-item-label> {{ r.meta.title }}</q-item-label>
             </q-item>
             <template v-for="c in r.children" :key="c.name">
-              <q-item v-if="!c.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
+              <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
                 @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title }}
               </q-item>
             </template>
@@ -134,12 +134,12 @@ onUnmounted(() => {
         <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
-              <q-list v-if="r.path !== '/' && r.children.length > 0 && !r.meta.hidden" dense class="full-width q-mb-md">
+              <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
                 <q-item>
                   <q-item-label class="header-title q-py-xs"> {{ r.meta.title }}</q-item-label>
                 </q-item>
                 <template v-for="c in r.children" :key="c.name">
-                  <q-item v-if="!c.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
+                  <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
                     :to="{ name: c.name }"> {{
                         c.meta.title
                     }}
@@ -155,7 +155,6 @@ onUnmounted(() => {
           <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
             data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
             :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
-          <div class="q-py-lg"></div>
           <template v-if="route.name === 'main'">
             <q-separator />
             <div class="q-py-lg">
@@ -292,12 +291,12 @@ a {
 }
 
 .page {
-  padding: 64px 96px 0 96px;
+  padding: 64px 96px;
 }
 
 @media (max-width:1240px) {
   .page {
-    padding: 32px 48px 0 48px;
+    padding: 32px 48px;
   }
 }
 

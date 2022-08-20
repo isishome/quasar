@@ -1,7 +1,7 @@
 <script setup>
 import { defineAsyncComponent, ref, shallowReadonly } from 'vue'
 const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
-const slide = ref('1')
+const slide = ref('2')
 const carousel = ref(null)
 const trigger = () => {
   carousel.value.forEach(c => { c.next() })
@@ -26,18 +26,18 @@ const transitions = shallowReadonly([
       </div>
       <div class="row q-gutter-sm q-mb-md">
         <q-card bordered flat v-for="(t, idx) in transitions" :key="idx">
-          <q-card-section class="no-padding overflow-hidden">
-            <q-carousel ref="carousel" height="140px" v-model="slide" :transition-next="t" animated
+          <q-card-section class="q-pa-xs overflow-hidden">
+            <q-carousel ref="carousel" height="90px" v-model="slide" :transition-next="t" animated
               control-color="primary" infinite>
               <q-carousel-slide name="1" class="no-padding">
-                <q-img src="@/assets/images/sites/vuejs.svg" width="140px" :ratio="1" />
+                <q-img src="@/assets/images/sites/vuejs.svg" width="90px" :ratio="1" />
               </q-carousel-slide>
               <q-carousel-slide name="2" class="no-padding">
-                <q-img src="@/assets/images/sites/quasar.svg" width="140px" :ratio="1" />
+                <q-img src="@/assets/images/sites/quasar.svg" width="90px" class="invert" :ratio="1" />
               </q-carousel-slide>
             </q-carousel>
           </q-card-section>
-          <div class="text-center">{{ t }}</div>
+          <div class="text-center bg-back">{{ t }}</div>
         </q-card>
       </div>
       <p>transition props에 캡션에 표시된 이름을 사용하세요. 예제:</p>
@@ -60,4 +60,7 @@ const transitions = shallowReadonly([
   </div>
 </template>
 <style scoped>
+.body--dark .invert {
+  filter: hue-rotate(180deg) invert(100%);
+}
 </style>
