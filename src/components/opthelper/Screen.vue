@@ -20,7 +20,7 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
             아닙니다</strong>. 바꿔 말하면
           스타일 처리로만 가능한 표현을 스크린 플러그인을 사용하게 되면 자바스크립트 코드로 처리되면서 <strong>더 큰 동작 비용(자원 소비 증가)</strong>을 가질 수 있다는 얘기가 됩니다.
         </p>
-        <p>플랫폼 감지 헬퍼는 이와 반대입니다. 디바이스에 따라 UI 렌더링이 불필요할 수 있으므로 반응형 CSS 클래스를 쓰는 것보다 <strong>플랫폼 감지 헬퍼</strong>를 사용하는 것이
+        <p>플랫폼 감지 헬퍼는 이와 반대입니다. 디바이스에 따라 UI 렌더링이 필요하지 않은 경우에는 반응형 CSS 클래스를 쓰는 것보다 <strong>플랫폼 감지 헬퍼</strong>를 사용하는 것이
           성능에 이점을 가집니다.</p>
       </Info>
     </section>
@@ -32,7 +32,7 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
     </section>
     <section id="usage" data-name="사용법">
       <Title sub>사용법</Title>
-      <p>아래 <code>$q.screen</code>을 확인하세요. 이것은 단순한 사용법의 예입니다.
+      <p>아래 <code>$q.screen</code>을 확인하세요. 이것은 간단한 사용법의 예입니다.
       </p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
@@ -80,7 +80,7 @@ export default &#123;
     </section>
     <section id="body" data-name="Body 클래스">
       <Title sub>Body 클래스</Title>
-      <p><b>Body 클래스를 활성화하면(아래 예제 이후에 수행하는 방법 참고)</b> document.body에 적용된 특정 CSS 클래스 세트를 기반으로 콘텐츠를 스타일 처리할 수
+      <p><b>Body 클래스를 활성화하면(아래 예제 이후에 수행하는 방법 참고)</b> document.body에 적용된 특정 CSS 클래스 세트를 기반으로 콘텐츠의 스타일 처리를 할 수
         있습니다:<code>screen--xs</code>,
         <code>screen--sm</code>, ..., <code>screen-xl</code>
       </p>
@@ -102,7 +102,7 @@ body.screen--sm &#123;
     </section>
     <section id="enable-body" data-name="Body 클래스 활성화" sub>
       <Title minor>Body 클래스를 활성화하는 방법</Title>
-      <p>위 동작을 활성화하기 위해 /src/main.js 파일을 다음과 같이 편집하세요. 이 설정으로 '첫 번째 의미 있는 페인트'(FMP) 시간이 약간 증가한다는 점에 유의하세요.</p>
+      <p>위 동작을 활성화하기 위해 /src/main.js 파일을 다음과 같이 수정하세요. 이 설정으로 '첫 번째 의미 있는 페인트'(FMP) 시간이 약간 증가한다는 점에 유의하세요.</p>
       <Info class="text-caption" color="transparent">
         <p>* Sera's Quasar에서는 <strong>Vite Plugin</strong>
           사용 시 활성화 방법만 소개하고 있습니다.
