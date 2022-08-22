@@ -114,7 +114,7 @@ body.screen--sm &#123;
       </Info>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-// 파일: /src/main.js
+// 파일: main.js
 
 const app = createApp(app)
 app.use(Quasar, &#123;

@@ -120,8 +120,7 @@ const routes = [
         path: 'styleid',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: '스타일 및 아이덴티티',
-          hidden: true
+          title: '스타일 및 아이덴티티'
         },
         children: [
           {
@@ -145,7 +144,8 @@ const routes = [
             name: 'dark',
             component: () => import('@/components/styleid/Dark.vue'),
             meta: {
-              title: '다크 모드'
+              title: '다크 모드',
+              working: true
             }
           },
           {
@@ -153,7 +153,8 @@ const routes = [
             name: 'spacing',
             component: () => import('@/components/styleid/Spacing.vue'),
             meta: {
-              title: '간격'
+              title: '간격',
+              working: true
             }
           },
           {
@@ -161,7 +162,8 @@ const routes = [
             name: 'break',
             component: () => import('@/components/styleid/Break.vue'),
             meta: {
-              title: '중단점'
+              title: '중단점',
+              working: true
             }
           },
           {
@@ -169,7 +171,8 @@ const routes = [
             name: 'body',
             component: () => import('@/components/styleid/Body.vue'),
             meta: {
-              title: 'Body 클래스'
+              title: 'Body 클래스',
+              working: true
             }
           },
           {
@@ -177,7 +180,8 @@ const routes = [
             name: 'visible',
             component: () => import('@/components/styleid/Visible.vue'),
             meta: {
-              title: '가시성'
+              title: 'Visibility',
+              working: true
             }
           },
           {
@@ -185,7 +189,8 @@ const routes = [
             name: 'position',
             component: () => import('@/components/styleid/Position.vue'),
             meta: {
-              title: '위치'
+              title: '위치',
+              working: true
             }
           },
           {
@@ -193,7 +198,24 @@ const routes = [
             name: 'other',
             component: () => import('@/components/styleid/Other.vue'),
             meta: {
-              title: '기타 CSS 헬퍼 클래스'
+              title: '기타 CSS 헬퍼 클래스',
+              working: true
+            }
+          }
+        ]
+      }, {
+        path: 'tools',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '도구'
+        },
+        children: [
+          {
+            path: 'htmlencode',
+            name: 'htmlencode',
+            component: () => import('@/components/tools/HtmlEncode.vue'),
+            meta: {
+              title: 'HTML 인코더'
             }
           }
         ]

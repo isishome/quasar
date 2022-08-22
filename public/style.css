@@ -105,7 +105,8 @@ strong {
 }
 
 p,
-li {
+li,
+table {
   word-break: keep-all;
   overflow-wrap: break-word;
 }

@@ -103,13 +103,15 @@ onUnmounted(() => {
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside mobile">
         <template v-for="r in routes" :key="r.name">
-          <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
+          <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
+            class="full-width q-mb-md">
             <q-item class="text-weight-bold">
-              <q-item-label>{{ r.meta.title }}<span v-if="r.meta.hidden" style="opacity:.5"> [예정]</span></q-item-label>
+              <q-item-label>{{ r.meta.title }}<span v-if="r.meta.working" style="opacity:.5"> [예정]</span></q-item-label>
             </q-item>
             <template v-for="c in r.children" :key="c.name">
-              <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
-                @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title }}
+              <q-item :disable="c.meta.working" tag="a" active-class="active" :active="routeName === c.name"
+                @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title
+                }}<span v-if="c.meta.working" style="opacity:.5">&nbsp;[예정]</span>
               </q-item>
             </template>
           </q-list>
@@ -121,7 +123,7 @@ onUnmounted(() => {
       <div class="aside mobile right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-          <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .3 : 0"
+          <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .2 : 0"
             active-class="active" :active="section.id === activeId" @click="rightDrawerOpen = false"
             :to="{ params: { sid: section.id } }">
             {{ section.name }}
@@ -134,15 +136,16 @@ onUnmounted(() => {
         <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
-              <q-list v-if="r.path !== '/' && r.children.length > 0" dense class="full-width q-mb-md">
+              <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
+                class="full-width q-mb-md">
                 <q-item>
-                  <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.hidden"
+                  <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.working"
                       style="opacity:.5"> [예정]</span></q-item-label>
                 </q-item>
                 <template v-for="c in r.children" :key="c.name">
-                  <q-item :disable="r.meta.hidden" tag="a" active-class="active" :active="routeName === c.name"
+                  <q-item :disable="c.meta.working" tag="a" active-class="active" :active="routeName === c.name"
                     :to="{ name: c.name }">
-                    {{ c.meta.title }}
+                    {{ c.meta.title }}<span v-if="c.meta.working" style="opacity:.5">&nbsp;[예정]</span>
                   </q-item>
                 </template>
               </q-list>
@@ -172,7 +175,7 @@ onUnmounted(() => {
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
               <q-item clickable v-for="section in sections" :key="section.id" tag="a"
-                :inset-level="section.sub ? .3 : 0" active-class="active" :active="section.id === activeId"
+                :inset-level="section.sub ? .2 : 0" active-class="active" :active="section.id === activeId"
                 :to="{ params: { sid: section.id } }">
                 {{ section.name }}
               </q-item>

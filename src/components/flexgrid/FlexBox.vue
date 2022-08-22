@@ -685,7 +685,9 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="wrap" data-name="래핑" sub>
       <Title minor>래핑</Title>
       <p>래핑은 Flex CSS 클래스를 이해하는 핵심 기능입니다. 각 row를 정확히 12포인트로 사용해야 하는 것은 아닙니다. 더 적거나 더 많이 사용할 수 있습니다.</p>
-      <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다. "반응형 디자인" 섹션을 읽어보세요.</p>
+      <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다.
+        <Link :to="{ hash: '#reponsive' }">"반응형 디자인"</Link> 섹션을 읽어보세요.
+      </p>
       <Code language="html">
         <textarea readonly>
 &#60;div class="row"&#62;

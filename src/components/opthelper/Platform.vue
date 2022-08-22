@@ -17,7 +17,8 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
         <p><strong>팁</strong></p>
         <p>
           필요한 경우,
-          <Link :to="{ name: 'visibility' }">스타일 및 아이덴티티 > 가시성</Link> 페이지의 CSS 만으로 동일한 효과를 얻을 수 있는 방법을 확인할 수 있습니다. 하지만 이
+          <Link :to="{ name: 'visible' }">스타일 및 아이덴티티 > Visibility</Link> 페이지의 CSS 만으로 동일한 효과를 얻을 수 있는 방법을 확인할 수 있습니다. 하지만
+          이
           방법은 플랫폼에
           관계없이 DOM
           요소나 컴포넌트를 렌더링 할 것이므로 앱의 성능을 어떻게 처리할지 현명한 선택이 필요합니다.
