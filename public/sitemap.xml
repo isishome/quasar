@@ -13,6 +13,22 @@
     <lastmod>2022-08-18</lastmod>
   </url>
   <url>
+    <loc>https://quasar.serasome.com/flexgrid/flexbox/</loc>
+    <lastmod>2022-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/flexgrid/gridrow/</loc>
+    <lastmod>2022-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/flexgrid/gridcolumn/</loc>
+    <lastmod>2022-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/flexgrid/gridgutter/</loc>
+    <lastmod>2022-08-18</lastmod>
+  </url>
+  <url>
     <loc>https://quasar.serasome.com/opthelper/qobject/</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
@@ -29,19 +45,39 @@
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
-    <loc>https://quasar.serasome.com/flexgrid/flexbox/</loc>
-    <lastmod>2022-08-18</lastmod>
+    <loc>https://quasar.serasome.com/styleid/typo/</loc>
+    <lastmod>2022-08-23</lastmod>
   </url>
   <url>
-    <loc>https://quasar.serasome.com/flexgrid/gridrow/</loc>
-    <lastmod>2022-08-18</lastmod>
+    <loc>https://quasar.serasome.com/styleid/color/</loc>
+    <lastmod>2022-08-23</lastmod>
   </url>
   <url>
-    <loc>https://quasar.serasome.com/flexgrid/gridcolumn/</loc>
-    <lastmod>2022-08-18</lastmod>
+    <loc>https://quasar.serasome.com/styleid/dark/</loc>
+    <lastmod>2022-08-23</lastmod>
   </url>
   <url>
-    <loc>https://quasar.serasome.com/flexgrid/gridgutter/</loc>
-    <lastmod>2022-08-18</lastmod>
+    <loc>https://quasar.serasome.com/styleid/spacing/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/styleid/break/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/styleid/body/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/styleid/visible/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/styleid/position/</loc>
+    <lastmod>2022-08-23</lastmod>
+  </url>
+  <url>
+    <loc>https://quasar.serasome.com/styleid/other/</loc>
+    <lastmod>2022-08-23</lastmod>
   </url>
 </urlset>
