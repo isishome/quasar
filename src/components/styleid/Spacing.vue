@@ -12,13 +12,13 @@ const sWidth = shallowReadonly([{ value: 'none', label: '' }, { value: 'xs', lab
       <Title head>CSS 간격 클래스</Title>
       <p>
         Quasar는 DOM 요소 또는 컴포넌트의 간격을 지정하는 데 도움이 되는 CSS 클래스를 제공합니다. 모든 옵션에는 <code>q-</code>가 접두사로 붙은 다음 유형(T), 방향(D),
-        너비(S)가 차례대로 분류됩니다. 가능한 모든 CSS 클래스를 아래 순열표를 참고하세요.
+        너비(S)가 차례대로 분류됩니다. 가능한 모든 CSS 클래스는 아래 순열표를 참고하세요.
       </p>
       <Info advice color="teal-4">
         <p><em>Flex Grid</em> 만큼이나 자주 사용되는 Quasar 제공 클래스입니다. . 유형, 방향, 너비 조합만 알아두면 필요한 부분에 손쉽게 간격 설정이
           가능합니다. <strong>꼭 기억해두세요!</strong></p>
       </Info>
-      <Code class="q-mb-lg" language="css">
+      <Code class="q-mb-lg" language="">
         <textarea readonly>
 q-[p|m][t|r|b|l|a|x|y]-[none|auto|xs|sm|md|lg|xl]
     T       D                   S
@@ -67,10 +67,10 @@ body.body--dark &#123;
       <Title sub>Flex 애드온</Title>
       <p><code>main.js</code> &gt; <code>app.use(Quasar)</code> &gt; <code>cssAddon: true</code>를 통해 활성화되면 모든 간격 관련 CSS
         클래스에 대해 중단점 인식 버전을 제공합니다.</p>
-      <Note color="grey-4">
+      <Note color="grey-6">
         <p>활성화할 때 CSS 사용 부분에 눈에 띄는 충돌이 있을 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요. </p>
       </Note>
-      <Code class="q-mb-lg" language="css">
+      <Code class="q-mb-lg" language="">
         <textarea readonly>
 .q-(p|m)(t|r|b|l|a|x|y)-&#60;bp&#62;-(none|auto|xs|sm|md|lg|xl)
         </textarea>
@@ -142,21 +142,4 @@ body.body--dark &#123;
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
-.noto-sans {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-.q-hoverable:deep(.q-focus-helper) {
-  display: none;
-}
-
-.toggle {
-  box-shadow: 0 0 0 1px var(--q-primary);
-}
-
-th {
-  font-weight: 700;
-}
 </style>

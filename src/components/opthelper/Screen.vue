@@ -179,7 +179,4 @@ Screen.setSizes(&#123; sm: 300, md: 500, lg: 1000, xl: 2000 &#125;)
   </div>
 </template>
 <style scoped>
-th {
-  font-weight: 700;
-}
 </style>

@@ -130,3 +130,7 @@ code:not([class]) {
   font-family: inherit;
   letter-spacing: 1px;
 }
+
+th {
+  font-weight: 700 !important;
+}

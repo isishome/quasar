@@ -15,14 +15,14 @@ const mode = ref('rgb')
         Quasar Framework는 기본적으로 다양한 색상을 제공합니다. CSS 코드에서 Sass/SCSS 변수로 사용하거나 HTML 템플릿에서 CSS 클래스로 직접 사용할 수 있습니다.
       </p>
       <Info advice color="teal-4">
-        <p>컴포넌트와 더불어 색상 참고를 위해 가장 많이 방문하는 페이지입니다.</p>
+        <p>컴포넌트와 더불어 색상 참고를 위해 가장 많이 사용하는 페이지입니다.</p>
       </Info>
     </section>
     <section id="brand" data-name="브랜드 색상">
       <Title sub>브랜드 색상</Title>
-      <p>Quasar 컴포넌트가 사용하는 대부분의 색상은 변경할 수 있는 이 세 가지 색상과 밀접하게 연결되어 있습니다. 이러한 색상을 선택하는 것이 앱의 디자인을 차별화하기 위해 해야 할 첫 번째
+      <p>Quasar 컴포넌트가 사용하는 대부분의 색상은 변경 가능한 아래 색상들과 밀접하게 연관되어 있습니다. 이러한 색상을 선택하는 것이 앱의 디자인을 차별화하기 위해 해야 할 첫 번째
         단계입니다.
-        기본값을 변경하면 Quasar 컴포넌트가 기본값으로 설정된 색상들을 지침으로 따른다는 것을 바로 알 수 있습니다.
+        기본값을 변경하면 Quasar 컴포넌트가 기본값으로 설정된 색상들의 지침을 따른다는 것을 바로 알 수 있습니다.
       </p>
       <div class="row q-col-gutter-xs">
         <div class="col-6 col-sm-4 col-md-3" v-for="bc in brandColors" :key="bc">
@@ -63,7 +63,7 @@ const mode = ref('rgb')
     </section>
     <section id="class" data-name="CSS 클래스로 사용">
       <Title sub>CSS 클래스로 사용</Title>
-      <p><code>text-</code> 또는 <code>bg-</code> 접두사를 클래스 이름으로 사용하여 텍스트 또는 배경색을 변경합니다.</p>
+      <p><code>text-</code> 또는 <code>bg-</code> 접두사를 클래스 이름으로 사용하여 텍스트 또는 배경의 색상을 변경합니다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;!-- 텍스트 색상 변경 --&#62;
@@ -108,14 +108,14 @@ const mode = ref('rgb')
         빌드 결과물 안에 기본
         색상 테마와 실행 중 선택한 테마 모두 표시할 수 있습니다.
       </p>
-      <p>기본 색상 구성은 루트 요소(<code>:root</code>)에 저장된 CSS 사용자 정의 속성으로 사용됩니다. 각 속성의 이름은 <code>--q-${name}</code>(예:
+      <p>기본 색상 구성은 루트 요소 (<code>:root</code>)에 저장된 CSS 사용자 정의 속성으로 사용됩니다. 각 속성의 이름은 <code>--q-${name}</code>(예:
         <code>--q-primary</code>, <code>--q-secondary</code>)이며 유효한
         CSS 색상이 값으로 있어야 합니다.
       </p>
       <p>CSS 사용자 정의 속성은 일반 CSS와 동일한 상속 규칙을 사용하므로 원하는 색상만 재정의할 수 있으며 나머지는 상위 요소에서 상속됩니다.</p>
       <p>
-        <code>html</code>(<code>document.documentElement</code>) 또는
-        <code>>body</code>(<code>document.body</code>) 요소에 사용자 정의된 색상 속성을 설정하는 것이 좋습니다. 이렇게 하면 사용자 지정 색상을 삭제하여 기본
+        <code>html</code> (<code>document.documentElement</code>) 또는
+        <code>body</code> (<code>document.body</code>) 요소에 사용자 정의된 색상 속성을 설정하는 것이 좋습니다. 이렇게 하면 사용자 지정 색상을 삭제하여 기본
         색상으로 되돌릴 수 있습니다.
       </p>
       <p>자세한 정보는
@@ -290,12 +290,6 @@ app.use(Quasar, &#123;
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-
-.noto-sans {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
 .q-hoverable:deep(.q-focus-helper) {
   display: none;
 }

@@ -962,10 +962,6 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
 </template>
 <style scoped>
 th {
-  font-weight: 700;
-}
-
-th {
   word-break: normal !important;
 }
 

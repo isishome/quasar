@@ -163,8 +163,7 @@ const routes = [
             name: 'break',
             component: () => import('@/components/styleid/Break.vue'),
             meta: {
-              title: '중단점',
-              working: true
+              title: '중단점'
             }
           },
           {
@@ -172,8 +171,7 @@ const routes = [
             name: 'body',
             component: () => import('@/components/styleid/Body.vue'),
             meta: {
-              title: 'Body 클래스',
-              working: true
+              title: 'Body 클래스'
             }
           },
           {
@@ -181,8 +179,7 @@ const routes = [
             name: 'visible',
             component: () => import('@/components/styleid/Visible.vue'),
             meta: {
-              title: 'Visibility',
-              working: true
+              title: 'Visibility'
             }
           },
           {
@@ -190,8 +187,7 @@ const routes = [
             name: 'position',
             component: () => import('@/components/styleid/Position.vue'),
             meta: {
-              title: '위치',
-              working: true
+              title: 'Positioning'
             }
           },
           {
@@ -199,8 +195,7 @@ const routes = [
             name: 'other',
             component: () => import('@/components/styleid/Other.vue'),
             meta: {
-              title: '기타 CSS 헬퍼 클래스',
-              working: true
+              title: '그 외 CSS 헬퍼 클래스'
             }
           }
         ]

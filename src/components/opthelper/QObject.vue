@@ -151,7 +151,4 @@ console.log(Quasar.platform.is.ios)
   </div>
 </template>
 <style scoped>
-th {
-  font-weight: 700;
-}
 </style>
