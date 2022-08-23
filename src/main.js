@@ -19,7 +19,7 @@ import 'quasar/dist/quasar.css'
 const pinia = createPinia()
 
 createApp(App).use(router).use(pinia).use(Quasar, {
-  plugins: { Cookies, Notify }, // import Quasar plugins and add here
+  plugins: { Cookies, Notify } // import Quasar plugins and add here
 })
   .component('Link', Link)
   .component('Title', Title)
