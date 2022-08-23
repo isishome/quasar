@@ -14,6 +14,10 @@ const sWidth = shallowReadonly([{ value: 'none', label: '' }, { value: 'xs', lab
         Quasar는 DOM 요소 또는 컴포넌트의 간격을 지정하는 데 도움이 되는 CSS 클래스를 제공합니다. 모든 옵션에는 <code>q-</code>가 접두사로 붙은 다음 유형(T), 방향(D),
         너비(S)가 차례대로 분류됩니다. 가능한 모든 CSS 클래스를 아래 순열표를 참고하세요.
       </p>
+      <Info advice color="teal-4">
+        <p><em>Flex Grid</em> 만큼이나 자주 사용되는 Quasar 제공 클래스입니다. . 유형, 방향, 너비 조합만 알아두면 필요한 부분에 손쉽게 간격 설정이
+          가능합니다. <strong>꼭 기억해두세요!</strong></p>
+      </Info>
       <Code class="q-mb-lg" language="css">
         <textarea readonly>
 q-[p|m][t|r|b|l|a|x|y]-[none|auto|xs|sm|md|lg|xl]
