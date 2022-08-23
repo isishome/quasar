@@ -147,8 +147,7 @@ const routes = [
             name: 'dark',
             component: () => import('@/components/styleid/Dark.vue'),
             meta: {
-              title: '다크 모드',
-              working: true
+              title: '다크 모드'
             }
           },
           {
@@ -156,8 +155,7 @@ const routes = [
             name: 'spacing',
             component: () => import('@/components/styleid/Spacing.vue'),
             meta: {
-              title: '간격',
-              working: true
+              title: '간격'
             }
           },
           {

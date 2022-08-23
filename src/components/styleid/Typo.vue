@@ -157,7 +157,6 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         <p>시스템 기본 폰트(따로 폰트를 설정하지 않은 경우), 웹폰트, 임의 폰트 등을 사용하는 경우 해당 폰트가 Quasar에서 지정한 굵기들을 지원해야만 정상적으로 사용이 가능합니다.</p>
         <p>아래 미리 보기에 정상적인 폰트 굵기를 표시하기 위해 해당 페이지에서만 구글 웹폰트인 '<em>Noto Sans Korean</em>'을 사용했습니다.</p>
       </Info>
-      <p>웹폰트나 시스템 폰트에 해당 굵기가 포함된 경우에만 정상적으로 표시됩니다.</p>
       <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
         <thead>
           <tr>

@@ -910,7 +910,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="addon" data-name="Flex 애드온">
       <Title sub>Flex 애드온</Title>
-      <p>활성화되면(<code>quasar.config.js</code> &gt; <code>framework</code> &gt; <code>cssAddon: true</code>를 통해) 모든 flex(및
+      <p><code>main.js</code> &gt; <code>app.use(Quasar)</code> &gt; <code>cssAddon: true</code>를 통해 활성화되면 모든 flex(및
         디스플레이) 관련
         CSS 클래스에 대해 중단점 인식
         버전을 제공합니다.</p>

@@ -266,7 +266,7 @@ setCssVar('primary-darkened', lighten(newPrimaryColor, -10))
       </p>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-// UMD or Quasar Vite plugin or Vue CLI
+// UMD 또는 Quasar Vite 플러그인 또는 Vue CLI
 app.use(Quasar, &#123;
   config: &#123;
     brand: &#123;
