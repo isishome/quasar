@@ -55,6 +55,7 @@ const transitions = shallowReadonly([
     <div>
       <div class="row justify-between items-cetner">
         <Move label="스크린 플러그인" prev :to="{ name: 'screen' }" />
+        <Move label="타이포그래피" next :to="{ name: 'typo' }" />
       </div>
     </div>
   </div>
