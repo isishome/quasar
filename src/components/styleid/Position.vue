@@ -188,7 +188,7 @@
     <div>
       <div class="row justify-between items-cetner">
         <Move label="Visibility" prev :to="{ name: 'visible' }" />
-        <Move label="기타 CSS 헬퍼 클래스" next :to="{ name: 'ohter' }" />
+        <Move label="기타 CSS 헬퍼 클래스" next :to="{ name: 'other' }" />
       </div>
     </div>
   </div>

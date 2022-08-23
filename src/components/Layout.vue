@@ -7,14 +7,21 @@ import { useStore } from '@/store'
 const prod = computed(() => import.meta.env.PROD)
 const $q = useQuasar()
 const screen = computed(() => $q.screen)
+const touch = computed(() => $q.platform.has.touch)
 const route = useRoute()
 const router = useRouter()
 const routeName = computed(() => route.name)
 const routes = router.getRoutes()
 
+// change md width
+$q.screen.setSizes({ md: touch.value ? 700 : 960 })
+
 // top intersection
 const scrollMove = ref(false)
 const onHeaderIntersection = (entry) => {
+  if (touch.value)
+    return
+
   if (entry.rootBounds.width && entry.rootBounds.height)
     scrollMove.value = !entry.isIntersecting
 }
@@ -86,18 +93,18 @@ onUnmounted(() => {
 <template>
   <q-layout view="hHh lpR fFf">
     <div class="top-inter" v-intersection="onHeaderIntersection"></div>
-    <q-header :class="['header', scrollMove ? 'scroll' : '']">
+    <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.sm" dense flat round icon="menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title>
-          <router-link class="title" :to="{ name: 'main' }">
+        <q-toolbar-title class="title">
+          <router-link :to="{ name: 'main' }">
             <div class="row items-center">
               Sera's Quasar
             </div>
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />
-        <q-btn v-if="!$q.platform.has.touch && screen.lt.lg && sections.length > 0" dense flat icon="assignment"
+        <q-btn v-if="!touch && screen.lt.lg && sections.length > 0" dense flat icon="assignment"
           @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
@@ -119,8 +126,8 @@ onUnmounted(() => {
         </template>
       </div>
     </q-drawer>
-    <q-drawer v-if="!$q.platform.has.touch && screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen"
-      side="right" behavior="mobile" no-swipe-open no-swipe-close>
+    <q-drawer v-if="!touch && screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right"
+      behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside mobile right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
@@ -134,7 +141,7 @@ onUnmounted(() => {
     </q-drawer>
     <q-page-container>
       <div class="row justify-center contents">
-        <aside class="gt-xs col-2 row justify-end relative-position" style="min-width:250px">
+        <aside v-if="screen.gt.sm" class="col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
@@ -171,7 +178,7 @@ onUnmounted(() => {
             </div>
           </template>
         </q-page>
-        <aside v-if="!$q.platform.has.touch" class="gt-md col-2 row justify-start relative-position block">
+        <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
@@ -202,6 +209,7 @@ a {
 }
 
 .title {
+  padding-left: 24px;
   font-style: italic;
   font-weight: 700;
   letter-spacing: -1px;
@@ -237,8 +245,13 @@ a {
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
 
+.header.touch {
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
+
 .aside {
-  padding: 24px 32px 24px 5px;
+  padding: 32px;
   position: fixed;
 }
 
