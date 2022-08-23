@@ -88,7 +88,7 @@ onUnmounted(() => {
     <div class="top-inter" v-intersection="onHeaderIntersection"></div>
     <q-header :class="['header', scrollMove ? 'scroll' : '']">
       <q-toolbar class="contents">
-        <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-btn v-if="screen.lt.sm" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
           <router-link class="title" :to="{ name: 'main' }">
             <div class="row items-center">
@@ -97,7 +97,8 @@ onUnmounted(() => {
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />
-        <q-btn v-if="screen.lt.lg && sections.length > 0" dense flat icon="assignment" @click="toggleRightDrawer" />
+        <q-btn v-if="!$q.platform.has.touch && screen.lt.lg && sections.length > 0" dense flat icon="assignment"
+          @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
@@ -118,8 +119,8 @@ onUnmounted(() => {
         </template>
       </div>
     </q-drawer>
-    <q-drawer v-if="screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right" behavior="mobile"
-      no-swipe-open no-swipe-close>
+    <q-drawer v-if="!$q.platform.has.touch && screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen"
+      side="right" behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside mobile right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
@@ -133,7 +134,7 @@ onUnmounted(() => {
     </q-drawer>
     <q-page-container>
       <div class="row justify-center contents">
-        <aside class="gt-sm col-2 row justify-end relative-position" style="min-width:250px">
+        <aside class="gt-xs col-2 row justify-end relative-position" style="min-width:250px">
           <div class="aside fixed-260 full-height scroll" style="overflow:scroll">
             <template v-for="r in routes" :key="r.name">
               <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
@@ -170,7 +171,7 @@ onUnmounted(() => {
             </div>
           </template>
         </q-page>
-        <aside class="gt-md col-2 row justify-start relative-position block">
+        <aside v-if="!$q.platform.has.touch" class="gt-md col-2 row justify-start relative-position block">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
@@ -235,8 +236,6 @@ a {
   background-color: rgba(29, 29, 29, .5) !important;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
 }
-
-
 
 .aside {
   padding: 24px 32px 24px 5px;

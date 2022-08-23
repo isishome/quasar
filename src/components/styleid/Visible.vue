@@ -315,7 +315,7 @@
           </tr>
           <tr>
             <td>
-              <code>electron-hide</code>1024
+              <code>electron-hide</code>
             </td>
             <td>앱 내부의 Electron 환경에서 숨기기</td>
           </tr>

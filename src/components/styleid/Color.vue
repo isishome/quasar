@@ -97,8 +97,8 @@ const mode = ref('rgb')
         <Link>getPaletteColor</Link> 유틸을 사용하여 JS 컨텍스트에서 사용자 정의 색상 값(hex 문자)에 액세스할 수 있습니다.>
       </p>
     </section>
-    <section id="dynamic" data-name="브래드 색상의 동적 변경(동적 테마 색상)">
-      <Title sub>브래드 색상의 동적 변경(동적 테마 색상)</Title>
+    <section id="dynamic" data-name="브랜드 색상의 동적 변경">
+      <Title sub>브랜드 색상의 동적 변경(동적 테마 색상)</Title>
     </section>
     <section id="how" data-name="작동 방법" sub>
       <Title minor>작동 방법</Title>

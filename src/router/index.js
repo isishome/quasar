@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { Platform } from 'quasar'
 import routes from './routes'
 import { useStore } from '@/store'
 
@@ -50,24 +51,27 @@ router.beforeEach((to) => {
 })
 
 router.afterEach(() => {
-  setTimeout(() => {
-    const sections = document.querySelectorAll('section[id]')
-    const store = useStore()
-    store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, intersecting: false, sub: s.hasAttribute('sub') })))
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        store.setIntersecting(entry.target.id, entry.isIntersecting)
-        const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
-        const filter = store.sections.filter(s => s.top > 0 && s.intersecting)
-        if (filter.length > 0)
-          store.setActive(filter.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id)
+  if (!Platform.has.touch) {
+    setTimeout(() => {
+      const sections = document.querySelectorAll('section[id]')
+      const store = useStore()
+      store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, intersecting: false, sub: s.hasAttribute('sub') })))
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          store.setIntersecting(entry.target.id, entry.isIntersecting)
+          const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
+          const filter = store.sections.filter(s => s.top > 0 && s.intersecting)
+          store.setActive(entry.target.id)
+          if (filter.length > 0)
+            store.setActive(filter.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id)
+        })
+      }, {
+        threshold: Array.from(Array(10), (_, x) => x * 0.1)
       })
-    }, {
-      threshold: Array.from(Array(10), (_, x) => x * 0.1)
-    })
-    sections.forEach(section => {
-      store.setTop(section.id, section.offsetTop + store.offset)
-      io.observe(section)
-    })
-  }, 100)
+      sections.forEach(section => {
+        store.setTop(section.id, section.offsetTop + store.offset)
+        io.observe(section)
+      })
+    }, 100)
+  }
 })

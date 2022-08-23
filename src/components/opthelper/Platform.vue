@@ -69,7 +69,7 @@ $q.platform.is.cordova
       </Code>
       <p>
         <code>Platform.is</code> 자체는 현재 플랫폼에 대한 세부 정보가 포함된 객체를 반환합니다. 예를 들어 MacOS 데스크톱 컴퓨터에서 Chrome을 실행할 때
-        <code>Platform.io</code>는 다음과 유사한 결과를 반환합니다:
+        <code>Platform.is</code>는 다음과 유사한 결과를 반환합니다:
       </p>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
