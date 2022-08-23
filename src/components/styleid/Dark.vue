@@ -16,6 +16,10 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         <li>야간이나 어두운 환경에서 사용 편의를 제공합니다.</li>
         <li>OLED 또는 AMOLED 디바이스 스크린의 배터리 전원을 절약하여 충전 없이 더 오랜 시간 디바이스를 사용할 수 있습니다.</li>
       </ul>
+      <Info advice color="teal-4">
+        <p>최근 어두운 테마는 대부분의 웹사이트에서 기본적으로 제공하는 기능으로 자리 잡고 있습니다. Quasar에서는 대부분의 컴포넌트에 다크 모드를 적용하여 간단한 설정 변경만으로도 어두운 UI를 손쉽게
+          사용할 수 있도록 제공합니다.</p>
+      </Info>
     </section>
     <section id="what" data-name="용도">
       <Title sub>용도</Title>
