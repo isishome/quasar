@@ -48,11 +48,11 @@ watch(() => activeId.value, (val, old) => {
     history.replaceState({}, null, `#${val}`)
 })
 
-
 // toggle dark 
 const toggleDark = () => {
   $q.dark.set(!$q.dark.isActive)
   $q.cookies.set('sq.dark', $q.dark.isActive, { path: import.meta.env.BASE_URL, expires: 365 })
+  document.documentElement.style.setProperty('color-scheme', $q.dark.isActive ? 'dark' : 'light')
 }
 
 const key = ref(uid())
