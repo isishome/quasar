@@ -12,10 +12,10 @@ const sWidth = shallowReadonly([{ value: 'none', label: '' }, { value: 'xs', lab
       <Title head>CSS 간격 클래스</Title>
       <p>
         Quasar는 DOM 요소 또는 컴포넌트의 간격을 지정하는 데 도움이 되는 CSS 클래스를 제공합니다. 모든 옵션에는 <code>q-</code>가 접두사로 붙은 다음 유형(T), 방향(D),
-        너비(S)가 차례대로 분류됩니다. 가능한 모든 CSS 클래스는 아래 순열표를 참고하세요.
+        너비(S)로 분류되어 연결됩니다. 가능한 모든 CSS 클래스는 아래 순열 표를 참고하세요.
       </p>
       <Info advice color="teal-4">
-        <p><em>Flex Grid</em> 만큼이나 자주 사용되는 Quasar 제공 클래스입니다. . 유형, 방향, 너비 조합만 알아두면 필요한 부분에 손쉽게 간격 설정이
+        <p><em>Flex Grid</em> 만큼이나 자주 사용되는 Quasar에서 제공하는 스타일 클래스입니다. 유형, 방향, 너비 조합만 알아두면 필요한 부분에 손쉽게 간격 설정이
           가능합니다. <strong>꼭 기억해두세요!</strong></p>
       </Info>
       <Code class="q-mb-lg" language="">
@@ -68,7 +68,7 @@ body.body--dark &#123;
       <p><code>main.js</code> &gt; <code>app.use(Quasar)</code> &gt; <code>cssAddon: true</code>를 통해 활성화되면 모든 간격 관련 CSS
         클래스에 대해 중단점 인식 버전을 제공합니다.</p>
       <Note color="grey-6">
-        <p>활성화할 때 CSS 사용 부분에 눈에 띄는 충돌이 있을 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요. </p>
+        <p>활성화 시 CSS가 사용된 부분에 눈에 띄는 결함이 발생할 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요.</p>
       </Note>
       <Code class="q-mb-lg" language="">
         <textarea readonly>
@@ -78,7 +78,7 @@ body.body--dark &#123;
       <p>예: <code>q-pa-xs-md</code> <code>q-pa-sm-sm</code> <code>q-px-md-lg</code> <code>q-py-md-md</code></p>
     </section>
     <section id="permutations" data-name="순열표">
-      <Title sub>순열표</Title>
+      <Title sub>순열 표</Title>
       <q-markup-table flat bordered wrap-cells class="text-left q-mb-md" style="max-width:500px">
         <thead>
           <tr>

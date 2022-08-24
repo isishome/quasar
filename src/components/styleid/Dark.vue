@@ -12,13 +12,13 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       </p>
       <p>다크 모드의 장점은 다음과 같습니다.</p>
       <ul>
-        <li>눈의 피로를 줄여 시력을 보호해 줍니다.</li>
+        <li>눈의 피로를 줄여 시력 보호에 도움을 줍니다.</li>
         <li>야간이나 어두운 환경에서 사용 편의를 제공합니다.</li>
         <li>OLED 또는 AMOLED 디바이스 스크린의 배터리 전원을 절약하여 충전 없이 더 오랜 시간 디바이스를 사용할 수 있습니다.</li>
       </ul>
       <Info advice color="teal-4">
-        <p>최근 어두운 테마는 대부분의 웹사이트에서 기본적으로 제공하는 기능으로 자리 잡고 있습니다. Quasar에서는 다크 모드를 적용하여 간단한 설정 변경만으로도 어두운 UI를 손쉽게
-          사용할 수 있도록 대부분의 컴포넌트에 어두운 UI를 제공합니다.</p>
+        <p>근래에 들어 어두운 테마는 대부분의 웹사이트에서 기본적으로 제공하는 일종의 기능으로 자리 잡고 있습니다. Quasar에서는 다크 모드를 도입하여 간단한 설정 변경만으로도 어두운 UI를 손쉽게
+          사용할 수 있도록 대부분의 컴포넌트에서 어두운 UI를 제공합니다.</p>
       </Info>
     </section>
     <section id="what" data-name="용도">
@@ -27,8 +27,9 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         <li>페이지( <code>body.body---dark</code> 선택자로 CSS를 통해 쉽게 재정의 가능)의 기본 어두운 배경을 설정합니다.</li>
         <li><code>dark</code> 속성이 있는 모든 컴포넌트는 자동으로 <code>true</code>로 설정됩니다. 수동설정이 필요 없습니다.</li>
       </ol>
-      <p>자동 감지는 <code>prefers-color-scheme: dark</code> 미디어 쿼리를 보고 작동하며 동적으로 실행됩니다. 앱이 실행되는 동안 클라이언트 브라우저/플랫폼이 다크 모드를
-        활성/비활성으로 변경하면 Quasar의 다크 모드가 업데이트됩니다.(다크 모드가 <code>auto</code>로 설정된 경우)
+      <p>자동 감지는 <code>prefers-color-scheme: dark</code> 미디어 쿼리를 기반으로 작동하며 동적으로 실행됩니다. 앱이 실행되는 동안 클라이언트가 브라우저나 플랫폼의 다크
+        모드를
+        활성 또는 비활성으로 변경하면 Quasar의 다크 모드가 자동으로 업데이트됩니다.(다크 모드가 <code>auto</code>로 설정된 경우)
       </p>
     </section>
     <section id="how" data-name="사용법">
@@ -39,9 +40,10 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="style" data-name="앱 스타일 지정 방법">
       <Title sub>앱 스타일 지정 방법</Title>
-      <p>앱이 다크 모드에 있거나 그렇지 않을 수도 있기 때문에 <code>body</code> 태그에 연결된 CSS 클래스(<code>body--light</code> 또는
-        <code>body--dark</code>)를 활용하여
-        쉽게 스타일을 지정할 수 있습니다. <b>두 가지 모드를 모두 지원하길 원한다면 말이죠</b>.
+      <p><b>여러분의 앱에 다크 모드와 라이트 모드, 이 두 가지 모드를 모두 지원하려는 경우</b>, <code>body</code> 태그에 연결된 CSS 클래스:
+        <code>body--light</code> 또는
+        <code>body--dark</code>를 활용하여
+        쉽게 스타일을 지정할 수 있습니다.
       </p>
       <Code class="q-mb-lg" language="css">
         <textarea readonly>
@@ -54,7 +56,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 &#125;
         </textarea>
       </Code>
-      <p>기본 다크 모드 페이지 배경색을 재정의 하려는 경우:</p>
+      <p>다크 모드 기본 페이지 배경색을 재정의 하려는 경우:</p>
       <Code class="q-mb-lg" language="css">
         <textarea readonly>
 body.body--dark &#123;

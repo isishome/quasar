@@ -95,7 +95,7 @@ onUnmounted(() => {
     <div class="top-inter" v-intersection="onHeaderIntersection"></div>
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
-        <q-btn v-if="screen.lt.sm" dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title class="title">
           <router-link :to="{ name: 'main' }">
             <div class="row items-center">

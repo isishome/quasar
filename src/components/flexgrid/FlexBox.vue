@@ -916,7 +916,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         버전을 제공합니다.</p>
       <Note color="orange-4">
         <p class="text-subtitle1"><b>경고</b></p>
-        <p>활성화할 때 CSS 사용 부분에 눈에 띄는 충돌이 있을 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요. </p>
+        <p>활성화 시 CSS가 사용된 부분에 눈에 띄는 결함이 발생할 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요.</p>
       </Note>
       <Code language="css" class="q-mb-md">
         <textarea readonly>
