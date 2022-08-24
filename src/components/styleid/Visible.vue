@@ -87,7 +87,7 @@
             </td>
           </tr>
           <tr>
-            <td><code>z-top</code></td>
+            <td><code>z-max</code></td>
             <td>
               다른 컴포넌트(Drawer, 모달, 알림창, 헤더/푸터 레이아웃) 위에 요소를 배치합니다.
             </td>
@@ -182,7 +182,7 @@
         </tbody>
       </q-markup-table>
       <p>
-        너비 중 <strong>특정 너비보다 작은 경우</strong>에 일부 DOM 요소 또는 컴포넌트를 표시할 수도 있습니다. <strong>특정 너비보다 큰 경우</strong>도 동일합니다. “보다
+        <strong>특정 너비보다 작은 경우</strong>에만 일부 DOM 요소 또는 컴포넌트를 표시할 수도 있습니다. <strong>특정 너비보다 큰 경우</strong>도 동일합니다. “보다
         작은”과 “보다 큰” 에서 파생된 <code>lt-</code> 또는 <code>gt-</code> 접두사를 붙이기만 하면 됩니다.
         예:<code>lt-md</code> (xs 및 sm에만 표시), <code>lt-xl</code> (xs, sm, md 및 lg 창에만 표시), <code>gt-md</code> (중간보다 큰 창에
         표시:lg 및 xl).
@@ -368,13 +368,13 @@
             <td>
               <code>orientation-portrait</code>
             </td>
-            <td>화면 방향이 세로인 경우에만 표시</td>
+            <td>화면 방향이 수직인 경우에만 표시</td>
           </tr>
           <tr>
             <td>
               <code>orientation-landscape</code>
             </td>
-            <td>화면 방향이 가로인 경우에만 표시</td>
+            <td>화면 방향이 수평인 경우에만 표시</td>
           </tr>
         </tbody>
       </q-markup-table>
