@@ -93,9 +93,9 @@ onUnmounted(() => {
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title class="title">
+        <q-toolbar-title class="cursor-pointer">
           <router-link :to="{ name: 'main' }">
-            <div class="row items-center" :class="screen.lt.md ? 'justify-center' : ''">
+            <div class="row items-center" :class="screen.lt.md ? 'justify-center' : 'q-px-lg'">
               <img src="@/assets/images/sera_quasar_logo.svg" />
             </div>
             <!-- <div class="row items-center">
@@ -206,14 +206,6 @@ onUnmounted(() => {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.title {
-  padding-left: 24px;
-  font-style: italic;
-  font-weight: 700;
-  letter-spacing: -1px;
-  cursor: pointer;
 }
 
 .contents {
