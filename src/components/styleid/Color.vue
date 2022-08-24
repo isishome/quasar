@@ -283,7 +283,7 @@ app.use(Quasar, &#123;
     <div>
       <div class="row justify-between items-cetner">
         <Move label="타이포그래피" prev :to="{ name: 'typo' }" />
-        <Move label="다크 모드" next :to="{ name: 'dark' }" />
+        <Move label="다크 모드" next :to="{ name: 'darkmode' }" />
       </div>
     </div>
   </div>

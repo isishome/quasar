@@ -19,9 +19,6 @@ $q.screen.setSizes({ md: touch.value ? 700 : 960 })
 // top intersection
 const scrollMove = ref(false)
 const onHeaderIntersection = (entry) => {
-  if (touch.value)
-    return
-
   if (entry.rootBounds.width && entry.rootBounds.height)
     scrollMove.value = !entry.isIntersecting
 }
@@ -92,7 +89,7 @@ onUnmounted(() => {
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
-    <div class="top-inter" v-intersection="onHeaderIntersection"></div>
+    <div class="top-inter" v-intersection="!touch ? onHeaderIntersection : undefined"></div>
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />

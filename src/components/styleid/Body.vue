@@ -26,13 +26,13 @@
           <tr>
             <td>body-dark</td>
             <td>
-              <Link :to="{ name: 'dark' }">다크 모드</Link>일 때
+              <Link :to="{ name: 'darkmode' }">다크 모드</Link>일 때
             </td>
           </tr>
           <tr>
             <td>body-light</td>
             <td>
-              <Link :to="{ name: 'dark' }">다크 모드</Link>가 아닐 때
+              <Link :to="{ name: 'darkmode' }">다크 모드</Link>가 아닐 때
             </td>
           </tr>
           <tr>

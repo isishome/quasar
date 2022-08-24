@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
+import { useQuasar } from 'quasar'
 
 const props = defineProps({
   language: {
@@ -11,6 +12,9 @@ const props = defineProps({
     default: false
   }
 })
+
+const $q = useQuasar()
+const touch = computed(() => $q.platform.has.touch)
 
 const Prism = window.Prism
 Prism.disableWorkerMessageHandler = true
@@ -29,7 +33,7 @@ const onIntersection = (entry) => {
 </script>
 
 <template>
-  <div v-intersection.once="onIntersection" class="pre-wrap" :data-language="language">
+  <div v-intersection.once="!touch ? onIntersection : undefined" class="pre-wrap" :data-language="language">
     <pre><code ref="code" :class="`language-${language}`">{{ $slots.default()[0].children.replace(/^[\r\n\s]{0,}/, '').replace(/[\r\n\s]{0,}$/, '') }}</code></pre>
   </div>
 </template>

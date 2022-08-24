@@ -144,7 +144,7 @@ const routes = [
           },
           {
             path: 'dark',
-            name: 'dark',
+            name: 'darkmode',
             component: () => import('@/components/styleid/Dark.vue'),
             meta: {
               title: '다크 모드'
@@ -196,6 +196,51 @@ const routes = [
             component: () => import('@/components/styleid/Other.vue'),
             meta: {
               title: '그 외 CSS 헬퍼 클래스'
+            }
+          }
+        ]
+      }, {
+        path: 'plugin',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: 'Quasar 플러그인',
+          working: true
+        },
+        children: [
+          {
+            path: 'cookies',
+            name: 'cookies',
+            component: () => import('@/components/plugin/Cookies.vue'),
+            meta: {
+              title: 'Cookies',
+              working: true
+            }
+          },
+          {
+            path: 'dark',
+            name: 'dark',
+            component: () => import('@/components/plugin/Dark.vue'),
+            meta: {
+              title: 'Dark',
+              working: true
+            }
+          },
+          {
+            path: 'loading',
+            name: 'loading',
+            component: () => import('@/components/plugin/Loading.vue'),
+            meta: {
+              title: 'Loading',
+              working: true
+            }
+          },
+          {
+            path: 'notify',
+            name: 'notify',
+            component: () => import('@/components/plugin/Notify.vue'),
+            meta: {
+              title: 'Notify',
+              working: true
             }
           }
         ]
