@@ -175,7 +175,7 @@ onUnmounted(() => {
             </div>
           </template>
         </q-page>
-        <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block">
+        <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="sections.length > 0" dense>
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
@@ -330,7 +330,7 @@ a {
 
 .header-title {
   color: inherit;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
   font-weight: 700;
 }
