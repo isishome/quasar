@@ -89,15 +89,18 @@ onUnmounted(() => {
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
-    <div class="top-inter" v-intersection="!touch ? onHeaderIntersection : undefined"></div>
+    <div v-if="!touch" class="top-inter" v-intersection="onHeaderIntersection"></div>
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title class="title">
           <router-link :to="{ name: 'main' }">
-            <div class="row items-center">
-              Sera's Quasar
+            <div class="row items-center" :class="screen.lt.md ? 'justify-center' : ''">
+              <img src="@/assets/images/sera_quasar_logo.svg" />
             </div>
+            <!-- <div class="row items-center">
+              Sera's Quasar
+            </div> -->
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />

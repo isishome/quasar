@@ -14,7 +14,6 @@ const props = defineProps({
 })
 
 const $q = useQuasar()
-const touch = computed(() => $q.platform.has.touch)
 
 const Prism = window.Prism
 Prism.disableWorkerMessageHandler = true
@@ -26,14 +25,14 @@ onMounted(() => {
 
 const code = ref(null)
 const onIntersection = (entry) => {
-  if (props.intersection && entry.isIntersecting)
+  if (!$q.platform.has.touch && props.intersection && entry.isIntersecting)
     Prism.highlightElement(code.value)
 }
 
 </script>
 
 <template>
-  <div v-intersection.once="!touch ? onIntersection : undefined" class="pre-wrap" :data-language="language">
+  <div v-intersection.once="onIntersection" class="pre-wrap" :data-language="language">
     <pre><code ref="code" :class="`language-${language}`">{{ $slots.default()[0].children.replace(/^[\r\n\s]{0,}/, '').replace(/[\r\n\s]{0,}$/, '') }}</code></pre>
   </div>
 </template>
