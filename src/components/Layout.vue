@@ -260,13 +260,18 @@ onUnmounted(() => {
         </q-page>
         <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
-            <q-list v-if="sections.length > 0" dense>
-              <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-              <q-item clickable v-for="section in sections" :key="section.id" tag="a"
-                :inset-level="section.sub ? .2 : 0" active-class="active" :active="section.id === activeId"
-                :to="{ hash: `#${section.id}` }" replace>
-                {{ section.name }}
-              </q-item>
+            <q-list v-if="routeName !== 'main'" dense class="relative-position" style="min-height:6em">
+              <q-inner-loading :showing="sections.length === 0">
+                <q-spinner color="primary" size="3em" :thickness="5" />
+              </q-inner-loading>
+              <template v-if="sections.length > 0">
+                <q-item-label header class="header-title q-py-sm">단락</q-item-label>
+                <q-item clickable v-for="section in sections" :key="section.id" tag="a"
+                  :inset-level="section.sub ? .2 : 0" active-class="active" :active="section.id === activeId"
+                  :to="{ hash: `#${section.id}` }" replace>
+                  {{ section.name }}
+                </q-item>
+              </template>
             </q-list>
             <q-list dense class="q-mt-xl">
               <q-item>

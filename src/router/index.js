@@ -10,17 +10,14 @@ export const router = createRouter({
   routes,
   scrollBehavior(to) {
     return new Promise((resolve) => {
+      const store = useStore()
       setTimeout(() => {
-        if (to.hash) {
-          const store = useStore()
-          resolve({ el: to.hash, top: store.offset + 20 })
-        }
-        else if (to.params.sid) {
-          const store = useStore()
-          resolve({ el: `#${to.params.sid}`, top: store.offset + 20 })
-        }
+        if (to.hash)
+          resolve({ el: to.hash, top: store.offset + 20, behavior: 'smooth' })
+        else if (to.params.sid)
+          resolve({ el: `#${to.params.sid}`, top: store.offset + 20, behavior: 'smooth' })
         else
-          resolve({ top: 0 })
+          resolve({ top: 0, behavior: 'smooth' })
       }, 200)
     })
   }
