@@ -1,14 +1,19 @@
 <script setup>
-defineProps({
+import { getCssVar, colors } from 'quasar'
+const { getPaletteColor } = colors
+
+const props = defineProps({
   color: {
     type: String,
     default: 'primary'
   }
 })
+
+const hexColor = getPaletteColor(props.color)
 </script>
 <template>
   <div>
-    <div class="note">
+    <div class="note" :style="`--note-color:${hexColor}`">
       <div class="box" :class="`bg-${color}`"></div>
       <div class="box right" :class="`bg-${color}`"></div>
       <div class="inner" :class="`bg-${color}`"></div>
@@ -40,9 +45,24 @@ defineProps({
 }
 
 .body--light .note:deep(em) {
-  background-color: var(--q-primary);
-  color: var(--q-dark-text);
+  background-color: transparent;
+  color: inherit;
+  position: relative;
 }
+
+.body--light .note:deep(em::before) {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: var(--note-color);
+  opacity: .5;
+  border-radius: 4px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 
 .body--dark .inner {
   opacity: 1;

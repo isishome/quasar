@@ -203,8 +203,7 @@ const routes = [
         path: 'plugin',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: 'Quasar 플러그인',
-          working: true
+          title: 'Quasar 플러그인'
         },
         children: [
           {
@@ -212,8 +211,7 @@ const routes = [
             name: 'cookies',
             component: () => import('@/components/plugin/Cookies.vue'),
             meta: {
-              title: 'Cookies',
-              working: true
+              title: 'Cookies'
             }
           },
           {

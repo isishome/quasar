@@ -1,29 +1,32 @@
-import { createRouter, createWebHistory } from 'vue-router'
 import { nextTick } from 'vue'
-import { Platform } from 'quasar'
+import { createRouter, createWebHistory } from 'vue-router'
 import routes from './routes'
 import { useStore } from '@/store'
+
+// sleep
+const sleep = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
 
 // Create Router
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to) {
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       const store = useStore()
-      setTimeout(() => {
-        if (to.hash)
-          resolve({ el: to.hash, top: store.offset + 20 })
-        else if (to.params.sid)
-          resolve({ el: `#${to.params.sid}`, top: store.offset + 20 })
-        else
-          resolve({ top: 0 })
-      }, 200)
+      await sleep(200)
+      if (to.hash)
+        resolve({ el: to.hash, top: store.offset + 20 })
+      else
+        resolve({ top: 0 })
     })
   }
 })
 
-router.beforeEach((to) => {
+router.beforeEach((to, from) => {
   const store = useStore()
   const title = `${to.meta.title ? `${to.meta.title} | ` : ''}Sera\'s Quasar`
   document.title = title
@@ -48,36 +51,14 @@ router.beforeEach((to) => {
   else
     oldKeywordsMeta.replaceWith(keywordsMeta)
 
-  store.setSections([])
+  if (to.name !== from.name)
+    store.setSections([])
 })
 
 router.afterEach(async () => {
-  if (Platform.has.touch)
-    return
-
   await nextTick()
-
+  await sleep(200)
   const sections = document.querySelectorAll('section[id]')
   const store = useStore()
-  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, intersecting: false, sub: s.hasAttribute('sub') })))
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      store.setIntersecting(entry.target.id, entry.isIntersecting)
-      const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
-      const filter = store.sections.filter(s => s.top > 0 && s.intersecting)
-      if (filter.length > 0) {
-        const newId = filter.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id
-        if (store.active !== newId)
-          history.replaceState(router.options.history.state, null, `#${newId}`)
-
-        store.setActive(newId)
-      }
-    })
-  }, {
-    threshold: [.1, .9]
-  })
-  sections.forEach(section => {
-    store.setTop(section.id, section.offsetTop + store.offset)
-    io.observe(section)
-  })
+  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: s.offsetTop + store.offset, sub: s.hasAttribute('sub') })))
 })

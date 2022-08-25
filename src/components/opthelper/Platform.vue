@@ -40,15 +40,14 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
       <p>
         Vue 컴포넌트 js 내 사용법:
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
 
-setup () &#123;
-  const $q = useQuasar()
-
-  $q.platform.is.mobile
-&#125;
+const $q = useQuasar()
+$q.platform.is.mobile
+&#60;/script&#62;
         </textarea>
       </Code>
       <p>
@@ -341,15 +340,15 @@ $q.platform.is.cordova
       </p>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{ 'import { Platform } from \'quasar\'' }}
 
 // `ssrContext`에 접근이 필요합니다
 function (ssrContext) &#123;
   const platform = process.env.SERVER
     ? Platform.parseSSR(ssrContext)
-    : Platform // 그렇지 않으면 클라이언트가 됩니다
+    : Platform // 그렇지 않으면 클라이언트 환경이 됩니다
 
-  //  platform은 non-SSR 빌드에 global import 와 동일합니다
+  //  "platform"은 non-SSR 빌드에 global import 와 동일합니다
 &#125;
         </textarea>
       </Code>
@@ -362,7 +361,7 @@ function (ssrContext) &#123;
         매개변수로
         제공됩니다.
       </p>
-      <p>이 모든 것이 클라이언트 전용 앱에서 모든 사용자가 브라우저의 새로운 앱 인스턴스를 사용하기 때문입니다. server-side 렌더링에 대해서도 동일한 것을 원하는 것에 대해:각 요청에는 교차 요청
+      <p>이것은 클라이언트 전용 앱에서 모든 사용자가 브라우저의 새로운 앱 인스턴스를 사용하기 때문입니다. server-side 렌더링에 대해서도 동일한 것을 원하는 것에 대해:각 요청에는 교차 요청
         상태 오염이 발생하지
         않도록 새로운 격리 앱 인스턴스를 필요로 합니다. 따라서 Platform은 각 요청에 별도로 바인딩 되어야 합니다.</p>
     </section>

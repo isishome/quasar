@@ -48,24 +48,21 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
 &#60;/q-list&#62;
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="html">
         <textarea readonly>
 // Vue 컴포넌트 스크립트 부분
+
+&#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
 import &#123; computed &#125; from 'vue'
 
-export default &#123;
-  setup () &#123;
-    const $q = useQuasar()
-    const buttonColor = computed(() =&#62; &#123;
-      return $q.screen.lt.md
-        ? 'primary'
-        : 'secondary'
-    &#125;)
-
-    return &#123; buttonColor &#125;
-  &#125;
-&#125;
+const $q = useQuasar()
+const buttonColor = computed(() =&#62; &#123;
+  return $q.screen.lt.md
+    ? 'primary'
+    : 'secondary'
+&#125;)
+&#60;/script&#62;
         </textarea>
       </Code>
       <p>Vue 컴포넌트 외부에서 스크린 플러그인을 사용할 수도 있습니다:</p>

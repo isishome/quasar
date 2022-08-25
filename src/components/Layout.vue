@@ -56,6 +56,21 @@ const reload = () => {
   })
 }
 
+const onScroll = (details) => {
+  const scrollTop = details ? details.position.top : 0
+  const filter = store.sections.filter(s => s.top >= scrollTop)
+
+  if (filter.length === 0)
+    return
+
+  const newId = filter.reduce((prev, current) => prev.top < current.top ? prev : current).id
+
+  if (store.active !== newId)
+    history.replaceState(router.options.history.state, null, `#${newId}`)
+
+  store.setActive(newId)
+}
+
 watch(() => route.name, (val, old) => {
   if (val && val !== old)
     reload()
@@ -85,6 +100,7 @@ onUnmounted(() => {
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
+    <q-scroll-observer @scroll="onScroll" debounce="100" />
     <div v-if="!touch" class="top-inter" v-intersection="onHeaderIntersection"></div>
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
@@ -211,8 +227,9 @@ onUnmounted(() => {
       <div class="aside mobile right text-weight-bold">
         <q-list v-if="sections.length > 0" dense>
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-          <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .2 : 0"
-            active-class="active" :active="section.id === activeId" @click="rightDrawerOpen = false"
+          <q-item clickable v-for="(section, idx) in sections" :key="section.id" tag="a"
+            :inset-level="section.sub ? .2 : 0" active-class="active"
+            :active="!activeId && idx === 0 || section.id === activeId" @click="rightDrawerOpen = false"
             :to="{ hash: `#${section.id}` }" replace>
             {{ section.name }}
           </q-item>
@@ -266,9 +283,9 @@ onUnmounted(() => {
               </q-inner-loading>
               <template v-if="sections.length > 0">
                 <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-                <q-item clickable v-for="section in sections" :key="section.id" tag="a"
-                  :inset-level="section.sub ? .2 : 0" active-class="active" :active="section.id === activeId"
-                  :to="{ hash: `#${section.id}` }" replace>
+                <q-item clickable v-for="(section, idx) in sections" :key="section.id" tag="a"
+                  :inset-level="section.sub ? .2 : 0" active-class="active"
+                  :active="!activeId && idx === 0 || section.id === activeId" :to="{ hash: `#${section.id}` }" replace>
                   {{ section.name }}
                 </q-item>
               </template>
@@ -454,11 +471,11 @@ ins::after {
 }
 
 .char {
-  animation: opacity 1s ease forwards;
+  animation: opacity 1.4s ease-out forwards;
 }
 
 .letter {
-  animation: slidein .3s ease .3s forwards;
+  animation: slidein .3s ease-out .3s forwards;
   opacity: 0;
 }
 

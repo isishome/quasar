@@ -290,7 +290,7 @@
     <div>
       <div class="row justify-between items-cetner">
         <Move label="Positioning" prev :to="{ name: 'position' }" />
-        <!-- <Move label="기타 CSS 헬퍼 클래스" next :to="{ name: 'ohter' }" /> -->
+        <Move label="Cookies" next :to="{ name: 'cookies' }" />
       </div>
     </div>
   </div>
