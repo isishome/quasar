@@ -40,10 +40,6 @@ const myTweak = (offset) => {
 }
 
 const activeId = computed(() => store.active)
-watch(() => activeId.value, (val, old) => {
-  if (val && val !== old)
-    history.replaceState({}, null, `#${val}`)
-})
 
 // toggle dark 
 const toggleDark = () => {
@@ -217,7 +213,7 @@ onUnmounted(() => {
           <q-item-label header class="header-title q-py-sm">단락</q-item-label>
           <q-item clickable v-for="section in sections" :key="section.id" tag="a" :inset-level="section.sub ? .2 : 0"
             active-class="active" :active="section.id === activeId" @click="rightDrawerOpen = false"
-            :to="{ params: { sid: section.id } }">
+            :to="{ hash: `#${section.id}` }" replace>
             {{ section.name }}
           </q-item>
         </q-list>
@@ -268,7 +264,7 @@ onUnmounted(() => {
               <q-item-label header class="header-title q-py-sm">단락</q-item-label>
               <q-item clickable v-for="section in sections" :key="section.id" tag="a"
                 :inset-level="section.sub ? .2 : 0" active-class="active" :active="section.id === activeId"
-                :to="{ params: { sid: section.id } }">
+                :to="{ hash: `#${section.id}` }" replace>
                 {{ section.name }}
               </q-item>
             </q-list>

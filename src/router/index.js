@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { nextTick } from 'vue'
 import { Platform } from 'quasar'
 import routes from './routes'
 import { useStore } from '@/store'
@@ -26,6 +27,7 @@ export const router = createRouter({
 })
 
 router.beforeEach((to) => {
+  const store = useStore()
   const title = `${to.meta.title ? `${to.meta.title} | ` : ''}Sera\'s Quasar`
   document.title = title
   const ogTitle = document.createElement('meta')
@@ -48,31 +50,37 @@ router.beforeEach((to) => {
     document.head.appendChild(keywordsMeta)
   else
     oldKeywordsMeta.replaceWith(keywordsMeta)
+
+  store.setSections([])
 })
 
-router.afterEach(() => {
+router.afterEach(async () => {
   if (Platform.has.touch)
     return
 
-  setTimeout(() => {
-    const sections = document.querySelectorAll('section[id]')
-    const store = useStore()
-    store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, intersecting: false, sub: s.hasAttribute('sub') })))
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        store.setIntersecting(entry.target.id, entry.isIntersecting)
-        const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
-        const filter = store.sections.filter(s => s.top > 0 && s.intersecting)
-        store.setActive(entry.target.id)
-        if (filter.length > 0)
-          store.setActive(filter.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id)
-      })
-    }, {
-      threshold: Array.from(Array(10), (_, x) => x * 0.1)
+  await nextTick()
+
+  const sections = document.querySelectorAll('section[id]')
+  const store = useStore()
+  store.setSections([...sections].map(s => ({ id: s.id, name: s.dataset.name, top: 0, intersecting: false, sub: s.hasAttribute('sub') })))
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      store.setIntersecting(entry.target.id, entry.isIntersecting)
+      const scrollTop = entry.target.offsetTop - entry.boundingClientRect.top
+      const filter = store.sections.filter(s => s.top > 0 && s.intersecting)
+      if (filter.length > 0) {
+        const newId = filter.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id
+        if (store.active !== newId)
+          history.replaceState(router.options.history.state, null, `#${newId}`)
+
+        store.setActive(newId)
+      }
     })
-    sections.forEach(section => {
-      store.setTop(section.id, section.offsetTop + store.offset)
-      io.observe(section)
-    })
-  }, 100)
+  }, {
+    threshold: [.1, .9]
+  })
+  sections.forEach(section => {
+    store.setTop(section.id, section.offsetTop + store.offset)
+    io.observe(section)
+  })
 })
