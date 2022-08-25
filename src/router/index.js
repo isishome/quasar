@@ -13,11 +13,11 @@ export const router = createRouter({
       const store = useStore()
       setTimeout(() => {
         if (to.hash)
-          resolve({ el: to.hash, top: store.offset + 20, behavior: 'smooth' })
+          resolve({ el: to.hash, top: store.offset + 20 })
         else if (to.params.sid)
-          resolve({ el: `#${to.params.sid}`, top: store.offset + 20, behavior: 'smooth' })
+          resolve({ el: `#${to.params.sid}`, top: store.offset + 20 })
         else
-          resolve({ top: 0, behavior: 'smooth' })
+          resolve({ top: 0 })
       }, 200)
     })
   }
