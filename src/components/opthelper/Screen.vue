@@ -1,9 +1,8 @@
 <script setup>
 import { useQuasar } from 'quasar'
-import { defineAsyncComponent, computed } from 'vue'
+import { defineAsyncComponent } from 'vue'
 const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 const $q = useQuasar()
-const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원하지 않습니다')
 </script>
 
 <template>

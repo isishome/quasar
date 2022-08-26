@@ -7,30 +7,18 @@ import { useStore } from '@/store'
 const prod = computed(() => import.meta.env.PROD)
 const $q = useQuasar()
 const screen = computed(() => $q.screen)
-const touch = computed(() => $q.platform.has.touch)
 const route = useRoute()
 const router = useRouter()
 const routeName = computed(() => route.name)
 const routes = router.getRoutes()
 
 // change md width
+const touch = computed(() => $q.platform.has.touch)
 $q.screen.setSizes({ md: touch.value ? 700 : 960 })
-
-// top intersection
-const scrollMove = ref(false)
-const onHeaderIntersection = (entry) => {
-  if (entry.rootBounds.width && entry.rootBounds.height)
-    scrollMove.value = !entry.isIntersecting
-}
 
 const leftDrawerOpen = ref(false)
 const toggleLeftDrawer = () => {
   leftDrawerOpen.value = !leftDrawerOpen.value
-}
-
-const rightDrawerOpen = ref(false)
-const toggleRightDrawer = () => {
-  rightDrawerOpen.value = !rightDrawerOpen.value
 }
 
 const store = useStore()
@@ -56,13 +44,16 @@ const reload = () => {
   })
 }
 
+const scrollTop = ref(0)
+const scrollMove = ref(false)
 const onScroll = (details) => {
-  const scrollTop = details ? details.position.top : 0
+  scrollTop.value = details ? details.position.top : 0
+  scrollMove.value = scrollTop.value > 0
 
   if (store.sections.length === 0)
     return
 
-  const newId = store.sections.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id
+  const newId = store.sections.reduce((prev, current) => Math.abs(prev.top - scrollTop.value) < Math.abs(current.top - scrollTop.value) ? prev : current).id
 
   if (store.active !== newId)
     history.replaceState(router.options.history.state, null, `#${newId}`)
@@ -99,8 +90,7 @@ onUnmounted(() => {
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-scroll-observer @scroll="onScroll" debounce="100" />
-    <div v-if="!touch" class="top-inter" v-intersection="onHeaderIntersection"></div>
+    <q-scroll-observer v-if="!touch" @scroll="onScroll" debounce="100" />
     <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
@@ -199,8 +189,6 @@ onUnmounted(() => {
           </router-link>
         </q-toolbar-title>
         <q-btn dense flat icon="dark_mode" @click="toggleDark" />
-        <q-btn v-if="!touch && screen.lt.lg && sections.length > 0" dense flat icon="assignment"
-          @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
@@ -208,31 +196,18 @@ onUnmounted(() => {
         <template v-for="r in routes" :key="r.name">
           <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
             class="full-width q-mb-md">
-            <q-item class="text-weight-bold">
-              <q-item-label>{{ r.meta.title }}<span v-if="r.meta.working" style="opacity:.5"> [예정]</span></q-item-label>
+            <q-item>
+              <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.working"
+                  style="opacity:.5"> [예정]</span></q-item-label>
             </q-item>
             <template v-for="c in r.children" :key="c.name">
               <q-item :disable="c.meta.working" tag="a" active-class="active" :active="routeName === c.name"
-                @click="leftDrawerOpen = false" :to="{ name: c.name }"> {{ c.meta.title
-                }}<span v-if="c.meta.working" style="opacity:.5">&nbsp;[예정]</span>
+                :to="{ name: c.name }">
+                {{ c.meta.title }}<span v-if="c.meta.working" style="opacity:.5">&nbsp;[예정]</span>
               </q-item>
             </template>
           </q-list>
         </template>
-      </div>
-    </q-drawer>
-    <q-drawer v-if="!touch && screen.lt.lg && sections.length > 0" v-model="rightDrawerOpen" side="right"
-      behavior="mobile" no-swipe-open no-swipe-close>
-      <div class="aside mobile right text-weight-bold">
-        <q-list v-if="sections.length > 0" dense>
-          <q-item-label header class="header-title q-py-sm">단락</q-item-label>
-          <q-item clickable v-for="(section, idx) in sections" :key="section.id" tag="a"
-            :inset-level="section.sub ? .2 : 0" active-class="active"
-            :active="!activeId && idx === 0 || section.id === activeId" @click="rightDrawerOpen = false"
-            :to="{ hash: `#${section.id}` }" replace>
-            {{ section.name }}
-          </q-item>
-        </q-list>
       </div>
     </q-drawer>
     <q-page-container>
@@ -274,7 +249,7 @@ onUnmounted(() => {
             </div>
           </template>
         </q-page>
-        <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
+        <aside class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
             <q-list v-if="!['main', 'htmlencode'].includes(routeName)" dense class="relative-position"
               style="min-height:6em">
@@ -475,8 +450,17 @@ ins::after {
 }
 
 .letter {
+  transition: fill .3s ease;
   animation: slidein .3s ease-out .3s forwards;
   opacity: 0;
+}
+
+.header.scroll:deep(.letter) {
+  fill: var(--q-text);
+}
+
+.body--dark .header.scroll:deep(.letter) {
+  fill: var(--q-dark-text);
 }
 
 @keyframes opacity {
