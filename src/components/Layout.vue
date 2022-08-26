@@ -58,12 +58,11 @@ const reload = () => {
 
 const onScroll = (details) => {
   const scrollTop = details ? details.position.top : 0
-  const filter = store.sections.filter(s => s.top >= scrollTop)
 
-  if (filter.length === 0)
+  if (store.sections.length === 0)
     return
 
-  const newId = filter.reduce((prev, current) => prev.top < current.top ? prev : current).id
+  const newId = store.sections.reduce((prev, current) => Math.abs(prev.top - scrollTop) < Math.abs(current.top - scrollTop) ? prev : current).id
 
   if (store.active !== newId)
     history.replaceState(router.options.history.state, null, `#${newId}`)
@@ -277,7 +276,8 @@ onUnmounted(() => {
         </q-page>
         <aside v-if="!touch" class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
-            <q-list v-if="routeName !== 'main'" dense class="relative-position" style="min-height:6em">
+            <q-list v-if="!['main', 'htmlencode'].includes(routeName)" dense class="relative-position"
+              style="min-height:6em">
               <q-inner-loading :showing="sections.length === 0">
                 <q-spinner color="primary" size="3em" :thickness="5" />
               </q-inner-loading>

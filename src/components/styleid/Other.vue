@@ -11,6 +11,18 @@
       <p>아래 목록은 완벽하지 않습니다. 타이포그래피, Visibility,
         <Link href="https://quasar.dev/style/shadows">Shadows</Link>, Positioning과 같은 다른 CSS 문서 페이지도 함께 참고하세요.
       </p>
+      <Info advice color="teal-4">
+        <p>자주는 아니지만 몇가지 클래스는 가끔 아주 유용하게 사용됩니다.</p>
+        <ul>
+          <li>드래그나 클릭을 방지하기 위해: <code>non-selectable</code></li>
+          <li>기본적으로 클릭 형태가 아닌 요소에: <code>cursor-pointer</code></li>
+          <li>요소에 스크롤이 필요할 때: <code>scroll</code></li>
+          <li>자식 요소의 overflow를 막고싶을 때: <code>overflow-hidden</code></li>
+          <li>요소를 상위 요소에 수평, 수직, 전체 영역으로 채우고 싶을 때: <code>full-width</code>, <code>full-height</code>,
+            <code>fit</code>
+          </li>
+        </ul>
+      </Info>
     </section>
     <section id="mouse" data-name="마우스 관련">
       <Title sub>마우스 관련</Title>
@@ -63,7 +75,7 @@
             </td>
           </tr>
           <tr>
-            <td><code>cursor-inherit</code></td>
+            <td><code>cursor-none</code></td>
             <td>
               마우스 커서가 렌더링되지 않음
             </td>

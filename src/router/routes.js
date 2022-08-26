@@ -219,8 +219,7 @@ const routes = [
             name: 'dark',
             component: () => import('@/components/plugin/Dark.vue'),
             meta: {
-              title: 'Dark',
-              working: true
+              title: 'Dark'
             }
           },
           {

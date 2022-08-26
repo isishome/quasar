@@ -102,7 +102,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       </p>
     </section>
     <section id="usage-vue" data-name=".vue 안에서 사용하기" sub>
-      <Title minor>.vue 파일에서 사용하기</Title>
+      <Title minor>Vue 파일에서 사용하기</Title>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;template&#62;
@@ -131,7 +131,7 @@ function show () &#123;
       </Code>
     </section>
     <section id="usage-outside" data-name=".vue 밖에서 사용하기" sub>
-      <Title minor>.vue 파일 외부에서 사용하기</Title>
+      <Title minor>Vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 {{ 'import { Quasar } from \'quasar\'' }}

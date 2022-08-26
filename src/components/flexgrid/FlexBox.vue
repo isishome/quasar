@@ -915,7 +915,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         CSS 클래스에 대해 중단점 인식
         버전을 제공합니다.</p>
       <Note color="orange-4">
-        <p class="text-subtitle1"><b>경고</b></p>
+        <p><b>주의</b></p>
         <p>활성화 시 CSS가 사용된 부분에 눈에 띄는 결함이 발생할 수 있으니 이점 유의하여 꼭 필요한 경우에만 사용하세요.</p>
       </Note>
       <Code language="css" class="q-mb-md">

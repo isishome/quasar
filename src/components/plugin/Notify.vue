@@ -57,8 +57,8 @@
         <Link :to="{ name: 'visible' }">Visibility</Link> 페이지를 참고하세요.
       </p>
       <p>
-        “반응형 디자인” 섹션에서
-        <Link :to="{ name: 'flexbox', hash: '#reponsive' }">Flexbox 소개</Link>를 살펴보는 것도 좋습니다.
+        Flexbox 챕터에서
+        <Link :to="{ name: 'flexbox', hash: '#reponsive' }">“반응형 디자인” 섹션</Link>을 살펴보는 것도 좋습니다.
       </p>
     </section>
     <div class="q-py-xl"></div>

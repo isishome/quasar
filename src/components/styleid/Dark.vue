@@ -35,7 +35,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     <section id="how" data-name="사용법">
       <Title sub>사용법</Title>
       <p>
-        <Link>다크 플러그인</Link>을 통해 다크 모드와 라이트 모드(기본값)를 쉽게 전환할 수 있습니다.
+        <Link :to="{ name: 'dark' }">다크 플러그인</Link>을 통해 다크 모드와 라이트 모드(기본값)를 쉽게 전환할 수 있습니다.
       </p>
     </section>
     <section id="style" data-name="앱 스타일 지정 방법">

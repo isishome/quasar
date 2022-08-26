@@ -16,9 +16,9 @@ const transitions = shallowReadonly([
     <section id="intro" data-name="소개">
       <Title head>Transitions</Title>
       <p>
-        <code>transition-show</code>/<code>transition-hide</code> 또는
-        <code>transition-prev</code>/<code>transition-next</code> 또는 간단하게 <code>transition</code>
-        props를 사용하는 몇 가지
+        <code>transition-show</code> / <code>transition-hide</code> 또는
+        <code>transition-prev</code> / <code>transition-next</code> 또는 간단하게 <em>transition props</em>
+        를 사용하는 몇 가지
         Quasar 컴포넌트가 있습니다. 여기에서 이러한 props에 사용하는 몇 가지 transition을 보여드리겠습니다.
       </p>
       <div class="q-my-lg">
@@ -40,7 +40,7 @@ const transitions = shallowReadonly([
           <div class="text-center bg-back">{{ t }}</div>
         </q-card>
       </div>
-      <p>transition props에 캡션에 표시된 이름을 사용하세요. 예제:</p>
+      <p>transition props에 <em>캡션</em>에 표시된 이름을 사용하세요. 예제:</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;q-menu

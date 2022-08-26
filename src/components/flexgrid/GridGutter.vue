@@ -30,7 +30,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="q-gutter" data-name="q-gutter-{size}">
       <Title sub>q-gutter-{size}</Title>
       <Note color="orange-4">
-        <p><strong>경고</strong></p>
+        <p><b>주의</b></p>
         <p>
           <code>q-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는 +마진</strong>을
           적용합니다. gutter의
@@ -170,7 +170,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="q-col-gutter" data-name="q-col-gutter-{size}">
       <Title sub>q-col-gutter-{size}</Title>
       <Note color="orange-4">
-        <p><strong>경고</strong></p>
+        <p><b>주의</b></p>
         <p>
           <code>q-col-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는
             +패딩</strong>을
@@ -362,7 +362,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title sub>장단점 및 문제 해결 방법</Title>
       <p>두 클래스 세트 모두 장단점이 있습니다.</p>
       <Note color="orange-4">
-        <p><strong>경고</strong></p>
+        <p><b>주의</b></p>
         <p>
           <code>q-gutter-*</code> 및 <code>q-col-gutter-*</code> 클래스 모두 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하기 때문에 부모
           요소의 배경, 마진 또는 테두리 관련 속성을 대상으로 하는 스타일을 적용해서는 안 됩니다. 대신 부모 요소를 컨테이너로 래핑하고 그 컨테이너에 스타일 및 overflow-auto, row 등을
@@ -453,7 +453,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </p>
       </Note>
       <Note color="orange-4">
-        <p><strong>경고</strong></p>
+        <p><b>주의</b></p>
         <p>
           <em>q-gutter-*</em> 클래스는 자식 요소의 외부 수치를 <strong>변경하므로</strong> 더이상 너비를 지정하는 <em>col-*</em> 또는
           <em>offset-*</em> 클래스를 사용할 수
@@ -563,7 +563,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </div>
       </Info>
       <Note color="orange-4">
-        <p><strong>경고</strong></p>
+        <p><b>주의</b></p>
         <p>
           <code>q-col-gutter-*</code> 클래스는 자식 요소의 <strong>상단과 좌측에 -패딩</strong>을 적용하기 때문에
           자식

@@ -1,5 +1,5 @@
 <script setup>
-import { getCssVar, colors } from 'quasar'
+import { colors } from 'quasar'
 const { getPaletteColor } = colors
 
 const props = defineProps({

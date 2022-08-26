@@ -14,6 +14,11 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         <p><b>메모</b></p>
         <p>쿠키를 다루는 표준 방법에 더해 쿠키 플러그인을 사용하면 JSON 객체를 사용하여 쿠키를 읽고 쓸 수 있습니다. SSR의 쿠키를 관리하는 것 역시 가능합니다.</p>
       </Note>
+      <Info advice color="teal-4">
+        <p>Quasar 내에서 쿠키를 사용하도록 도와주는 플러그인입니다. 저는 주로 다크 모드 여부 값이나 다국어 정보(<code>ko</code>, <code>en</code> 등)와 같이 간단한 정보를
+          저장할 때
+          사용합니다.</p>
+      </Info>
     </section>
     <section id="install" data-name="설치">
       <Title sub>설치</Title>
@@ -168,6 +173,8 @@ $q.cookies.set('cookie_name', cookie_value, options)
         </textarea>
       </Code>
       <p>(선택사항) <code>options</code> 매개변수는 속성별로 아래에 설명된 객체입니다.</p>
+    </section>
+    <section id="expires" data-name="옵션: expires" sub>
       <Title minor>옵션: expires</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -182,6 +189,8 @@ expires: '15m 10s' // 15분 10초
       </Code>
       <p>쿠키의 수명을 정의합니다. 값은 생성 시점으로부터 날짜로 해석되는 숫자 또는 Date 객체 또는 원시 문자열 날짜 (“Mon, 06 Jan 2020 12:52:55 GMT”) 또는 특수 문자열 형식
         ("1d", " 15m", "13d", "1d 15m", "1d 3h 5m 3s") 일 수 있습니다. 생략하면 쿠키는 세션 쿠키가 됩니다.</p>
+    </section>
+    <section id="path" data-name="옵션: path" sub>
       <Title minor>옵션: path</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -190,6 +199,8 @@ path: '/'
       </Code>
       <p>쿠키의 유효 경로를 정의합니다. 기본적으로 쿠키의 경로는 쿠키가 작성된 페이지의 경로입니다(표준 브라우저 동작). 예를 들어 전체 도메인에서 사용할 수 있도록 하려면 경로: '/'를 사용하세요.
         기본값: 쿠키가 생성된 페이지 경로입니다.</p>
+    </section>
+    <section id="domain" data-name="옵션: domain" sub>
       <Title minor>옵션: domain</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -197,6 +208,8 @@ domain: 'quasar.dev'
         </textarea>
       </Code>
       <p>쿠키의 유효 도메인을 정의합니다. 기본값: 쿠키가 생성된 페이지의 도메인입니다.</p>
+    </section>
+    <section id="samesite" data-name="옵션: sameSite" sub>
       <Title minor>옵션: sameSite</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -219,6 +232,8 @@ sameSite: 'Lax'
       <p><code>same-site</code> 설정에 대한 자세한 정보는
         <Link href="https://web.dev/samesite-cookies-explained/">여기</Link>를 참고하세요.
       </p>
+    </section>
+    <section id="httponly" data-name="옵션: httpOnly" sub>
       <Title minor>옵션: httpOnly</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -227,6 +242,8 @@ httpOnly: true
       </Code>
       <p>사이트 간 스크립트(XSS) 공격을 완화하기 위해 HttpOnly 쿠키는 자바스크립트의 document.cookie API에 액세스할 수 없으며 서버로만 전송됩니다. 예를 들어, 서버 측 세션을
         유지하는 쿠키는 자바스크립트에서 사용할 필요가 없으며 HttpOnly 플래그가 설정되어야 합니다.</p>
+    </section>
+    <section id="secure" data-name="옵션: secure" sub>
       <Title minor>옵션: secure</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -238,6 +255,8 @@ secure: true
         <p><b>팁</b></p>
         <p>Quasar CLI 환경과 개발 모드를 사용하고 있다면, quasar.config.js > devServer > https: true를 통해 HTTPS를 활성화할 수 있습니다.</p>
       </Note>
+    </section>
+    <section id="other" data-name="옵션: ohter" sub>
       <Title minor>옵션: ohter</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
@@ -277,7 +296,7 @@ $q.cookies.remove('cookie_name', options)
         </textarea>
       </Code>
       <Note color="orange-4">
-        <p><b>경고</b></p>
+        <p><b>주의</b></p>
         <p>쿠키가 이전에 특정 <em>경로</em> 및/또는 <em>도메인</em>으로 설정된 경우 <em>options</em> 매개변수를 통해 동일한 속성이 remove()에 전달된 경우에만 쿠키를
           성공적으로
           제거할 수 있습니다. 이것은 RFC6265에
