@@ -29,7 +29,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="q-gutter" data-name="q-gutter-{size}">
       <Title sub>q-gutter-{size}</Title>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>
           <code>q-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는 +마진</strong>을
@@ -169,7 +169,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     </section>
     <section id="q-col-gutter" data-name="q-col-gutter-{size}">
       <Title sub>q-col-gutter-{size}</Title>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>
           <code>q-col-gutter-*</code> 클래스는 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하고 자식 요소의 <strong>상단과 좌측에는
@@ -361,7 +361,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="issue" data-name="장단점 및 문제 해결 방법">
       <Title sub>장단점 및 문제 해결 방법</Title>
       <p>두 클래스 세트 모두 장단점이 있습니다.</p>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>
           <code>q-gutter-*</code> 및 <code>q-col-gutter-*</code> 클래스 모두 부모 요소의 <strong>상단과 좌측에 -마진</strong>을 적용하기 때문에 부모
@@ -452,7 +452,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           있습니다.
         </p>
       </Note>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>
           <em>q-gutter-*</em> 클래스는 자식 요소의 외부 수치를 <strong>변경하므로</strong> 더이상 너비를 지정하는 <em>col-*</em> 또는
@@ -562,7 +562,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </div>
         </div>
       </Info>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>
           <code>q-col-gutter-*</code> 클래스는 자식 요소의 <strong>상단과 좌측에 -패딩</strong>을 적용하기 때문에

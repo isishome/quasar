@@ -1,9 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 const props = defineProps({
-  options: Array,
-  default: () => {
-    return []
+  options: {
+    type: Array,
+    default: () => {
+      return []
+    }
+  },
+  item: {
+    type: String,
+    default: 'code'
   }
 })
 
@@ -13,7 +19,10 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
   <div class="practice">
     <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm">
       <template #label="opt">
-        <div class="col-12"><code>{{ opt.label }}</code></div>
+        <div class="col-12">
+          <code v-if="item === 'code'">{{ opt.label }}</code>
+          <div v-else>{{ opt.label }}</div>
+        </div>
       </template>
     </q-option-group>
     <q-tab-panels v-model="tab">

@@ -6,7 +6,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 <template>
   <div class="q-px-md text-body2">
     <section id="intro" data-name="소개">
-      <Title head>쿠키</Title>
+      <Title head>Cookies 플러그인</Title>
       <p>
         표준화된 <code>document.cookie</code>의 래퍼입니다.
       </p>
@@ -295,7 +295,7 @@ $q.cookies.remove('cookie_name', options)
 &#60;/script&#62;
         </textarea>
       </Code>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>쿠키가 이전에 특정 <em>경로</em> 및/또는 <em>도메인</em>으로 설정된 경우 <em>options</em> 매개변수를 통해 동일한 속성이 remove()에 전달된 경우에만 쿠키를
           성공적으로

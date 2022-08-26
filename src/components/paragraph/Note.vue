@@ -41,7 +41,7 @@ const hexColor = getPaletteColor(props.color)
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .1;
+  opacity: .2;
 }
 
 .body--light .note:deep(em) {

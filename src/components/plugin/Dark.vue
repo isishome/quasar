@@ -6,7 +6,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 <template>
   <div class="q-px-md text-body2">
     <section id="intro" data-name="소개">
-      <Title head>다크 플러그인
+      <Title head>Dark 플러그인
       </Title>
       <Note>
         <p><b>팁</b></p>
@@ -26,7 +26,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="usage" data-name="사용법">
       <Title sub>사용법</Title>
-      <Note color="orange-4">
+      <Note color="amber-5">
         <p><b>주의</b></p>
         <p>아래에 <em>isActive</em> 또는 <em>mode</em>에 수동으로 값을 할당하지 마세요. 그대신 <em>set(val)</em> 메서드를 사용하세요.</p>
       </Note>

@@ -106,12 +106,12 @@ onBeforeUnmount(() => {
 <template>
   <div class="q-px-md text-body2">
     <section id="intro" data-name="소개">
-      <Title head>로딩 플러그인
+      <Title head>Loading 플러그인
       </Title>
-      <p>로딩은 백그라운드 작업이 진행 중임을 사용자에게 알리기 위해 앱 콘텐츠 위에 스피너와 오버레이를 표시하는 데 사용할 수 있는 기능입니다. 전역 백그라운드 작업을 위해 페이지 내에 복잡한 논리를 추가할
+      <p>로딩은 백그라운드 작업이 진행 중임을 사용자에게 알리기 위해 앱 콘텐츠 위에 스피너와 오버레이를 표시하는 데 사용되는 기능입니다. 전역 백그라운드 작업을 위해 페이지 내에 복잡한 논리를 추가할
         필요가 없습니다.</p>
       <Info advice color="teal-4">
-        <p>특정 작업 시 레이아웃 전체를 비활성화해야 할 때 유용하게 사용됩니다. 저는 개인적으로 로딩 플러그인 보다 내부 로딩을 많이 사용하는 편입니다.</p>
+        <p>특정 작업 시 레이아웃 전체를 비활성화해야 할 때 유용하게 사용됩니다. 저는 개인적으로 “로딩 플러그”인 보다 “내부 로딩”을 많이 사용하는 편입니다.</p>
       </Info>
     </section>
     <section id="install" data-name="설치">
@@ -138,8 +138,8 @@ app.use(Quasar, &#123;
     </section>
     <section id="usage" data-name="사용법">
       <Title sub>사용법</Title>
-      <p>로딩은 빠른 작업으로 인해 화면이 깜박이지 않도록 지연 (500ms)을 사용하여 표시됩니다. 이것은 사용자가 무슨 일이 일어나는지 볼 기회 없이 스피너를 표시했다가 빠르게
-        숨김으로써 발생합니다. 그래서 지연을 사용함으로써 문제를 해소합니다.</p>
+      <p>Quasar 로딩 플러그인은 빠른 작업으로 인해 화면이 깜박이지 않도록 지연 (500ms)을 사용하여 표시됩니다. 깜박임은 사용자가 확인할 기회도 없이 스피너와 오버레이가 표시되었다가 빠르게
+        숨김 처리 될 때 발생합니다. 지연은 로딩 화면이 보여기 전 이런 문제를 해결하는 데 도움을 줍니다.</p>
     </section>
     <section id="inside" data-name="Vue 파일에서 사용하기" sub>
       <Title minor>Vue 파일에서 사용하기</Title>
@@ -192,7 +192,7 @@ Loading.hide()
         { label: '안전하지 않은 메시지', value: 'unsafe' },
         { label: '사용자 정의', value: 'custom' },
         { label: '표시 및 변경', value: 'change' },
-      ]">
+      ]" item="default">
         <template #default>
           <Code language="html">
             <textarea readonly>
