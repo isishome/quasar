@@ -227,8 +227,7 @@ const routes = [
             name: 'loading',
             component: () => import('@/components/plugin/Loading.vue'),
             meta: {
-              title: 'Loading',
-              working: true
+              title: 'Loading'
             }
           },
           {

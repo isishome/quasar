@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { Quasar, Cookies, Notify } from 'quasar'
+import { Quasar, Cookies, Notify, Loading } from 'quasar'
 import { router } from './router'
 import { createPinia } from 'pinia'
 import App from './App.vue'
@@ -19,7 +19,7 @@ import 'quasar/dist/quasar.css'
 const pinia = createPinia()
 
 createApp(App).use(router).use(pinia).use(Quasar, {
-  plugins: { Cookies, Notify } // import Quasar plugins and add here
+  plugins: { Cookies, Notify, Loading } // import Quasar plugins and add here
 })
   .component('Link', Link)
   .component('Title', Title)

@@ -55,7 +55,7 @@ $q.dark.toggle()
         </textarea>
       </Code>
     </section>
-    <section id="outside" data-name="Vue 파일에서 사용하기" sub>
+    <section id="outside" data-name="Vue 파일 외부에서 사용하기" sub>
       <Title minor>Vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
