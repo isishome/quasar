@@ -235,8 +235,7 @@ const routes = [
             name: 'notify',
             component: () => import('@/components/plugin/Notify.vue'),
             meta: {
-              title: 'Notify',
-              working: true
+              title: 'Notify'
             }
           }
         ]
