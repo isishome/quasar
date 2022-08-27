@@ -46,7 +46,7 @@ const onIntersection = (entry) => {
   border-radius: 8px;
   overflow: hidden;
   background-color: #202030;
-  transition: background-color .3s ease;
+  transition: background-color .3s ease, max-height .6s ease, margin-top .6s ease;
 }
 
 .body--dark .pre-wrap {

@@ -347,10 +347,10 @@ const showNotifHtml = () => {
     <section id="intro" data-name="소개">
       <Title head>Notify 플러그인
       </Title>
-      <p>Notify는 알림 형태로 사용자에게 애니메이션 메시지(페이지에 있는 모든 것보다 상위에 있는)를 표시할 수 있는 Quasar 플러그인입니다. 이벤트를 사용자에게 알리는 데 유용하며 작업을 통해
+      <p>Notify는 알림 형태로 사용자에게 애니메이션 메시지(페이지에 있는 다른 요소들 보다 상위에 있는)를 표시할 수 있는 Quasar 플러그인입니다. 이벤트를 사용자에게 알리는 데 유용하며 작업을 통해
         사용자의 참여를 유도할 수도 있습니다. 토스트 또는 스낵바라고도 합니다.</p>
       <Info advice color="teal-4">
-        <p>백엔드 서버에 HTTP 요청 성공이나 실패에 대한 메시지를 보여주거나 사용자 동의를 받는 등 다양한 곳에 활용할 수 있습니다.</p>
+        <p>백엔드 서버의 HTTP 요청 성공이나 실패에 대한 메시지를 보여주거나 사용자 동의를 받는 등 다양한 곳에 활용할 수 있습니다.</p>
       </Info>
     </section>
     <section id="install" data-name="설치">
@@ -420,7 +420,7 @@ Notify.create(&#123;
         { label: '액션과 함께', value: 'action' },
         { label: '멀티라인', value: 'multi' },
         { label: '포지셔닝', value: 'position' }
-      ]" item="default">
+      ]" non-code>
         <template #default>
           <Code language="html">
             <textarea readonly>
@@ -835,15 +835,15 @@ const showNotif = (position) =&#62; &#123;
       <Title minor>그룹화</Title>
       <p>각 알림에는 메시지 + 캡션 + 멀티라인 + 액션 레이블 + 포지션에서 계산되는 기본 고유 그룹이 있습니다. 동일한 그룹에서 여러 알림이 트리거 되면 모든 알림을 펼쳐 표시하는 대신 첫
         번째 알림만 배지와 함께 화면에 남습니다. 배지 콘텐츠는 첫 번째 알림이 화면에 나타난 이후 동일한 알림이 동일한 위치에서 트리거 된 횟수를 나타냅니다.</p>
-      <p>이 동작을 비활성화하려면 <code>group: false</code>를 지정하세요. 아래 예에서 첫 번째 버튼은 클릭할 때마다 동일한 알림을 두 번 트리거 합니다. 두 번째 버튼에는 그룹화가
+      <p>이 동작을 비활성화하려면 <code>group: false</code>를 지정하세요. 아래 예에서 첫 번째 예제는 클릭할 때마다 동일한 알림을 두 번 트리거 합니다. 두 번째 예제는 그룹화가
         비활성화되어 있습니다. 세
-        번째 버튼에는 사용자 지정 그룹명이 있으므로 이후의 알림은 이전 알림을 대체하고 배지 번호를 증가시킵니다.</p>
+        번째 예제는 사용자 지정 그룹명이 있으므로 이후의 알림은 이전 알림을 대체하고 배지 번호를 증가시킵니다.</p>
       <Practice :options="[
         { label: '두 번 트리거', value: 'trigger' },
         { label: '두 번 트리거(그룹화되지 않음)', value: 'nogroup' },
         { label: '두 번 트리거(사용자 정의 그룹화)', value: 'group' },
         { label: '두 번 트리거와 사용자 정의 배지', value: 'custom' }
-      ]" item="default">
+      ]" non-code>
         <template #trigger>
           <Code language="html">
             <textarea readonly>
@@ -1001,7 +1001,7 @@ const triggerTwice = () =&#62; &#123;
     </section>
     <section id="timeout" data-name="타임아웃 진행 상황" sub>
       <Title minor>타임아웃 진행 상황</Title>
-      <p>timeout을 0으로 설정하지 않는 경우, 알림이 화면에서 사라지는 때를 사용자에게 알려줄 수 있습니다.</p>
+      <p>timeout을 0으로 설정하지 않는 경우, 화면에서 알림이 사라지는 시간을 사용자가 지정할 수 있습니다.</p>
       <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
@@ -1058,7 +1058,7 @@ const showNotifs = () =&#62; &#123;
     </section>
     <section id="update" data-name="업데이트 가능한 알림" sub>
       <Title minor>업데이트 가능한 알림</Title>
-      <p>진행 중인 프로세스가 있을 때, 현재 작업을 차단하지 않고 진행 상황을 사용자에게 알리려면 업데이트 가능한 알림을 생성할 수 있습니다. 업데이트되는 동안 스피너를 보여주는 것도 유용합니다.</p>
+      <p>진행 중인 프로세스가 있을 때, 현재 작업을 종료하지 않고 진행 상황을 사용자에게 알리려면 업데이트 가능한 알림을 사용하세요. 업데이트되는 동안 스피너를 보여주는 것도 좋습니다.</p>
       <p>아래 예제에서는 “group: false”(그룹화되지 않은 알림만 업데이트하기 위해)와 “timeout: 0”(알림이 해제되는 때를 전적으로 제어하기 위해)을 명시적으로 설정하고 있습니다.
       </p>
       <Code language="html">
@@ -1114,7 +1114,7 @@ const showNotif = () =&#62; &#123;
     </section>
     <section id="predefine" data-name="미리 정의된 유형" sub>
       <Title minor>미리 정의된 유형</Title>
-      <p>“positive”, “negative”, “warning” 및 “info”의 네 가지 미리 정의된 유형을 기본적으로 사용할 수 있습니다.</p>
+      <p>“positive”, “negative”, “warning” 및 “info”의 미리 정의된 네 가지 유형을 기본적으로 사용할 수 있습니다.</p>
       <Code language="html">
         <textarea readonly>
 &#60;script setup&#62;
@@ -1191,8 +1191,8 @@ const triggerOngoing = () =&#62; &#123;
           </div>
         </div>
       </Info>
-      <p>또한 자신의 유형을 등록하거나 미리 정의된 유형을 재정의할 수도 있습니다. <code>@quasar/app-vite Boot File</code> 또는
-        <code>@quasar/app-webpack Boot File</code>에 있는 것이 가장
+      <p>사용자 정의 유형을 등록하거나 미리 정의된 유형을 재정의할 수도 있습니다. <code>@quasar/app-vite Boot File</code> 또는
+        <code>@quasar/app-webpack Boot File</code>에 적용해 사용하는 것이 가장
         좋습니다.
       </p>
       <Code language="html">
@@ -1271,7 +1271,8 @@ Notify.registerType('my-notif', &#123;
     </section>
     <section id="html" data-name="HTML 사용" sub>
       <Title minor>HTML 사용</Title>
-      <p><code>html: true</code> prop을 지정하면 메시지에 HTML을 사용할 수 있습니다. <strong>이로 인해 XSS 공격 뒤따를 수 있으므로</strong> 메시지를 직접 삭제해야
+      <p><code>html: true</code> prop을 지정하면 HTML을 메시지로 사용할 수 있습니다. <strong>이로 인해 XSS 공격에 노출될 위험이 있으므로</strong> 메시지를 직접
+        삭제해야
         합니다.</p>
       <Code language="html">
         <textarea readonly>
@@ -1331,7 +1332,7 @@ $q.notify(&#123;
     </section>
     <section id="close" data-name="프로그래밍 방식으로 닫기" sub>
       <Title minor>프로그래밍 방식으로 닫기</Title>
-      <p>알림은 사용자만 해제하도록 되어 있지만 예외적인 경우에는 프로그래밍 방식으로 해제할 수 있습니다. 무한 제한 시간(0)을 설정할 때 특히 유용합니다.</p>
+      <p>알림은 사용자만 해제하도록 되어 있지만 예외적인 경우에는 프로그래밍 방식으로 해제할 수 있습니다. 무제한으로 시간(0)을 설정할 때 특히 유용합니다.</p>
       <Code language="javascript">
         <textarea readonly>
 const dismiss = $q.notify(&#123;...&#125;)
@@ -1342,7 +1343,8 @@ dismiss()
     </section>
     <section id="default" data-name="기본값 설정" sub>
       <Title minor>기본값 설정</Title>
-      <p>모든 알림에 적용할 기본 구성을 설정하는 두 가지 방법이 있습니다. main.js > framework > config > notify Object(설치 섹션 참조) 또는
+      <p>모든 알림에 적용할 기본 구성을 설정하는 두 가지 방법이 있습니다. main.js > framework > config > notify Object(
+        <Link :to="{ hash: '#install' }">설치 섹션</Link> 참조) 또는
         <Link href="https://quasar.dev/quasar-plugins/notify#setting-defaults">프로그래밍 방식</Link>입니다.
       </p>
       <p>일부 Vue 파일에서 기본값을 설정할 수도 있습니다.</p>

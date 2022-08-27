@@ -192,7 +192,7 @@ Loading.hide()
         { label: '안전하지 않은 메시지', value: 'unsafe' },
         { label: '사용자 정의', value: 'custom' },
         { label: '표시 및 변경', value: 'change' },
-      ]" item="default">
+      ]" non-code>
         <template #default>
           <Code language="html">
             <textarea readonly>

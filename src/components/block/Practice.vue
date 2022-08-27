@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, h } from 'vue'
 const props = defineProps({
   options: {
     type: Array,
@@ -7,25 +7,50 @@ const props = defineProps({
       return []
     }
   },
-  item: {
-    type: String,
-    default: 'code'
+  nonCode: {
+    type: Boolean,
+    default: false
   }
 })
 
 const tab = ref(props.options.length > 0 ? props.options[0].value : '')
+const panel = ref(null)
+const hideCode = ref(true)
+
+const setMaxHeight = () => {
+  const pres = panel.value.$el.querySelectorAll('.pre-wrap pre')
+  pres.forEach(p => {
+    if (p.closest('.pre-wrap'))
+      p.closest('.pre-wrap').style.maxHeight = `${p.offsetHeight}px`
+  })
+}
+
+onMounted(() => {
+  setMaxHeight()
+})
+
 </script>
+
 <template>
   <div class="practice">
-    <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm">
-      <template #label="opt">
-        <div class="col-12">
-          <code v-if="item === 'code'">{{ opt.label }}</code>
-          <div v-else>{{ opt.label }}</div>
+    <div class="q-pa-sm">
+      <div class="row justify-between items-center">
+        <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm col">
+          <template #label="opt">
+            <div class="col-12">
+              <div v-if="nonCode">{{ opt.label }}</div>
+              <code v-else>{{ opt.label }}</code>
+            </div>
+          </template>
+        </q-option-group>
+        <div>
+          <q-btn round flat size="sm" icon="code" @click="hideCode = !hideCode" />
         </div>
-      </template>
-    </q-option-group>
-    <q-tab-panels v-model="tab">
+      </div>
+    </div>
+    <q-separator />
+    <q-tab-panels ref="panel" class="panel q-px-sm q-pb-sm" :class="hideCode ? 'hide' : ''" v-model="tab"
+      @transition="setMaxHeight" animated transition-prev="slide-down" transition-next="slide-up">
       <q-tab-panel v-for="o in options" :key="o.value" :name="o.value">
         <slot :name="o.value"></slot>
       </q-tab-panel>
@@ -37,7 +62,6 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
   margin-bottom: 2rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
   border-radius: 8px;
-  padding: 10px;
 }
 
 .body--dark .practice {
@@ -75,5 +99,14 @@ const tab = ref(props.options.length > 0 ? props.options[0].value : '')
 .og:deep(.q-radio__inner) {
   font-size: 2em;
   height: 1em;
+}
+
+.panel:deep(.pre-wrap) {
+  margin-top: 10px;
+}
+
+.panel.hide:deep(.pre-wrap) {
+  margin-top: 0 !important;
+  max-height: 0 !important;
 }
 </style>
