@@ -311,7 +311,7 @@ import '@quasar/extras/roboto-font/roboto-font.css'
     <div>
       <div class="row justify-between items-cetner">
         <Move label="Transitions" prev :to="{ name: 'transition' }" />
-        <Move label="색상 팔레트" next :to="{ name: 'color' }" />
+        <Move label="색상 팔레트" next :to="{ name: 'palette' }" />
       </div>
     </div>
   </div>

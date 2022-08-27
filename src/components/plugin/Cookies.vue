@@ -307,7 +307,7 @@ $q.cookies.remove('cookie_name', options)
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
-        <Move label="그 외 CSS 헬퍼 클래스" prev :to="{ name: 'other' }" />
+        <Move label="그 외 CSS 헬퍼 클래스" prev :to="{ name: 'helper' }" />
         <Move label="Dark" next :to="{ name: 'dark' }" />
       </div>
     </div>

@@ -135,9 +135,9 @@ const routes = [
             }
           },
           {
-            path: 'color',
-            name: 'color',
-            component: () => import('@/components/styleid/Color.vue'),
+            path: 'palette',
+            name: 'palette',
+            component: () => import('@/components/styleid/Palette.vue'),
             meta: {
               title: '색상 팔레트'
             }
@@ -191,9 +191,9 @@ const routes = [
             }
           },
           {
-            path: 'other',
-            name: 'other',
-            component: () => import('@/components/styleid/Other.vue'),
+            path: 'helper',
+            name: 'helper',
+            component: () => import('@/components/styleid/Helper.vue'),
             meta: {
               title: '그 외 CSS 헬퍼 클래스'
             }
@@ -236,6 +236,69 @@ const routes = [
             component: () => import('@/components/plugin/Notify.vue'),
             meta: {
               title: 'Notify'
+            }
+          }
+        ]
+      }, {
+        path: 'util',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: 'Quasar 유틸',
+          working: true
+        },
+        children: [
+          {
+            path: 'date',
+            name: 'date',
+            component: () => import('@/components/util/Date.vue'),
+            meta: {
+              title: 'Date 유틸',
+              working: true
+            }
+          },
+          {
+            path: 'color',
+            name: 'color',
+            component: () => import('@/components/util/Color.vue'),
+            meta: {
+              title: 'Color 유틸',
+              working: true
+            }
+          },
+          {
+            path: 'dom',
+            name: 'dom',
+            component: () => import('@/components/util/Dom.vue'),
+            meta: {
+              title: 'DOM 유틸',
+              working: true
+            }
+          },
+          {
+            path: 'format',
+            name: 'format',
+            component: () => import('@/components/util/Format.vue'),
+            meta: {
+              title: 'Formatter 유틸',
+              working: true
+            }
+          },
+          {
+            path: 'scroll',
+            name: 'scroll',
+            component: () => import('@/components/util/Scroll.vue'),
+            meta: {
+              title: 'Scrolling 유틸',
+              working: true
+            }
+          },
+          {
+            path: 'util',
+            name: 'util',
+            component: () => import('@/components/util/Util.vue'),
+            meta: {
+              title: '그 외 유틸',
+              working: true
             }
           }
         ]

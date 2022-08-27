@@ -69,7 +69,7 @@ body.body--dark &#123;
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
-        <Move label="색상 팔레트" prev :to="{ name: 'color' }" />
+        <Move label="색상 팔레트" prev :to="{ name: 'palette' }" />
         <Move label="간격" next :to="{ name: 'spacing' }" />
       </div>
     </div>
