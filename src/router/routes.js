@@ -252,7 +252,7 @@ const routes = [
             name: 'date',
             component: () => import('@/components/util/Date.vue'),
             meta: {
-              title: 'Date 유틸',
+              title: 'Date',
               working: true
             }
           },
@@ -261,7 +261,7 @@ const routes = [
             name: 'color',
             component: () => import('@/components/util/Color.vue'),
             meta: {
-              title: 'Color 유틸',
+              title: 'Color',
               working: true
             }
           },
@@ -270,7 +270,7 @@ const routes = [
             name: 'dom',
             component: () => import('@/components/util/Dom.vue'),
             meta: {
-              title: 'DOM 유틸',
+              title: 'DOM',
               working: true
             }
           },
@@ -279,7 +279,7 @@ const routes = [
             name: 'format',
             component: () => import('@/components/util/Format.vue'),
             meta: {
-              title: 'Formatter 유틸',
+              title: 'Formatter',
               working: true
             }
           },
@@ -288,7 +288,7 @@ const routes = [
             name: 'scroll',
             component: () => import('@/components/util/Scroll.vue'),
             meta: {
-              title: 'Scrolling 유틸',
+              title: 'Scrolling',
               working: true
             }
           },
