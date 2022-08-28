@@ -13,7 +13,7 @@ const props = defineProps({
   }
 })
 
-const tab = ref(props.options.length > 0 ? props.options[0].value : '')
+const tab = ref('')
 const panel = ref(null)
 const hideCode = ref(true)
 
@@ -26,7 +26,7 @@ const setMaxHeight = () => {
 }
 
 onMounted(() => {
-  setMaxHeight()
+  tab.value = props.options.length > 0 ? props.options[0].value : ''
 })
 
 </script>
