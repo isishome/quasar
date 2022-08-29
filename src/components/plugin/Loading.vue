@@ -112,6 +112,9 @@ onBeforeUnmount(() => {
         필요가 없습니다.</p>
       <Info advice color="teal-4">
         <p>특정 작업 시 레이아웃 전체를 비활성화해야 할 때 유용하게 사용됩니다. 저는 개인적으로 “로딩 플러그”인 보다 “내부 로딩”을 많이 사용하는 편입니다.</p>
+        <p>Loading 플러그인의 옵션이나 메서드는 Quasar 공식 홈페이지
+          <Link href="https://quasar.dev/quasar-plugins/loading#loading-api">Loading API</Link>를 참고하세요.
+        </p>
       </Info>
     </section>
     <section id="install" data-name="설치">

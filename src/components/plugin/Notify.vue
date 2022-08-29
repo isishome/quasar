@@ -351,6 +351,9 @@ const showNotifHtml = () => {
         사용자의 참여를 유도할 수도 있습니다. 토스트 또는 스낵바라고도 합니다.</p>
       <Info advice color="teal-4">
         <p>HTTP 요청 성공이나 실패에 대한 메시지를 보여주거나 사용자 동의를 받는 등 다양한 곳에 활용할 수 있습니다.</p>
+        <p>Notify 플러그인의 옵션이나 메서드는 Quasar 공식 홈페이지
+          <Link href="https://quasar.dev/quasar-plugins/notify#notify-api">Notify API</Link>를 참고하세요.
+        </p>
       </Info>
     </section>
     <section id="install" data-name="설치">
@@ -383,7 +386,7 @@ app.use(Quasar, &#123;
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -398,7 +401,7 @@ $q.notify(&#123;...&#125;)
       <Title minor>Vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-{{                                     'import { Notify } from \'quasar\''                                     }}
+{{ 'import { Notify } from \'quasar\'' }}
 
 Notify.create('위험해! 세라야! 위험!')
 // 또는 구성 객체와 함께:
@@ -425,7 +428,7 @@ Notify.create(&#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -452,7 +455,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -480,7 +483,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -507,7 +510,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -535,7 +538,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -563,7 +566,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar, QSpinnerGears } from \'quasar\''                                     }}
+{{ 'import { useQuasar, QSpinnerGears } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -591,7 +594,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -632,7 +635,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -664,7 +667,7 @@ const showNotif = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -848,7 +851,7 @@ const showNotif = (position) =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -884,7 +887,7 @@ const triggerTwice = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -922,7 +925,7 @@ const triggerNoGroupingTwice = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -963,7 +966,7 @@ const triggerTwiceCustomGroup = () =&#62; &#123;
           <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1005,7 +1008,7 @@ const triggerTwice = () =&#62; &#123;
       <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1064,7 +1067,7 @@ const showNotifs = () =&#62; &#123;
       <Code language="html">
             <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1118,7 +1121,7 @@ const showNotif = () =&#62; &#123;
       <Code language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1198,7 +1201,7 @@ const triggerOngoing = () =&#62; &#123;
       <Code language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1257,7 +1260,7 @@ const triggerCustomRegisteredType2 = () =&#62; &#123;
         <textarea readonly>
 // 부팅 파일에 등록하는 방법
 
-{{                                     'import { Notify } from \'quasar\''                                     }}
+{{ 'import { Notify } from \'quasar\'' }}
 
 Notify.registerType('my-notif', &#123;
   icon: 'announcement',
@@ -1277,7 +1280,7 @@ Notify.registerType('my-notif', &#123;
       <Code language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1306,7 +1309,7 @@ const showNotif = () =&#62; &#123;
       <Code language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
@@ -1353,7 +1356,7 @@ dismiss()
 // Vue 컴포넌트 내부
 
 &#60;script setup&#62;
-{{                                     'import { useQuasar } from \'quasar\''                                     }}
+{{ 'import { useQuasar } from \'quasar\'' }}
 
 const $q = useQuasar()
 
