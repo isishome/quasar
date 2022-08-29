@@ -38,8 +38,8 @@ onMounted(() => {
         <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm col">
           <template #label="opt">
             <div class="col-12">
-              <div v-if="nonCode">{{ opt.label }}</div>
-              <code v-else>{{ opt.label }}</code>
+              <div v-if="nonCode">{{  opt.label  }}</div>
+              <code v-else>{{   opt.label   }}</code>
             </div>
           </template>
         </q-option-group>
@@ -50,7 +50,7 @@ onMounted(() => {
     </div>
     <q-separator />
     <q-tab-panels ref="panel" class="panel q-px-sm q-pb-sm" :class="hideCode ? 'hide' : ''" v-model="tab"
-      @transition="setMaxHeight" animated transition-prev="slide-down" transition-next="slide-up">
+      @transition="setMaxHeight" animated transition-prev="jump-down" transition-next="jump-up">
       <q-tab-panel v-for="o in options" :key="o.value" :name="o.value">
         <slot :name="o.value"></slot>
       </q-tab-panel>

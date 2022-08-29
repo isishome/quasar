@@ -42,11 +42,11 @@ app.use(Quasar, &#123;
     <section id="ssr" data-name="SSR에 관한 참고사항">
       <Title sub>SSR에 관한 참고사항</Title>
       <p>SSR 용으로 빌드 할 때, <code>$q.cookies</code> 형식만 사용할 수 있습니다.
-        <code>{{ 'import { Cookies } from \'quasar\'' }}</code>(server-side 환경일 때)를 사용해야 하는 경우 다음과 같이 사용해야 합니다.
+        <code>{{  'import { Cookies } from \'quasar\''  }}</code>(server-side 환경일 때)를 사용해야 하는 경우 다음과 같이 사용해야 합니다.
       </p>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 
 // `ssrContext`에 접근이 필요합니다
 function (ssrContext) &#123;
@@ -76,7 +76,7 @@ function (ssrContext) &#123;
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 const value = Cookies.get('cookie_name')
         </textarea>
       </Code>
@@ -85,7 +85,7 @@ const value = Cookies.get('cookie_name')
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 const value = $q.cookies.get('cookie_name')
@@ -98,7 +98,7 @@ const value = $q.cookies.get('cookie_name')
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 const value = Cookies.getAll()
         </textarea>
       </Code>
@@ -107,7 +107,7 @@ const value = Cookies.getAll()
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 const value = $q.cookies.getAll()
@@ -120,15 +120,15 @@ const value = $q.cookies.getAll()
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
-Cookies.has('cookie_name') // 불린값
+{{  'import { Cookies } from \'quasar\''  }}
+Cookies.has('cookie_name') // 부울값
         </textarea>
       </Code>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 const hasIt = $q.cookies.has('cookie_name')
@@ -141,7 +141,7 @@ const hasIt = $q.cookies.has('cookie_name')
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 
 Cookies.set('cookie_name', cookie_value)
 
@@ -152,7 +152,7 @@ Cookies.set('cookie_name', cookie_value, options)
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 
 Cookies.set('quasar', 'framework', &#123;
   secure: true
@@ -163,7 +163,7 @@ Cookies.set('quasar', 'framework', &#123;
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 $q.cookies.set('cookie_name', cookie_value)
@@ -270,7 +270,7 @@ other: 'SomeNewProp'
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
 // Vue 파일 밖에서 사용
-{{ 'import { Cookies } from \'quasar\'' }}
+{{  'import { Cookies } from \'quasar\''  }}
 
 Cookies.remove('cookie_name')
 
@@ -283,7 +283,7 @@ Cookies.remove('cookie_name', options)
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 

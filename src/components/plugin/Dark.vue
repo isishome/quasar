@@ -36,7 +36,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
 
 const $q = useQuasar()
 
@@ -59,7 +59,7 @@ $q.dark.toggle()
       <Title minor>Vue 파일 외부에서 사용하기</Title>
       <Code class="q-mb-lg" language="javascript">
         <textarea readonly>
-{{ 'import { Dark } from \'quasar\'' }}
+{{  'import { Dark } from \'quasar\''  }}
 
 // 현재 사용 여부 가져오기
 console.log(Dark.isActive)
@@ -84,7 +84,7 @@ Dark.toggle()
 const app = createApp(app)
 app.use(Quasar, &#123;
   config: &#123;
-    dark: 'auto' // 또는 불린 값 true/false
+    dark: 'auto' // 또는 부울 값 true/false
   &#125;
 &#125;)
         </textarea>
@@ -94,7 +94,7 @@ app.use(Quasar, &#123;
       <Title sub>SSR에 관한 참고사항</Title>
       <p>SSR 빌드 시:</p>
       <ul>
-        <li>다크 모드 사용을 위한 <code>{{ 'import { Dark } from \'quasar\'' }}</code>는 오류가 발생하지 않지만 작동하지 않습니다 (아무것도 하지 않음). 그러나
+        <li>다크 모드 사용을 위한 <code>{{  'import { Dark } from \'quasar\''  }}</code>는 오류가 발생하지 않지만 작동하지 않습니다 (아무것도 하지 않음). 그러나
           다른 두가지 방법을 사용할 수 있습니다 (이전 챕터 참조). quasar.config.js를 통해 사용하는 것을 권장합니다.</li>
         <li>SSR 빌드의 경우 다크 모드를 'auto'로 설정하지 않는 것이 좋습니다. 클라이언트의 다크 모드 기본 설정을 알 수 없기 때문에 SSR은 항상 라이트 모드로 렌더링 한 다음 클라이언트가
           전달받으면 다크 모드로 전환됩니다. 그 결과 화면이 빠르게 깜박입니다.</li>
@@ -107,8 +107,8 @@ app.use(Quasar, &#123;
 &#60;template&#62;...&#60;/template&#62;
 
 &#60;script setup&#62;
-{{ 'import { useQuasar } from \'quasar\'' }}
-{{ 'import { watch } from \'vue\'' }}
+{{  'import { useQuasar } from \'quasar\''  }}
+{{  'import { watch } from \'vue\''  }}
 
 const $q = useQuasar()
 
