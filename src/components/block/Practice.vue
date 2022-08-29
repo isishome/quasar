@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 const props = defineProps({
   options: {
     type: Array,
@@ -26,9 +26,8 @@ const setMaxHeight = () => {
 }
 
 onMounted(() => {
-  nextTick(() => {
-    tab.value = props.options.length > 0 ? props.options[0].value : ''
-  })
+  tab.value = props.options.length > 0 ? props.options[0].value : ''
+  setMaxHeight()
 })
 
 </script>
