@@ -42,6 +42,7 @@ const routes = [
       }, {
         path: 'flexgrid',
         component: () => import('@/components/Blank.vue'),
+        redirect: { name: 'flexbox' },
         meta: {
           title: 'Flex Grid'
         },

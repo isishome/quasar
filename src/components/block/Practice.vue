@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, h } from 'vue'
+import { ref, onMounted } from 'vue'
 const props = defineProps({
   options: {
     type: Array,
@@ -38,8 +38,8 @@ onMounted(() => {
         <q-option-group v-model="tab" inline size="xs" :options="options" class="q-mb-sm col">
           <template #label="opt">
             <div class="col-12">
-              <div v-if="nonCode">{{  opt.label  }}</div>
-              <code v-else>{{   opt.label   }}</code>
+              <div v-if="nonCode">{{ opt.label }}</div>
+              <code v-else>{{ opt.label }}</code>
             </div>
           </template>
         </q-option-group>

@@ -40,7 +40,7 @@ router.beforeEach((to, from) => {
   else
     oldOgTitle.replaceWith(ogTitle)
 
-  const keywords = to.meta.keywords.join(', ')
+  const keywords = to.meta.keywords ? to.meta.keywords.join(', ') : ''
   const keywordsMeta = document.createElement('meta')
   keywordsMeta.setAttribute('name', 'keywords')
   keywordsMeta.setAttribute('content', keywords)
