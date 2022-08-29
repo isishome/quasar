@@ -21,13 +21,14 @@ const setMaxHeight = () => {
   const pres = panel.value.$el.querySelectorAll('.pre-wrap pre')
   pres.forEach(p => {
     if (p.closest('.pre-wrap'))
-      p.closest('.pre-wrap').style.maxHeight = `${p.offsetHeight}px`
+      p.closest('.pre-wrap').style.maxHeight = `${p.offsetHeight + 10}px`
   })
 }
 
 onMounted(() => {
-  tab.value = props.options.length > 0 ? props.options[0].value : ''
-  setMaxHeight()
+  setTimeout(() => {
+    tab.value = props.options.length > 0 ? props.options[0].value : ''
+  }, 100)
 })
 
 </script>
