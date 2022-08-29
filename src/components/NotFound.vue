@@ -1,6 +1,6 @@
 <template>
-  <div class="text-h6 absolute-center column items-center q-gutter-y-sm">
-    <q-btn outline text-color="primary" :to="{ name: 'main' }">
+  <div class="absolute-center column items-center q-gutter-y-sm">
+    <div>
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="175" height="30"
         viewBox="0 0 46.375 7.95" xmlns:v="https://vecta.io/nano">
         <defs>
@@ -88,9 +88,10 @@
           <use xlink:href="#C" x="27.994" />
         </g>
       </svg>
-    </q-btn>
-    <div>페이지를 찾을 수 없습니다
     </div>
+    <div class="text-h6 text-primary text-weight-bold">페이지를 찾을 수 없습니다
+    </div>
+    <q-btn push color="primary" :to="{ name: 'main' }">메인 페이지로</q-btn>
   </div>
 </template>
 
