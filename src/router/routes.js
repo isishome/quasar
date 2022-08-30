@@ -6,9 +6,6 @@ const routes = [
   }, {
     path: '/',
     component: () => import('@/components/Layout.vue'),
-    meta: {
-      keywords: ['vuejs', 'vue3', 'vue.js', 'framework', 'quasar', 'quasar 강좌', '퀘이사', '퀘이사 강좌', '퀘이사 시작하기', 'vue3 quasar']
-    },
     children: [
       {
         path: '',
