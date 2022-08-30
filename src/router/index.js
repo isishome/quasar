@@ -40,12 +40,6 @@ router.beforeEach((to, from) => {
   else
     oldOgTitle.replaceWith(ogTitle)
 
-  const oldKeywordsMeta = document.head.querySelector('meta[name="keywords"]')
-  if (oldKeywordsMeta === null)
-    document.head.appendChild(keywordsMeta)
-  else
-    oldKeywordsMeta.replaceWith(keywordsMeta)
-
   if (to.name !== from.name)
     store.setSections([])
 })
