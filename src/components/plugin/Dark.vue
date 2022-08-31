@@ -11,7 +11,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <Note>
         <p><b>팁</b></p>
         <p>이 Quasar 플러그인이 잘 이해가 되지 않는다면 스타일 및 아이덴티티에
-          <Link :to="{ name: 'darkmode' }">다크 모드</Link> 페이지로 이동하세요.
+          <Link :to="{ name: 'darkmode' }">다크 모드</Link> 페이지를 참고하세요.
         </p>
       </Note>
       <Info advice color="teal-4">
@@ -97,9 +97,9 @@ app.use(Quasar, &#123;
       <Title sub>SSR에 관한 참고사항</Title>
       <p>SSR 빌드 시:</p>
       <ul>
-        <li>다크 모드 사용을 위한 <code>{{ 'import { Dark } from \'quasar\'' }}</code>는 오류가 발생하지 않지만 작동하지 않습니다 (아무것도 하지 않음).
+        <li>다크 모드 사용을 위한 <code>{{ 'import { Dark } from \'quasar\'' }}</code>는 오류가 발생하지 않지만 작동하지 않습니다 (아무것도 작동되지 않음).
           그러나
-          다른 두가지 방법을 사용할 수 있습니다 (이전 챕터 참조). quasar.config.js를 통해 사용하는 것을 권장합니다.</li>
+          다른 두가지 방법을 사용할 수 있습니다 (이전 챕터 참조). 그중 quasar.config.js를 통해 사용하는 것을 권장합니다.</li>
         <li>SSR 빌드의 경우 다크 모드를 'auto'로 설정하지 않는 것이 좋습니다. 클라이언트의 다크 모드 기본 설정을 알 수 없기 때문에 SSR은 항상 라이트 모드로 렌더링 한 다음 클라이언트가
           전달받으면 다크 모드로 전환됩니다. 그 결과 화면이 빠르게 깜박입니다.</li>
       </ul>

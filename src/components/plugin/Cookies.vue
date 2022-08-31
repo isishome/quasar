@@ -18,6 +18,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         <p>Quasar 내에서 쿠키를 사용하도록 도와주는 플러그인입니다. 저는 주로 다크 모드 여부 값이나 다국어 정보(<code>ko</code>, <code>en</code> 등)와 같이 간단한 정보를
           저장할 때
           사용합니다.</p>
+        <p>간혹 쿠기 값으로 부울을 사용할 경우, 정상적으로 인식이 되지 않는 경우가 있으니 <strong>쿠키 값은 string 유형이라고</strong> 생각하고 사용하시기 바랍니다.</p>
         <p>Cookies 플러그인의 옵션이나 메서드는 Quasar 공식 홈페이지
           <Link href="https://quasar.dev/quasar-plugins/cookies#cookies-api">Cookies API</Link>를 참고하세요.
         </p>
