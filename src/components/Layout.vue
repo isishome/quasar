@@ -455,6 +455,10 @@ ins::after {
   opacity: 0;
 }
 
+.header.scroll:deep(.char) {
+  filter: grayscale(1);
+}
+
 .header.scroll:deep(.letter) {
   fill: var(--q-text);
 }

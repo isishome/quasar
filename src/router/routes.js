@@ -301,6 +301,33 @@ const routes = [
           }
         ]
       }, {
+        path: 'tutorial',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '자습서',
+          working: true
+        },
+        children: [
+          {
+            path: 'ready',
+            name: 'ready',
+            component: () => import('@/components/tutorial/Ready.vue'),
+            meta: {
+              title: '준비하기',
+              working: true
+            }
+          },
+          {
+            path: 'card',
+            name: 'card',
+            component: () => import('@/components/tutorial/Card.vue'),
+            meta: {
+              title: '카드 만들기',
+              working: true
+            }
+          }
+        ]
+      }, {
         path: 'tools',
         component: () => import('@/components/Blank.vue'),
         meta: {
