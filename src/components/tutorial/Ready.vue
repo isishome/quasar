@@ -7,7 +7,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
 <template>
   <div class="q-px-md text-body2">
     <section id="intro" data-name="소개">
-      <Title head>자습서: 준비하기
+      <Title head>준비하기
       </Title>
       <p>이 자습서를 통해 <b>멤버 관리 페이지</b>를 만들어 보려고 합니다. Grid Box를 이용한 카드 배치부터 Card의 내용을 수정, 저장 및 다양한 컴포넌트를 사용하여 Quasar로 앱을
         만드는

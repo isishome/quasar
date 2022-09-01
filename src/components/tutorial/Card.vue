@@ -13,7 +13,7 @@ const members = reactive([
 <template>
   <div class="q-px-md text-body2">
     <section>
-      <Title head>멤버 카드 만들기
+      <Title head>카드 만들기
       </Title>
       <p>Quasar <em>QCard</em> 컴포넌트를 활용해 간단한 레이아웃을 구성해 보도록 하겠습니다.</p>
       <Code class="q-mb-lg" language="html">
@@ -186,29 +186,33 @@ const members = reactive([
 &#60;/script&#62;
 
 &#60;template&#62;
-  &#60;div class="row q-gutter-lg"&#62;
-    &#60;q-card v-for="m in members" :key="m"&#62;
-      &#60;div class="text-center bg-primary text-white"&#62;멤버&#60;/div&#62;
-      &#60;q-card-section&#62;
-        &#60;div&#62;&#123;&#123; m.name &#125;&#125;&#60;/div&#62;
-        &#60;div&#62;&#123;&#123; m.team &#125;&#125;&#60;/div&#62;
-        &#60;div&#62;&#123;&#123; m.contact &#125;&#125;&#60;/div&#62;
-      &#60;/q-card-section&#62;
-    &#60;/q-card&#62;
+  &#60;div class="row q-col-gutter-lg"&#62;
+    &#60;div v-for="m in members" :key="m" class="col-6 col-md-4"&#62;
+      &#60;q-card&#62;
+        &#60;div class="text-center bg-primary text-white"&#62;멤버&#60;/div&#62;
+        &#60;q-card-section&#62;
+          &#60;div&#62;&#123;&#123; m.name &#125;&#125;&#60;/div&#62;
+          &#60;div&#62;&#123;&#123; m.team &#125;&#125;&#60;/div&#62;
+          &#60;div&#62;&#123;&#123; m.contact &#125;&#125;&#60;/div&#62;
+        &#60;/q-card-section&#62;
+      &#60;/q-card&#62;
+    &#60;/div&#62;
   &#60;/div&#62;
 &#60;/template&#62;
   </textarea>
       </Code>
       <b>결과</b>
-      <div class="row q-gutter-lg">
-        <q-card v-for="m in members" :key="m">
-          <div class="text-center bg-primary text-white">멤버</div>
-          <q-card-section>
-            <div>{{ m.name }}</div>
-            <div>{{ m.team }}</div>
-            <div>{{ m.contact }}</div>
-          </q-card-section>
-        </q-card>
+      <div class="row q-col-gutter-lg">
+        <div v-for="m in members" :key="m" class="col-6 col-md-4">
+          <q-card>
+            <div class="text-center bg-primary text-white">멤버</div>
+            <q-card-section>
+              <div>{{ m.name }}</div>
+              <div>{{ m.team }}</div>
+              <div>{{ m.contact }}</div>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
       <p class="q-py-lg"></p>
       <p><code>reactive</code> 객체로 만든 <code>members</code> 데이터가 정상적으로 <em>QCard</em> 컴포넌트에 바인딩 되었습니다.</p>
