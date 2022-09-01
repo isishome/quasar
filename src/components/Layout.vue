@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { useQuasar, uid } from 'quasar'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute, useRouter, onBeforeRouteUpdate } from 'vue-router'
 import { useStore } from '@/store'
 
 const prod = computed(() => import.meta.env.PROD)
@@ -296,11 +296,11 @@ a {
 }
 
 .header {
-  transition: all .3s ease;
   background-color: var(--q-primary-alpha) !important;
   color: var(--q-primary);
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
+  transition: all .3s ease;
 }
 
 .header.scroll {
@@ -455,11 +455,15 @@ ins::after {
   transition: filter .3s ease;
 }
 
-.header.scroll:deep(svg) {
-  filter: grayscale(1) brightness(.6);
+.scroll:deep(.letter) {
+  fill: var(--q-text);
 }
 
-.body--dark .header.scroll:deep(svg) {
+.body--dark .scroll:deep(.letter) {
+  fill: var(--q-dark-text);
+}
+
+.header.scroll:deep(svg) {
   filter: grayscale(1);
 }
 

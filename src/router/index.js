@@ -19,9 +19,9 @@ export const router = createRouter({
       const store = useStore()
       await sleep(200)
       if (to.hash)
-        resolve({ el: to.hash, top: store.offset + 20 })
+        resolve({ el: to.hash, top: store.offset + 20, behavior: 'smooth' })
       else
-        resolve({ top: 0 })
+        resolve({ top: 0, behavior: 'smooth' })
     })
   }
 })
