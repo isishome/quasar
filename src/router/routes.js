@@ -10,7 +10,10 @@ const routes = [
       {
         path: '',
         name: 'main',
-        component: () => import('@/components/Main.vue')
+        component: () => import('@/components/Main.vue'),
+        meta: {
+          nonSections: true
+        }
       },
       {
         path: 'intro',
@@ -33,6 +36,32 @@ const routes = [
             component: () => import('@/components/intro/Start.vue'),
             meta: {
               title: '시작하기'
+            }
+          }
+        ]
+      }, {
+        path: 'tutorial',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '자습서',
+          working: true
+        },
+        children: [
+          {
+            path: 'ready',
+            name: 'ready',
+            component: () => import('@/components/tutorial/Ready.vue'),
+            meta: {
+              title: '준비하기'
+            }
+          },
+          {
+            path: 'card',
+            name: 'card',
+            component: () => import('@/components/tutorial/Card.vue'),
+            meta: {
+              title: '카드 만들기',
+              nonSections: true
             }
           }
         ]
@@ -301,33 +330,6 @@ const routes = [
           }
         ]
       }, {
-        path: 'tutorial',
-        component: () => import('@/components/Blank.vue'),
-        meta: {
-          title: '자습서',
-          working: true
-        },
-        children: [
-          {
-            path: 'ready',
-            name: 'ready',
-            component: () => import('@/components/tutorial/Ready.vue'),
-            meta: {
-              title: '준비하기',
-              working: true
-            }
-          },
-          {
-            path: 'card',
-            name: 'card',
-            component: () => import('@/components/tutorial/Card.vue'),
-            meta: {
-              title: '카드 만들기',
-              working: true
-            }
-          }
-        ]
-      }, {
         path: 'tools',
         component: () => import('@/components/Blank.vue'),
         meta: {
@@ -339,7 +341,8 @@ const routes = [
             name: 'htmlencode',
             component: () => import('@/components/tools/HtmlEncode.vue'),
             meta: {
-              title: 'HTML 인코더'
+              title: 'HTML 인코더',
+              nonSections: true
             }
           }
         ]

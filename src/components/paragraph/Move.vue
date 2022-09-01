@@ -25,11 +25,16 @@ defineProps({
   color: {
     type: String,
     default: 'primary'
+  },
+  disable: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
 <template>
-  <q-btn no-caps outline :text-color="color" class="back" padding="1em" :to="to" style="max-width:48%">
+  <q-btn no-caps outline :disable="disable" :text-color="color" class="back" padding="1em" :to="to"
+    style="max-width:48%">
     <div class="column q-gutter-y-sm">
       <div class="row justify-between items-center q-gutter-x-sm no-wrap keep">
         <q-icon v-if="prev" name="chevron_left" />

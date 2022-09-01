@@ -10,6 +10,7 @@ const screen = computed(() => $q.screen)
 const route = useRoute()
 const router = useRouter()
 const routeName = computed(() => route.name)
+const nonSections = computed(() => route.meta.nonSections)
 const routes = router.getRoutes()
 
 // change md width
@@ -90,8 +91,8 @@ onUnmounted(() => {
 </script>
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-scroll-observer v-if="!touch" @scroll="onScroll" debounce="100" />
-    <q-header :class="['header', scrollMove ? 'scroll' : '', touch ? 'touch' : '']">
+    <q-scroll-observer @scroll="onScroll" :debounce="touch ? 400 : 100" />
+    <q-header :class="['header', scrollMove ? 'scroll' : '']">
       <q-toolbar class="contents">
         <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title class="cursor-pointer">
@@ -251,8 +252,7 @@ onUnmounted(() => {
         </q-page>
         <aside class="gt-md col-2 row justify-start relative-position block" style="min-width:250px">
           <div class="aside right text-weight-bold" :style="`top: ${store.offset}px;`">
-            <q-list v-if="!['main', 'htmlencode'].includes(routeName)" dense class="relative-position"
-              style="min-height:6em">
+            <q-list v-if="!nonSections" dense class="relative-position" style="min-height:6em">
               <q-inner-loading :showing="sections.length === 0">
                 <q-spinner color="primary" size="3em" :thickness="5" />
               </q-inner-loading>
@@ -299,24 +299,19 @@ a {
   transition: all .3s ease;
   background-color: var(--q-primary-alpha) !important;
   color: var(--q-primary);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
 }
 
 .header.scroll {
   color: inherit;
   background-color: rgba(255, 255, 255, .5) !important;
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .08);
 }
 
 .body--dark .header.scroll {
   background-color: rgba(29, 29, 29, .5) !important;
   box-shadow: 0 1px 0 0 rgba(255, 255, 255, .08);
-}
-
-.header.touch {
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
 }
 
 .aside {
@@ -455,16 +450,13 @@ ins::after {
   opacity: 0;
 }
 
-.header.scroll:deep(.char) {
+
+.header.scroll:deep(svg) {
+  transition: filter .3s ease;
+}
+
+.header.scroll:deep(svg) {
   filter: grayscale(1);
-}
-
-.header.scroll:deep(.letter) {
-  fill: var(--q-text);
-}
-
-.body--dark .header.scroll:deep(.letter) {
-  fill: var(--q-dark-text);
 }
 
 @keyframes opacity {

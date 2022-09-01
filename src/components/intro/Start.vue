@@ -221,7 +221,7 @@ export default defineConfig({
     <div>
       <div class="row justify-between items-cetner">
         <Move label="왜 Quasar인가?" prev :to="{ name: 'why' }" />
-        <Move label="Flexbox 소개" next :to="{ name: 'flexbox' }" />
+        <Move label="준비하기" next :to="{ name: 'ready' }" />
       </div>
     </div>
   </div>

@@ -124,7 +124,6 @@ code:not([class]) {
   border: dotted 1px var(--q-primary);
   padding: 2px 4px;
   border-radius: 4px;
-  text-decoration: dashed;
   white-space: nowrap;
   font-size: 12px;
   font-family: inherit;
