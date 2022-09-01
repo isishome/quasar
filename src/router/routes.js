@@ -43,8 +43,7 @@ const routes = [
         path: 'tutorial',
         component: () => import('@/components/Blank.vue'),
         meta: {
-          title: '자습서',
-          working: true
+          title: '자습서'
         },
         children: [
           {
@@ -61,6 +60,16 @@ const routes = [
             component: () => import('@/components/tutorial/Card.vue'),
             meta: {
               title: '카드 만들기',
+              nonSections: true
+            }
+          },
+          {
+            path: 'component',
+            name: 'component',
+            component: () => import('@/components/tutorial/Component.vue'),
+            meta: {
+              title: '컴포넌트 분리하기',
+              working: true,
               nonSections: true
             }
           }

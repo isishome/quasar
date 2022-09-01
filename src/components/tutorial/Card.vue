@@ -15,8 +15,7 @@ const members = reactive([
     <section>
       <Title head>멤버 카드 만들기
       </Title>
-      <p><code>&#60;q-card&#62;</code> Quasar 컴포넌트를 활용해 간단한 레이아웃을 구성해 보도록 하겠습니다.</p>
-      <p>먼저 <em>QCard</em> 컴포넌트를 이용해 간단한 멤버 카드를 만듭니다.</p>
+      <p>Quasar <em>QCard</em> 컴포넌트를 활용해 간단한 레이아웃을 구성해 보도록 하겠습니다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;template&#62;
@@ -75,7 +74,7 @@ const members = reactive([
         <Link :to="{ name: 'gridrow', hash: '#intro' }">Grid Row 소개
         </Link>섹션에서 언급했던 12포인트가 아직 적용되지 않았습니다. 현재 멤버 카드는 부모 요소의 가로 너비 안에서 자신의 너비에 맞춰 자동으로 래핑 됩니다.
       </p>
-      <p><code>q-gutter</code>를 이용해 간격을 주도록 하겠습니다.</p>
+      <p>그럼 <code>q-gutter</code>를 이용해 간격을 주도록 하겠습니다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
 &#60;template&#62;
@@ -104,10 +103,10 @@ const members = reactive([
         </q-card>
       </div>
       <p class="q-py-lg"></p>
-      <p><code>row</code> 클래스와 인접한 자식 요소인 <em>QCard</em> 컴포넌트에 <code>col</code> 클래스를 적용하려면
+      <p>일반적으로 <code>row</code> 클래스에 인접한 자식 요소인 <em>QCard</em> 컴포넌트에 <code>col</code> 클래스를 적용하려면
         <code>q-gutter-*</code>형식 대신
         <code>q-col-gutter-*</code>을 사용해야 하며, <code>q-col-gutter-*</code> 클래스의 특성상 자식 요소의 상단과 좌측 마진에 영향을 주므로
-        <em>QCard</em> 컴포넌트를 한 번 더 래핑 해 주는 것이 필요합니다.
+        <em>QCard</em> 컴포넌트를 한 번 더 래핑 해 주는 것이 필요합니다. 좀 더 그럴싸한 반응형 웹을 만들기 위해 <code>col</code> 클래스를 적용해 봅시다.
       </p>
       <p>아래 예제에서 래핑 여부에 따른 차이를 확인해 보세요:</p>
       <Code class="q-mb-lg" language="html">
@@ -170,8 +169,7 @@ const members = reactive([
           <li>Vue.js 공식 홈페이지의
             <Link href="https://vuejs.org/guide/essentials/reactivity-fundamentals.html" color="green-7">Reactivity
             Fundamentals</Link>
-            항목을 꼭 읽어보시기
-            바랍니다.
+            항목을 꼭 읽어보실 것을 추천드립니다!
           </li>
         </ul>
       </Info>
@@ -215,15 +213,16 @@ const members = reactive([
       <p class="q-py-lg"></p>
       <p><code>reactive</code> 객체로 만든 <code>members</code> 데이터가 정상적으로 <em>QCard</em> 컴포넌트에 바인딩 되었습니다.</p>
       <p>왜 굳이 <span class="text-green-6" t>Vue.js</span>에서는 반응형 객체로 만든 데이터를 사용해야 할까요? 일반적인 <em>Array</em> 형태로 사용해도 렌더링
-        결과는 같지만 새 멤버 데이터를 추가하거나 수정, 삭제하고자 할 때 즉, <strong>이미 화면에 렌더링 된 요소들에 변화가 필요할 때</strong> 반응형 객체를 사용합니다.</p>
-      <p>다음 챕터에서는 오늘 만든 멤버 카드를 컴포넌트로 분리하는 방법을 알아보도록 하겠습니다.</p>
+        결과는 같지만 새로운 멤버의 데이터를 추가하거나 수정, 삭제하고자 할 때 즉, <strong>이미 화면에 렌더링 된 요소들의 변경이 필요할 때</strong> 반응형 객체를 사용해야 합니다.(Array
+        유형을 사용한 경우 렌더링이 끝난 시점에서 값을 변경해도 화면에 적용되지 않습니다)</p>
+      <p>다음 챕터에서는 오늘 만든 멤버 카드를 <b>컴포넌트로 분리</b>하는 방법을 알아보도록 하겠습니다.</p>
     </section>
     <div class="q-py-xl"></div>
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
         <Move label="준비하기" prev :to="{ name: 'ready' }" />
-        <Move disable label="컴포넌트로 분리" next :to="{ name: 'component' }" />
+        <Move disable label="컴포넌트 분리하기" next :to="{ name: 'component' }" />
       </div>
     </div>
   </div>
