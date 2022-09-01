@@ -456,6 +456,10 @@ ins::after {
 }
 
 .header.scroll:deep(svg) {
+  filter: grayscale(1) brightness(.6);
+}
+
+.body--dark .header.scroll:deep(svg) {
   filter: grayscale(1);
 }
 
