@@ -17,7 +17,7 @@ export const router = createRouter({
   scrollBehavior(to) {
     return new Promise(async (resolve) => {
       const store = useStore()
-      await sleep(200)
+      await sleep(300)
       if (to.hash)
         resolve({ el: to.hash, top: store.offset + 20, behavior: 'smooth' })
       else

@@ -18,6 +18,8 @@ const members = reactive([
       <p>Quasar <em>QCard</em> 컴포넌트를 활용해 간단한 레이아웃을 구성해 보도록 하겠습니다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;!-- App.vue --&#62;
+
 &#60;template&#62;
   &#60;div class="row"&#62;
     &#60;q-card v-for="c in 10" :key="c"&#62;
@@ -43,6 +45,8 @@ const members = reactive([
       <p>간단한 멤버 카드가 만들어졌습니다. 몇 가지 항목을 추가하고 <code>v-for</code> 디렉티브를 이용해 더 많은 카드를 만들어 봅시다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;!-- App.vue --&#62;
+
 &#60;template&#62;
   &#60;div class="row"&#62;
     &#60;q-card v-for="c in 10" :key="c"&#62;
@@ -69,7 +73,7 @@ const members = reactive([
         </q-card>
       </div>
       <p class="q-py-lg"></p>
-      <p>8개의 멤버 카드가 순식간에 만들어졌습니다. 급하게 만들다 보니 간격을 주는 걸 깜박했네요.
+      <p>8개의 멤버 카드가 만들어졌습니다. 결과물을 보니 간격을 주는 걸 깜박했군요.
         <code>row</code>의 자식 요소에 <code>col</code> 클래스를 추가하지 않았기 때문에
         <Link :to="{ name: 'gridrow', hash: '#intro' }">Grid Row 소개
         </Link>섹션에서 언급했던 12포인트가 아직 적용되지 않았습니다. 현재 멤버 카드는 부모 요소의 가로 너비 안에서 자신의 너비에 맞춰 자동으로 래핑 됩니다.
@@ -77,6 +81,8 @@ const members = reactive([
       <p>그럼 <code>q-gutter</code>를 이용해 간격을 주도록 하겠습니다.</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;!-- App.vue --&#62;
+
 &#60;template&#62;
   &#60;div class="row q-gutter-lg"&#62;
     &#60;q-card v-for="c in 10" :key="c"&#62;
@@ -111,6 +117,8 @@ const members = reactive([
       <p>아래 예제에서 래핑 여부에 따른 차이를 확인해 보세요:</p>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;!-- App.vue --&#62;
+
 &#60;template&#62;
   &#60;div class="row q-col-gutter-lg"&#62;
     &#60;q-card v-for="c in 4" :key="c" class="col-6 col-md-4"&#62;
@@ -176,6 +184,8 @@ const members = reactive([
       </Info>
       <Code class="q-mb-lg" language="html">
         <textarea readonly>
+&#60;!-- App.vue --&#62;
+
 &#60;script setup&#62;
 {{ 'import { reactive } from \'vue\'' }}
 
@@ -227,7 +237,7 @@ const members = reactive([
     <div>
       <div class="row justify-between items-cetner">
         <Move label="준비하기" prev :to="{ name: 'ready' }" />
-        <Move disable label="컴포넌트 분리하기" next :to="{ name: 'component' }" />
+        <Move label="컴포넌트 분리하기" next :to="{ name: 'component' }" />
       </div>
     </div>
   </div>

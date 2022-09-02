@@ -66,10 +66,28 @@ const routes = [
           {
             path: 'component',
             name: 'component',
-            component: () => import('@/components/tutorial/Component.vue'),
+            component: () => import('@/components/tutorial/Comp.vue'),
             meta: {
               title: '컴포넌트 분리하기',
-              working: true,
+              nonSections: true
+            }
+          },
+          {
+            path: 'edit',
+            name: 'edit',
+            component: () => import('@/components/tutorial/Edit.vue'),
+            meta: {
+              title: '카드 수정하기',
+              nonSections: true,
+              toDo: true
+            }
+          },
+          {
+            path: 'result',
+            name: 'result',
+            component: () => import('@/components/tutorial/Result.vue'),
+            meta: {
+              title: '결과물',
               nonSections: true
             }
           }
@@ -280,7 +298,7 @@ const routes = [
         component: () => import('@/components/Blank.vue'),
         meta: {
           title: 'Quasar 유틸',
-          working: true
+          toDo: true
         },
         children: [
           {
@@ -289,7 +307,7 @@ const routes = [
             component: () => import('@/components/util/Date.vue'),
             meta: {
               title: 'Date',
-              working: true
+              toDo: true
             }
           },
           {
@@ -298,7 +316,7 @@ const routes = [
             component: () => import('@/components/util/Color.vue'),
             meta: {
               title: 'Color',
-              working: true
+              toDo: true
             }
           },
           {
@@ -307,7 +325,7 @@ const routes = [
             component: () => import('@/components/util/Dom.vue'),
             meta: {
               title: 'DOM',
-              working: true
+              toDo: true
             }
           },
           {
@@ -316,7 +334,7 @@ const routes = [
             component: () => import('@/components/util/Format.vue'),
             meta: {
               title: 'Formatter',
-              working: true
+              toDo: true
             }
           },
           {
@@ -325,7 +343,7 @@ const routes = [
             component: () => import('@/components/util/Scroll.vue'),
             meta: {
               title: 'Scrolling',
-              working: true
+              toDo: true
             }
           },
           {
@@ -334,7 +352,7 @@ const routes = [
             component: () => import('@/components/util/Util.vue'),
             meta: {
               title: '그 외 유틸',
-              working: true
+              toDo: true
             }
           }
         ]
