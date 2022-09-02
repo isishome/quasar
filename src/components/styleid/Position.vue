@@ -9,7 +9,7 @@
         DOM 요소를 쉽게 포지셔닝할 수 있도록 Quasar에서 제공하는 CSS 클래스가 있습니다:
       </p>
       <Info advice color="teal-4">
-        <p>CSS의 위치 관련 속성들을 쉽게 사용할 수 있도록 Quasar에서 미리 정의해 놓은 헬퍼 클래스입니다. 디테일한 위치 설정 시에는 사용하기 어렵지만 요소의 간단한 위치를 위치시킬 때 유용하게
+        <p>CSS의 위치 관련 속성들을 쉽게 사용할 수 있도록 Quasar에서 미리 정의해 놓은 헬퍼 클래스입니다. 디테일한 위치 설정 시에는 사용하기 어렵지만 요소를 간단하게 배치할 때 유용하게
           사용됩니다.</p>
       </Info>
       <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
