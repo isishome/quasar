@@ -40,6 +40,18 @@ router.beforeEach((to, from) => {
   else
     oldOgTitle.replaceWith(ogTitle)
 
+  const canonicalLink = document.createElement('link')
+  canonicalLink.setAttribute('rel', 'canonical')
+  canonicalLink.setAttribute('href', `${location.origin}${to.path}`)
+  console.log(to)
+  console.log(location)
+
+  const oldCanonicalLink = document.head.querySelector('link[rel="canonical"]')
+  if (oldCanonicalLink === null)
+    document.head.appendChild(canonicalLink)
+  else
+    oldCanonicalLink.replaceWith(canonicalLink)
+
   if (to.name !== from.name)
     store.setSections([])
 })
