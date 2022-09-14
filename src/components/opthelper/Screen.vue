@@ -34,7 +34,7 @@ const $q = useQuasar()
       <Title sub>사용법</Title>
       <p>아래 <code>$q.screen</code>을 확인하세요. 이것은 간단한 사용법의 예입니다.
       </p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;q-list :dense="$q.screen.lt.md"&#62;
   &#60;q-item&#62;
@@ -47,7 +47,7 @@ const $q = useQuasar()
 &#60;/q-list&#62;
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 // Vue 컴포넌트 스크립트 부분
 
@@ -65,7 +65,7 @@ const buttonColor = computed(() =&#62; &#123;
         </textarea>
       </Code>
       <p>Vue 컴포넌트 외부에서 스크린 플러그인을 사용할 수도 있습니다:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Screen } from \'quasar\'' }}
 
@@ -108,7 +108,7 @@ body.screen--sm &#123;
           홈페이지</Link>를 참고하세요.
         </p>
       </Info>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 파일: main.js
 
@@ -149,7 +149,7 @@ app.use(Quasar, &#123;
         </tbody>
       </q-markup-table>
       <p>예제:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 컴포넌트 내부
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -175,4 +175,5 @@ Screen.setSizes(&#123; sm: 300, md: 500, lg: 1000, xl: 2000 &#125;)
   </div>
 </template>
 <style scoped>
+
 </style>

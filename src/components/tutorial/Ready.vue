@@ -33,7 +33,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <p>데이터를 다루기 위해 Quasar 플러그인 중 <code>SessionStorage</code>를 사용할 계획입니다. <b class="text-primary">Sera's Quasar</b>에선
         따로 다루지 않을 만큼
         간단한 플러그인이기 때문에 자습서를 진행하면서 익혀보도록 하겠습니다. 먼저 아래와 같이 <em>main.js</em> 파일을 수정해서 미리 설정하도록 합시다.</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // main.js
 
@@ -48,7 +48,7 @@ app.use(Quasar, &#123;
       </Code>
       <Title minor>Notify 플러그인 설정</Title>
       <p>멤버의 추가나 수정, 삭제 시 그 처리 결과의 안내를 위해 Notify 플러그인 설정을 추가해줍니다.</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // main.js
 
@@ -74,4 +74,5 @@ app.use(Quasar, &#123;
   </div>
 </template>
 <style scoped>
+
 </style>

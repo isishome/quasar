@@ -16,7 +16,7 @@ const addMember = () => {
 }
 </script>
   
-  <template>
+<template>
   <div class="q-px-md text-body2">
     <section>
       <Title head>컴포넌트 분리하기
@@ -29,7 +29,7 @@ const addMember = () => {
         붙여넣기
         해줍니다.
       </p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
           <textarea readonly>
 &#60;!-- Member.vue --&#62;
 
@@ -55,13 +55,11 @@ const addMember = () => {
         나누어 정의하도록
         하겠습니다.</p>
       <p><em>&#60;script setup&#62;</em> 문법에서는 <code>defineProps</code> API를 이용해 props를 정의합니다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Member.vue --&#62;
 
 &#60;script setup&#62;
-{{ 'import { defineProps } from \'vue\'' }}
-
 const props = defineProps(&#123;
   mid: &#123;
     type: String,
@@ -111,7 +109,7 @@ const props = defineProps(&#123;
       <p>이제 기존 코드로 돌아가 보겠습니다. 위에서 만들어 둔 <em>Member.vue</em>를 활용해 봅시다. 먼저 <code>defineAsyncComponent</code> API를 사용하여
         Member 컴포넌트를 가져옵니다. 그리고 기존 <em>QCard</em>가 있던 자리에 Member 컴포넌트를 위치시킵니다. 마지막으로 <code>v-bind</code> 디렉티브를 이용해 각 멤버
         데이터들을 컴포넌트의 props에 바인딩 해줍니다. (<code>:</code> = <code>v-bind</code> 디렉티브의 축약형)</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -151,7 +149,7 @@ const Member = defineAsyncComponent(() =&#62; import('./Member.vue'))
         <em>501e7ae1-7e6f-b923-3e84-4e946bff31a8</em>와 같은 임의 문자열을 반환해 줍니다. 사용자에게는 보이지 않지만 각 컴포넌트마다 고유한 아이디를 갖게 된 셈이죠.
         고유 아이디는 이어지는 챕터에서 아주 유용하게 사용될 예정입니다.
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 간단한 uid 유틸 사용법
 
@@ -162,7 +160,7 @@ let uid = uid()
         </textarea>
       </Code>
       <p>컴포넌트 분리 작업이 간단하게 마무리 되었으니 새 멤버 카드를 추가하는 로직을 만들어 보겠습니다. 먼저 리스트 상단에 버튼을 추가 해봅시다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -229,5 +227,6 @@ const addMember = () =&#62; &#123;
   </div>
 </template>
   
-  <style scoped>
-  </style>
+<style scoped>
+
+</style>

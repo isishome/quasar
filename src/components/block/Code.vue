@@ -10,11 +10,18 @@ const props = defineProps({
   intersection: {
     type: Boolean,
     default: false
+  },
+  convert: {
+    type: Object,
+    default: () => {
+      return {}
+    }
   }
 })
 
 const $q = useQuasar()
 const touch = computed(() => $q.platform.has.touch)
+const lang = computed(() => props.convert[props.language] || props.language)
 const Prism = window.Prism
 Prism.disableWorkerMessageHandler = true
 
@@ -32,10 +39,10 @@ const onIntersection = (entry) => {
 </script>
 
 <template>
-  <div v-if="touch" class="pre-wrap" :data-language="language">
+  <div v-if="touch" class="pre-wrap" :data-language="lang">
     <pre><code ref="code" :class="`language-${language}`">{{ $slots.default()[0].children.replace(/^[\r\n\s]{0,}/, '').replace(/[\r\n\s]{0,}$/, '') }}</code></pre>
   </div>
-  <div v-else v-intersection.once="onIntersection" class="pre-wrap" :data-language="language">
+  <div v-else v-intersection.once="onIntersection" class="pre-wrap" :data-language="lang">
     <pre><code ref="code" :class="`language-${language}`">{{ $slots.default()[0].children.replace(/^[\r\n\s]{0,}/, '').replace(/[\r\n\s]{0,}$/, '') }}</code></pre>
   </div>
 </template>

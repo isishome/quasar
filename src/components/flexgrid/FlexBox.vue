@@ -106,7 +106,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'column reverse', value: 'column-reverse' },
       ]">
         <template #row>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div v-for="i in 5" :key="i"&#62;&#123;&#123; i &#125;&#125;&#60;/div&#62;
@@ -120,7 +120,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #column>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
            <textarea readonly>
 &#60;div class="column"&#62;
   &#60;div v-for="i in 5" :key="i"&#62;&#123;&#123; i &#125;&#125;&#60;/div&#62;
@@ -134,7 +134,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #row-reverse>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row reverse"&#62;
   &#60;div v-for="i in 5" :key="i"&#62;&#123;&#123; i &#125;&#125;&#60;/div&#62;
@@ -148,7 +148,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #column-reverse>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column reverse"&#62;
   &#60;div v-for="i in 5" :key="i"&#62;&#123;&#123; i &#125;&#125;&#60;/div&#62;
@@ -206,7 +206,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'reverse-wrap', value: 'reverse-wrap' }
       ]">
         <template #wrap>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row wrap"&#62;
   &#60;div class="col-6"&#62;1&#60;/div&#62;
@@ -224,7 +224,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #no-wrap>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
            <textarea readonly>
 &#60;div class="row no-wrap"&#62;
   &#60;div class="col-6"&#62;1&#60;/div&#62;
@@ -242,7 +242,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #reverse-wrap>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row reverse-wrap"&#62;
   &#60;div class="col-6"&#62;1&#60;/div&#62;
@@ -281,7 +281,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'justify-evenly', value: 'justify-evenly' }
       ]">
         <template #justify-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-start"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -299,7 +299,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
            <textarea readonly>
 &#60;div class="row justify-end"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -317,7 +317,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -335,7 +335,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-between>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -353,7 +353,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-around>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -371,7 +371,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-evenly>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-2"&#62;1&#60;/div&#62;
@@ -404,7 +404,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'items-baseline', value: 'items-baseline' }
       ]">
         <template #items-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-start" style="height:100px"&#62;
   &#60;div class="col-2 q-py-sm"&#62;1&#60;/div&#62;
@@ -424,7 +424,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-end" style="height:100px"&#62;
   &#60;div class="col-2 q-py-sm"&#62;1&#60;/div&#62;
@@ -444,7 +444,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-center" style="height:100px"&#62;
   &#60;div class="col-2 q-py-sm"&#62;1&#60;/div&#62;
@@ -464,7 +464,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-stretch>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-stretch" style="height:100px"&#62;
   &#60;div class="col-2 q-py-sm"&#62;1&#60;/div&#62;
@@ -484,7 +484,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-baseline>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-baseline" style="height:100px"&#62;
   &#60;div class="col-2 q-py-sm"&#62;1&#60;/div&#62;
@@ -526,7 +526,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'content-around', value: 'content-around' }
       ]">
         <template #content-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-start q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -540,7 +540,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #content-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-end q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -554,7 +554,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #content-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-center q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -568,7 +568,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #content-stretch>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-stretch q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -582,7 +582,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #content-between>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-between q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -596,7 +596,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #content-around>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row content-around q-gutter-xs" style="height:20rem"&#62;
   &#60;div class="col-1" v-for="i in 30" :key="i"&#62;1&#60;/div&#62;
@@ -617,7 +617,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="distribute" data-name="크기 분배" sub>
       <Title minor>크기 분배</Title>
       <p>Quasar는 row에 포함된 아이템의 크기를 분배하기 위해 12 포인트 column 시스템을 사용합니다. 다음은 사용 가능한 CSS 헬퍼 클래스의 몇 가지 예입니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-8"&#62;2/3&#60;/div&#62;
@@ -645,7 +645,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>CSS 헬퍼 클래스 <code>col-grow</code>는 셀이 렌더링에 필요한 최소한의 공간만 채우고 더 많은 공간을 사용할 수 있을 때 확장할 수 있습니다.</p>
       <p>CSS 헬퍼 클래스 <code>col-shrink</code>는 셀이 렌더링에 필요한 최대 공간으로 채우고 사용 가능한 공간이 충분하지 않을 때 축소할 수 있습니다.</p>
       <p>다음은 시각적 표현의 또 다른 예제입니다:</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col"&#62;1&#60;/div&#62;
@@ -688,7 +688,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>이를 통해 작은 화면에 row를 수직으로 쌓는 동시에 큰 화면에 row를 한줄로 표시할 수 있습니다.
         <Link :to="{ hash: '#reponsive' }">"반응형 디자인"</Link> 섹션을 읽어보세요.
       </p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-2"&#62;...&#60;/div&#62;
@@ -734,7 +734,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'self', value: 'self' }
       ]">
         <template #self>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between items-start" style="height:100px"&#62;
   &#60;div class="col-2 self-start q-py-sm"&#62;self-start&#60;/div&#62;
@@ -767,7 +767,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         CSS 속성을 사용하고
         원하는 값을 할당합니다.</p>
       <p>예제:</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div style="order: 2" class=""&#62;두 번째 column&#60;/div&#62;
@@ -848,7 +848,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>예: <code>col-md-7</code>, <code>offset-lg-3</code>, <code>col-xs-auto</code></p>
       <p>전체 예 : 3개의 아이템(자식 요소) 있는 row가 있다고 가정해 보겠습니다. 초소형 창에서는 아이템을 세로로 쌓아야 하고, 소형 창에서는 나란히 표시해야 하며(각각 너비가 동일함) 중형 창부터는
         모든 아이템을 한 줄에 표시해야 합니다:</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-xs-12 col-sm-6 col-md-4"&#62;
@@ -884,7 +884,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <code>&#60;div&#62;</code>에
         <code>col-8</code>을 사용한 경우 8 + 8 = 16이고 한 줄에 12개 포인트만 표시할 수 있기 때문에 아이템들은 쌓이게 됩니다.
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;!--

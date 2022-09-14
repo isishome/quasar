@@ -358,7 +358,7 @@ const showNotifHtml = () => {
     </section>
     <section id="install" data-name="설치">
       <Title sub>설치</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // main.js
 
@@ -383,7 +383,7 @@ app.use(Quasar, &#123;
     </section>
     <section id="inside" data-name="Vue 파일에서 사용하기" sub>
       <Title minor>Vue 파일에서 사용하기</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -399,7 +399,7 @@ $q.notify(&#123;...&#125;)
     </section>
     <section id="outside" data-name="Vue 파일 외부에서 사용하기" sub>
       <Title minor>Vue 파일 외부에서 사용하기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Notify } from \'quasar\'' }}
 
@@ -425,7 +425,7 @@ Notify.create(&#123;
         { label: '포지셔닝', value: 'position' }
       ]" non-code>
         <template #default>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -452,7 +452,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #caption>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -480,7 +480,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #icon>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -507,7 +507,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #avatar>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -535,7 +535,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #spinner1>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -563,7 +563,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #spinner2>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar, QSpinnerGears } from \'quasar\'' }}
@@ -591,7 +591,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #action>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -632,7 +632,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #multi>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -664,7 +664,7 @@ const showNotif = () =&#62; &#123;
           </Info>
         </template>
         <template #position>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -848,7 +848,7 @@ const showNotif = (position) =&#62; &#123;
         { label: '두 번 트리거와 사용자 정의 배지', value: 'custom' }
       ]" non-code>
         <template #trigger>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -884,7 +884,7 @@ const triggerTwice = () =&#62; &#123;
           </Info>
         </template>
         <template #nogroup>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -922,7 +922,7 @@ const triggerNoGroupingTwice = () =&#62; &#123;
           </Info>
         </template>
         <template #group>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -963,7 +963,7 @@ const triggerTwiceCustomGroup = () =&#62; &#123;
           </Info>
         </template>
         <template #custom>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1005,7 +1005,7 @@ const triggerTwice = () =&#62; &#123;
     <section id="timeout" data-name="타임아웃 진행 상황" sub>
       <Title minor>타임아웃 진행 상황</Title>
       <p>timeout을 0으로 설정하지 않는 경우, 화면에서 알림이 사라지는 시간을 사용자가 지정할 수 있습니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1064,7 +1064,7 @@ const showNotifs = () =&#62; &#123;
       <p>진행 중인 프로세스가 있을 때, 현재 작업을 종료하지 않고 진행 상황을 사용자에게 알리려면 업데이트 가능한 알림을 사용하세요. 업데이트되는 동안 스피너를 보여주는 것도 좋습니다.</p>
       <p>아래 예제에서는 “group: false”(그룹화되지 않은 알림만 업데이트하기 위해)와 “timeout: 0”(알림이 해제되는 때를 전적으로 제어하기 위해)을 명시적으로 설정하고 있습니다.
       </p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1118,7 +1118,7 @@ const showNotif = () =&#62; &#123;
     <section id="predefine" data-name="미리 정의된 유형" sub>
       <Title minor>미리 정의된 유형</Title>
       <p>“positive”, “negative”, “warning” 및 “info”의 미리 정의된 네 가지 유형을 기본적으로 사용할 수 있습니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1198,7 +1198,7 @@ const triggerOngoing = () =&#62; &#123;
         <code>@quasar/app-webpack Boot File</code>에 적용해 사용하는 것이 가장
         좋습니다.
       </p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1256,7 +1256,7 @@ const triggerCustomRegisteredType2 = () =&#62; &#123;
           </div>
         </div>
       </Info>
-      <Code language="javascript">
+      <Code language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 부팅 파일에 등록하는 방법
 
@@ -1277,7 +1277,7 @@ Notify.registerType('my-notif', &#123;
       <p><code>html: true</code> prop을 지정하면 HTML을 메시지로 사용할 수 있습니다. <strong>이로 인해 XSS 공격에 노출될 위험이 있으므로</strong> 메시지를 직접
         삭제해야
         합니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1306,7 +1306,7 @@ const showNotif = () =&#62; &#123;
     <section id="attr" data-name="속성 설정" sub>
       <Title minor>속성 설정</Title>
       <p>attr 객체 속성을 설정하여 알림 자체에 사용자 정의 HTML 속성을 설정할 수 있습니다. 개별 알림 액션의 경우 다른 prop처럼 직접 전달할 수 있습니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -1336,7 +1336,7 @@ $q.notify(&#123;
     <section id="close" data-name="프로그래밍 방식으로 닫기" sub>
       <Title minor>프로그래밍 방식으로 닫기</Title>
       <p>알림은 사용자만 해제하도록 되어 있지만 예외적인 경우에는 프로그래밍 방식으로 해제할 수 있습니다. 무제한으로 시간(0)을 설정할 때 특히 유용합니다.</p>
-      <Code language="javascript">
+      <Code language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 const dismiss = $q.notify(&#123;...&#125;)
 ...
@@ -1351,7 +1351,7 @@ dismiss()
         <Link href="https://quasar.dev/quasar-plugins/notify#setting-defaults">프로그래밍 방식</Link>입니다.
       </p>
       <p>일부 Vue 파일에서 기본값을 설정할 수도 있습니다.</p>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 // Vue 컴포넌트 내부
 
@@ -1382,4 +1382,5 @@ $q.notify.setDefaults(&#123;
 </template>
 
 <style scoped>
+
 </style>

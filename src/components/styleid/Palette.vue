@@ -64,7 +64,7 @@ const mode = ref('rgb')
     <section id="class" data-name="CSS 클래스로 사용">
       <Title sub>CSS 클래스로 사용</Title>
       <p><code>text-</code> 또는 <code>bg-</code> 접두사를 클래스 이름으로 사용하여 텍스트 또는 배경의 색상을 변경합니다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- 텍스트 색상 변경 --&#62;
 &#60;p class="text-primary"&#62;....&#60;/p&#62;
@@ -88,7 +88,7 @@ const mode = ref('rgb')
         </textarea>
       </Code>
       <p>이제 Quasar 컴포넌트에 이 색상을 사용할 수 있습니다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;q-btn color="brand" ... /&#62;
         </textarea>
@@ -171,7 +171,7 @@ const mode = ref('rgb')
         </tbody>
       </q-markup-table>
       <p>헬퍼를 사용하여 브랜드 색상을 설정하는 예:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { setCssVar } from \'quasar\'' }}
 
@@ -181,7 +181,7 @@ setCssVar('primary', '#F33', document.getElementById('rebranded-section-id'))
         </textarea>
       </Code>
       <p>순수 자바스크립트를 사용하여 브랜드 색상을 설정하는 예:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 원시 자바스크립트의 setCssVar('primary')와 동일:
 document.body.style.setProperty('--q-primary', '#0273d4')
@@ -226,7 +226,7 @@ document.body.style.setProperty('--q-primary', '#0273d4')
         </tbody>
       </q-markup-table>
       <p>헬퍼를 사용하여 브랜드 색상을 가져오는 예:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { getCssVar } from \'quasar\'' }}
 
@@ -235,7 +235,7 @@ getCssVar('primary', document.getElementById('rebranded-section-id'))
         </textarea>
       </Code>
       <p>이 헬퍼는 원시 자바스크립트의 <code>getPeropertyValue()</code>를 래핑 하여 편리하게 사용 가능합니다. 다음은 이와 동일한 순수 자바스크립트의 예제입니다:</p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 원시 자바스크립트의 getCssVar('primary')와 동일:
 getComputedStyle(document.documentElement)
@@ -248,7 +248,7 @@ getComputedStyle(document.documentElement)
       <p>위 유틸 외에도 관심을 가질만한 색상을 처리하기 위한 전용 섹션 문서가 있습니다:
         <Link href="https://quasar.dev/quasar-utils/color-utils">색상 유틸</Link>
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { colors, setCssVar } from \'quasar\'' }}
 
@@ -264,7 +264,7 @@ setCssVar('primary-darkened', lighten(newPrimaryColor, -10))
       <Title sub>기본값 설정</Title>
       <p>직접 CSS를 변경하지 않고 브랜드 색상을 설정할 수 있는 방법은 다음과 같습니다.
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // UMD 또는 Quasar Vite 플러그인 또는 Vue CLI
 app.use(Quasar, &#123;

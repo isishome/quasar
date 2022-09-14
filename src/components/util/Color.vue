@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
     </section>
     <section id="install" data-name="설치">
       <Title sub>설치</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // main.js
 
@@ -143,7 +143,7 @@ app.use(Quasar, &#123;
     </section>
     <section id="inside" data-name="Vue 파일에서 사용하기" sub>
       <Title minor>Vue 파일에서 사용하기</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -161,7 +161,7 @@ $q.loading.hide()
     </section>
     <section id="outside" data-name="Vue 파일 외부에서 사용하기" sub>
       <Title minor>Vue 파일 외부에서 사용하기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 import &#123;
   Loading,
@@ -194,7 +194,7 @@ Loading.hide()
         { label: '표시 및 변경', value: 'change' },
       ]" non-code>
         <template #default>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -235,7 +235,7 @@ onBeforeUnmount(() =&#62; &#123;
           </Info>
         </template>
         <template #message>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -278,7 +278,7 @@ onBeforeUnmount(() =&#62; &#123;
           </Info>
         </template>
         <template #box>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -323,7 +323,7 @@ onBeforeUnmount(() =&#62; &#123;
           </Info>
         </template>
         <template #unsafe>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -367,7 +367,7 @@ onBeforeUnmount(() =&#62; &#123;
           </Info>
         </template>
         <template #custom>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar, QSpinnerFacebook } from \'quasar\'' }}
@@ -415,7 +415,7 @@ onBeforeUnmount(() =&#62; &#123;
           </Info>
         </template>
         <template #change>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;script sectup&#62;
 {{ 'import { useQuasar, QSpinnerGears } from \'quasar\'' }}
@@ -486,4 +486,5 @@ onBeforeUnmount(() =&#62; &#123;
 </template>
 
 <style scoped>
+
 </style>

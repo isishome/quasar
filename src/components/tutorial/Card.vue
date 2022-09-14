@@ -16,7 +16,7 @@ const members = reactive([
       <Title head>카드 만들기
       </Title>
       <p>Quasar <em>QCard</em> 컴포넌트를 활용해 간단한 레이아웃을 구성해 보도록 하겠습니다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -43,7 +43,7 @@ const members = reactive([
       </div>
       <p class="q-py-lg"></p>
       <p>간단한 멤버 카드가 만들어졌습니다. 몇 가지 항목을 추가하고 <code>v-for</code> 디렉티브를 이용해 더 많은 카드를 만들어 봅시다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -79,7 +79,7 @@ const members = reactive([
         </Link>섹션에서 언급했던 12포인트가 아직 적용되지 않았습니다. 현재 멤버 카드는 부모 요소의 가로 너비 안에서 자신의 너비에 맞춰 자동으로 래핑 됩니다.
       </p>
       <p>그럼 <code>q-gutter</code>를 이용해 간격을 주도록 하겠습니다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -115,7 +115,7 @@ const members = reactive([
         <em>QCard</em> 컴포넌트를 한 번 더 래핑 해 주는 것이 필요합니다. 좀 더 그럴싸한 반응형 웹을 만들기 위해 <code>col</code> 클래스를 적용해 봅시다.
       </p>
       <p>아래 예제에서 래핑 여부에 따른 차이를 확인해 보세요:</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -182,7 +182,7 @@ const members = reactive([
           </li>
         </ul>
       </Info>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -244,4 +244,5 @@ const members = reactive([
 </template>
 
 <style scoped>
+
 </style>

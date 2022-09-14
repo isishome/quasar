@@ -29,7 +29,7 @@ const update = (val) => {
     <Editor :contents="contents" @update="update" />
     <div>{{ contents }}</div>
     <div style="height:10vh"></div>
-    <Code language="html">
+    <Code language="html" :convert="{'html':'vue'}">
       <textarea readonly>
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -49,7 +49,7 @@ const update = (val) => {
       </textarea>
     </Code>
     <div style="height:100vh"></div>
-    <Code language="javascript" intersection>
+    <Code language="javascript" :convert="{'javascript':'js'}" intersection>
       <textarea readonly>""
 import { fileURLToPath, URL } from &#39;url&#39;
 

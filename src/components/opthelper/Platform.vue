@@ -40,7 +40,7 @@ const touch = computed(() => $q.platform.has.touch ? '지원합니다' : '지원
       <p>
         Vue 컴포넌트 js 내 사용법:
       </p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -53,7 +53,7 @@ $q.platform.is.mobile
       <p>
         Vue 컴포넌트 템플릿 내 사용법:
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 $q.platform.is.cordova
         </textarea>
@@ -61,7 +61,7 @@ $q.platform.is.cordova
       <p>
         Vue 컴포넌트 외부에서 사용할 경우 플랫폼 객체를 import 해야 합니다:
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Platform } from \'quasar\'' }}
         </textarea>
@@ -70,7 +70,7 @@ $q.platform.is.cordova
         <code>Platform.is</code> 자체는 현재 플랫폼에 대한 세부 정보가 포함된 객체를 반환합니다. 예를 들어 MacOS 데스크톱 컴퓨터에서 Chrome을 실행할 때
         <code>Platform.is</code>는 다음과 유사한 결과를 반환합니다:
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 &#123;
   chrome: true,
@@ -87,7 +87,7 @@ $q.platform.is.cordova
       <p>
         이제 코드가 실행되는 플랫폼마다 다른 컴포넌트나 DOM 요소를 렌더링 한다고 가정해 보겠습니다. 데스크톱과 모바일 환경에서 서로 다른 뭔가를 보여주길 원한다면 다음과 같이 진행하세요:
       </p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;div v-if="$q.platform.is.desktop"&#62;
   데스크톱 환경에서만 렌더링 됩니다!
@@ -105,7 +105,7 @@ $q.platform.is.cordova
     </section>
     <section id="users-device" data-name="사용자의 디바이스" sub>
       <Title minor>사용자의 디바이스</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;template&#62;
   &#60;div class="q-mb-md"&#62;
@@ -338,7 +338,7 @@ $q.platform.is.cordova
       <p>SSR 용으로 빌드 할 때, <code>$q.platform</code> 형식만 사용할 수 있습니다.
         <code>{{ 'import { Platform } from \'quasar\'' }}</code>(server-side 환경일 때)를 사용해야 하는 경우 다음과 같이 사용해야 합니다.
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Platform } from \'quasar\'' }}
 
@@ -376,4 +376,5 @@ function (ssrContext) &#123;
   </div>
 </template>
 <style scoped>
+
 </style>

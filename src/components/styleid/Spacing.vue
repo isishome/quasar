@@ -45,7 +45,7 @@ S - 너비
     </section>
     <section id="example" data-name="예제">
       <Title sub>예제</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- 모든 방향의 소형 패딩 --&#62;
 &#60;div class="q-pa-sm"&#62;...&#60;/div&#62;
@@ -142,4 +142,5 @@ body.body--dark &#123;
 </template>
 
 <style scoped>
+
 </style>

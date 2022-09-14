@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
-
 const props = defineProps({
   mid: {
     type: String,
@@ -33,4 +31,5 @@ const props = defineProps({
 </template>
 
 <style scoped>
+
 </style>

@@ -268,7 +268,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <Info advice color="teal-4">
         <p>기존 Quasar 버전에서는 Roboto 폰트가 강제로 설치 적용되었으나, 현재 버전에서는 사용 여부를 사용자가 설정할 수 있게 되었습니다.</p>
       </Info>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 파일: main.js
 

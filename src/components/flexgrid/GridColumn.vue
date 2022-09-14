@@ -24,7 +24,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="equal" data-name="같은 높이">
       <Title sub>같은 높이</Title>
       <p>아래 초소형(xs) 창 높이부터 초대형(xl) 창 높이까지 모든 디바이스와 뷰포트에 같은 높이의 column을 가지는 grid layouts이 있습니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -75,7 +75,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>flexbox grid row에서 자동 레이아웃은 일부 row의 중단점 높이를 설정하면 나머지 row는 자동으로 높이가 조정되는 것을 뜻합니다.
         미리 정의된 grid 클래스(아래 참조)나 인라인 높이를 사용할 수 있습니다.
         다른 row는 가운데 row와 관계없이 높이가 조정됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -133,7 +133,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         사용됩니다. 수평 정렬 클래스와 함께 뷰포트 높이가
         변경됨에
         따라 row의 높이를 알 수 없는 레이아웃을 중앙에 배치하는 데 매우 유용합니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column justify-center" style="height: 250px"&#62;
   &#60;div class="col col-md-4"&#62;
@@ -195,7 +195,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>가장 작은 디바이스에서 가장 큰 디바이스까지 동일한 grid의 경우 <code>.col</code> 및 <code>.col-*</code> 클래스를 사용합니다. 특정 높이의 row가 필요한 경우
         포인트가 지정된 클래스를 사용하세요. 그런
         경우가 아니면 <code>.col</code>을 사용하시면 됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column" style="height: 150px"&#62;
   &#60;div class="col"&#62;.col&#60;/div&#62;
@@ -227,7 +227,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title minor>믹스 앤 매치</Title>
       <p>row가 grid 계층에 쌓이는 것을 원하지 않나요? 필요에 따라 각 계층에 서로 다른 클래스를 조합하여 사용하세요. 모든 클래스들이 어떻게 작동하는지 알고 싶다면 아래 예제를 참고하세요.
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;!-- 하나는 전체 너비로 다른 하나는 절반 너비로 모바일 환경에서 column 쌓기 --&#62;
 &#60;div class="column" style="height: 150px"&#62;
@@ -276,7 +276,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'self-*', value: 'self' }
       ]">
         <template #items-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column items-start" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -306,7 +306,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column items-center" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -336,7 +336,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column items-end" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -366,7 +366,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #self>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column" style="height: 150px"&#62;
   &#60;div class="col self-start"&#62;
@@ -405,7 +405,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'justify-evenly', value: 'justify-evenly' }
       ]">
         <template #justify-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-start" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -429,7 +429,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-center" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -453,7 +453,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-end" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -477,7 +477,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-around>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-around" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -501,7 +501,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-between>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-between" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -525,7 +525,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-evenly>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column justify-evenly" style="height: 150px"&#62;
   &#60;div class="col-4"&#62;
@@ -561,7 +561,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="wrap" data-name="래핑" sub>
       <Title minor>래핑</Title>
       <p>단일 row에 column들의 높이 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column" style="height: 300px; max-height: 100%"&#62;
   &#60;div class="col-9"&#62;.col-9&#60;/div&#62;
@@ -619,7 +619,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'Flex 배치', value: 'flex-order' }
       ]">
         <template #reverse>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column reverse" style="height: 150px"&#62;
   &#60;div class="col"&#62;
@@ -649,7 +649,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #flex-order>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="column" style="height: 190px"&#62;
   &#60;div class="col order-none"&#62;
@@ -695,7 +695,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         12포인트
         이하의 column이 포함되어야 합니다(12 포인트 column을 모두 사용할 필요는 없습니다).
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="column" style="height: 200px"&#62;
   &#60;div class="col-auto"&#62;.col-auto&#60;/div&#62;

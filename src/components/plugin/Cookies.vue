@@ -26,7 +26,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="install" data-name="설치">
       <Title sub>설치</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // main.js : Quasar Vite 플러그인
 
@@ -48,7 +48,7 @@ app.use(Quasar, &#123;
       <p>SSR 용으로 빌드 할 때, <code>$q.cookies</code> 형식만 사용할 수 있습니다.
         <code>{{ 'import { Cookies } from \'quasar\'' }}</code>(server-side 환경일 때)를 사용해야 하는 경우 다음과 같이 사용해야 합니다.
       </p>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Cookies } from \'quasar\'' }}
 
@@ -77,7 +77,7 @@ function (ssrContext) &#123;
     </section>
     <section id="read" data-name="쿠키 읽기">
       <Title sub>쿠키 읽기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
@@ -85,7 +85,7 @@ const value = Cookies.get('cookie_name')
         </textarea>
       </Code>
       <p>쿠키를 설정하지 않으면, <code>null</code>값을 반환한다.</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
@@ -99,7 +99,7 @@ const value = $q.cookies.get('cookie_name')
     </section>
     <section id="readall" data-name="모든 쿠키 읽기">
       <Title sub>모든 쿠키 읽기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
@@ -107,7 +107,7 @@ const value = Cookies.getAll()
         </textarea>
       </Code>
       <p><code>cookies</code> 변수는 키-값 쌍의 객체 입니다(cookie_name : cookie_value).</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
@@ -121,14 +121,14 @@ const value = $q.cookies.getAll()
     </section>
     <section id="verify" data-name="쿠키 설정 확인">
       <Title sub>쿠키 설정 확인</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
 Cookies.has('cookie_name') // 부울값
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
@@ -142,7 +142,7 @@ const hasIt = $q.cookies.has('cookie_name')
     </section>
     <section id="write" data-name="쿠키 쓰기">
       <Title sub>쿠키 쓰기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
@@ -153,7 +153,7 @@ Cookies.set('cookie_name', cookie_value)
 Cookies.set('cookie_name', cookie_value, options)
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
@@ -163,7 +163,7 @@ Cookies.set('quasar', 'framework', &#123;
 &#125;)
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
@@ -180,7 +180,7 @@ $q.cookies.set('cookie_name', cookie_value, options)
     </section>
     <section id="expires" data-name="옵션: expires" sub>
       <Title minor>옵션: expires</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 expires: 10 // 10일
 expires: -1 // 어제
@@ -196,7 +196,7 @@ expires: '15m 10s' // 15분 10초
     </section>
     <section id="path" data-name="옵션: path" sub>
       <Title minor>옵션: path</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 path: '/'
         </textarea>
@@ -206,7 +206,7 @@ path: '/'
     </section>
     <section id="domain" data-name="옵션: domain" sub>
       <Title minor>옵션: domain</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 domain: 'quasar.dev'
         </textarea>
@@ -215,7 +215,7 @@ domain: 'quasar.dev'
     </section>
     <section id="samesite" data-name="옵션: sameSite" sub>
       <Title minor>옵션: sameSite</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 sameSite: 'Strict'
 // 또는
@@ -239,7 +239,7 @@ sameSite: 'Lax'
     </section>
     <section id="httponly" data-name="옵션: httpOnly" sub>
       <Title minor>옵션: httpOnly</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 httpOnly: true
         </textarea>
@@ -249,7 +249,7 @@ httpOnly: true
     </section>
     <section id="secure" data-name="옵션: secure" sub>
       <Title minor>옵션: secure</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 secure: true
         </textarea>
@@ -262,7 +262,7 @@ secure: true
     </section>
     <section id="other" data-name="옵션: ohter" sub>
       <Title minor>옵션: ohter</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 other: 'SomeNewProp'
         </textarea>
@@ -271,7 +271,7 @@ other: 'SomeNewProp'
     </section>
     <section id="remove" data-name="쿠키 제거">
       <Title sub>쿠키 제거</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // Vue 파일 밖에서 사용
 {{ 'import { Cookies } from \'quasar\'' }}
@@ -283,7 +283,7 @@ Cookies.remove('cookie_name')
 Cookies.remove('cookie_name', options)
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- Vue file 안에서 사용 --&#62;
 &#60;script setup&#62;
@@ -319,4 +319,5 @@ $q.cookies.remove('cookie_name', options)
 </template>
 
 <style scoped>
+
 </style>

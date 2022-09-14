@@ -41,7 +41,7 @@ const transitions = shallowReadonly([
         </q-card>
       </div>
       <p>transition props에 <em>캡션</em>에 표시된 이름을 사용하세요. 예제:</p>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;q-menu
   transition-show="jump-down"

@@ -26,7 +26,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="equal" data-name="같은 너비">
       <Title sub>같은 너비</Title>
       <p>아래 초소형(xs) 창 너비부터 초대형(xl) 창 너비까지 모든 디바이스와 뷰포트에 같은 너비의 column을 가지는 grid layouts이 있습니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col"&#62;
@@ -78,7 +78,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>첫 번째 row의 두 번째 column은 그 너비를 5로 설정했으므로(5/12 = 42.6%), 나머지 column의 너비는 7/12 = 57.4% 가 됩니다.</p>
       <p>두 번째 row의 두 번째 column은 그 너비를 6으로 설정했으므로(6/12 = 50%), 나머지 column들의 너비는 3/12 = 25%(나머지 column이 6/12 너비를 나눠가짐) 가
         됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col"&#62;
@@ -130,7 +130,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         유용하게 사용됩니다(이 페이지 마지막 예제 참조). 수평 정렬 클래스(justify-center등)와 함께 뷰포트 너비가
         변경됨에
         따라 column의 너비를 알 수 없는 레이아웃을 중앙에 배치하는 데 매우 유용합니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-12 col-md-2"&#62;
@@ -193,7 +193,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p>가장 작은 디바이스에서 가장 큰 디바이스까지 동일한 grid의 경우 <code>.col</code> 및 <code>.col-*</code> 클래스를 사용합니다. 특정 너비의 column이 필요한 경우
         포인트가 지정된 클래스를 사용하세요. 그런
         경우가 아니면 <code>.col</code>을 사용하시면 됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col"&#62;
@@ -250,7 +250,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <p><code>.col-12</code>와 <code>.col-md-*</code> 클래스의 조합을 사용하여 소형 디바이스에서 쌓는 정렬로 시작해 데스크톱(중형) 디바이스에서 수평 정렬까지 기본
         그리드
         시스템을 생성할 수 있습니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-12 col-md-8"&#62;
@@ -304,7 +304,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title minor>믹스 앤 매치</Title>
       <p>column이 grid 계층에 쌓이는 것을 원하지 않나요? 필요에 따라 각 계층에 서로 다른 클래스를 조합하여 사용하세요. 모든 클래스들이 어떻게 작동하는지 알고 싶다면 아래 예제를 참고하세요.
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col col-md-8"&#62;
@@ -378,7 +378,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'self-*', value: 'self' }
       ]">
         <template #items-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row items-start" style="height:5rem"&#62;
   &#60;div class="col"&#62;
@@ -408,7 +408,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row items-center" style="height:5rem"&#62;
   &#60;div class="col"&#62;
@@ -438,7 +438,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #items-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row items-end" style="height:5rem"&#62;
   &#60;div class="col"&#62;
@@ -468,7 +468,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #self>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row" style="height:5rem"&#62;
   &#60;div class="col self-start"&#62;
@@ -507,7 +507,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'justify-evenly', value: 'justify-evenly' }
       ]">
         <template #justify-start>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-start"&#62;
   &#60;div class="col-4"&#62;
@@ -531,7 +531,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-center>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-center"&#62;
   &#60;div class="col-4"&#62;
@@ -555,7 +555,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-end>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-end"&#62;
   &#60;div class="col-4"&#62;
@@ -579,7 +579,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-around>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-around"&#62;
   &#60;div class="col-4"&#62;
@@ -603,7 +603,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-between>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-between"&#62;
   &#60;div class="col-4"&#62;
@@ -627,7 +627,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #justify-evenly>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row justify-evenly"&#62;
   &#60;div class="col-4"&#62;
@@ -663,7 +663,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
     <section id="wrap" data-name="column 래핑" sub>
       <Title minor>column 래핑</Title>
       <p>단일 row에 column들의 너비 값이 12 포인트를 넘는 경우, 초과되는 column들은 순차적으로 새 라인으로 줄 바꿈 됩니다.</p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-9"&#62;
@@ -735,7 +735,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'Flex 배치', value: 'flex-order' }
       ]">
         <template #reverse>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row reverse"&#62;
   &#60;div class="col"&#62;
@@ -765,7 +765,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #flex-order>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col order-none"&#62;
@@ -803,7 +803,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         <code>.offset-md-4</code>는
         <code>.col-md-4</code>를 4너비만큼 이동시킵니다.
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-md-4"&#62;
@@ -864,7 +864,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         12포인트
         이하의 column이 포함되어야 합니다(12 포인트 column을 모두 사용할 필요는 없습니다).
       </p>
-      <Code language="html" class="q-mb-md">
+      <Code language="html" :convert="{'html':'vue'}" class="q-mb-md">
         <textarea readonly>
 &#60;div class="row"&#62;
   &#60;div class="col-sm-9"&#62;

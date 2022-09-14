@@ -47,7 +47,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'q-gutter-xl', value: 'q-gutter-xl' }
       ]">
         <template #q-gutter-xs>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-xs"&#62;
   &#60;q-btn color="brown" label="Button" v-for="n in 7" :key="`xs-$&#123;n&#125;`" /&#62;
@@ -61,7 +61,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-gutter-sm>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-sm"&#62;
   &#60;q-btn color="teal" label="Button" v-for="n in 7" :key="`sm-$&#123;n&#125;`" /&#62;
@@ -75,7 +75,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-gutter-md>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-md"&#62;
   &#60;q-btn color="accent" label="Button" v-for="n in 7" :key="`md-$&#123;n&#125;`" /&#62;
@@ -89,7 +89,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-gutter-lg>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-lg"&#62;
   &#60;q-btn color="red" label="Button" v-for="n in 7" :key="`lg-$&#123;n&#125;`" /&#62;
@@ -103,7 +103,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-gutter-xl>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-xl"&#62;
   &#60;q-btn color="indigo" label="Button" v-for="n in 7" :key="`xl-$&#123;n&#125;`" /&#62;
@@ -124,7 +124,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: '수평, 수직이 혼합된 q-gutter', value: 'mixed' }
       ]">
         <template #horizontal>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-x-md"&#62;
   &#60;q-btn color="primary" label="Button" v-for="n in 3" :key="n" /&#62;
@@ -138,7 +138,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #vertical>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-y-md"&#62;
   &#60;q-btn color="teal" label="Button" v-for="n in 10" :key="n" /&#62;
@@ -152,7 +152,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #mixed>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-gutter-x-xs q-gutter-y-lg"&#62;
   &#60;q-btn color="purple" label="Button" v-for="n in 10" :key="n" /&#62;
@@ -189,7 +189,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: 'q-col-gutter-xl', value: 'q-col-gutter-xl' }
       ]">
         <template #q-col-gutter-none>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-none"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`none-$&#123;n&#125;`"&#62;
@@ -207,7 +207,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-col-gutter-xs>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-xs"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`xs-$&#123;n&#125;`"&#62;
@@ -225,7 +225,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-col-gutter-sm>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-sm"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`sm-$&#123;n&#125;`"&#62;
@@ -243,7 +243,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-col-gutter-md>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-md"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`md-$&#123;n&#125;`"&#62;
@@ -261,7 +261,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-col-gutter-lg>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-lg"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`lg-$&#123;n&#125;`"&#62;
@@ -279,7 +279,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #q-col-gutter-xl>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-xl"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`xl-$&#123;n&#125;`"&#62;
@@ -303,7 +303,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         { label: '수평, 수직이 혼합된 q-col-gutter', value: 'mixed' }
       ]">
         <template #horizontal>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-x-md"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`none-$&#123;n&#125;`"&#62;
@@ -321,7 +321,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #vertical>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-y-md"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`none-$&#123;n&#125;`"&#62;
@@ -339,7 +339,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           </Info>
         </template>
         <template #mixed>
-          <Code language="html">
+          <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="row q-col-gutter-x-xs q-col-gutter-y-lg"&#62;
   &#60;div class="col-4" v-for="n in 5" :key="`none-$&#123;n&#125;`"&#62;
@@ -369,7 +369,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           적용하세요.
         </p>
       </Note>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-pa-md"&#62;
   &#60;div class="row"&#62;
@@ -460,7 +460,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           없습니다.
         </p>
       </Note>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-px-xl q-py-md"&#62;
   &#60;p&#62;.q-gutter 및 너비가 지정되지 않은 자식 요소&#60;/p&#62;
@@ -571,7 +571,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
           적용하세요.
         </p>
       </Note>
-      <Code language="html">
+      <Code language="html" :convert="{'html':'vue'}">
             <textarea readonly>
 &#60;div class="q-px-xl q-py-md"&#62;
   &#60;p&#62;.q-col-gutter와 스타일 적용된 자식 요소&#60;/p&#62;

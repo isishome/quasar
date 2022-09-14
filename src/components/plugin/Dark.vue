@@ -36,7 +36,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="inside" data-name="Vue 파일에서 사용하기" sub>
       <Title minor>Vue 파일에서 사용하기</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;script setup&#62;
 {{ 'import { useQuasar } from \'quasar\'' }}
@@ -60,7 +60,7 @@ $q.dark.toggle()
     </section>
     <section id="outside" data-name="Vue 파일 외부에서 사용하기" sub>
       <Title minor>Vue 파일 외부에서 사용하기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 {{ 'import { Dark } from \'quasar\'' }}
 
@@ -80,7 +80,7 @@ Dark.toggle()
     </section>
     <section id="main" data-name="main.js를 통해 사용하기" sub>
       <Title minor>main.js를 통해 사용하기</Title>
-      <Code class="q-mb-lg" language="javascript">
+      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
         <textarea readonly>
 // 파일: main.js
 
@@ -106,7 +106,7 @@ app.use(Quasar, &#123;
     </section>
     <section id="watch" data-name="상태 변화 관찰">
       <Title minor>상태 변화 관찰</Title>
-      <Code class="q-mb-lg" language="html">
+      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;template&#62;...&#60;/template&#62;
 
@@ -135,4 +135,5 @@ watch(() =&#62; $q.dark.isActive, val =&#62; &#123;
 </template>
 
 <style scoped>
+
 </style>
