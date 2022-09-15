@@ -77,8 +77,15 @@ const routes = [
             name: 'edit',
             component: () => import('@/components/tutorial/Edit.vue'),
             meta: {
-              title: '카드 수정하기',
-              nonSections: true,
+              title: '카드 수정하기'
+            }
+          },
+          {
+            path: 'storage',
+            name: 'storage',
+            component: () => import('@/components/tutorial/Storage.vue'),
+            meta: {
+              title: '세션 스토리지 저장',
               toDo: true
             }
           },

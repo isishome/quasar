@@ -38,10 +38,6 @@ const _contact = ref(props.contact)
   <q-card>
     <div class="text-center bg-primary text-white">멤버</div>
     <q-card-section>
-      <!-- 
-        @update:model-value 이벤트로 QInput에 바인딩 된 데이터가 변경되면 
-        상위 컴포넌트의 @update로 변경된 정보를 전달해 줍니다 
-      -->
       <q-input v-model="_name" :readonly="!editable" dense :borderless="!editable"
         @update:model-value="val => emits('update', props.mid,'name', val)" />
       <q-input v-model="_team" :readonly="!editable" dense :borderless="!editable"
@@ -51,3 +47,7 @@ const _contact = ref(props.contact)
     </q-card-section>
   </q-card>
 </template>
+    
+<style scoped>
+
+</style>

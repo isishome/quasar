@@ -3,7 +3,7 @@ import { defineAsyncComponent, reactive } from 'vue'
 import { uid } from 'quasar'
 
 const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
-const Member = defineAsyncComponent(() => import('./Member.vue'))
+const Member = defineAsyncComponent(() => import('./member/CComp.vue'))
 
 const members = reactive([
   { mid: uid(), name: '홍길동', team: '디자인 팀', contact: '010-0000-0000' },
@@ -221,7 +221,7 @@ const addMember = () =&#62; &#123;
     <div>
       <div class="row justify-between items-cetner">
         <Move label="카드 만들기" prev :to="{ name: 'card' }" />
-        <Move disable label="카드 수정하기" next :to="{ name: 'edit' }" />
+        <Move label="카드 수정하기" next :to="{ name: 'edit' }" />
       </div>
     </div>
   </div>
