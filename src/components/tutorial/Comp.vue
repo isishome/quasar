@@ -46,9 +46,6 @@ const addMember = () => {
     &#60;/q-card-section&#62;
   &#60;/q-card&#62;
 &#60;/template&#62;
-
-&#60;style scoped&#62;
-&#60;/style&#62;
     </textarea>
         </Code>
       <p>이름, 팀 명, 연락처 정보를 <em>props</em>로 새로 정의해 봅시다. 이 정보들은 <em>JSON</em> 객체 유형으로 그룹화해도 되지만 의미를 명확하게 하기 위해 각각의 props를
@@ -90,9 +87,6 @@ const props = defineProps(&#123;
     &#60;/q-card-section&#62;
   &#60;/q-card&#62;
 &#60;/template&#62;
-
-&#60;style scoped&#62;
-&#60;/style&#62;
         </textarea>
       </Code>
       <p>세 가지 props에 멤버의 고윳값으로 사용할 <code>mid</code> props도 추가해 주었습니다.</p>
