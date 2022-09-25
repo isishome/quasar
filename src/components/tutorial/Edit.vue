@@ -46,10 +46,10 @@ const update = (mid, key, val) => {
     </section>
     <section id="editable" data-name="수정 모드 만들기">
       <Title sub>수정 모드 만들기</Title>
-      <p>지난 챕터에 만든 <em>Member.vue</em> 파일을 열어 "수정 모드" 추가를 위한 부울 유형의 <code>editable</code> props를 새로 정의해 줍니다.
-        멤버 컴포넌트를 사용하는 상위 컴포넌트가 <code>editable</code> props 값을 변경하면 멤버 카드 안의
-        DOM 요소가 수정 가능 상태처럼 보이도록 하는 것도 함께 처리하도록
-        하겠습니다.
+      <p>지난 챕터에 만든 <em>Member.vue</em> 파일을 열어 "수정 모드"를 추가하기 위해 <em>Boolean</em> 유형의 <code>editable</code> props를 새로 정의해
+        줍니다.
+        멤버 컴포넌트를 사용하는 페이지나 컴포넌트가 <code>editable</code> props를 변경하면 멤버 카드를 구성하는
+        DOM 요소가 수정 가능 상태임을 사용자에게 알려주기 위한 화면 처리도 함께 적용해 보도록 하겠습니다.
       </p>
       <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
@@ -100,29 +100,28 @@ const _contact = ref(props.contact)
 &#60;/template&#62;
         </textarea>
       </Code>
-      <p>텍스트 보간(<em>&#123;&#123; name &#125;&#125;</em> - 이중 중괄호 : mustache syntax)을 사용하여 정보를 바인딩 하던 부분을 Quasar의
+      <p>텍스트 보간(<em>&#123;&#123; name &#125;&#125;</em> - 일명 mustache syntax)을 사용하여 정보를 바인딩 하던 부분을 Quasar의
         <em>QInput</em>
         컴포넌트로 변경해
-        주었습니다. 그리고 props로 전달받은 정보들을 초깃값으로 하는 새로운 반응형 객체들을 각 <em>QInput</em> 컴포넌트에 바인딩 해주었고,
+        주었습니다. 그리고 props로 전달받은 정보들을 초깃값으로 하는 새로운 반응형 객체들을 각 <em>QInput</em> 컴포넌트에 v-model로 바인딩 해주었고,
         멤버 컴포넌트의 수정 가능 상태가 바뀐다는 것을 명시하기 위해 <em>QInput</em>의
         <code>readonly</code>와
         <code>borderless</code>를 <code>editable</code> props로 바인딩 해주었습니다.
-        (readonly와 borderless는 단어 그대로 editable props에 따른 읽기 전용 속성 및 테두리 표시 전환을 설정합니다.)
+        (readonly와 borderless는 단어 그대로 editable props에 따른 DOM 요소의 읽기 전용 속성 및 테두리 표시 전환 상태를 지정할 수 있습니다.)
       </p>
       <Info advice color="teal-4">
-        <p><b>왜 props로 전달된 정보 값들을 바로 사용하지 않고 <em>_name</em>과 같은 새 값으로 정의해 바인딩 해주었을까요?</b></p>
+        <p><b>왜 props로 전달된 정보 값들을 바로 사용하지 않고 <em>_name</em>과 같은 새 변수에 할당해 주었을까요?</b></p>
         <p><span class="text-green-7">vue.js</span>에서는 <strong>부모 컴포넌트와 자식 컴포넌트 사이에 전달되는 모든 props 값이 단방향으로
-            처리됩니다(부모 > 자식)</strong>. 만약 자식
+            처리됩니다(부모 &rarr; 자식)</strong>. 만약 자식
           컴포넌트가
-          전달받은 props를
-          변경(Mutation) 하려고
-          하는
-          경우 콘솔 창에 경고를 표시합니다.</p>
+          전달받은 props의
+          변경(Mutation)을 시도하는
+          경우 콘솔 창에 경고를 표시할 수도 있습니다.</p>
       </Info>
-      <p>이제 수정 모드가 추가된 컴포넌트가 정상적으로 동작하는지 확인해봅시다.
+      <p>이제 수정 모드가 추가된 컴포넌트가 정상적으로 동작하는지 확인해 봅시다.
       </p>
-      <p>먼저 멤버 컴포넌트를 사용하는 페이지로 돌아가 멤버 데이터에 수정 여부 값(<em>editable: false</em>)을 추가하고, 카드 상단에 수정
-        상태 변경 버튼을 추가해 줍니다.</p>
+      <p>먼저 멤버 컴포넌트를 사용하는 상위 페이지로 돌아가 멤버 데이터에 수정 여부 값(<em>editable: false</em>)을 추가하고, 카드 상단에 수정
+        상태 변경 버튼도 추가해 줍시다.</p>
       <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
@@ -175,11 +174,14 @@ const addMember = () =&#62; &#123;
       </div>
       <p class="q-py-lg"></p>
       <p>각 카드의 상단
-        <q-icon name="edit" color="grey" /> 버튼을 클릭하면 해당 멤버 카드 정보가 수정 상태로 변경됩니다 (
-        <q-icon name="check" color="primary" /> 버튼을 클릭하면 수정 모드가 비활성화됩니다). 사용자 입장에서는 모든 기능이 정상적으로 동작하는 것처럼 보이지만
-        데이터(:아래)를 확인해 보면 당연하게도
-        화면상에서 수정된 값들이 실제로 적용되지
-        않은 것을 확인할 수 있습니다(멤버 컴포넌트 내부적으로 전달받은 props를 초깃값으로 하는 새 반응형 객체를 사용하고 있기 때문에).
+        <q-btn dense flat icon="edit" color="grey" size="sm" /> 버튼을 클릭하면 해당 멤버 카드 정보가 수정 상태로 변경됩니다 (
+        <q-btn dense round icon="check" color="primary" size="sm" /> 버튼을 클릭하면 수정 모드가 비활성화됩니다). 사용자 입장에서는
+        모든
+        기능이 정상적으로
+        동작하는 것처럼 보이지만
+        데이터(:아래)를 확인해 보면
+        <b>화면상에서 수정된 값들이 실제로 적용되지
+          않은 것</b>을 확인할 수 있습니다 (멤버 컴포넌트 내부적으로 전달받은 props를 초깃값으로 하는 새 반응형 객체를 사용하고 있기 때문).
         <Info>
           <p><b>Member 데이터</b></p>
           <p>
@@ -190,9 +192,9 @@ const addMember = () =&#62; &#123;
     </section>
     <section id="apply" data-name="수정 데이터 적용하기">
       <Title sub>수정 데이터 적용하기</Title>
-      <p>이제 멤버 컴포넌트에서 수정된 데이터를 상위 컴포넌트 또는 페이지에서 실제로 적용하는 방법을 알아보도록 하겠습니다. 멤버 컴포넌트의 정보가 업데이트되면 <code>defineEmits</code>
-        API를 이용해 미리 <em>@update</em> 이벤트를 정의해 둡니다. 그리고 각 멤버 데이터의 값이 변경되면 @update를 호출하고, 상위 컴포넌트 또는 페이지에서
-        <em>@update</em>로 바인딩 된 이벤트를 실행해서 실제 데이터를 업데이트해주면 됩니다.
+      <p>이제 멤버 컴포넌트에서 수정된 데이터를 상위 페이지에서 실제로 적용하는 방법을 알아보도록 하겠습니다. 멤버 컴포넌트의 정보가 업데이트되면 <code>defineEmits</code>
+        API를 이용해 미리 <em>@update</em> 이벤트를 정의해 둡니다. 그리고 각 멤버 데이터의 값이 변경되면 @update를 호출하고, 상위 페이지에서
+        <em>@update</em>로 바인딩 된 이벤트를 실행해서 실제 데이터를 업데이트해 주면 됩니다.
       </p>
       <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
         <textarea readonly>
@@ -226,7 +228,7 @@ const props = defineProps(&#123;
 &#125;)
 
 // emits 을 정의해 줍니다.
-const emits = defineEmits(['update'])
+const emit = defineEmits(['update'])
 
 // 컴포넌트 내부에서 사용할 멤버 데이터
 const _name = ref(props.name)
@@ -243,11 +245,11 @@ const _contact = ref(props.contact)
         상위 컴포넌트의 @update로 변경된 정보를 전달해 줍니다 
       --&#62;
       &#60;q-input v-model="_name" :readonly="!editable" dense :borderless="!editable"
-        @update:model-value="val =&#62; emits('update', props.mid,'name', val)" /&#62;
+        @update:model-value="val =&#62; emit('update', props.mid,'name', val)" /&#62;
       &#60;q-input v-model="_team" :readonly="!editable" dense :borderless="!editable"
-        @update:model-value="val =&#62; emits('update', props.mid,'team', val)" /&#62;
+        @update:model-value="val =&#62; emit('update', props.mid,'team', val)" /&#62;
       &#60;q-input v-model="_contact" :readonly="!editable" dense :borderless="!editable"
-        @update:model-value="val =&#62; emits('update', props.mid,'contact', val)" /&#62;
+        @update:model-value="val =&#62; emit('update', props.mid,'contact', val)" /&#62;
     &#60;/q-card-section&#62;
   &#60;/q-card&#62;
 &#60;/template&#62;
@@ -310,11 +312,11 @@ const update = (mid, key, val) =&#62; &#123;
       </Code>
       <p>멤버 컴포넌트에서 호출된 <em>@update</em>를 처리할 <code>update</code> 메서드를 추가했습니다. <code>update</code> 메서드는
         <code>memebers</code> 객체에서
-        전달받은 <em>mid</em> 값의 멤버가
-        존재하면 해당 항목의 데이터를
+        전달받은 고유의 <em>mid</em> 값의 멤버가
+        존재하면 해당 멤버의 데이터를
         업데이트해줍니다.
       </p>
-      <p>현재까지 작성된 결과물로 테스트해 봅시다. 카드의 멤버 항목이 업데이트되면 실제 <code>members</code> 객체도 함께 업데이트되는 것을 확인할 수 있습니다.</p>
+      <p>현재까지 작성된 코드가 잘 동작하는지 테스트해 봅시다. 카드의 멤버 항목이 업데이트되면 실제 <code>members</code> 객체도 함께 업데이트되는 것을 확인할 수 있습니다.</p>
       <b>결과</b>
       <div class="row justify-end q-pb-sm">
         <q-btn dense icon="add" round color="positive" @click="addMember2" />
@@ -335,14 +337,14 @@ const update = (mid, key, val) =&#62; &#123;
           {{members2}}
         </p>
       </Info>
-      <p>다음 챕터에서는 <b>멤버 카드 데이터를 실제 세션 스토리지에 저장</b>하는 작업을 진행해 보도록 하겠습니다.</p>
+      <p>다음 챕터에서는 <b>멤버 카드 정보를 실제 저장소(세션 스토리지)에 저장</b>하는 작업을 진행해 보도록 하겠습니다.</p>
     </section>
     <div class="q-py-xl"></div>
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
         <Move label="컴포넌트 분리하기" prev :to="{ name: 'component' }" />
-        <Move label="세션 스토리지 저장" next :to="{ name: 'storage' }" disable />
+        <Move label="카드 정보 저장하기" next :to="{ name: 'storage' }" disable />
       </div>
     </div>
   </div>
