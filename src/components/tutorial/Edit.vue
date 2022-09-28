@@ -344,7 +344,7 @@ const update = (mid, key, val) =&#62; &#123;
     <div>
       <div class="row justify-between items-cetner">
         <Move label="컴포넌트 분리하기" prev :to="{ name: 'component' }" />
-        <Move label="카드 정보 저장하기" next :to="{ name: 'storage' }" disable />
+        <Move label="카드 정보 저장하기" next :to="{ name: 'storage' }" />
       </div>
     </div>
   </div>

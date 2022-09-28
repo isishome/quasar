@@ -85,8 +85,7 @@ const routes = [
             name: 'storage',
             component: () => import('@/components/tutorial/Storage.vue'),
             meta: {
-              title: '카드 정보 저장하기',
-              toDo: true
+              title: '카드 정보 저장하기'
             }
           },
           {
