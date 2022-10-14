@@ -89,6 +89,14 @@ const routes = [
             }
           },
           {
+            path: 'soc',
+            name: 'soc',
+            component: () => import('@/components/tutorial/Soc.vue'),
+            meta: {
+              title: '관심사의 분리'
+            }
+          },
+          {
             path: 'result',
             name: 'result',
             component: () => import('@/components/tutorial/Result.vue'),

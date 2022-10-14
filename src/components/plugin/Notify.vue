@@ -33,7 +33,7 @@ const showNotifAvatar = () => {
   $q.notify({
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png'
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png'
   })
 }
 
@@ -57,7 +57,7 @@ const showNotifAction = () => {
   $q.notify({
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       { label: '무시', color: 'white', handler: () => { /* ... */ } }
     ]
@@ -66,7 +66,7 @@ const showNotifAction = () => {
   $q.notify({
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       { label: '응답', color: 'yellow', handler: () => { /* ... */ } },
       { label: '무시', color: 'white', handler: () => { /* ... */ } }
@@ -79,7 +79,7 @@ const showNotifMulti = () => {
     message: '세라에게 점심 식사 연락이 왔습니다',
     color: 'indigo',
     multiLine: true,
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       { label: '수락', color: 'yellow', handler: () => { /* ... */ } }
     ]
@@ -91,7 +91,7 @@ const alerts = [
   { message: '이걸 알아야 합니다!', icon: 'warning' },
   { message: '와! 잘했어!', icon: 'thumb_up' },
   { color: 'teal', message: 'Quasar 멋지다! 그쵸?', icon: 'tag_faces' },
-  { color: 'purple', message: '세라가 방금 전화했어', avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png' },
+  { color: 'purple', message: '세라가 방금 전화했어', avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png' },
   { multiLine: true, message: '식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아 식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아' }
 ]
 
@@ -192,7 +192,7 @@ const showNotifs = () => {
     message: '식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아 식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아',
     color: 'indigo',
     multiLine: true,
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       { label: '응답', color: 'yellow', handler: () => { /* ... */ } }
     ]
@@ -213,7 +213,7 @@ const showNotifs = () => {
       progress: true,
       message: '세라에게 전화가 왔어요.',
       color: 'purple',
-      avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+      avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
       actions: [
         { label: '응답', color: 'yellow', handler: () => { /* ... */ } }
       ]
@@ -518,7 +518,7 @@ const showNotif = () =&#62; &#123;
   $q.notify(&#123;
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png'
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png'
   &#125;)
 &#125;
 &#60;/script&#62;
@@ -602,7 +602,7 @@ const showNotif = () =&#62; &#123;
   $q.notify(&#123;
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       &#123; label: '무시', color: 'white', handler: () =&#62; &#123; /* ... */ &#125; &#125;
     ]
@@ -611,7 +611,7 @@ const showNotif = () =&#62; &#123;
   $q.notify(&#123;
     message: '세라에게 전화가 왔어요',
     color: 'indigo',
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       &#123; label: '응답', color: 'yellow', handler: () =&#62; &#123; /* ... */ &#125; &#125;,
       &#123; label: '무시', color: 'white', handler: () =&#62; &#123; /* ... */ &#125; &#125;
@@ -644,7 +644,7 @@ const showNotif = () =&#62; &#123;
     message: '세라에게 점심 식사 연락이 왔습니다',
     color: 'indigo',
     multiLine: true,
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       &#123; label: '수락', color: 'yellow', handler: () =&#62; &#123; /* ... */ &#125; &#125;
     ]
@@ -676,7 +676,7 @@ const alerts = [
   &#123; message: '이걸 알아야 합니다!', icon: 'warning' &#125;,
   &#123; message: '와! 잘했어!', icon: 'thumb_up' &#125;,
   &#123; color: 'teal', message: 'Quasar 멋지다! 그쵸?', icon: 'tag_faces' &#125;,
-  &#123; color: 'purple', message: '세라가 방금 전화했어', avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png' &#125;,
+  &#123; color: 'purple', message: '세라가 방금 전화했어', avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png' &#125;,
   &#123; multiLine: true, message: '식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아 식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아' &#125;
 ]
 
@@ -1018,7 +1018,7 @@ const showNotifs = () =&#62; &#123;
     message: '식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아 식사는 없어 배고파도 음료는 없어 목말라도 달콤한 맛만 디저트만 만 원하게 될 거 알잖아',
     color: 'indigo',
     multiLine: true,
-    avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+    avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
     actions: [
       &#123; label: '응답', color: 'yellow', handler: () =&#62; &#123; /* ... */ &#125; &#125;
     ]
@@ -1039,7 +1039,7 @@ const showNotifs = () =&#62; &#123;
       progress: true,
       message: '세라에게 전화가 왔어요.',
       color: 'purple',
-      avatar: 'https://quasar.serasome.com/favicon/android-icon-48x48.png',
+      avatar: 'https://quasar.serasome.com/favicon/favicon-32x32.png',
       actions: [
         &#123; label: '응답', color: 'yellow', handler: () =&#62; &#123; /* ... */ &#125; &#125;
       ]

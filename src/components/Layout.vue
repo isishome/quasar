@@ -408,7 +408,7 @@ a {
 
 ins {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
-  background-color: rgba(0, 0, 0, .02);
+  background-color: rgba(0, 0, 0, .02) !important;
   position: relative;
   min-height: 200px;
 }
@@ -425,7 +425,7 @@ ins::after {
 
 .body--dark ins {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
-  background-color: rgba(255, 255, 255, .02);
+  background-color: rgba(255, 255, 255, .02) !important;
 }
 
 .body--dark ins::after {

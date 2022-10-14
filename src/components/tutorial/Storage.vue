@@ -227,13 +227,14 @@ const store = (mid) =&#62; &#123;
         </div>
       </div>
       <p class="q-py-lg"></p>
-      <p>문제가 생겼던 부분을 다시 테스트해봅시다. <strong>이제 각 멤버 카드 정보가 별개로 관리 및 저장됩니다</strong>.</p>
+      <p>문제가 생겼던 부분을 다시 테스트해봅시다. <strong>이제 각 멤버 카드 정보가 독립적으로 관리 및 저장됩니다</strong>.</p>
     </section>
     <div class="q-py-xl"></div>
     <q-separator class="q-mb-lg" />
     <div>
       <div class="row justify-between items-cetner">
         <Move label="카드 수정하기" prev :to="{ name: 'edit' }" />
+        <Move label="관심사의 분리" next :to="{ name: 'soc' }" />
       </div>
     </div>
   </div>

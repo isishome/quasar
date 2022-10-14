@@ -57,6 +57,7 @@ onMounted(() => {
         <slot :name="o.value"></slot>
       </q-tab-panel>
     </q-tab-panels>
+    <slot name="result"></slot>
   </div>
 </template>
 <style scoped>
@@ -80,19 +81,19 @@ onMounted(() => {
   overflow: hidden;
 }
 
-.practice:deep(.info) {
+.panel:deep(.info) {
   background-color: transparent !important;
   padding: 0;
 }
 
-.practice:deep(.outer) {
+.panel:deep(.outer) {
   margin-top: 10px;
   margin-bottom: 0;
   background-color: transparent !important;
 }
 
 @media (max-width: 480px) {
-  .practice:deep(.pre-wrap) {
+  .panel:deep(.pre-wrap) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
