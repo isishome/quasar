@@ -189,7 +189,7 @@ onUnmounted(() => {
             </div>
           </router-link>
         </q-toolbar-title>
-        <q-btn dense flat icon="dark_mode" @click="toggleDark" />
+        <q-btn dense flat :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'" @click="toggleDark" />
       </q-toolbar>
     </q-header>
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>

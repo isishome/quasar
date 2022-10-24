@@ -96,6 +96,14 @@ const routes = [
               title: '관심사의 분리'
             }
           },
+          // {
+          //   path: 'decorate',
+          //   name: 'decorate',
+          //   component: () => import('@/components/tutorial/Decorate.vue'),
+          //   meta: {
+          //     title: '카드 꾸미기'
+          //   }
+          // },
           {
             path: 'result',
             name: 'result',
