@@ -8,7 +8,7 @@ const Member = defineAsyncComponent(() => import('./member/CSoc.vue'))
 
 const $q = useQuasar()
 
-const members = reactive($q.sessionStorage.getItem('decorate1') || [])
+const members = reactive($q.sessionStorage.getItem('soc') || [])
 
 const addMember = () => {
   members.unshift({ mid: uid(), name: '', team: '', contact: '' })
@@ -16,7 +16,7 @@ const addMember = () => {
 
 const upsert = (data, done) => {
   const findMember = members.find(m => m.mid === data.mid)
-  const storageMembers = $q.sessionStorage.getItem('decorate1') || []
+  const storageMembers = $q.sessionStorage.getItem('soc') || []
   const findStorageMember = storageMembers.find(m => m.mid === data.mid)
 
   if (findMember) {
@@ -33,14 +33,14 @@ const upsert = (data, done) => {
       storageMembers.unshift(findMember)
   }
 
-  $q.sessionStorage.set('decorate1', storageMembers)
+  $q.sessionStorage.set('soc', storageMembers)
 
   done()
 }
 
 const remove = (mid) => {
   const findIndex = members.findIndex(m => m.mid === mid)
-  const storageMembers = $q.sessionStorage.getItem('decorate1') || []
+  const storageMembers = $q.sessionStorage.getItem('soc') || []
   const findStorageIndex = storageMembers.findIndex(m => m.mid === mid)
 
   if (findIndex !== -1) {
@@ -50,7 +50,7 @@ const remove = (mid) => {
       storageMembers.splice(findStorageIndex, 1)
   }
 
-  $q.sessionStorage.set('decorate1', storageMembers)
+  $q.sessionStorage.set('soc', storageMembers)
 }
 </script>
 <template>
@@ -190,7 +190,7 @@ const remove = () =&#62; &#123;
         </textarea>
       </Code>
       <p class="q-pb-xl">멤버 삭제 시
-        <Link :to="{ name: '  notify' }">Notify</Link> 플러그인을 사용하여 삭제 여부를 확인합니다.
+        <Link :to="{ name: 'notify' }">Notify</Link> 플러그인을 사용하여 삭제 여부를 확인합니다.
       </p>
       <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript  ': 'vue' }">
         <textarea readonly>
