@@ -58,12 +58,16 @@ const cancel = () => {
 // 데이터를 수정 또는 입력 (현재 멤버 데이터를 상위 컴포넌트 or 페이지에 전달)
 const upsert = () => {
   loading.value = true
-  emit('upsert', {
-    mid: props.data.mid,
-    name: _name.value,
-    team: _team.value,
-    contact: _contact.value
-  }, done)
+
+  // 로딩 바를 확인하기 위해 setTimeout 으로 2초를 지연
+  setTimeout(() => {
+    emit('upsert', {
+      mid: props.data.mid,
+      name: _name.value,
+      team: _team.value,
+      contact: _contact.value
+    }, done)
+  }, 2000)
 }
 </script>
       

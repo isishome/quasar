@@ -67,7 +67,7 @@ const remove = (mid) => {
       <Title sub>컴포넌트 수정</Title>
       <p><strong>멤버 컴포넌트 코드를 아래와 같이 수정했습니다.</strong>
       </p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javasc  ript': 'vue' }">
         <textarea readonly>
 // Member.vue
 
@@ -81,7 +81,7 @@ const props = defineProps(&#123;
       </Code>
       <p class="q-pb-xl">이전 챕터에서 각각 <em>props</em>로 전달받았던 데이터(이름, 팀, 연락처)들을 <strong>단일 객체 형식</strong>으로 전달받도록 수정했습니다.
       </p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'ja  vascript': 'vu  e' }">
         <textarea readonly>
 // Member.vue
 
@@ -95,7 +95,7 @@ const editable = ref(false)
       </Code>
       <p class="q-pb-xl">이전 챕터에서 상위 요소에 포함되었던 <code>editable</code> 값을 컴포넌트 내부에 포함시키고 로딩 진행 상태를 표시해 줄 반응형 값을 추가했습니다.
       </p>
-      <Code class="q-mb-sm" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-sm" language="html" :convert="{ 'html': '  vue' }">
         <textarea readonly>
 &#60;!-- Member.vue --&#62;
 
@@ -127,7 +127,7 @@ const editable = ref(false)
           </li>
         </ul>
       </Info>
-      <Code class="q-mb-sm" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-sm" language="html" :convert="{ 'html': '  vue' }">
         <textarea readonly>
           &#60;!-- Member.vue --&#62;
 
@@ -152,7 +152,7 @@ const editable = ref(false)
       </Code>
       <p class="q-pb-xl">카드 상단에 <em>수정</em>, <em>취소</em>, <em>저장</em>, <em>삭제</em> 버튼을 포함시킵니다. Quasar <em>Flex
           Grid</em>를 이용해 타이틀과 버튼들을 적당한 곳에 위치시켜 줍니다.</p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript  ': 'vue' }">
         <textarea readonly>
 // Member.vue
 
@@ -165,7 +165,7 @@ const done = () =&#62; &#123;
       </Code>
       <p class="q-pb-xl">완료 시 로딩 값 및 수정 상태 값을 <em>false</em>로 변경해 줄 메서드를 만들어 줍니다. <code>emit</code> 호출 시 파라미터로 넘겨주면 상위
         요소는 지정된 처리가 완료된 경우 전달받은 <code>done</code>을 호출합니다.</p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javasc  ript': 'vue' }">
         <textarea readonly>
 // Member.vue
 
@@ -190,9 +190,9 @@ const remove = () =&#62; &#123;
         </textarea>
       </Code>
       <p class="q-pb-xl">멤버 삭제 시
-        <Link :to="{name:'notify'}">Notify</Link> 플러그인을 사용하여 삭제 여부를 확인합니다.
+        <Link :to="{ name: '  notify' }">Notify</Link> 플러그인을 사용하여 삭제 여부를 확인합니다.
       </p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript  ': 'vue' }">
         <textarea readonly>
 // Member.vue
 
@@ -207,30 +207,36 @@ const cancel = () =&#62; &#123;
       </Code>
       <p class="q-pb-xl">수정 취소 시 생성된 정보들을 <em>props</em>로 전달받은 초기 데이터로 되돌립니다. (<b>동시에 수정 모드
           비활성화</b>)</p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // Member.vue
 
 // 데이터를 수정 또는 입력 (현재 멤버 데이터를 상위 컴포넌트 or 페이지에 전달)
 const upsert = () =&#62; &#123;
   loading.value = true
-  emit('upsert', &#123;
-    mid: props.data.mid,
-    name: _name.value,
-    team: _team.value,
-    contact: _contact.value
-  &#125;, done)
+
+  // 로딩 바를 확인하기 위해 setTimeout 으로 2초를 지연
+  setTimeout(() =&#62; &#123;
+    emit('upsert', &#123;
+      mid: props.data.mid,
+      name: _name.value,
+      team: _team.value,
+      contact: _contact.value
+    &#125;, done)
+  &#125;, 2000)
 &#125;
 &#60;/script&#62;
         </textarea>
       </Code>
-      <p class="q-pb-xl">새로운 멤버 입력 또는 수정 시 현재 컴포넌트에 바인딩 된(수정 된) 데이터를 상위 요소로 전달해 줍니다. (<b><code>done</code> 메서드 파라미터
-          포함</b>)</p>
+      <p class="q-pb-xl">새로운 멤버 입력 또는 수정 시 현재 컴포넌트에 바인딩 된(수정된) 데이터를 상위 요소로 전달해 줍니다. 여기에 로딩 바를 확인하기 위한
+        <code>setTimeout</code>을 추가해 주었습니다. (<b><code>done</code> 메서드 파라미터
+          포함</b>)
+      </p>
     </section>
     <section id="page" data-name="페이지 수정">
       <Title sub>페이지 수정</Title>
       <p><strong>멤버 컴포넌트를 사용하는 페이지 코드를 아래와 같이 수정했습니다.</strong></p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -241,7 +247,7 @@ const addMember = () =&#62; &#123;
         </textarea>
       </Code>
       <p class="q-pb-xl">이전 챕터에서 만들었던 <em>addMember</em> 메서드 안의 멤버 데이터 중 <code>editable</code> 속성은 제거됩니다.</p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -276,7 +282,7 @@ const upsert = (data, done) =&#62; &#123;
         스토리지에 저장하고 전달받은
         <em>done</em> 메서드를 호출하면 정상적으로 수정이 완료된 상태가 됩니다.
       </p>
-      <Code class="q-mb-sm" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-sm" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -300,7 +306,7 @@ const remove = (mid) =&#62; &#123;
       <p class="q-pb-xl">전달받은 <em>mid</em>를 이용해 <em>members</em> 객체 및 세션 스토리지의 해당 멤버 정보를 동시에 제거합니다. 최종적으로 나머지 멤버 데이터를 세션
         스토리지에 저장합니다.
       </p>
-      <Code class="q-mb-sm" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-sm" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -328,7 +334,7 @@ const remove = (mid) =&#62; &#123;
         { label: 'App.vue', value: 'app' }
       ]">
         <template #comp>
-          <Code language="html" :convert="{'html':'vue'}">
+          <Code language="html" :convert="{ 'html': 'vue' }">
             <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -392,12 +398,16 @@ const cancel = () =&#62; &#123;
 // 데이터를 수정 또는 입력 (현재 멤버 데이터를 상위 컴포넌트 or 페이지에 전달)
 const upsert = () =&#62; &#123;
   loading.value = true
-  emit('upsert', &#123;
-    mid: props.data.mid,
-    name: _name.value,
-    team: _team.value,
-    contact: _contact.value
-  &#125;, done)
+
+  // 로딩 바를 확인하기 위해 setTimeout 으로 2초를 지연
+  setTimeout(() =&#62; &#123;
+    emit('upsert', &#123;
+      mid: props.data.mid,
+      name: _name.value,
+      team: _team.value,
+      contact: _contact.value
+    &#125;, done)
+  &#125;, 2000)
 &#125;
 &#60;/script&#62;
       
@@ -440,7 +450,7 @@ const upsert = () =&#62; &#123;
           </Code>
         </template>
         <template #app>
-          <Code language="html" :convert="{'html':'vue'}">
+          <Code language="html" :convert="{ 'html': 'vue' }">
             <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -536,7 +546,7 @@ const remove = (mid) =&#62; &#123;
             <Info>
               <p><b>Member 데이터</b></p>
               <p>
-                {{members}}
+                {{ members }}
               </p>
             </Info>
           </div>
