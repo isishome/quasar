@@ -237,7 +237,7 @@ onUnmounted(() => {
           <div class="q-py-xl"></div>
           <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
             data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
-            :data-adtest="prod ? 'off' : 'on'" :key="key"></ins>
+            :data-adtest="prod ? null : 'on'" :key="key"></ins>
           <template v-if="route.name === 'main'">
             <q-separator />
             <div class="q-py-lg">
@@ -268,7 +268,7 @@ onUnmounted(() => {
             <q-list dense class="q-mt-xl">
               <q-item>
                 <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px"
-                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? 'off' : 'on'"
+                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? null : 'on'"
                   :key="key"></ins>
               </q-item>
             </q-list>
