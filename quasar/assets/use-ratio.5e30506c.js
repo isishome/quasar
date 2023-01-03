@@ -1,1 +1,0 @@
-import{r as i}from"./index.b6be4404.js";const e={ratio:[String,Number]};function a(t,r){return i(()=>{const o=Number(t.ratio||(r!==void 0?r.value:void 0));return isNaN(o)!==!0&&o>0?{paddingBottom:`${100/o}%`}:null})}export{a,e as u};
