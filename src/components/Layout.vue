@@ -198,7 +198,9 @@ onUnmounted(() => {
           <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
             class="full-width q-mb-md">
             <q-item>
-              <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.toDo" style="opacity:.5">
+              <q-item-label class="header-title q-py-xs">
+                {{ r.meta.title }}
+                <span v-if="r.meta.toDo" style="opacity:.5">
                   [예정]</span></q-item-label>
             </q-item>
             <template v-for="c in r.children" :key="c.name">
@@ -219,13 +221,15 @@ onUnmounted(() => {
               <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
                 class="full-width q-mb-md">
                 <q-item>
-                  <q-item-label class="header-title q-py-xs">{{ r.meta.title }}<span v-if="r.meta.toDo"
-                      style="opacity:.5"> [예정]</span></q-item-label>
+                  <q-item-label class="header-title q-py-xs">
+                    {{ r.meta.title }}
+                    <span v-if="r.meta.toDo" style="opacity:.5"> [예정]</span></q-item-label>
                 </q-item>
                 <template v-for="c in r.children" :key="c.name">
                   <q-item :disable="c.meta.toDo" tag="a" active-class="active" :active="routeName === c.name"
                     :to="{ name: c.name }">
-                    <div>{{ c.meta.title }}<span v-if="c.meta.toDo" style="opacity:.5">&nbsp;[예정]</span></div>
+                    <div>{{ c.meta.title }}<span v-if="c.meta.toDo" style="opacity:.5">&nbsp;[예정]</span>
+                    </div>
                   </q-item>
                 </template>
               </q-list>

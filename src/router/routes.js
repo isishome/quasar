@@ -316,6 +316,22 @@ const routes = [
           }
         ]
       }, {
+        path: 'tip',
+        component: () => import('@/components/Blank.vue'),
+        meta: {
+          title: '팁'
+        },
+        children: [
+          {
+            path: 'performance',
+            name: 'performance',
+            component: () => import('@/components/tip/Performance.vue'),
+            meta: {
+              title: '성능 끌어올리기'
+            }
+          }
+        ]
+      }, {
         path: 'util',
         component: () => import('@/components/Blank.vue'),
         meta: {
