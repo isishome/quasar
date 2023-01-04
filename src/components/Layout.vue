@@ -94,7 +94,7 @@ onUnmounted(() => {
     <q-scroll-observer @scroll="onScroll" :debounce="touch ? 400 : 100" />
     <q-header :class="['header', scrollMove ? 'scroll' : '']">
       <q-toolbar class="contents">
-        <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-btn v-if="screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" aria-label="toggle drawer" />
         <q-toolbar-title class="cursor-pointer">
           <router-link :to="{ name: 'main' }">
             <div class="row items-center" :class="screen.lt.md ? 'justify-center' : 'q-px-lg'">
@@ -189,7 +189,8 @@ onUnmounted(() => {
             </div>
           </router-link>
         </q-toolbar-title>
-        <q-btn dense flat :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'" @click="toggleDark" />
+        <q-btn dense flat :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'" @click="toggleDark"
+          aria-label="toggle theme" />
       </q-toolbar>
     </q-header>
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>

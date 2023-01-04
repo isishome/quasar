@@ -81,16 +81,18 @@ const upsert = () => {
       <div class="row justify-between">
         <div class="row items-center q-gutter-x-xs">
           <!-- 수정 모드에서만 멤버 카드 삭제 버튼을 노출 -->
-          <q-btn v-if="editable" dense flat round size="sm" color="negative" icon="playlist_remove" @click="remove" />
+          <q-btn v-if="editable" dense flat round size="sm" color="negative" icon="playlist_remove" @click="remove"
+            aria-label="remove member" />
           <div class="text-center text-white">멤버</div>
         </div>
         <div>
           <!--  -->
           <q-btn v-if="!editable" unelevated dense round flat size="sm" color="white" icon="edit"
-            @click="editable = true" />
+            @click="editable = true" aria-label="edit member" />
           <template v-else>
-            <q-btn unelevated dense round flat size="sm" color="white" icon="close" @click="cancel" />
-            <q-btn unelevated dense round size="sm" color="positive" icon="check" @click="upsert" />
+            <q-btn unelevated dense round flat size="sm" color="white" icon="close" @click="cancel"
+              aria-label="cancel edit" />
+            <q-btn unelevated dense round size="sm" color="positive" icon="check" @click="upsert" aria-label="apply" />
           </template>
         </div>
       </div>

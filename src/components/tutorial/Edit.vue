@@ -51,7 +51,7 @@ const update = (mid, key, val) => {
         멤버 컴포넌트를 사용하는 페이지나 컴포넌트가 <code>editable</code> props를 변경하면 멤버 카드를 구성하는
         DOM 요소가 수정 가능 상태임을 사용자에게 알려주기 위한 화면 처리도 함께 적용해 보도록 하겠습니다.
       </p>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- Member.vue --&#62;
 
@@ -122,7 +122,7 @@ const _contact = ref(props.contact)
       </p>
       <p>먼저 멤버 컴포넌트를 사용하는 상위 페이지로 돌아가 멤버 데이터에 수정 여부 값(<em>editable: false</em>)을 추가하고, 카드 상단에 수정
         상태 변경 버튼도 추가해 줍시다.</p>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -162,20 +162,23 @@ const addMember = () =&#62; &#123;
       </Code>
       <b>결과</b>
       <div class="row justify-end q-pb-sm">
-        <q-btn dense icon="add" round color="positive" @click="addMember" />
+        <q-btn dense icon="add" round color="positive" @click="addMember" aria-label="add member" />
       </div>
       <div class="row q-col-gutter-lg">
         <div v-for="m in members" :key="m" class="col-6 col-md-4">
-          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit"
-            @click="m.editable = true" />
-          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="m.editable = false" />
+          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit" @click="m.editable = true"
+            aria-label="edit member" />
+          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="m.editable = false"
+            aria-label="check member" />
           <Member :mid="m.mid" :name="m.name" :team="m.team" :contact="m.contact" :editable="m.editable" />
         </div>
       </div>
       <p class="q-py-lg"></p>
       <p>각 카드의 상단
-        <q-btn dense flat icon="edit" color="grey" size="sm" /> 버튼을 클릭하면 해당 멤버 카드 정보가 수정 상태로 변경됩니다 (
-        <q-btn dense round icon="check" color="primary" size="sm" /> 버튼을 클릭하면 수정 모드가 비활성화됩니다). 사용자 입장에서는
+        <q-btn dense flat icon="edit" color="grey" size="sm" aria-label="edit member" /> 버튼을 클릭하면 해당 멤버 카드 정보가 수정 상태로
+        변경됩니다 (
+        <q-btn dense round icon="check" color="primary" size="sm" aria-label="check member" /> 버튼을 클릭하면 수정 모드가 비활성화됩니다).
+        사용자 입장에서는
         모든
         기능이 정상적으로
         동작하는 것처럼 보이지만
@@ -185,7 +188,7 @@ const addMember = () =&#62; &#123;
         <Info>
           <p><b>Member 데이터</b></p>
           <p>
-            {{members}}
+            {{ members }}
           </p>
         </Info>
       </p>
@@ -196,7 +199,7 @@ const addMember = () =&#62; &#123;
         API를 이용해 미리 <em>@update</em> 이벤트를 정의해 둡니다. 그리고 각 멤버 데이터의 값이 변경되면 @update를 호출하고, 상위 페이지에서
         <em>@update</em>로 바인딩 된 이벤트를 실행해서 실제 데이터를 업데이트해 주면 됩니다.
       </p>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- Member.vue --&#62;
 
@@ -257,7 +260,7 @@ const _contact = ref(props.contact)
       </Code>
       <p>멤버 컴포넌트 <em>QInput</em>의 <em>@update:model-value</em> 이벤트로 바인딩 된 데이터가 변경되면 상위 컴포넌트의 @update로 변경된 정보를 전달해
         줍니다 (멤버의 고유 아이디, 변경되는 항목, 변경 값).</p>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -319,13 +322,14 @@ const update = (mid, key, val) =&#62; &#123;
       <p>현재까지 작성된 코드가 잘 동작하는지 테스트해 봅시다. 카드의 멤버 항목이 업데이트되면 실제 <code>members</code> 객체도 함께 업데이트되는 것을 확인할 수 있습니다.</p>
       <b>결과</b>
       <div class="row justify-end q-pb-sm">
-        <q-btn dense icon="add" round color="positive" @click="addMember2" />
+        <q-btn dense icon="add" round color="positive" @click="addMember2" aria-label="add member" />
       </div>
       <div class="row q-col-gutter-lg">
         <div v-for="m in members2" :key="m" class="col-6 col-md-4">
-          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit"
-            @click="m.editable = true" />
-          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="m.editable = false" />
+          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit" @click="m.editable = true"
+            aria-label="edit member" />
+          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="m.editable = false"
+            aria-label="check member" />
           <Member2 :mid="m.mid" :name="m.name" :team="m.team" :contact="m.contact" :editable="m.editable"
             @update="update" />
         </div>
@@ -334,7 +338,7 @@ const update = (mid, key, val) =&#62; &#123;
       <Info>
         <p><b>Member 데이터</b></p>
         <p>
-          {{members2}}
+          {{ members2 }}
         </p>
       </Info>
       <p>다음 챕터에서는 <b>멤버 카드 정보를 실제 저장소(세션 스토리지)에 저장</b>하는 작업을 진행해 보도록 하겠습니다.</p>

@@ -60,7 +60,7 @@ const remove = (mid) => {
       
 <template>
   <div class="row justify-end q-pb-sm">
-    <q-btn dense icon="add" round color="positive" @click="addMember" />
+    <q-btn dense icon="add" round color="positive" @click="addMember" aria-label="add member" />
   </div>
   <div class="row q-col-gutter-lg">
     <div v-for="m in members" :key="m" class="col-6 col-md-4">
@@ -70,7 +70,7 @@ const remove = (mid) => {
   <Info>
     <p><b>Member 데이터</b></p>
     <p>
-      {{members}}
+      {{ members }}
     </p>
   </Info>
 </template>

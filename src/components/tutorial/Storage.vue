@@ -74,7 +74,7 @@ const store2 = (mid) => {
       <Title sub>설치</Title>
       <p>로컬 세션 스토리지를 사용하기 위해 <em>main.js</em> 파일의 수정이 필요합니다.
       </p>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'js' }">
         <textarea readonly>
 // main.js
 
@@ -98,7 +98,7 @@ app.use(Quasar, &#123;
         <code>sessionStorage</code>를 사용하기만 하면
         됩니다.
       </p>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'js' }">
         <textarea readonly>
           // Vue 파일 안에서 사용
 {{ 'import &#123; useQuasar &#125; from \'quasar\'' }}
@@ -117,7 +117,7 @@ const otherValue = $q.sessionStorage.getItem(key)
       <Title sub>저장하기</Title>
       <p>이제 지난 챕터까지 작성했던 <em>App.vue</em> 파일에 세션 스토리지를 적용 해 보겠습니다.
       </p>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -131,7 +131,7 @@ const members = reactive($q.sessionStorage.getItem('members') || [])
         <code>members</code> 반응형 객체의 초깃값으로 로컬 세션 스토리지의 'members' 키값을 가져오도록 수정합니다. 해당 키값을 갖는 데이터가 없을 경우 빈 배열([])을 정의해
         줍니다.
       </p>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -146,7 +146,7 @@ const store = (mid) =&#62; &#123;
 &#125;
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
 
@@ -154,19 +154,21 @@ const store = (mid) =&#62; &#123;
         </textarea>
       </Code>
       <p><em>&#60;script setup&#62;</em> 하단에 <code>store</code>라는 새 메서드를 추가하고, 체크 버튼의 이벤트 리스너로 사용합니다. 이제 멤버 카드 수정 모드에서
-        <q-btn dense round icon="check" color="primary" size="sm" /> 버튼을 클릭하면 <code>mid</code> 값을
+        <q-btn dense round icon="check" color="primary" size="sm" aria-label="check member" /> 버튼을 클릭하면 <code>mid</code>
+        값을
         전달해 해당 멤버 카드를 비수정 모드로 전환하고 <em>members</em> 전체 데이터를 로컬 세션 스토리지에 'members'라는 키값으로 저장합니다.
       </p>
       <b>결과</b>
       <div class="row justify-end q-pb-sm">
-        <q-btn dense icon="add" round color="positive" @click="addMember" />
+        <q-btn dense icon="add" round color="positive" @click="addMember" aria-label="add member" />
       </div>
       <div class="row q-col-gutter-lg">
         <div v-for="m in members" :key="m" class="col-6 col-md-4">
           <!-- 수정 모드 변경을 위해 버튼 추가 -->
-          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit"
-            @click="m.editable = true" />
-          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="store(m.mid)" />
+          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit" @click="m.editable = true"
+            aria-label="edit member" />
+          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="store(m.mid)"
+            aria-label="check member" />
           <!-- @update 이벤트를 바인딩 -->
           <Member :mid="m.mid" :name="m.name" :team="m.team" :contact="m.contact" :editable="m.editable"
             @update="update" />
@@ -178,7 +180,7 @@ const store = (mid) =&#62; &#123;
         <em>members</em> 데이터를 저장하기 때문에
         수정 중인 다른 카드 정보까지 모두 업데이트가 되어버립니다. 페이지를 새로고침 했을 때 저장하지 않은 다른 멤버 카드는 기존 상태가 유지되도록 하려면 좀 더 디테일한 처리가 필요합니다.
       </p>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'vue'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'vue' }">
         <textarea readonly>
 // App.vue
 
@@ -218,9 +220,10 @@ const store = (mid) =&#62; &#123;
       <div class="row q-col-gutter-lg">
         <div v-for="m in members2" :key="m" class="col-6 col-md-4">
           <!-- 수정 모드 변경을 위해 버튼 추가 -->
-          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit"
-            @click="m.editable = true" />
-          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="store2(m.mid)" />
+          <q-btn v-if="!m.editable" unelevated dense flat size="sm" color="grey" icon="edit" @click="m.editable = true"
+            aria-label="edit member" />
+          <q-btn v-else unelevated dense round size="sm" color="primary" icon="check" @click="store2(m.mid)"
+            aria-label="check member" />
           <!-- @update 이벤트를 바인딩 -->
           <Member :mid="m.mid" :name="m.name" :team="m.team" :contact="m.contact" :editable="m.editable"
             @update="update2" />

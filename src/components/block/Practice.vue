@@ -46,7 +46,8 @@ onMounted(() => {
           </template>
         </q-option-group>
         <div>
-          <q-btn dense round flat size="sm" padding="4px" icon="code" @click="hideCode = !hideCode" />
+          <q-btn dense round flat size="sm" padding="4px" icon="code" @click="hideCode = !hideCode"
+            aria-label="show code" />
         </div>
       </div>
     </div>

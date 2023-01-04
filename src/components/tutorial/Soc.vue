@@ -326,7 +326,7 @@ const remove = (mid) =&#62; &#123;
       <Info advice color="teal-4" class="q-pb-xl">
         <p class="row inline-block">
           코드 보기
-          <q-btn icon="code" round size="sm" /> 버튼을 클릭하면 전체 소스코드를 확인할 수 있습니다.
+          <q-btn icon="code" round size="sm" aria-label="show code" /> 버튼을 클릭하면 전체 소스코드를 확인할 수 있습니다.
         </p>
       </Info>
       <Practice :options="[
@@ -536,7 +536,7 @@ const remove = (mid) =&#62; &#123;
         <template #result>
           <div class="q-pa-sm">
             <div class="row justify-end q-pb-sm">
-              <q-btn dense icon="add" round color="positive" @click="addMember" />
+              <q-btn dense icon="add" round color="positive" @click="addMember" aria-label="add member" />
             </div>
             <div class="row q-col-gutter-lg">
               <div v-for="m in members" :key="m" class="col-6 col-md-4">
