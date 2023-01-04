@@ -137,7 +137,8 @@ myApp.mount('#app')
       <Title sub>뷰포트 최적화</Title>
       <p>
         화면에 다이내믹한 효과를 주기 위해 사용하는 다양한 기술이 있습니다. 예를 들어 <code>scroll event</code> 나 <code>resize event</code>,
-        <code>intersection observer</code> 등이 그것인데요. 사용자의 디바이스에 따라 화려하고 부드러운 효과를 보여주기도 하지만, 때로는 불편하고 답답한 경험을 제공하기도 합니다.
+        <code>intersection observer API</code> 등이 그것인데요. 사용자의 디바이스에 따라 화려하고 부드러운 효과를 보여주기도 하지만, 때로는 불편하고 답답한 경험을 제공하기도
+        합니다.
       </p>
     </section>
     <section id="scroll-observer" data-name="Scroll Observer" sub>
@@ -156,8 +157,7 @@ const onScroll = () =&#62; &#123;
 &#60;/script&#62;
 
 &#60;template&#62;
-  &#60;div class="q-pa-md"&#62;
-    &#60;pre class="q-ma-none container"&#62;&#60;/pre&#62;
+  &#60;div class="container"&#62;
     &#60;q-scroll-observer @scroll="onScroll" /&#62;
   &#60;/div&#62;
 &#60;/template&#62;
@@ -194,7 +194,7 @@ const onScroll = () =&#62; &#123;
       <div class="text-center q-pb-xl text-caption">
         <u>debounce props에 100(밀리초) 값을 추가</u>
       </div>
-      <div class="text-center q-pb-xl column">
+      <div class="text-center q-pb-lg column">
         <div>
           <img src="@/assets/images/tip/performance/debounce.jpg" class="img" />
         </div>
@@ -202,11 +202,58 @@ const onScroll = () =&#62; &#123;
       </div>
       <Info advice color="teal-4">
         <p>
-          <code>debounce</code>는 <code>setTimeout</code>과 같이 단순히 동작시간을 지연시켜주는 것과 달리 지정한 시간 안에 이벤트가 다시 호출될 경우 연속적으로 지연이
-          발생합니다.
+          <code>debounce</code>는 <code>setTimeout</code>과 같이 단순히 동작시간을 지연시켜주는 것과 달리 지정한 시간 안에 이벤트가 다시 호출될 경우 무시됩니다.
         </p>
-        <p>예를 들어 1000(밀리초)으로 debounce를 설정했을 경우 1초보다 짧은 시간 동안 계속 이벤트를 발생시킬 경우 이벤트 발생이 끝날 때까지 리스너는 실행되지 않습니다.</p>
+        <p>예를 들어 debounce 값을 1000(밀리초)으로 설정했을 경우 1초보다 짧은 시간 동안 계속 이벤트를 발생시키더라도 한 번의 이벤트 리스너만 실행됩니다.</p>
       </Info>
+    </section>
+    <section id="resize-observer" data-name="Resize Observer" sub>
+      <Title minor>Resize Observer</Title>
+      <p>QResizeObserver는 DOM 요소 / 컴포넌트 요소가 인접한 부모 요소로 정의되었을 때 크기(너비 또는 높이)를 변경할 때마다 이벤트를 발생시키는 Quasar 컴포넌트입니다.</p>
+      <p>아래 간단한 QResizeObserver는 예제를 확인해 보세요.</p>
+      <Code class="q-mb-sm" language="html" :convert="{ 'html': 'vue' }">
+        <textarea readonly>
+&#60;!-- App.vue --&#62;
+
+&#60;script setup&#62;
+const onResize = () =&#62; &#123;
+  console.log('on resize')
+&#125;
+&#60;/script&#62;
+
+&#60;template&#62;
+  &#60;div&#62;
+    &#60;q-resize-observer @resize="onResize" /&#62;
+  &#60;/div&#62;
+&#60;/template&#62;
+        </textarea>
+      </Code>
+      <div class="text-center q-pb-xl text-caption">
+        <u>브라우저 또는 DOM 요소의 크기를 변경하면 'on resize'이 출력되도록 작성된 예제</u>
+      </div>
+      <div class="text-center q-pb-xl column">
+        <div>
+          <img src="@/assets/images/tip/performance/resize.jpg" class="img" />
+        </div>
+        <div class="text-caption"><u>브라우저의 크기가 변경되는 동안 연속적으로 이벤트(8회)가 호출됨</u></div>
+      </div>
+      <p>QScrollObserver와 마찬가지로 <code>debounce</code> 컴포넌트 props를 제공합니다.</p>
+      <Code class="q-mb-sm" language="html" :convert="{ 'html': 'vue' }">
+        <textarea readonly>
+&#60;!-- App.vue --&#62;
+
+&#60;q-resize-observer @resize="onResize" debounce="1000" /&#62;
+        </textarea>
+      </Code>
+      <div class="text-center q-pb-xl text-caption">
+        <u>debounce props에 1000(밀리초) 값을 추가</u>
+      </div>
+      <div class="text-center column">
+        <div>
+          <img src="@/assets/images/tip/performance/debounce2.jpg" class="img" />
+        </div>
+        <div class="text-caption"><u>기존과 비슷하게 브라우저 크기를 변경했지만 이벤트가 한 번만 호출됨</u></div>
+      </div>
     </section>
   </div>
 </template>
