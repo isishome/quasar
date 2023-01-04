@@ -30,10 +30,11 @@ const transitions = shallowReadonly([
             <q-carousel ref="carousel" height="90px" v-model="slide" :transition-next="t" animated
               control-color="primary" infinite>
               <q-carousel-slide name="1" class="no-padding">
-                <q-img src="@/assets/images/sites/vuejs.svg" width="90px" :ratio="1" />
+                <q-img src="@/assets/images/sites/vuejs.svg" width="90px" :ratio="1" alt="Vue.js" />
               </q-carousel-slide>
               <q-carousel-slide name="2" class="no-padding">
-                <q-img src="@/assets/images/sites/quasar.svg" width="90px" class="invert" :ratio="1" />
+                <q-img src="@/assets/images/sites/quasar.svg" width="90px" class="invert" :ratio="1"
+                  alt="Quasar Framework" />
               </q-carousel-slide>
             </q-carousel>
           </q-card-section>
@@ -41,7 +42,7 @@ const transitions = shallowReadonly([
         </q-card>
       </div>
       <p>transition props에 <em>캡션</em>에 표시된 이름을 사용하세요. 예제:</p>
-      <Code class="q-mb-lg" language="html" :convert="{'html':'vue'}">
+      <Code class="q-mb-lg" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;q-menu
   transition-show="jump-down"

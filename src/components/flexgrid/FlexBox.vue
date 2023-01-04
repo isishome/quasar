@@ -29,8 +29,8 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         Quasar Flex CSS 클래스는 컨테이너(부모 요소) 또는 컨테이너 안의 아이템(자식 요소)에게 적용됩니다.
       </p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-container.svg" width="300" />
-        <img src="@/assets/images/flexgrid/flexbox-items.svg" width="300" />
+        <img src="@/assets/images/flexgrid/flexbox-container.svg" width="300" alt="Flexbox Container" />
+        <img src="@/assets/images/flexgrid/flexbox-items.svg" width="300" alt="Flexbox Items" />
       </p>
       <Info advice color="teal-4">
         <p>
@@ -47,7 +47,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title minor>방향 설정</Title>
       <p>다음 CSS 클래스는 아이템(자식 요소)에 사용되는 클래스(다음 섹션에서 설명)에 영향을 주기 때문에 필수로 사용돼야 합니다.</p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-direction.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-direction.svg" width="319" alt="Flexbox Direction" />
       </p>
       <q-markup-table flat bordered wrap-cells class="text-left q-mb-md">
         <thead>
@@ -167,7 +167,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       <Title minor>기본 래핑</Title>
       <p>기본적으로 모든 row와 column은 내용을 래핑 합니다</p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-wrap.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-wrap.svg" width="319" alt="Flexbox Wrap" />
       </p>
       <p>명시적으로 래핑 하지 않고 모든 내용을 한 줄에 넣으려면 <code>no-wrap</code> CSS 헬퍼 클래스를 사용하세요.</p>
       <p>역순으로 래핑 하고 싶다면 <code>reverse-wrap</code>을 사용할 수 있습니다.</p>
@@ -269,7 +269,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         또한 해당 라인을 넘어가는
         아이템(자식 요소)의 정렬을 어느 정도 제어할 수 있습니다.</p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-main-axis-align---2.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-main-axis-align---2.svg" width="319" alt="Flexbox Axis" />
       </p>
       <p>다음은 수평 정렬 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
@@ -393,7 +393,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         축에
         대한 수평-* 버전(주축에 수직)이라고 생각하면 됩니다.</p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-cross-axis-align.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-cross-axis-align.svg" width="319" alt="cross Items" />
       </p>
       <p>다음은 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
@@ -514,7 +514,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
       </Note>
       <p>다음 클래스는 주축 안의 각 아이템(자식 요소)이 수평-* 정렬되는 방식과 유사하게 교차되는 축에 여유 공간이 있을 때 컨테이너(부모 요소) 라인을 정렬해 줍니다.</p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-content-align.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-content-align.svg" width="319" alt="Flexbox Content" />
       </p>
       <p>다음은 래핑 된 아이템의 수직 정렬 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
@@ -678,7 +678,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         </div>
       </Info>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-grow.svg" width="400" />
+        <img src="@/assets/images/flexgrid/flexbox-grow.svg" width="400" alt="Flexbox Grow" />
       </p>
       <p>셀을 오프셋하는것도 가능합니다. 예: <code>offset-4</code>는 공간의 1/3을 오프셋 합니다 (4/12 = 1/3 = 33%).</p>
     </section>
@@ -727,7 +727,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         위해 "컨테이너(부모 요소) 관리"의 "정렬" 설명을 참조하세요.
       </p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-self.svg" width="319" />
+        <img src="@/assets/images/flexgrid/flexbox-self.svg" width="319" alt="Flexbox Items" />
       </p>
       <p>다음은 자체 정렬 관련 헬퍼 클래스의 예제입니다:</p>
       <Practice :options="[
@@ -787,7 +787,7 @@ const Practice = defineAsyncComponent(() => import('@/components/block/Practice.
         CSS <code>order</code> 속성의 작동 방식은 다음과 같습니다:
       </p>
       <p>
-        <img src="@/assets/images/flexgrid/flexbox-order.svg" width="400" />
+        <img src="@/assets/images/flexgrid/flexbox-order.svg" width="400" alt="Flexbox Order" />
       </p>
     </section>
     <section id="reponsive" data-name="반응형 디자인">

@@ -28,7 +28,7 @@ defineProps({
         </div>
         <div v-else-if="advice" class="row items-center q-gutter-x-xs q-mb-sm">
           <q-avatar size="28px">
-            <img src="@/assets/images/seraq.svg" />
+            <img src="@/assets/images/seraq.svg" alt="Sera's Quasar" />
           </q-avatar>
           <div class="text-subtitle1 text-weight-bold text-teal-4">Sera's Advice</div>
         </div>

@@ -50,7 +50,7 @@ myApp.mount('#app')
       <p><em>Roboto font</em>의 기본 사용 설정을 그대로 프로젝트를 빌드 한 후 <em>assets</em> 폴더를 확인해 봅시다. roboto 폰트가 번들링
         된 <code>.woff</code> 파일들을 확인할 수 있습니다.</p>
       <div class="text-center">
-        <img src="@/assets/images/tip/performance/font.jpg" class="img" />
+        <img src="@/assets/images/tip/performance/font.jpg" class="img" alt="Performance Font" />
       </div>
       <p></p>
       <p>6개의 파일들의 크기를 합치면 <strong>120KB</strong> 정도로 큰 용량은 아니지만 <strong>네트워크 환경이 원활하지 못한 경우 폰트의 로딩이 지연되면 페이지 렌더링 시 텍스트가
@@ -109,7 +109,7 @@ myApp.mount('#app')
         <code>.woff</code> 파일로 번들링 됩니다.
       </p>
       <div class="text-center">
-        <img src="@/assets/images/tip/performance/icon.jpg" class="img" />
+        <img src="@/assets/images/tip/performance/icon.jpg" class="img" alt="Performance Icon" />
       </div>
       <p></p>
       <p>2개의 파일들의 크기를 합쳐보면 <strong>280KB</strong>로 일부 용량을 차지합니다. 코드를 주석 처리하거나 제거하면 280KB만큼의 트래픽이 절약될 수 있지만
@@ -118,11 +118,11 @@ myApp.mount('#app')
       </p>
       <div class="row justify-center q-gutter-md items-center">
         <div>
-          <img src="@/assets/images/tip/performance/icon_before.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/icon_before.jpg" class="img" alt="Performance Icon" />
         </div>
         <q-icon name="arrow_forward" size="lg" />
         <div>
-          <img src="@/assets/images/tip/performance/icon_after.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/icon_after.jpg" class="img" alt="Performance Icon" />
         </div>
       </div>
       <Info advice color="teal-4">
@@ -174,7 +174,7 @@ const onScroll = () =&#62; &#123;
       </div>
       <div class="text-center q-pb-xl column">
         <div>
-          <img src="@/assets/images/tip/performance/scroll.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/scroll.jpg" class="img" alt="Performance Scroll" />
         </div>
         <div class="text-caption"><u>미세한 스크롤에도 대량의 이벤트(75회)가 호출됨</u></div>
       </div>
@@ -196,7 +196,7 @@ const onScroll = () =&#62; &#123;
       </div>
       <div class="text-center q-pb-lg column">
         <div>
-          <img src="@/assets/images/tip/performance/debounce.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/debounce.jpg" class="img" alt="Performance Debounce" />
         </div>
         <div class="text-caption"><u>같은 스크롤에도 이벤트 호출 횟수가 크게 감소됨(10회)</u></div>
       </div>
@@ -210,7 +210,7 @@ const onScroll = () =&#62; &#123;
     <section id="resize-observer" data-name="Resize Observer" sub>
       <Title minor>Resize Observer</Title>
       <p>QResizeObserver는 DOM 요소 / 컴포넌트 요소가 인접한 부모 요소로 정의되었을 때 크기(너비 또는 높이)를 변경할 때마다 이벤트를 발생시키는 Quasar 컴포넌트입니다.</p>
-      <p>아래 간단한 QResizeObserver는 예제를 확인해 보세요.</p>
+      <p>아래 간단한 QResizeObserver 예제를 확인해 보세요.</p>
       <Code class="q-mb-sm" language="html" :convert="{ 'html': 'vue' }">
         <textarea readonly>
 &#60;!-- App.vue --&#62;
@@ -233,7 +233,7 @@ const onResize = () =&#62; &#123;
       </div>
       <div class="text-center q-pb-xl column">
         <div>
-          <img src="@/assets/images/tip/performance/resize.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/resize.jpg" class="img" alt="Performance Resize" />
         </div>
         <div class="text-caption"><u>브라우저의 크기가 변경되는 동안 연속적으로 이벤트(8회)가 호출됨</u></div>
       </div>
@@ -250,7 +250,7 @@ const onResize = () =&#62; &#123;
       </div>
       <div class="text-center column">
         <div>
-          <img src="@/assets/images/tip/performance/debounce2.jpg" class="img" />
+          <img src="@/assets/images/tip/performance/debounce2.jpg" class="img" alt="Performance Debounce" />
         </div>
         <div class="text-caption"><u>기존과 비슷하게 브라우저 크기를 변경했지만 이벤트가 한 번만 호출됨</u></div>
       </div>

@@ -24,7 +24,8 @@ const sites = shallowReadonly([
 <template>
   <div class="text-center text-body1 q-px-md">
     <div class="q-py-lg q-px-sm q-gutter-y-md">
-      <q-img src="@/assets/images/quasar/logo-vertical.svg" width="40%" ratio=".98" class="invert" />
+      <q-img src="@/assets/images/quasar/logo-vertical.svg" width="40%" ratio=".98" class="invert"
+        alt="Quasar Framework Logo" />
       <div class="q-mt-xl text-primary text-weight-bold text-subtitle text-keep">
         빠른 시간에 높은 성능과 품질로 Vue.js&nbsp;3 사용자의 인터페이스를 손쉽게 구축
       </div>
@@ -72,7 +73,7 @@ const sites = shallowReadonly([
             <q-card bordered square class="no-shadow fit bg-back">
               <q-card-section>
                 <img :src="s.logo" width="100" height="100"
-                  :class="['Quasar', 'Javascript'].includes(s.name) ? 'invert' : ''" />
+                  :class="['Quasar', 'Javascript'].includes(s.name) ? 'invert' : ''" :alt="s.name" />
               </q-card-section>
               <q-card-section class="text-h6">{{ s.name }}</q-card-section>
             </q-card>
