@@ -30,6 +30,7 @@ router.beforeEach((to, from) => {
   const store = useStore()
   const title = `${to.meta.title ? `${to.meta.title} | ` : ''}Sera\'s Quasar`
   document.title = title
+
   const ogTitle = document.createElement('meta')
   ogTitle.setAttribute('property', 'og:title')
   ogTitle.setAttribute('content', title)
@@ -39,6 +40,16 @@ router.beforeEach((to, from) => {
     document.head.appendChild(ogTitle)
   else
     oldOgTitle.replaceWith(ogTitle)
+
+  const description = document.createElement('meta')
+  description.setAttribute('name', 'description')
+  description.setAttribute('content', to.meta.desc || 'Sera\'s Quasar Study!')
+
+  const oldDescription = document.head.querySelector('meta[name="description"]')
+  if (oldDescription === null)
+    document.head.appendChild(description)
+  else
+    oldDescription.replaceWith(description)
 
   const canonicalLink = document.createElement('link')
   canonicalLink.setAttribute('rel', 'canonical')

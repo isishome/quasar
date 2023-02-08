@@ -10,7 +10,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
       <p>
         Quasar를 사용하는 방법에는 여러 가지가 있지만 여기서는 Vue.js 공식 사이트에 나온 빠른 시작의 가볍고 빠른 빌드 도구인
         <Link href="https://vitejs.dev/" color="deep-purple-6">Vite</Link>를 바탕으로 하는
-        <Link href="https://quasar.dev/start/vite-plugin">Quasar 플러그인</Link>을 설치할 예정입니다.
+        <Link href="https://quasar.dev/start/vite-plugin">Quasar 플러그인</Link>을 설치해 보도록 하겠습니다.
       </p>
       <p class="q-pa-sm text-caption">* 시작하기 챕터에서 사용된 설치 과정은 모두 각 프레임워크 또는 플러그인의
         공식 홈페이지를
@@ -26,7 +26,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
     </section>
     <section id="vuejs" data-name="Vue.js 빠른 시작">
       <Title sub color="green-7">Vue.js 빠른 시작</Title>
-      <Code class="q-mb-lg" language="bash" :convert="{'bash':'sh'}">
+      <Code class="q-mb-lg" language="bash" :convert="{ 'bash': 'sh' }">
         <textarea readonly>
           &gt; npm init vue@latest
         </textarea>
@@ -38,7 +38,7 @@ const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
         선택적
         기능에 사용 여부가 표시됩니다:
       </p>
-      <Code class="q-mb-lg" language="bash" :convert="{'bash':'sh'}">
+      <Code class="q-mb-lg" language="bash" :convert="{ 'bash': 'sh' }">
         <textarea readonly>
 Need to install the following packages:
   create-vue@latest
@@ -69,7 +69,7 @@ Done. Now run:
       <p>
         옵션에 대해 잘 모르는 경우 엔터키를 눌러 <em>No(아니오)</em>를 선택하세요. 프로젝트가 생성되면 안내에 따라 의존성 모듈들을 설치하고 개발 서버를 시작합니다:
       </p>
-      <Code class="q-mb-lg" language="bash" :convert="{'bash':'sh'}">
+      <Code class="q-mb-lg" language="bash" :convert="{ 'bash': 'sh' }">
         <textarea readonly>
 &#62; cd &#60;your-project-name&#62;
 &#62; npm install
@@ -124,7 +124,7 @@ Done. Now run:
       <p>
         앱을 배포할 준비가 되면 다음을 실행합니다:
       </p>
-      <Code class="q-mb-lg" language="bash" :convert="{'bash':'sh'}">
+      <Code class="q-mb-lg" language="bash" :convert="{ 'bash': 'sh' }">
         <textarea readonly>
 &#62; npm run build
         </textarea>
@@ -147,7 +147,7 @@ Done. Now run:
           </li>
         </ul>
       </Info>
-      <Code class="q-mb-lg" language="bash" :convert="{'bash':'sh'}">
+      <Code class="q-mb-lg" language="bash" :convert="{ 'bash': 'sh' }">
         <textarea readonly>
 &#62; cd &#60;your-project-name&#62;
 &#62; npm install quasar @quasar/extras
@@ -163,7 +163,7 @@ Done. Now run:
           <li>프로젝트 폴더 안의 <em>/src/main.js</em> 과 <em>/vite.config.js</em>에 Quasar와 관련 설정 코드 수정이 필요합니다.</li>
         </ul>
       </Info>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'js' }">
         <textarea readonly>
 // main.js
 
@@ -182,7 +182,7 @@ createApp(App).use(Quasar, {
 }).mount('#app')
         </textarea>
       </Code>
-      <Code class="q-mb-lg" language="javascript" :convert="{'javascript':'js'}">
+      <Code class="q-mb-lg" language="javascript" :convert="{ 'javascript': 'js' }">
         <textarea readonly>
 // vite.config.js
 
