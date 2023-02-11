@@ -41,15 +41,27 @@ router.beforeEach((to, from) => {
   else
     oldOgTitle.replaceWith(ogTitle)
 
+  const descList = to.matched.filter(r => r.meta && r.meta.description)
+  const desc = to.meta.desc || descList.length > 0 ? descList[0].meta.description : 'Sera\'s Quasar Study!'
   const description = document.createElement('meta')
   description.setAttribute('name', 'description')
-  description.setAttribute('content', to.meta.desc || 'Sera\'s Quasar Study!')
+  description.setAttribute('content', desc)
 
   const oldDescription = document.head.querySelector('meta[name="description"]')
   if (oldDescription === null)
     document.head.appendChild(description)
   else
     oldDescription.replaceWith(description)
+
+  const ogDescription = document.createElement('meta')
+  ogDescription.setAttribute('property', 'og:description')
+  ogDescription.setAttribute('content', desc)
+
+  const oldOgDescription = document.head.querySelector('meta[property="og:description"]')
+  if (oldOgDescription === null)
+    document.head.appendChild(ogDescription)
+  else
+    oldOgDescription.replaceWith(ogDescription)
 
   const canonicalLink = document.createElement('link')
   canonicalLink.setAttribute('rel', 'canonical')
