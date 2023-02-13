@@ -41,8 +41,8 @@ router.beforeEach((to, from) => {
   else
     oldOgTitle.replaceWith(ogTitle)
 
-  const descList = to.matched.filter(r => r.meta && r.meta.description)
-  const desc = to.meta.desc || descList.length > 0 ? descList[0].meta.description : 'Sera\'s Quasar Study!'
+  const descList = to.matched.filter(r => r.meta && r.meta.desc)
+  const desc = to.meta.desc || descList.length > 0 ? descList[0].meta.desc : 'Sera\'s Quasar Study!'
   const description = document.createElement('meta')
   description.setAttribute('name', 'description')
   description.setAttribute('content', desc)
