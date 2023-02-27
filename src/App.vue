@@ -6,6 +6,8 @@ const isDark = $q.cookies.has('sq.dark') ? $q.cookies.get('sq.dark').toString() 
 $q.dark.set(isDark)
 //document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'light')
 
+console.log(`is prod : ${import.meta.env.PROD}`)
+
 if (import.meta.env.PROD) {
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
