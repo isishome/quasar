@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted, nextTick } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import { useQuasar, uid } from 'quasar'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
@@ -79,9 +79,14 @@ const onWindowLoad = () => {
 }
 
 onMounted(() => {
-  nextTick(() => {
+  if (!window.adsbygoogle)
+    window.addEventListener('load', onWindowLoad)
+  else
     onWindowLoad()
-  })
+})
+
+onUnmounted(() => {
+  window.removeEventListener("load", onWindowLoad)
 })
 </script>
 <template>
