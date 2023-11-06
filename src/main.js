@@ -3,6 +3,7 @@ import { Quasar, Cookies, Notify, Loading, SessionStorage } from 'quasar'
 import { router } from './router'
 import { createPinia } from 'pinia'
 import App from './App.vue'
+import Adsense from '@/components/Adsense.vue'
 import Link from '@/components/paragraph/Link.vue'
 import Title from '@/components/paragraph/Title.vue'
 import Move from '@/components/paragraph/Move.vue'
@@ -22,6 +23,7 @@ const pinia = createPinia()
 createApp(App).use(router).use(pinia).use(Quasar, {
   plugins: { Cookies, Notify, Loading, SessionStorage } // import Quasar plugins and add here
 })
+  .component('Adsense', Adsense)
   .component('Link', Link)
   .component('Title', Title)
   .component('Move', Move)

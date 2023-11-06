@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useQuasar, uid } from 'quasar'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
@@ -38,13 +38,6 @@ const toggleDark = () => {
 }
 
 const key = ref(uid())
-const reload = () => {
-  key.value = uid()
-  nextTick(() => {
-    onWindowLoad()
-  })
-}
-
 const scrollTop = ref(0)
 const scrollMove = ref(false)
 const onScroll = (details) => {
@@ -64,29 +57,7 @@ const onScroll = (details) => {
 
 watch(() => route.name, (val, old) => {
   if (val && val !== old)
-    reload()
-})
-
-const onWindowLoad = () => {
-  if (prod) {
-    const adsbygoogle = window.adsbygoogle || []
-    const ads = document.querySelectorAll('ins.adsbygoogle')
-    ads.forEach((a) => {
-      if (a.clientWidth + a.clientHeight > 0)
-        adsbygoogle.push({})
-    })
-  }
-}
-
-onMounted(() => {
-  if (!window.adsbygoogle)
-    window.addEventListener('load', onWindowLoad)
-  else
-    onWindowLoad()
-})
-
-onUnmounted(() => {
-  window.removeEventListener("load", onWindowLoad)
+    key.value = uid()
 })
 </script>
 <template>
@@ -238,9 +209,8 @@ onUnmounted(() => {
         <q-page class="col page" :style-fn="myTweak">
           <router-view />
           <div class="q-py-xl"></div>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5110777286519562"
-            data-ad-slot="8610177982" data-ad-format="auto" data-full-width-responsive="true"
-            :data-adtest="prod ? null : 'on'" :key="key"></ins>
+          <Adsense style="display:block" data-ad-client="ca-pub-5110777286519562" data-ad-slot="8610177982"
+            :data-adtest="!prod" data-ad-format="auto" data-full-width-responsive="true" :key="key" />
           <template v-if="route.name === 'main'">
             <q-separator />
             <div class="q-py-lg">
@@ -270,9 +240,8 @@ onUnmounted(() => {
             </q-list>
             <q-list dense class="q-mt-xl">
               <q-item>
-                <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px"
-                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="prod ? null : 'on'"
-                  :key="key"></ins>
+                <Adsense style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5110777286519562"
+                  data-ad-slot="7240136439" :data-adtest="!prod" :key="key" />
               </q-item>
             </q-list>
           </div>
@@ -407,32 +376,6 @@ a {
 
 .q-item {
   line-height: 1.8em;
-}
-
-ins {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
-  background-color: rgba(0, 0, 0, .02) !important;
-  position: relative;
-  min-height: 200px;
-}
-
-ins::after {
-  content: '광고';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, .2);
-}
-
-.body--dark ins {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
-  background-color: rgba(255, 255, 255, .02) !important;
-}
-
-.body--dark ins::after {
-  color: rgba(255, 255, 255, .2);
 }
 
 .bottom {
