@@ -1,10 +1,10 @@
 <script setup>
-import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import { useQuasar, uid } from 'quasar'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
 
-const prod = computed(() => import.meta.env.PROD)
+const prod = import.meta.env.PROD
 const $q = useQuasar()
 const screen = computed(() => $q.screen)
 const route = useRoute()
@@ -68,25 +68,20 @@ watch(() => route.name, (val, old) => {
 })
 
 const onWindowLoad = () => {
-  if (prod.value) {
+  if (prod) {
     const adsbygoogle = window.adsbygoogle || []
-    adsbygoogle.push({})
-    adsbygoogle.push({})
+    const ads = document.querySelectorAll('ins.adsbygoogle')
+    ads.forEach((a) => {
+      if (a.clientWidth + a.clientHeight > 0)
+        adsbygoogle.push({})
+    })
   }
 }
 
 onMounted(() => {
-  if (document.readyState !== 'complete')
-    window.addEventListener("load", onWindowLoad)
-  else {
-    nextTick(() => {
-      onWindowLoad()
-    })
-  }
-})
-
-onUnmounted(() => {
-  window.removeEventListener("load", onWindowLoad)
+  nextTick(() => {
+    onWindowLoad()
+  })
 })
 </script>
 <template>
@@ -102,9 +97,9 @@ onUnmounted(() => {
                 viewBox="0 0 46.375 7.95" xmlns:v="https://vecta.io/nano">
                 <defs>
                   <clipPath id="A">
-                    <path d="M49.254 41.646h141.328V74.21H49.254zM80.475 75.21l83.108 6.769-42.942-42.042z"
-                      fill="#ffe6d5" fill-opacity="1" stroke="none" stroke-width=".265" stroke-linecap="butt"
-                      stroke-linejoin="miter" stroke-opacity="1" />
+                    <path d="M49.254 41.646h141.328V74.21H49.254zM80.475 75.21l83.108 6.769-42.942-42.042z" fill="#ffe6d5"
+                      fill-opacity="1" stroke="none" stroke-width=".265" stroke-linecap="butt" stroke-linejoin="miter"
+                      stroke-opacity="1" />
                   </clipPath>
                   <path id="B"
                     d="M44.45 114.565c-4.505 14.164-2.638 33.337-23.813 34.396 32.055 11.27 63.85 23.642 97.896 26.458 31.458-1.887 65.782-13.44 100.542-26.458-22.616-2.213-18.814-21.078-23.812-34.396" />
@@ -167,8 +162,7 @@ onUnmounted(() => {
                     <circle cx="2.767" cy="4.351" r=".19" paint-order="markers stroke fill" />
                     <circle cx="5.62" cy="4.359" r=".19" paint-order="markers stroke fill" />
                   </g>
-                  <path d="M3.622 5.063c.001.443 1.138.463 1.139 0h0" fill="none" stroke="#502d16"
-                    stroke-width=".287" />
+                  <path d="M3.622 5.063c.001.443 1.138.463 1.139 0h0" fill="none" stroke="#502d16" stroke-width=".287" />
                 </g>
                 <g fill="#00b4ff" class="letter">
                   <path
@@ -196,8 +190,7 @@ onUnmounted(() => {
     <q-drawer v-if="screen.lt.md" v-model="leftDrawerOpen" side="left" behavior="mobile" no-swipe-open no-swipe-close>
       <div class="aside mobile">
         <template v-for="r in routes" :key="r.name">
-          <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense
-            class="full-width q-mb-md">
+          <q-list v-if="r.path !== '/' && r.children.length > 0 && r.path !== '/tools'" dense class="full-width q-mb-md">
             <q-item>
               <q-item-label class="header-title q-py-xs">
                 {{ r.meta.title }}
