@@ -70,4 +70,8 @@ onUnmounted(() => {
 .body--dark .ins::after {
   color: rgba(255, 255, 255, .2);
 }
+
+.ins[data-ad-status="unfilled"] {
+  display: none !important;
+}
 </style>

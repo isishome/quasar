@@ -4,7 +4,9 @@ export const useStore = defineStore('main', {
   state: () => ({
     sections: [],
     active: null,
-    offset: 0
+    offset: 0,
+    bottomAccessTimeStamp: Date.now(),
+    rightAccessTimeStamp: Date.now()
   }),
   getters: {
     section(state) {

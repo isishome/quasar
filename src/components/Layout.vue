@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { useQuasar, uid } from 'quasar'
+import { useQuasar } from 'quasar'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from '@/store'
 
@@ -37,7 +37,10 @@ const toggleDark = () => {
   document.documentElement.style.setProperty('color-scheme', $q.dark.isActive ? 'dark' : 'light')
 }
 
-const key = ref(uid())
+const bottomRef = ref()
+const rightRef = ref()
+const bottomKey = ref(0)
+const rightKey = ref(0)
 const scrollTop = ref(0)
 const scrollMove = ref(false)
 const onScroll = (details) => {
@@ -56,8 +59,26 @@ const onScroll = (details) => {
 }
 
 watch(() => route.name, (val, old) => {
-  if (val && val !== old)
-    key.value = uid()
+  if (val && val !== old) {
+    if (Date.now() - store.bottomAccessTimeStamp > 60000 || bottomRef.value?.$el.getAttribute('data-ad-status') === 'unfilled') {
+      bottomKey.value++
+      store.bottomAccessTimeStamp = Date.now()
+    }
+
+    if (Date.now() - store.rightAccessTimeStamp > 60000 || rightRef.value?.$el.getAttribute('data-ad-status') === 'unfilled') {
+      rightKey.value++
+      store.rightAccessTimeStamp = Date.now()
+    }
+  }
+})
+
+watch(() => $q.screen.gt.md, (val, old) => {
+  if (val !== old) {
+    bottomKey.value++
+    rightKey.value++
+    store.bottomAccessTimeStamp = Date.now()
+    store.rightAccessTimeStamp = Date.now()
+  }
 })
 </script>
 <template>
@@ -209,8 +230,9 @@ watch(() => route.name, (val, old) => {
         <q-page class="col page" :style-fn="myTweak">
           <router-view />
           <div class="q-py-xl"></div>
-          <Adsense style="display:block" data-ad-client="ca-pub-5110777286519562" data-ad-slot="8610177982"
-            :data-adtest="!prod" data-ad-format="auto" data-full-width-responsive="true" :key="key" />
+          <Adsense ref="bottomRef" style="display:block" data-ad-client="ca-pub-5110777286519562"
+            data-ad-slot="8610177982" :data-adtest="!prod" data-ad-format="auto" data-full-width-responsive="true"
+            :key="bottomKey" />
           <template v-if="route.name === 'main'">
             <q-separator />
             <div class="q-py-lg">
@@ -240,8 +262,9 @@ watch(() => route.name, (val, old) => {
             </q-list>
             <q-list dense class="q-mt-xl">
               <q-item>
-                <Adsense style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5110777286519562"
-                  data-ad-slot="7240136439" :data-adtest="!prod" :key="key" />
+                <Adsense ref="rightRef" style="display:inline-block;width:160px;height:600px"
+                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="!prod"
+                  :key="rightKey" />
               </q-item>
             </q-list>
           </div>
