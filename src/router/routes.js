@@ -396,6 +396,7 @@ const routes = [
             meta: {
               title: "Date",
               desc: "Quasar는 Momentjs와 같은 전용 라이브러리를 통합하는 데 드는 높은 추가 비용 없이 대부분의 사용 사례에 JS Date를 쉽게 조작할 수 있는 유용한 함수들을 제공합니다.",
+              toDo: true
             },
           },
           {
@@ -404,7 +405,7 @@ const routes = [
             component: () => import("@/components/util/Color.vue"),
             meta: {
               title: "Color",
-              toDo: true,
+              toDo: true
             },
           },
           {
@@ -413,7 +414,7 @@ const routes = [
             component: () => import("@/components/util/Dom.vue"),
             meta: {
               title: "DOM",
-              toDo: true,
+              toDo: true
             },
           },
           {
@@ -422,7 +423,7 @@ const routes = [
             component: () => import("@/components/util/Format.vue"),
             meta: {
               title: "Formatter",
-              toDo: true,
+              toDo: true
             },
           },
           {
@@ -431,7 +432,7 @@ const routes = [
             component: () => import("@/components/util/Scroll.vue"),
             meta: {
               title: "Scrolling",
-              toDo: true,
+              toDo: true
             },
           },
           {
@@ -440,7 +441,7 @@ const routes = [
             component: () => import("@/components/util/Util.vue"),
             meta: {
               title: "그 외 유틸",
-              toDo: true,
+              toDo: true
             },
           },
         ],
