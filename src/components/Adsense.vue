@@ -1,10 +1,10 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue'
 
 const props = defineProps({
   dataAdClient: {
     type: String,
-    required: true
+    default: 'ca-pub-5110777286519562'
   },
   dataAdSlot: {
     type: String,
@@ -23,31 +23,55 @@ const props = defineProps({
     default: null
   }
 })
+
+let timer
+const repeat = ref(0)
 const render = () => {
-  (window.adsbygoogle || []).push({})
+  repeat.value++
+  if (repeat.value > props.repeat) clearTimeout(timer)
+  else if (!!window?.adsbygoogle) (window.adsbygoogle || []).push({})
+  else
+    timer = setTimeout(() => {
+      render()
+    }, 400)
 }
 
+onBeforeMount(() => {
+  const adURL = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${props.dataAdClient}`
+  const script = document.createElement('script')
+  script.src = adURL
+
+  script.async = true
+  script.crossOrigin = 'anonymous'
+
+  if (!document.head.querySelector(`script[src="${adURL}"]`))
+    document.head.appendChild(script)
+})
+
 onMounted(() => {
-  if (document.readyState !== 'complete')
-    window.addEventListener('load', render)
-  else
-    render()
+  render()
 })
 
 onUnmounted(() => {
-  window.removeEventListener('load', render)
+  clearTimeout(timer)
 })
 </script>
 
 <template>
-  <ins class="adsbygoogle ins" :data-ad-client="dataAdClient" :data-ad-slot="dataAdSlot" :data-ad-format="dataAdFormat"
-    :data-adtest="dataAdtest ? 'on' : null" :data-full-width-responsive="dataFullWidthResponsive"></ins>
+  <ins
+    class="adsbygoogle ins"
+    :data-ad-client="dataAdClient"
+    :data-ad-slot="dataAdSlot"
+    :data-ad-format="dataAdFormat"
+    :data-adtest="dataAdtest ? 'on' : null"
+    :data-full-width-responsive="dataFullWidthResponsive"
+  ></ins>
 </template>
 
 <style scoped>
 .ins {
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05) !important;
-  background-color: rgba(0, 0, 0, .02) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
   position: relative;
   min-height: 200px;
 }
@@ -59,19 +83,19 @@ onUnmounted(() => {
   left: 50%;
   z-index: -1;
   transform: translate(-50%, -50%);
-  color: rgba(0, 0, 0, .2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .body--dark .ins {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .05) !important;
-  background-color: rgba(255, 255, 255, .02) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 .body--dark .ins::after {
-  color: rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, 0.2);
 }
 
-.ins[data-ad-status="unfilled"] {
+.ins[data-ad-status='unfilled'] {
   display: none !important;
 }
 </style>
