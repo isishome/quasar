@@ -230,7 +230,7 @@ watch(() => $q.screen.gt.md, (val, old) => {
         <q-page class="col page" :style-fn="myTweak">
           <router-view />
           <div class="q-py-xl"></div>
-          <Adsense ref="bottomRef" style="display:block" data-ad-client="ca-pub-5110777286519562"
+          <Adsense ref="bottomRef" style="display:block" 
             data-ad-slot="8610177982" :data-adtest="!prod" data-ad-format="auto" data-full-width-responsive="true"
             :key="bottomKey" />
           <template v-if="route.name === 'main'">
@@ -263,7 +263,7 @@ watch(() => $q.screen.gt.md, (val, old) => {
             <q-list dense class="q-mt-xl">
               <q-item>
                 <Adsense ref="rightRef" style="display:inline-block;width:160px;height:600px"
-                  data-ad-client="ca-pub-5110777286519562" data-ad-slot="7240136439" :data-adtest="!prod"
+                  data-ad-slot="7240136439" :data-adtest="!prod"
                   :key="rightKey" />
               </q-item>
             </q-list>
