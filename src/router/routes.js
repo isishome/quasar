@@ -1,12 +1,5 @@
 const routes = [
-  {
-    path: "/:pathMatch(.*)*",
-    name: "NotFound",
-    component: () => import("@/components/NotFound.vue"),
-    meta: {
-      desc: "페이지를 찾을 수 없습니다 :(",
-    },
-  },
+
   {
     path: "/",
     component: () => import("@/components/Layout.vue"),
@@ -466,6 +459,14 @@ const routes = [
         ],
       },
     ],
+  },
+    {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@/components/NotFound.vue"),
+    meta: {
+      desc: "페이지를 찾을 수 없습니다 :(",
+    },
   },
 ];
 export default routes;
