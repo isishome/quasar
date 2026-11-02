@@ -4,4 +4,5 @@ dist
 docs
 prompts
 public
+src/vendor
 package-lock.json

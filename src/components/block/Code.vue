@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useQuasar } from 'quasar'
+import '@/vendor/prism.js'
+import '@/vendor/prism-darcula.css'
 
 const props = defineProps({
   language: {

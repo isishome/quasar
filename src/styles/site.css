@@ -16,6 +16,7 @@
 }
 
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-y: scroll;
   width: 100%;
   min-width: 320px;

@@ -11,6 +11,7 @@ export default [
       'public/**',
       'docs/**',
       'prompts/**',
+      'src/vendor/**',
     ],
   },
   js.configs.recommended,
