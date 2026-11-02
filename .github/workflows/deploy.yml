@@ -6,8 +6,11 @@ on:
       - main
 
 permissions:
-  id-token: write
   contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -16,12 +19,13 @@ jobs:
 
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: '22'
+          node-version-file: '.node-version'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -29,22 +33,28 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify project
+        run: |
+          npm run lint
+          npm test
+          npm audit --omit=dev
+
       - name: Upload to S3
-        uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --delete
         env:
           AWS_S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: ./dist
+        run: |
+          aws s3 cp dist/assets/ "s3://$AWS_S3_BUCKET/assets/" --recursive --cache-control 'public,max-age=31536000,immutable' --only-show-errors
+          aws s3 cp dist/ "s3://$AWS_S3_BUCKET/" --recursive --exclude 'assets/*' --exclude 'index.html' --cache-control 'public,max-age=3600' --only-show-errors
+          aws s3 cp dist/index.html "s3://$AWS_S3_BUCKET/index.html" --cache-control 'no-cache' --content-type 'text/html; charset=utf-8' --only-show-errors
 
       - name: Invalidate CloudFront Cache
-        uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           PATHS: '/*'
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths '/*'

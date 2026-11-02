@@ -1,0 +1,7 @@
+node_modules
+dist
+.report
+docs
+prompts
+public
+package-lock.json

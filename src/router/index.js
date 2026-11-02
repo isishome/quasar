@@ -14,21 +14,19 @@ const sleep = (ms) => {
 export const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to) {
-    return new Promise(async (resolve) => {
+  async scrollBehavior(to) {
       const store = useStore()
       await sleep(300)
       if (to.hash)
-        resolve({ el: to.hash, top: store.offset + 20, behavior: 'smooth' })
+        return { el: to.hash, top: store.offset + 20, behavior: 'smooth' }
       else
-        resolve({ top: 0, behavior: 'smooth' })
-    })
+        return { top: 0, behavior: 'smooth' }
   }
 })
 
 router.beforeEach((to, from) => {
   const store = useStore()
-  const title = `${to.meta.title ? `${to.meta.title} | ` : ''}Sera\'s Quasar`
+  const title = `${to.meta.title ? `${to.meta.title} | ` : ''}Sera's Quasar`
   document.title = title
 
   const ogTitle = document.createElement('meta')
@@ -42,7 +40,7 @@ router.beforeEach((to, from) => {
     oldOgTitle.replaceWith(ogTitle)
 
   const descList = to.matched.filter(r => r.meta && r.meta.desc)
-  const desc = to.meta.desc || descList.length > 0 ? descList[0].meta.desc : 'Sera\'s Quasar Study!'
+  const desc = to.meta.desc || descList.at(-1)?.meta.desc || 'Sera\'s Quasar Study!'
   const description = document.createElement('meta')
   description.setAttribute('name', 'description')
   description.setAttribute('content', desc)

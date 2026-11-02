@@ -138,7 +138,7 @@ Done. Now run:
     </section>
     <section id="quasar" data-name="Quasar 플러그인 설치">
       <Title sub>Quasar 플러그인 설치</Title>
-      <p>이제 &#60;your-project-name&#62 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
+      <p>이제 &#60;your-project-name&#62; 폴더로 이동하여 Vite용 Quasar 플러그인을 설치해보도록 하겠습니다.
       </p>
       <Info advice color="teal-4">
         <ul>

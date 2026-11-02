@@ -26,3 +26,18 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# Report
+.report
+
+# 로컬 에이전트 지침 및 하네스 작업 문서 (공개 저장소 제외)
+AGENTS.md
+CLAUDE.md
+/.agents/
+/.claude/
+/.codex/
+/docs/
+/prompts/
+/deploy/README.md
+/test-results/
+/playwright-report/

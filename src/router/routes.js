@@ -131,7 +131,6 @@ const routes = [
         meta: {
           title: "Flex Grid",
         },
-        redirect: { name: "flexbox" },
         children: [
           {
             path: "flexbox",

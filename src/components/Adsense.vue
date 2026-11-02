@@ -1,7 +1,7 @@
 <script setup >
 import { onMounted, onUnmounted, nextTick } from "vue";
 
-const props = defineProps({
+defineProps({
   dataAdClient: {
     type: String,
     default: "ca-pub-5110777286519562",

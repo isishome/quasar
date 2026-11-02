@@ -2,7 +2,7 @@
 import { useQuasar } from 'quasar'
 import { defineAsyncComponent } from 'vue'
 const Code = defineAsyncComponent(() => import('@/components/block/Code.vue'))
-const $q = useQuasar()
+useQuasar()
 </script>
 
 <template>

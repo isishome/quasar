@@ -83,7 +83,7 @@ const remove = (file) => {
   if (findIndex !== -1) {
     attach.value.splice(findIndex, 1)
     uploader.value.removeFile(file)
-    const imgs = editor.value.getContentEl().querySelectorAll(`img[src=\"${file.__img.src}\"]`)
+    const imgs = editor.value.getContentEl().querySelectorAll(`img[src="${file.__img.src}"]`)
     imgs.forEach(img => img.remove())
   }
   update()
@@ -111,14 +111,14 @@ const onPaste = (evt) => {
   evt.stopPropagation()
   if (evt.originalEvent && evt.originalEvent.clipboardData.getData) {
     text = evt.originalEvent.clipboardData.getData('text/plain')
-    encodeText = text.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+    encodeText = text.replace(/[\u00A0-\u9999<>&]/g, function (i) {
       return '&#' + i.charCodeAt(0) + ';'
     })
-    editor.value.runCmd('insertHTML', text)
+    editor.value.runCmd('insertHTML', encodeText)
   }
   else if (evt.clipboardData && evt.clipboardData.getData) {
     text = evt.clipboardData.getData('text/plain')
-    encodeText = text.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+    encodeText = text.replace(/[\u00A0-\u9999<>&]/g, function (i) {
       return '&#' + i.charCodeAt(0) + ';'
     })
     editor.value.runCmd('insertHTML', encodeText)
